@@ -314,22 +314,22 @@ class product extends React.Component {
         });
         const buttons = document.querySelectorAll(".subtablinks");
         const section = document.querySelectorAll(".thumb");
-        buttons.forEach(item => {
-            item.addEventListener('click', () => {
-                buttons.forEach(item => {
-                    item.className = "";
-                });
-                item.className = "active";
-                let values = item.textContent;
-                document.getElementById("myCheck").checked = true;
-                section.forEach(show => {
-                    show.style.display = "none";
-                    if (show.getAttribute("data-id") === values || values === "All products") {
-                        show.style.display = "block";
-                    }
-                });
-            });
-        });
+        // buttons.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         buttons.forEach(item => {
+        //             item.className = "";
+        //         });
+        //         item.className = "active";
+        //         let values = item.textContent;
+        //         document.getElementById("myCheck").checked = true;
+        //         section.forEach(show => {
+        //             show.style.display = "none";
+        //             if (show.getAttribute("data-id") === values || values === "All products") {
+        //                 show.style.display = "block";
+        //             }
+        //         });
+        //     });
+        // });
     }
 
 
@@ -522,11 +522,11 @@ class product extends React.Component {
                                     <div class="container-fluid p-0 py-1">
                                         <div class="row py-4 ">
                                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
-                                                <h1 class="meduim white  aligncenter">{newbrandfiltered.map((key,value)=>key.title)}</h1>
+                                                <h1 class={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+" white  aligncenter"}>{newbrandfiltered.map((key,value)=>key.title)}</h1>
                                             </div>
                                             <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 "></div>
                                             <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-5">
-                                                <p class="light white footertext  aligncenter lineheight">{newbrandfiltered.map((key,value)=>key.description)}</p>
+                                                <p class={[(i18n.language=="ar")?"DroidKufi ":"gill light "]+" white footertext  aligncenter lineheight"}>{newbrandfiltered.map((key,value)=>key.description)}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -537,7 +537,7 @@ class product extends React.Component {
                                 <div class="row ">
                                         <div class="container-fluid p-0 py-2 linkleft">
                                         <img src='./assets/images/smallleftfleche.svg' class="img-fluid cover backmediafleche" />
-                                        <span class=" regular footertext color_pagination px-2"><Back /></span>
+                                        <span class={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
                                     </div>
                                     </div>
                                 </a>
@@ -557,13 +557,13 @@ class product extends React.Component {
                         <div class="container-fluid p-0">
                             <div class="row ">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3   px-md-4">
-                                    <h4 className={[(i18n.language=="ar")?"textalignright ":""]+"light text-lightgrey gill "}><BrowseCategories /></h4>
+                                    <h4 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}><BrowseCategories /></h4>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9  ">
                                     <div class="container-fluid ">
                                         <div class="row ">
                                             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
-                                                <h4 className={[(i18n.language=="ar")?"textalignright ":""]+"light text-lightgrey gill "}>
+                                                <h4 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
                                                <Showing />
                                         {" " + 
                                         (this.state.firstnmbrofprod)
@@ -581,11 +581,11 @@ class product extends React.Component {
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
                                                 <form action="" className="row relative ">
                                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
-                                                        <div className={[(i18n.language=="ar")?"textalignright ":""]+"relative texttitlemedia searchnewprodbordure font_size light gill h-100"}>
+                                                        <div className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
                                                             {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
                                                             
                                                             <input type="text" id="search "
-                                                             placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"SearchProducts"} className={[(i18n.language=="ar")?"pr-5 ":"pl-5 "]+"  texttitlemedia footertext light gill w-100"}
+                                                             placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"SearchProducts"} className={[(i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 gill light "]+" pt-2  texttitlemedia footertext   w-100"}
                                                                 value={this.state.inputsearch} onChange={this.filter} />
                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
                                                              <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
@@ -632,7 +632,7 @@ class product extends React.Component {
                                                                                     else var title_ar = key.title_ar 
 
                                                                                     return (
-                                                                                        <option className="selectoption container-fluid px-2 textalignleft meduim gill font_size" value={"" + key.id + ""}>
+                                                                                        <option className={[(i18n.language=="ar")?"textalignright DroidKufi ":"meduim gill "]+"selectoption container-fluid px-2 textalignleft  font_size"} value={"" + key.id + ""}>
                                                                                             {  (i18n.language=="ar") ? title_ar : key.title}
                                                                                         </option>
 
@@ -648,7 +648,7 @@ class product extends React.Component {
                                                             </div> */}
 
                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
-                                                                <h3 className="blue meduim gill py-2"><Subcateg /></h3>
+                                                                <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill  "]+"blue py-2"}><Subcateg /></h3>
                                                                 {this.state.categ.map((key, value) => {
                                                                     let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
                                                                     return (a.map((keys, value) => {
@@ -658,13 +658,13 @@ class product extends React.Component {
                                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""} >
                                                                                 <div className="container-fluid p-0">
                                                                                     <div className="row">
-                                                                                        <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 mr-3 ">
+                                                                                        <div className={[(i18n.language=="ar")?"textalignright  ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 "}>
                                                                                             <label className="checkbox h-100 w-100 p-0 " >
                                                                                                 <input type="checkbox" id="categCheck" name={"" + key.title + ""} value={"" + key.title + ""}  disabled={true} />
                                                                                             </label>
                                                                                         </div>
                                                                                         <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                                            <h3 className="light text-lightgrey contents ">
+                                                                                            <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey contents "}>
                                                                                                 {  (i18n.language=="ar") ? title_ar : keys.title}
                                                                                                 {/* {"" + keys.category + ""} */}
                                                                                                  </h3>
@@ -677,23 +677,23 @@ class product extends React.Component {
                                                                 })}
                                                             </div>
                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  mt-4 mb-4 px-4">
-                                                                <h3 className="meduim blue"><Brand /></h3>
+                                                                <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill  meduim "]+" blue"}><Brand /></h3>
                                                             </div>
                                                             {newbrandfiltered.map((key, value) => {
                                                                 if (key.title_ar == null) { var title_ar = key.title }
                                                                 else var title_ar = key.title_ar 
                                                                 return (
-                                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 ">
+                                                                    <div className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
                                                                         <div className="container-fluid p-0">
                                                                             <div className="row">
-                                                                                <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 mr-3 px-4">
+                                                                                <div className={[(18n.language=="ar")?"textalignright ml-3 ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 px-4"}>
                                                                                     <label className="checkbox h-100 w-100 p-0 " >
                                                                                         <input type="checkbox" id={"myCheck"+key.id} name={"" + key.title + ""} value={"" + key.title + ""} disabled={true} />
                                                                                     </label>
                                                                                 </div>
 
                                                                                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                                    <h3 className="light text-lightgrey contents ">{  (i18n.language=="ar") ? title_ar : key.title}</h3>
+                                                                                    <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey contents "}>{  (i18n.language=="ar") ? title_ar : key.title}</h3>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -702,7 +702,7 @@ class product extends React.Component {
                                                             })}
                                                             <div className="textaligncenter py-4 ">
                                                                 <button className="clearfilterbtn textaligncenter px-5 py-2" >
-                                                                    <h3 className="gill light  text-lightgrey px-4"><Clearfilters /></h3>
+                                                                    <h3 className={[(i18n.language=="ar")?"textalignrightDroidKufi ":"gill "]+" light  text-lightgrey px-4"}><Clearfilters /></h3>
                                                                 </button>
                                                             </div>
 
@@ -731,7 +731,7 @@ class product extends React.Component {
                                                                  else var title_ar = key.title_ar 
 
                                                                 return (
-                                                                    <option className=" px-4 selectoption textaligncenter meduim gill font_size" value={"" + key.id + ""}>
+                                                                    <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter font_size"} value={"" + key.id + ""}>
                                                                         {  (i18n.language=="ar") ? title_ar : key.title}
                                                                     </option>
 
@@ -747,7 +747,7 @@ class product extends React.Component {
                                         </div>
 
                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
-                                            <h3 className={[(i18n.language=="ar")?"textalignright ":""]+"blue meduim gill py-2"}><Subcateg /></h3>
+                                            <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"meduim gill " ]+"blue  py-2"}><Subcateg /></h3>
                                             {this.state.categ.map((key, value) => {
                                                 let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
                                                 
@@ -764,7 +764,7 @@ class product extends React.Component {
                                                                         </label>
                                                                     </div>
                                                                     <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                        <h3 className={[(i18n.language=="ar")?"textalignright ":""]+"light text-lightgrey contents "}>{  (i18n.language=="ar") ? title_ar : keys.title} </h3>
+                                                                        <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+" text-lightgrey contents "}>{  (i18n.language=="ar") ? title_ar : keys.title} </h3>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -791,7 +791,7 @@ class product extends React.Component {
                                                             </div>
 
                                                             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                <h3 className={[(i18n.language=="ar")?"textalignright ":""]+"light text-lightgrey contents "}>
+                                                                <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+" text-lightgrey contents "}>
                                                                 {  (i18n.language=="ar") ? title_ar : key.title}
                                                                 </h3>
                                                             </div>
@@ -802,7 +802,7 @@ class product extends React.Component {
                                         })}
                                         <div className="textaligncenter py-4 ">
                                             <button className="clearfilterbtn textaligncenter px-5 py-2" >
-                                                <h3 className="gill light  text-lightgrey px-4"><Clearfilters /></h3>
+                                                <h3 className={[(i18n.language=="ar")?"DroidKufi ":"gill light "]+"   text-lightgrey px-4"}><Clearfilters /></h3>
                                             </button>
                                         </div>
                                     </div>
@@ -842,10 +842,10 @@ class product extends React.Component {
                                                                     <div className={[(i18n.language=="ar")?"textalignright ":""]+"Products"}>
                                                                         <Link href="/productbrand">
                                                                             <a href="/productbrand">
-                                                                                <p className="footertext meduim prodbrandd">
+                                                                                <p className={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"footertext  prodbrandd"}>
                                                                                 {this.state.brand[key.brand - 1].title}
                                                                                     <br />
-                                                                                    <span className="font_size gill meduim blue">
+                                                                                    <span className={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"font_size   blue"}>
                                                                                     {  (i18n.language=="ar") ? key.title_ar : key.title}
                                                                                     </span>
                                                                                 </p>
@@ -889,10 +889,10 @@ class product extends React.Component {
                                                                     <div className={[(i18n.language=="ar")?"textalignright ":""]+"Products"}>
                                                                         <Link href="/productbrand">
                                                                             <a href="/productbrand">
-                                                                                <p className="footertext meduim prodbrandd">
+                                                                                <p className={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"footertext  prodbrandd"}>
                                                                                 {  (i18n.language=="ar") ?  this.state.brand[key.brand - 1].title_ar : this.state.brand[key.brand - 1].title}
                                                                                     <br />
-                                                                                    <span className="font_size gill meduim blue">
+                                                                                    <span className={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"font_size  blue"}>
                                                                                     {  (i18n.language=="ar") ? key.title_ar : key.title}
                                                                                     </span>
                                                                                 </p>
@@ -921,22 +921,22 @@ class product extends React.Component {
                                                 {(this.state.isSearchPress) ?
                                                     arraysearchedpages.map((key, value) => {
                                                         return (
-                                                            <button className="color_pagination" onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                            <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                         )
                                                     })
                                                     :
                                                         arraypages.map((key, value) => {
                                                             return (
-                                                                <button className="color_pagination" onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                                <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                             )
                                                         })
                                                 }
                                                 {
                                                     (this.state.isSearchPress) ?
-                                                        ((arraysearchedpages.length == this.state.currentpage) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}><Back /></button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}><Next /></button>)
+                                                        ((arraysearchedpages.length == this.state.currentpage) ? <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"blue"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}><Back /></button> : <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"blue"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}><Next /></button>)
                                                             // && (arraysearchedpages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}><Next /></button> : null)
                                                         :
-                                                            ((arraypages.length == this.state.currentpage ) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}><Back /></button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}><Next /></button>)
+                                                            ((arraypages.length == this.state.currentpage ) ? <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"blue"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}><Back /></button> : <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"blue"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}><Next /></button>)
                                                                 // || (arraypages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>Next</button> : null
                                                 }
                                             </div>

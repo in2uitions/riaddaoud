@@ -839,7 +839,7 @@ class product extends React.Component {
                                                                         </label>
                                                                     </div>
                                                                     <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                        <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":" gill "]+"light text-lightgrey contents "}>{  (this.props.i18n.language == "ar") ? title_ar : keys.title} </h3>
+                                                                        <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":" gill light "]+" text-lightgrey contents "}>{  (this.props.i18n.language == "ar") ? title_ar : keys.title} </h3>
                                                                     </div>
                                                                 </div>
                                                             </div>

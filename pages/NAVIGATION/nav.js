@@ -24,6 +24,7 @@ class Nav extends React.Component{
             var inputBox = $('.searchbox-input');
             var searchBox = $('.searchbox');
             var isOpen = false;
+            $('.dropdown-toggle').dropdown()
             submitIcon.click(function() {
                 if (isOpen == false) {
                     searchBox.addClass('searchbox-open');
@@ -61,9 +62,9 @@ class Nav extends React.Component{
                 document.getElementById(current).style["boxShadow"] = "0px 25x 20px rgba(0,0,0,0.38)"
             }
         
-        $(document).ready(function(){
-            $('.dropdown-toggle').dropdown()
-        });
+        // $(document).ready(function(){
+            // $('.dropdown-toggle').dropdown()
+        // });
     }
     
 handlefalse = () => {
