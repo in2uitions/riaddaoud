@@ -317,7 +317,8 @@ const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
               className="owl-carousel owl-theme  bigslider relative "
             >
               <div className="item  p-0 relative ">
-                <img
+                <div className="container-fluid p-0">
+                   <img
                   src={""+imagbackeurl+""} 
                   alt="The Last of us"
                   className="img-fluid w-100 cover parallaxxi "
@@ -338,6 +339,7 @@ const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
                   <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light scrolltoexp"}>
                   {this.props.t("scroll")}
                  </p>
+                </div>
                 </div>
               </div>
               <div className="item parallaxxi  p-0">

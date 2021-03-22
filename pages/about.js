@@ -228,9 +228,10 @@ render (){
                                         
                                         </h1>
                                 </div>
-                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+'mission light py-2 lineheightbig'}><h4>
+                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+'mission light py-2 lineheightbig'}>
+                                    <h3>
                                     {(this.props.i18n.language=="ar")?description_ar:value.description}
-                                    </h4></div>
+                                    </h3></div>
                                 </div>
                                 <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax1' style={{backgroundImage:'url('+imageurl+')'}}   ></div>
                         </div>
@@ -241,7 +242,7 @@ render (){
                                     <div className=' col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3'></div>
                                     <div className='d-flex col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 py-5 px-0 '>
                                         <div className='align-self-lg-start quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover ' /></div>
-                                        <p className='quotestext gill aligncenter'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt</p>
+                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'quotestext  aligncenter'}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt</p>
                                         <div className='secquotes quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover' /></div>
                                     </div>
                                 </div>
@@ -260,7 +261,7 @@ render (){
                             <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 aligncenter '}>
                                  <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>   {(this.props.i18n.language=="ar")?title_ar:value.title}</h1>
                             </div>
-                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 lineheightbig'}><h4>{(this.props.i18n.language=="ar")?description_ar:value.description}</h4>
+                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 lineheightbig'}><h3>{(this.props.i18n.language=="ar")?description_ar:value.description}</h3>
                             </div>
                         </div>
                     </div>
@@ -269,7 +270,7 @@ render (){
                     <div className='container-fluid'>
                         <div className='row'>
                             <div className=' col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3'></div> 
-                            <div className=' col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 aligncenter py-5 quotesreply gill regular '>
+                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+' col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 aligncenter py-5 quotesreply regular '}>
                                 {this.props.t('aboutreplying')}
                                 <div className='py-2 mt-4 '>
                                     <Link href='/contact'>
@@ -290,10 +291,12 @@ render (){
         
       })}
     </div>
-        <div className="relative ">
-            <hr className="hr my-5 "/>
-            <div className="thingonhr">
-                <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"blue meduim"}>{this.props.t('riadovertheyear')}</h1>
+        <div className="container-fluid py-md-0 py-sm-3 py-5">
+            <div className="relative ">
+                <hr className="hr my-5 "/>
+                <div className="thingonhr">
+                    <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"blue meduim"}>{this.props.t('riadovertheyear')}</h1>
+                </div>
             </div>
         </div>
         <div className="container">
@@ -325,7 +328,7 @@ render (){
                                             </div>
                                             <div className='container py-4 row '>
                                                 <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2'></div>
-                                                {(value.image!=null)?(<div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 py-0 text-right regular timelinecolor '> <h3 className='py-1 mb-2'>{value.description}</h3>
+                                                {(value.image!=null)?(<div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 py-0 text-right regular timelinecolor '> <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{value.description}</h3>
                                                 </div>):(<div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 py-5 text-right regular timelinecolor '>
                                                     <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{(this.props.i18n.language=="ar")?description_ar:value.description}</h3>
                                                 </div>)}

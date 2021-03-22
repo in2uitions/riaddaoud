@@ -220,7 +220,7 @@ class media extends React.Component {
                                                     <div className='row '>
                                                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0  '>
                                                             <div className='hiddenimg'>
-                                                                <img src={"" + imageurl + ""} className='img-fluid img cover imgshake' />
+                                                                <img src={"" + imageurl + ""} className='img-fluid img cover w-100 imgshake' />
                                                             </div>
                                                             <figcaption className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'mt-3'}>
                                                                 <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'proddatetitle  regular '}>
@@ -294,7 +294,7 @@ class media extends React.Component {
                                                     <div className='row '>
                                                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0  '>
                                                             <div className='hiddenimg'>
-                                                                <img src={"" + imageurl + ""} className='img-fluid img cover imgshake' />
+                                                                <img src={"" + imageurl + ""} className='img-fluid img cover w-100 imgshake' />
                                                             </div>
                                                             <figcaption className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'mt-3'}>
                                                                 <h3 className='proddatetitle gill regular '>
@@ -359,10 +359,10 @@ class media extends React.Component {
                             <div className={[(this.props.i18n.language == "ar") ? "textalignleft flexreverse " : " textalignright "] + "col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 paginnext gill regular  "}>
                                 {arraypages.map((key, value) => {
                                     return (
-                                        <button className="color_pagination" onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                        <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                     )
                                 })}
-                                {((arraypages.length == this.state.currentpage) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)}
+                                {((arraypages.length == this.state.currentpage) ? <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"blue"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)}
                             </div>
                         </div>
                     </div>

@@ -218,14 +218,14 @@ render (){
                       <div className="col   ">
                         <input
                           type="text "
-                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"form-control animation  placeholder light bordernone js--fadeInb"}
+                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation  placeholder  bordernone js--fadeInb"}
                           placeholder={this.props.t("firstname")}
                         />
                       </div>
                       <div className="col ">
                         <input
                           type="text "
-                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"form-control animation placeholder light bordernone js--fadeInb"}
+                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation placeholder  bordernone js--fadeInb"}
                           placeholder={this.props.t("lastname")}
                         />
                       </div>
@@ -236,14 +236,14 @@ render (){
                       <div className="col ">
                         <input
                           type="text "
-                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"form-control animation  light placeholder bordernone js--fadeInb"}
+                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light " ]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("emailplaceholder")}
                         />
                       </div>
                       <div className="col ">
                         <input
                           type="text "
-                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"form-control animation  light placeholder bordernone js--fadeInb"}
+                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("phonenbplaceholder")}
                         />
                       </div>
@@ -257,7 +257,7 @@ render (){
                           <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 col-xxl-10 px-0 my-auto "}>
                             <span
                               id="custom-text"
-                              className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light placeholder marginLeft"}
+                              className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light "]+" placeholder marginLeft"}
                             >
                             {this.props.t("attachresume")}
                             </span>
@@ -276,7 +276,7 @@ render (){
                                       className="img-fluid contain w-100 "
                                     />
                                   </div>
-                                  <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light footertext regular  dcontent "}>
+                                  <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light "]+" footertext regular  dcontent "}>
                                   {this.props.t("choosefile")}
                                   </p>
                                 </div>
@@ -289,7 +289,7 @@ render (){
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 ">
                       <div className="form-group ">
                         <textarea
-                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"form-control animation js--fadeInb light placeholder resizeoff bordernone"}
+                          className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation js--fadeInb  placeholder resizeoff bordernone"}
                           id="exampleFormControlTextarea1 "
                           rows="5"
                           placeholder={this.props.t("textareaplaceholder")}
@@ -319,7 +319,7 @@ render (){
                                     </div>
                                   </div>
                                 </div>
-                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light footertext gill dcontent animation js--fadeInRight"}>
+                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light"]+" footertext gill dcontent animation js--fadeInRight"}>
                                 {this.props.t("submit")}
                                 </span>
                               </div>

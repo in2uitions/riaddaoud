@@ -191,26 +191,26 @@ render (){
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder lightitalic bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")}/>
+                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder  bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")}/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder lightitalic bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")}/>
+                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder  bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")}/>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight lightitalic bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")}/>
+                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")}/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight lightitalic bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")}/>
+                                        <input type="text" className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")}/>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">
                                 <div className="form-group  ">
-                                    <textarea className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight lightitalic bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")}></textarea>
+                                    <textarea className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight  bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")}></textarea>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">

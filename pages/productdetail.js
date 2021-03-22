@@ -250,28 +250,28 @@ class proddetail extends React.Component {
                                     </div>
                                 </a>
                             </Link> */}
-                            <div class={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100   sidemenudropdown  "}>
-                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
+                            <div className={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100   sidemenudropdown  "}>
+                                <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
                                         <Link href="/product">
                                         <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
                                             <div className="row ">
                                                 {(i18n.language == "ar") ?
-                                                    <div className="container-fluid p-0 py-2 link centeredpag">
-                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill "]+" regular footertext color_pagination px-2"}><Back /></span>
+                                                    <div className="container-fluid p-0 py-2 link ">
+                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
                                                         <img src="./assets/images/smallrightfleche.svg" className="img-fluid cover backmediafleche" />
                                                     </div> :
                                                     <div className="container-fluid p-0 py-2 linkleft centeredpag">
                                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
-                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill "]+" regular footertext color_pagination px-2"}><Back /></span>
+                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
                                                     </div>}
                                             </div>
                                         </a>
                                     </Link>
                                 </div>
-                                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                            <div id="sync1" class="owl-carousel productcarousel owl-theme w-100 p-0">
+                                <div className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 py-md-0 py-5">
+                                    <div className="row">
+                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                            <div id="sync1" className="owl-carousel productcarousel owl-theme w-100 p-0">
 
                                                 {
                                                     this.state.data.map((key, value) => {
@@ -280,7 +280,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div class="item w-100"> <div class="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div className="item w-100"> <div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
@@ -291,7 +291,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div class="item w-100"><div class="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div className="item w-100"><div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
@@ -299,7 +299,7 @@ class proddetail extends React.Component {
                                             </div>
 
 
-                                            <div id="sync2" class="owl-carousel productcarousel secondcarousel owl-theme webkitalign">
+                                            <div id="sync2" className="owl-carousel productcarousel secondcarousel owl-theme webkitalign">
                                                 {
                                                     this.state.data.map((key, value) => {
                                                         var startb_url = 'https://rdcms.businessexchange.me/assets/';
@@ -307,7 +307,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div class="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
+                                                            <div className="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
                                                         )
                                                     })
                                                 }
@@ -318,7 +318,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div class="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
+                                                            <div className="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
                                                         )
                                                     })
                                                 }
@@ -330,7 +330,7 @@ class proddetail extends React.Component {
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 py-3 px-1 mt-3">
-                            <div className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5">
+                            <div className="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 col-xxl-11 p-5">
                                 {/* <Link href="/productbrand" > */}
                                 <Link href={{ pathname: '/productbrand', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, data_id: this.state.brand.id } }}>
                                     <a href={{ pathname: '/productbrand', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, data_id: this.state.brand.id } }}>
@@ -347,7 +347,7 @@ class proddetail extends React.Component {
                                         return (i18n.language == "ar") ? title_ar : key.title
                                     })}
                                 </span>
-                                <div className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "gill "] + "footertext lineheight light texttitlemedia py-3 mb-3"}>
+                                <div className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "gill light "] + "footertext lineheight  texttitlemedia py-3 mb-3"}>
                                     <p>
                                         {this.state.data.map((key, value) => {
                                             if (key.description_ar == null) { var description_ar = key.description }
@@ -368,7 +368,7 @@ class proddetail extends React.Component {
 
                                         <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                             <div className="card-body px-0">
-                                                <div className={[(i18n.language == "ar") ? "textalignright  DroidKufi " : "gill "] + "footertext lineheight light texttitlemedia lineheight"}>
+                                                <div className={[(i18n.language == "ar") ? "textalignright  DroidKufi " : "gill light "] + "footertext lineheight  texttitlemedia lineheight"}>
                                                     <div dangerouslySetInnerHTML={{
                                                         __html: this.state.data.map((key, value) => {
                                                             if (key.application_ar == null) { var application_ar = key.application }
@@ -391,7 +391,7 @@ class proddetail extends React.Component {
                                         </div>
                                         <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                             <div className="card-body px-0">
-                                                <div className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "gill "] + "footertext lineheight light texttitlemedia lineheight"}>
+                                                <div className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "gill light"] + "footertext lineheight  texttitlemedia lineheight"}>
                                                     <div dangerouslySetInnerHTML={{
                                                         __html: this.state.data.map((key, value) => {
                                                             if (key.ingredients_ar == null) { var ingredients_ar = key.ingredients }
@@ -407,7 +407,7 @@ class proddetail extends React.Component {
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-4"></div>
                             <div className={[(i18n.language == "ar") ? "textalignleft col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 mt-5 px-5 mb-0" : "col-10 col-sm-10 col-md-9 col-lg-9 col-xl-7 col-xxl-7 mt-5 px-5 mb-0"]}>
-                                <p className={[(i18n.language == "ar")?"DroidKufi ":"gill "]+"lightitalic footertext"}>
+                                <p className={[(i18n.language == "ar")?"DroidKufi ":"gill lightitalic "]+" footertext"}>
                                     <Link href="/contact">
                                         <a href="/contact" className={[(i18n.language == "ar")?"DroidKufi ":"gill "]+"blue underlinetext"}>
                                             <Contactus />

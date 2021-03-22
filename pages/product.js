@@ -616,7 +616,7 @@ class product extends React.Component {
                 <div>
                     <div class="container-fluid p-0 parallax " style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
                         <div className={[(this.props.i18n.language=="ar")?"productnewbackar textalignright":"productnewback "]+" col-10 col-sm-10 col-md-10 col-lg-4 col-xl-4 col-xxl-4 p-0 "}>
-                            <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" meduim  bigtitleprod"}>
+                            <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"   bigtitleprod"}>
                                 {this.state.backg.map((key, value) => {
                                      if (key.description_ar == null) { var description_ar = key.description }
                                      else var description_ar = key.description_ar
@@ -631,13 +631,13 @@ class product extends React.Component {
                         <div class="container-fluid p-0">
                             <div class="row ">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3   px-md-4">
-                                    <h4 className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"light text-lightgrey gill "}>{this.props.t("BrowseCategories")}</h4>
+                                    <h4 className={[(this.props.i18n.language=="ar")?"textalignright ":"light "]+" text-lightgrey gill "}>{this.props.t("BrowseCategories")}</h4>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9  ">
                                     <div class="container-fluid ">
                                         <div class="row ">
                                             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
-                                                <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"light text-lightgrey  "}>
+                                                <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
                                                 {this.props.t("Showing")}
                                         {" " + (this.state.isFilterPress) ?
                                        ( (this.state.filtering.length==0 && this.state.isFilterPress==true) ?0: (this.state.firstnmbrofprod))
@@ -657,10 +657,10 @@ class product extends React.Component {
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
                                                 <form action="" className="row relative ">
                                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
-                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"relative texttitlemedia searchnewprodbordure font_size light gill h-100"}>
+                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
                                                             {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
                                                             
-                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 ":"pl-5 "]+"  texttitlemedia footertext light gill w-100"}
+                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+" pt-2  texttitlemedia footertext   w-100"}
                                                                 value={this.state.inputsearch} onChange={this.filter} />
                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
                                                              <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
@@ -687,7 +687,7 @@ class product extends React.Component {
                                             <button data-parent="#modal" className="navbar-toggler textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
                                                 <span>FILTER</span>
                                             </button>
-                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div class="modal-dialog " role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -723,23 +723,23 @@ class product extends React.Component {
                                                             </div> */}
 
                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
-                                                                <h3 className="blue meduim gill py-2">{this.props.t("subcateg")}</h3>
+                                                                <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill  "]+"blue meduim py-2"}>{this.props.t("subcateg")}</h3>
                                                                 {this.state.categ.map((key, value) => {
                                                                     let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
                                                                     return (a.map((keys, value) => {
                                                                         if (keys.title_ar == null) { var title_ar = keys.title }
                                                                         else var title_ar = keys.title_ar 
                                                                         return (
-                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""} >
+                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""}>
                                                                                 <div className="container-fluid p-0">
                                                                                     <div className="row">
-                                                                                        <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 mr-3 ">
+                                                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright  ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 "}>
                                                                                             <label className="checkbox h-100 w-100 p-0 " >
                                                                                                 <input type="checkbox" id="categCheck" name={"" + key.title + ""} value={"" + key.title + ""} onChange={(e) => this.clickingcategfilter(keys.id, e.target.checked)} />
                                                                                             </label>
                                                                                         </div>
                                                                                         <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                                            <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light text-lightgrey contents "}>
+                                                                                            <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey contents "}>
                                                                                                 {  (this.props.i18n.language == "ar") ? title_ar : keys.title}
                                                                                                 {/* {"" + keys.category + ""} */}
                                                                                                  </h3>
@@ -752,23 +752,23 @@ class product extends React.Component {
                                                                 })}
                                                             </div>
                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  mt-4 mb-4 px-4">
-                                                                <h3 className="meduim blue"> {this.props.t("brand")}</h3>
+                                                                <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill  meduim "]+" blue"}> {this.props.t("brand")}</h3>
                                                             </div>
                                                             {this.state.brand.map((key, value) => {
                                                                 if (key.title_ar == null) { var title_ar = key.title }
                                                                 else var title_ar = key.title_ar 
                                                                 return (
-                                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 ">
+                                                                    <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
                                                                         <div className="container-fluid p-0">
                                                                             <div className="row">
-                                                                                <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 mr-3 px-4">
+                                                                                <div className={[(this.props.i18n.language=="ar")?"textalignright ml-3 ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 px-4"}>
                                                                                     <label className="checkbox h-100 w-100 p-0 " >
                                                                                         <input type="checkbox" id="myCheck" name={"" + key.title + ""} value={"" + key.title + ""} onChange={(e) => this.clickingbrandfilter(key.id, e.target.checked)} />
                                                                                     </label>
                                                                                 </div>
 
                                                                                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                                    <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light text-lightgrey contents "}>{  (this.props.i18n.language == "ar") ? title_ar : key.title}</h3>
+                                                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey contents "}>{  (this.props.i18n.language == "ar") ? title_ar : key.title}</h3>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -777,7 +777,7 @@ class product extends React.Component {
                                                             })}
                                                             <div className="textaligncenter py-4 ">
                                                                 <button className="clearfilterbtn textaligncenter px-5 py-2" onClick={() => this.clearfilter()}>
-                                                                    <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" light  text-lightgrey px-4"}>{this.props.t("clearfilters")}</h3>
+                                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignrightDroidKufi ":"gill "]+" light  text-lightgrey px-4"}>{this.props.t("clearfilters")}</h3>
                                                                 </button>
                                                             </div>
 
@@ -822,7 +822,7 @@ class product extends React.Component {
                                         </div>
 
                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
-                                            <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"blue meduim gill py-2"}>{this.props.t("subcateg")}</h3>
+                                            <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"blue meduim  py-2"}>{this.props.t("subcateg")}</h3>
                                             {this.state.categ.map((key, value) => {
                                                 let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
                                                 
@@ -833,7 +833,7 @@ class product extends React.Component {
                                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ" + keys.category + ""} >
                                                             <div className="container-fluid p-0">
                                                                 <div className="row">
-                                                                    <div className={[(this.props.i18n.language=="ar")?" ":"mr-3 "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0  "}>
+                                                                    <div className={[(this.props.i18n.language=="ar")?"textalignright ":"mr-3 "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0  "}>
                                                                         <label className="checkbox h-100 w-100 p-0 " >
                                                                             <input type="checkbox" id="categCheck" name={"" + key.title + ""} value={"" + key.title + ""} onChange={(e) => this.clickingcategfilter(keys.id, e.target.checked)} />
                                                                         </label>
@@ -849,7 +849,7 @@ class product extends React.Component {
                                             })}
                                         </div>
                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  mt-4 mb-4 px-4">
-                                            <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":" gill "]+"meduim blue"}>{this.props.t("brand")}</h3>
+                                            <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":" gill meduim "]+" blue"}>{this.props.t("brand")}</h3>
                                         </div>
                                         {this.state.brand.map((key, value) => {
                                             if (key.title_ar == null) { var title_ar = key.title }
