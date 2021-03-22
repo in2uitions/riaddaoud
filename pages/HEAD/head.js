@@ -21,8 +21,9 @@ function HEAD({title,description}){
                 <link rel="stylesheet" href="assets/css/owl.theme.default.min.css"/>
                 {/* <link rel= "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"/> */}
                 {/* <link rel= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/> */}
+                
 
-
+                
     
               </Head>
               {/* <p >{title}  And  {description}</p> */}

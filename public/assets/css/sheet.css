@@ -2368,7 +2368,7 @@ a:focus {
             box-shadow: none!important;
         }
         /* homepage */
-        
+       
         #owl-demo .item img {
             display: block;
             top: 0;
@@ -3488,4 +3488,27 @@ a:focus {
             left: 0!important;
             right: 0!important;
             z-index: 99!important;
-        }
+        } 
+        
+.customimagecarousel{
+    width:100px;
+    height:100px;
+    object-fit: contain;
+}
+.react-multiple-carousel__arrow::before {
+    background-color: transparent!important;
+    color: #002891!important;
+}
+.react-multiple-carousel__arrow::after {
+    background-color: transparent!important;
+    color: #002891!important;
+    outline:none!important;
+}
+.react-multiple-carousel__arrow {
+    background-color: transparent!important;
+    color: #002891!important;
+}
+.react-multiple-carousel__arrow:hover{
+    background-color: transparent!important;
+    color: #002891!important;
+}
