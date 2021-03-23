@@ -272,7 +272,7 @@ render (){
                             >
                               <div className="container-fluid p-2">
                                 <div className="row">
-                                  <div class="col-2 mr-2  p-0">
+                                  <div className="col-2 mr-2  p-0">
                                     <img
                                       src="./assets/images/paperclip.svg"
                                       className="img-fluid contain w-100 "

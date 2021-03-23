@@ -280,7 +280,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div className="item w-100"> <div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div key={['btn-3-'+value]} className="item w-100"> <div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
@@ -291,7 +291,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div className="item w-100"><div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div key={['btn-2-'+value]} className="item w-100"><div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
@@ -307,7 +307,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div className="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
+                                                            <div key={['btn-1-'+value]} className="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
                                                         )
                                                     })
                                                 }
@@ -318,7 +318,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div className="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
+                                                            <div key={['btn-4-'+value]} className="item w-100"><img src={"" + imageurl + ""} className="imgprodmini  img-fluid" /></div>
                                                         )
                                                     })
                                                 }

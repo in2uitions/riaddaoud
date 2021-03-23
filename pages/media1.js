@@ -225,7 +225,7 @@ render (){
                         {this.props.data.map((value, index) => {
                             if (value.description_ar == null ||value.description_ar == '') { var description_ar = value.description }
                             else var description_ar = value.description_ar
-                            return  (i18n.language=="ar")?(<div className="w-100 w74" dangerouslySetInnerHTML={{__html:description_ar}}></div>):(<div className="w-100 w74" dangerouslySetInnerHTML={{__html:value.description}}></div>)
+                            return  (i18n.language=="ar")?(<div key={['btn-3-'+index]} className="w-100 w74" dangerouslySetInnerHTML={{__html:description_ar}}></div>):(<div key={['btn-5-'+index]} className="w-100 w74" dangerouslySetInnerHTML={{__html:value.description}}></div>)
                             })}
                         </div>
                     </div>

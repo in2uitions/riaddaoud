@@ -219,7 +219,7 @@ render (){
         {
             return (
                 <div>
-                    <div className='container-fluid p-0' >
+                    <div key={['btn-3-'+value]} className='container-fluid p-0' >
                        <div className='row relative' >
                             <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 aboutmission px-3 py-5 js--fadeInLeft'>
                                 <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  aligncenter'}>
@@ -316,7 +316,7 @@ render (){
 
                         if(index%2==0){
                             return(
-                                    <div className='timeline-item'>
+                                    <div key={['btn-2-'+index]} className='timeline-item'>
                                         <div className='timeline-img'></div>
 
                                         <div className='timeline-content timeline-card js--fadeInLeft '>

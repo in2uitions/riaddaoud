@@ -140,22 +140,22 @@ handletrue = () => {
                                     <i  className="searchbox-icon fa fa-search " id="fa" onClick={this.handletrue}></i>}
                                 </div>
                             </form>
-                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-0 dropdown allzero textalignright">
+                            <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-0 dropdown allzero textalignright">
                                 <div className="container-fluid p-0">
                                     {(i18n.language=="ar")?
-                                        <button class="dropbtn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="./assets/images/dropdown.svg" class="img-fluid ml-2 cover"/>
+                                        <button className="dropbtn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="./assets/images/dropdown.svg" className="img-fluid ml-2 cover"/>
                                             <span>{i18n.t("language")}</span>
                                         </button>
                                     :
-                                        <button class="dropbtn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button className="dropbtn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span>LANGUAGE</span>
-                                            <img src="./assets/images/dropdown.svg" class="img-fluid ml-2 cover"/>
+                                            <img src="./assets/images/dropdown.svg" className="img-fluid ml-2 cover"/>
                                         </button>
                                     }
-                                    <div class="dropdown-menu dropdowncontent" id="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <p class="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("ar")}>Arabic</p>
-                                        <p class="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("en")}>English</p>
+                                    <div className="dropdown-menu dropdowncontent" id="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("ar")}>Arabic</p>
+                                        <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("en")}>English</p>
                                     </div>
                                 </div>
                             </div>

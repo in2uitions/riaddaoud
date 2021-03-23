@@ -559,7 +559,7 @@ class product extends React.Component {
             <div >
                 <Navigation current="products"></Navigation>
                 <div>
-                    <div class="container-fluid p-0 parallax " style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
+                    <div className="container-fluid p-0 parallax " style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
                         <div className={[(this.props.i18n.language=="ar")?"productnewbackar textalignright":"productnewback "]+" col-10 col-sm-10 col-md-10 col-lg-4 col-xl-4 col-xxl-4 p-0 "}>
                             <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"   bigtitleprod"}>
                                 {this.state.backg.map((key, value) => {
@@ -573,14 +573,14 @@ class product extends React.Component {
                 </div>
                 <div className={[(this.props.i18n.language=="ar")?"rtl ":""]+"container-fluid py-4"} >
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
-                        <div class="container-fluid p-0">
-                            <div class="row ">
+                        <div className="container-fluid p-0">
+                            <div className="row ">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3   px-md-4">
                                     <h4 className={[(this.props.i18n.language=="ar")?"textalignright ":"light "]+" text-lightgrey gill "}>{this.props.t("BrowseCategories")}</h4>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9  ">
-                                    <div class="container-fluid ">
-                                        <div class="row ">
+                                    <div className="container-fluid ">
+                                        <div className="row ">
                                             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
                                                 <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
                                                 {this.props.t("Showing")}
@@ -632,14 +632,14 @@ class product extends React.Component {
                                             <button data-parent="#modal" className="navbar-toggler textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
                                                 <span>FILTER</span>
                                             </button>
-                                            <div class="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                <div class="modal-dialog " role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
+                                            <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                <div className="modal-dialog " role="document">
+                                                    <div className="modal-content">
+                                                        <div className="modal-header">
                                                             <p>FILTER</p>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         </div>
-                                                        <div class="modal-body">
+                                                        <div className="modal-body">
                                                             <div className="container-fluid  p-0 div-collapse collapse colapse2" id="collapse1">
 
                                                                 {/* <div className="container-fluid p-0 ">
@@ -652,7 +652,7 @@ class product extends React.Component {
                                                                                     else var title_ar = key.title_ar 
 
                                                                                     return (
-                                                                                        <option className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"selectoption container-fluid px-2 textalignleft meduim  font_size"} value={"" + key.id + ""}>
+                                                                                        <option key={['btn-4-'+value]} className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"selectoption container-fluid px-2 textalignleft meduim  font_size"} value={"" + key.id + ""}>
                                                                                             {  (this.props.i18n.language == "ar") ? title_ar : key.title}
                                                                                         </option>
 
@@ -675,7 +675,7 @@ class product extends React.Component {
                                                                         if (keys.title_ar == null) { var title_ar = keys.title }
                                                                         else var title_ar = keys.title_ar 
                                                                         return (
-                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""}>
+                                                                            <div key={['btn-5-'+value]} className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""}>
                                                                                 <div className="container-fluid p-0">
                                                                                     <div className="row">
                                                                                         <div className={[(this.props.i18n.language=="ar")?"textalignright  ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 "}>
@@ -703,7 +703,7 @@ class product extends React.Component {
                                                                 if (key.title_ar == null) { var title_ar = key.title }
                                                                 else var title_ar = key.title_ar 
                                                                 return (
-                                                                    <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
+                                                                    <div key={['btn-6-'+value]} className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
                                                                         <div className="container-fluid p-0">
                                                                             <div className="row">
                                                                                 <div className={[(this.props.i18n.language=="ar")?"textalignright ml-3 ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 px-4"}>
@@ -751,7 +751,7 @@ class product extends React.Component {
                                                                  else var title_ar = key.title_ar 
 
                                                                 return (
-                                                                    <option className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter meduim  font_size"} value={"" + key.id + ""}>
+                                                                    <option key={['btn-7-'+value]} className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter meduim  font_size"} value={"" + key.id + ""}>
                                                                         {  (this.props.i18n.language == "ar") ? title_ar : key.title}
                                                                     </option>
 
@@ -775,7 +775,7 @@ class product extends React.Component {
                                                     if (keys.title_ar == null) { var title_ar = keys.title }
                                                     else var title_ar = keys.title_ar 
                                                     return (
-                                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ" + keys.category + ""} >
+                                                        <div key={['btn-8-'+value]} className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ" + keys.category + ""} >
                                                             <div className="container-fluid p-0">
                                                                 <div className="row">
                                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":"mr-3 "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0  "}>
@@ -800,7 +800,7 @@ class product extends React.Component {
                                             if (key.title_ar == null) { var title_ar = key.title }
                                             else var title_ar = key.title_ar 
                                             return (
-                                                <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
+                                                <div key={['btn-9-'+value]} className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
                                                     <div className="container-fluid p-0">
                                                         <div className="row">
                                                             <div className={[(this.props.i18n.language=="ar")?"textalignright ml-3 ":"mr-3 "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 px-4"}>
@@ -845,12 +845,12 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div key={['btn-10-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
                                                                 <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                     <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                        <div class="container-fluid centereditems" >
+                                                                        <div className="container-fluid centereditems" >
                                                                             <img
                                                                                 src={"" + imageurl + ""}
                                                                                 className="img-fluid imgshake"
@@ -891,12 +891,12 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div key={['btn-11-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
                                                                 <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                     <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                        <div class="container-fluid centereditems" >
+                                                                        <div className="container-fluid centereditems" >
                                                                             <img
                                                                                 src={"" + imageurl + ""}
                                                                                 className="img-fluid imgshake"
@@ -937,12 +937,12 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div key={['btn-12-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
                                                                 <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                     <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                        <div class="container-fluid centereditems" >
+                                                                        <div className="container-fluid centereditems" >
                                                                             <img
                                                                                 src={"" + imageurl + ""}
                                                                                 className="img-fluid imgshake "
@@ -988,11 +988,11 @@ class product extends React.Component {
 
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
-                                                                <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                                <div key={['btn-13-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                     <div className='hiddenimg pointer'>
                                                                     <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                         <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                            <div class="container-fluid centereditems" >
+                                                                            <div className="container-fluid centereditems" >
                                                                                 <img
                                                                                     src={"" + imageurl + ""}
                                                                                     className="img-fluid imgshake"
@@ -1037,11 +1037,11 @@ class product extends React.Component {
 
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
-                                                                <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
+                                                                <div key={['btn-14-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
                                                                     <div className='hiddenimg pointer'>
                                                                         <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                             <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                                <div class="container-fluid centereditems" >
+                                                                                <div className="container-fluid centereditems" >
                                                                                     <img
                                                                                         src={"" + imageurl + ""}
                                                                                         className="img-fluid imgshake"
@@ -1077,7 +1077,7 @@ class product extends React.Component {
 
                                     </div>
                                    { 
-                                   ((this.state.isFilterPress) ?arrayfilterpages==1:arraysearchedpages==1)?"":
+                                   ((this.state.isFilterPress) ?arrayfilterpages.length==1:arraysearchedpages.length==1)?"":
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
@@ -1085,7 +1085,7 @@ class product extends React.Component {
                                                 {(this.state.isSearchPress) ?
                                                     arraysearchedpages.map((key, value) => {
                                                         return (
-                                                            <button className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                            <button key={['btn-1-'+value]} className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                         )
                                                     })
                                                     // style={(this.state.currentpage==key)?"color=red":"color=green"}
@@ -1093,13 +1093,13 @@ class product extends React.Component {
                                                     (this.state.isFilterPress) ?
                                                         arrayfilterpages.map((key, value) => {
                                                             return (
-                                                                <button className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                                <button key={['btn-3-'+value]} className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                             )
                                                         })
                                                         :
                                                         arraypages.map((key, value) => {
                                                             return (
-                                                                <button className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                                <button key={['btn-2-'+value]} className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                             )
                                                         })
                                                 }

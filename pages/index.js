@@ -224,7 +224,7 @@ class index extends React.Component {
           items: 2
         }
       },
-      navText: ["<div class='nav-btn prevlogo-slide '><img src='./assets/images/bigleft.png' style='object-fit: contain;height: 20px' class='img-fluid ' /></div>", "<div class='nav-btn nextlogo-slide'><img src='./assets/images/bigright.png' style='object-fit: contain;height: 20px' class='img-fluid ' /></div>"],
+      navText: ["<div className='nav-btn prevlogo-slide '><img src='./assets/images/bigleft.png' style='object-fit: contain;height: 20px' className='img-fluid ' /></div>", "<div className='nav-btn nextlogo-slide'><img src='./assets/images/bigright.png' style='object-fit: contain;height: 20px' className='img-fluid ' /></div>"],
       // slideSpeed: 300,
       // paginationSpeed: 400,
 
@@ -282,8 +282,8 @@ class index extends React.Component {
         nav: true,
         items: 1,
         navText: [
-          "<div class='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' class='img-fluid ' /></div>",
-          "<div class='nav-btn next-slide'><img src='./assets/images/bigright.png' style='object-fit: cover' class='img-fluid ' /></div>",
+          "<div className='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' className='img-fluid ' /></div>",
+          "<div className='nav-btn next-slide'><img src='./assets/images/bigright.png' style='object-fit: cover' className='img-fluid ' /></div>",
         ],
         slideSpeed: 300,
         paginationSpeed: 400,
@@ -453,7 +453,7 @@ class index extends React.Component {
                       else var title_ar = value.title_ar
                       if (value.id == 1) {
                         return (
-                          <div className="block  block--left clip406" style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
+                          <div key={['btn-4-'+index]} className="block  block--left clip406" style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
                             <Link href="/product">
                               <a href="/product">
                                 <h2 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "white italic  textalign"}>{(this.props.i18n.language == "ar") ? title_ar : value.title}</h2>
@@ -528,9 +528,9 @@ class index extends React.Component {
               keyBoardControl={true}
               // customTransition="all .5"
               transitionDuration={1000}
-              containerClass="carousel-container"
+              containerclassName="carousel-container"
               deviceType={this.props.deviceType}
-              // itemClass={this.state.currentslidecarousel}
+              // itemclassName={this.state.currentslidecarousel}
               // afterChange={(previousSlide, { currentSlide, onMove }) => {
               //   this.setState({currentslidecarousel:currentSlide-1},()=>{
               //     this.filter(currentSlide-1)
@@ -556,18 +556,18 @@ class index extends React.Component {
                 const imagbackeurl = startb_url + valuebackimg + endb_url;
 
                 return (
-                <div className={"textaligncenter "+index}>
+                <div key={['btn-5-'+index]} className={"textaligncenter "+index}>
                   <img
                     id={index}
                     src={"" + imagbackeurl + ""}
                     alt=""
-                    class="img-fluid cover customimagecarousel" />
+                    className="img-fluid cover customimagecarousel" />
                     </div>
 
                 )
               })}
             </Carousel>
-            {console.log(this.state.activeSlide)}
+            {/* {console.log(this.state.activeSlide)} */}
               {/* <div className="container-fluid  mb-5 py-5 py-md-2">
                 <div className="owl-carousel1 owl-theme carousel_2 ">
                     {brannnnds.map((value, index) => {
@@ -583,7 +583,7 @@ class index extends React.Component {
                                       data-dots="1"
                                       src={""+imagbackeurl+""}
                                       alt=""
-                                      class="img-fluid cover"/>
+                                      className="img-fluid cover"/>
                                     
                           )
                           
@@ -613,10 +613,10 @@ class index extends React.Component {
                         if (brannnnds[key.brand - 1].title_ar == null) { var brandstitle_ar = brannnnds[key.brand - 1].title }
                         else var brandstitle_ar = brannnnds[key.brand - 1].title_ar
                         return (
-                          <div className={[(this.props.i18n.language == "ar") ? "hoverbrandindexar " : "hoverbrandindex "] + "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 "}>
+                          <div key={['btn-3-'+value]} className={[(this.props.i18n.language == "ar") ? "hoverbrandindexar " : "hoverbrandindex "] + "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 "}>
                             <Link href="/product">
                               <a href="/product">
-                                <div class="container-fluid centereditems" >
+                                <div className="container-fluid centereditems" >
                                   <div className='hiddenimg '>
                                     <img
                                       src={"" + imagbackeurl + ""}
@@ -706,7 +706,7 @@ class index extends React.Component {
                                 else var author_ar = value.author_ar
                                 if (index == 1) { act = "carousel-item active" }
                                 return (
-                                  <div className={act}  >
+                                  <div key={['btn-2-'+index]} className={act}  >
                                     <div className="row p-0"  >
                                       <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 " style={{ height: "400px" }}>
                                         <img
@@ -752,7 +752,7 @@ class index extends React.Component {
                                                 href="/media"
                                                 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "viewproducts meduim font_size link"}
                                               >
-                                                <span class="ml-3">{this.props.t("readmore")}</span>
+                                                <span className="ml-3">{this.props.t("readmore")}</span>
                                                 <img src="./assets/images/smallleftfleche.svg" />
                                               </a>
                                               :

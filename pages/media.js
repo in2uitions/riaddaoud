@@ -215,7 +215,7 @@ class media extends React.Component {
                                     let nbr_of_place = index
                                     if (nbr_of_place < 4) {
                                         return (
-                                            <div className="grid-item js--fadeInTop">
+                                            <div key={['btn-3-'+index]} className="grid-item js--fadeInTop">
                                                 <div className='container-fluid  '>
                                                     <div className='row '>
                                                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0  '>
@@ -295,7 +295,7 @@ class media extends React.Component {
                                     let nbr_of_place = index
                                     if (nbr_of_place < 4) {
                                         return (
-                                            <div className="grid-item js--fadeInTop">
+                                            <div key={['btn-4-'+index]} className="grid-item js--fadeInTop">
                                                 <div className='container-fluid  '>
                                                     <div className='row '>
                                                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0  '>
@@ -371,7 +371,7 @@ class media extends React.Component {
                             <div className={[(this.props.i18n.language == "ar") ? "textalignleft flexreverse " : " textalignright "] + "col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 paginnext gill regular  "}>
                                 {arraypages.map((key, value) => {
                                     return (
-                                        <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+[(this.state.currentpage==key)?" currentpage ":""]+" color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                        <button key={['btn-9-'+value]} className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+[(this.state.currentpage==key)?" currentpage ":""]+" color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                     )
                                 })}
                                 {((arraypages.length == this.state.currentpage) ? <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill  "]+"blue pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"blue pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)}

@@ -504,64 +504,55 @@ class product extends React.Component {
             for(const i in this.state.backg[0]){
                 backg[i]=this.state.backg[0][i];
             }
-        // console.log(newbrandfiltered.map((key,value)=>key.title))
-        // if (arraypages.length==this.state.currentpage){
-        //         this.setState({isvisible:false})
-            
-        //     }
+      
         
         return (
             <div >
                 <Navigation current="products"></Navigation>
-                    <div class="container-fluid p-0 parallax " style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
+                    <div className="container-fluid p-0 parallax " style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
                     </div>
-                    <div class="container-fluid px-5 py-0">
-                            <div class="row">
-                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 "></div>
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 aboutheader py-5 p-0">
-                                    <div class="container-fluid p-0 py-1">
-                                        <div class="row py-4 ">
-                                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
-                                                <h1 class={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+" white  aligncenter"}>{newbrandfiltered.map((key,value)=>key.title)}</h1>
+                    <div className="container-fluid px-5 py-0">
+                            <div className="row">
+                                <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 "></div>
+                                <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 aboutheader py-5 p-0">
+                                    <div className="container-fluid p-0 py-1">
+                                        <div className="row py-4 ">
+                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                                                <h1 className={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+" white  aligncenter"}>{newbrandfiltered.map((key,value)=>key.title)}</h1>
                                             </div>
-                                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 "></div>
-                                            <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-5">
-                                                <p class={[(i18n.language=="ar")?"DroidKufi ":"gill light "]+" white footertext  aligncenter lineheight"}>{newbrandfiltered.map((key,value)=>key.description)}</p>
+                                            <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 "></div>
+                                            <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-5">
+                                                <p className={[(i18n.language=="ar")?"DroidKufi ":"gill light "]+" white footertext  aligncenter lineheight"}>{newbrandfiltered.map((key,value)=>key.description)}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <Link href="/product">
-                                <a href="/product" class=" backmediaprod mt-3">
-                                <div class="row ">
-                                        <div class="container-fluid p-0 py-2 linkleft">
-                                        <img src='./assets/images/smallleftfleche.svg' class="img-fluid cover backmediafleche" />
-                                        <span class={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                <a href="/product" className=" backmediaprod mt-3">
+                                <div className="row ">
+                                        <div className="container-fluid p-0 py-2 linkleft">
+                                        <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
+                                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
                                     </div>
                                     </div>
                                 </a>
                             </Link>
-                            {/* <div className={[(i18n.language=="ar")?"productnewbackar textalignright":"productnewbackbrand "]+" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 textaligncenter"}>
-                                <p className=" meduim gill bigtitleprod">
-                                    {newbrandfiltered.map((key,value)=>key.title)}
-
-                                </p>
-                        </div> */}
+                         
                         </div>
                     <div>
 
                 </div>
                 <div className={[(i18n.language=="ar")?"rtl ":""]+"container-fluid py-4"} >
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
-                        <div class="container-fluid p-0">
-                            <div class="row ">
+                        <div className="container-fluid p-0">
+                            <div className="row ">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3   px-md-4">
                                     <h4 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}><BrowseCategories /></h4>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9  ">
-                                    <div class="container-fluid ">
-                                        <div class="row ">
+                                    <div className="container-fluid ">
+                                        <div className="row ">
                                             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
                                                 <h4 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
                                                <Showing />
@@ -612,14 +603,14 @@ class product extends React.Component {
                                             <button data-parent="#modal" className="navbar-toggler textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
                                                 <span>FILTER</span>
                                             </button>
-                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                <div class="modal-dialog " role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
+                                            <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                <div className="modal-dialog " role="document">
+                                                    <div className="modal-content">
+                                                        <div className="modal-header">
                                                             <p>FILTER</p>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         </div>
-                                                        <div class="modal-body">
+                                                        <div className="modal-body">
                                                             <div className="container-fluid  p-0 div-collapse collapse colapse2" id="collapse1">
 
                                                                 {/* <div className="container-fluid p-0 ">
@@ -632,7 +623,7 @@ class product extends React.Component {
                                                                                     else var title_ar = key.title_ar 
 
                                                                                     return (
-                                                                                        <option className={[(i18n.language=="ar")?"textalignright DroidKufi ":"meduim gill "]+"selectoption container-fluid px-2 textalignleft  font_size"} value={"" + key.id + ""}>
+                                                                                        <option key={['btn-1-'+value]} className={[(i18n.language=="ar")?"textalignright DroidKufi ":"meduim gill "]+"selectoption container-fluid px-2 textalignleft  font_size"} value={"" + key.id + ""}>
                                                                                             {  (i18n.language=="ar") ? title_ar : key.title}
                                                                                         </option>
 
@@ -655,7 +646,7 @@ class product extends React.Component {
                                                                         if (keys.title_ar == null) { var title_ar = keys.title }
                                                                         else var title_ar = keys.title_ar 
                                                                         return (
-                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""} >
+                                                                            <div key={['btn-10-'+value]} className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""} >
                                                                                 <div className="container-fluid p-0">
                                                                                     <div className="row">
                                                                                         <div className={[(i18n.language=="ar")?"textalignright  ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 "}>
@@ -683,7 +674,7 @@ class product extends React.Component {
                                                                 if (key.title_ar == null) { var title_ar = key.title }
                                                                 else var title_ar = key.title_ar 
                                                                 return (
-                                                                    <div className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
+                                                                    <div key={['btn-9-'+value]} className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
                                                                         <div className="container-fluid p-0">
                                                                             <div className="row">
                                                                                 <div className={[(18n.language=="ar")?"textalignright ml-3 ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 px-4"}>
@@ -708,8 +699,8 @@ class product extends React.Component {
 
                                                         </div>
 
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <div className="modal-footer">
+                                                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
 
                                                         </div>
                                                     </div>
@@ -731,7 +722,7 @@ class product extends React.Component {
                                                                  else var title_ar = key.title_ar 
 
                                                                 return (
-                                                                    <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter font_size"} value={"" + key.id + ""}>
+                                                                    <option key={['btn-8-'+value]} className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter font_size"} value={"" + key.id + ""}>
                                                                         {  (i18n.language=="ar") ? title_ar : key.title}
                                                                     </option>
 
@@ -755,7 +746,7 @@ class product extends React.Component {
                                                     if (keys.title_ar == null) { var title_ar = keys.title }
                                                     else var title_ar = keys.title_ar 
                                                     return (
-                                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ" + keys.category + ""} >
+                                                        <div key={['btn-7-'+value]} className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ" + keys.category + ""} >
                                                             <div className="container-fluid p-0">
                                                                 <div className="row">
                                                                     <div className={[(i18n.language=="ar")?" ":"mr-3 "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0  "}>
@@ -781,7 +772,7 @@ class product extends React.Component {
                                             if (key.title_ar == null) { var title_ar = key.title }
                                             else var title_ar = key.title_ar 
                                             return (
-                                                <div className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
+                                                <div key={['btn-6-'+value]} className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1 "}>
                                                     <div className="container-fluid p-0">
                                                         <div className="row">
                                                             <div className={[(i18n.language=="ar")?"textalignright ml-3 ":"mr-3 "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 px-4"}>
@@ -827,11 +818,11 @@ class product extends React.Component {
 
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
-                                                                <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
+                                                                <div key={['btn-5-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
                                                                     <div className='hiddenimg pointer'>
                                                                         <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                             <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                                <div class="container-fluid centereditems" >
+                                                                                <div className="container-fluid centereditems" >
                                                                                     <img
                                                                                         src={"" + imageurl + ""}
                                                                                         className="img-fluid "
@@ -873,11 +864,11 @@ class product extends React.Component {
 
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
-                                                                <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
+                                                                <div key={['btn-3-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
                                                                     <div className='hiddenimg pointer'>
                                                                         <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                             <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                                <div class="container-fluid centereditems" >
+                                                                                <div className="container-fluid centereditems" >
                                                                                     <img
                                                                                         src={"" + imageurl + ""}
                                                                                         className="img-fluid "
@@ -912,6 +903,7 @@ class product extends React.Component {
 
 
                                     </div>
+                                   { (arraysearchedpages.length<=1)?"":
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
@@ -919,13 +911,13 @@ class product extends React.Component {
                                                 {(this.state.isSearchPress) ?
                                                     arraysearchedpages.map((key, value) => {
                                                         return (
-                                                            <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                            <button key={['btn-1-'+value]} className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                         )
                                                     })
                                                     :
                                                         arraypages.map((key, value) => {
                                                             return (
-                                                                <button className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                                <button key={['btn-2-'+value]} className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                             )
                                                         })
                                                 }
@@ -940,6 +932,8 @@ class product extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                                 }
+                                 {console.log(arraysearchedpages)}
                                 </div>
                             </section>
                         </div>
