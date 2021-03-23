@@ -219,52 +219,58 @@ class media extends React.Component {
                                                 <div className='container-fluid  '>
                                                     <div className='row '>
                                                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0  '>
-                                                            <div className='hiddenimg'>
-                                                                <img src={"" + imageurl + ""} className='img-fluid img cover w-100 imgshake' />
+                                                            <div className='hiddenimg pointer'>
+                                                                <Link href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }}>
+                                                                    <img src={"" + imageurl + ""} className='img-fluid img cover w-100 imgshake' />
+                                                                </Link>
                                                             </div>
                                                             <figcaption className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'mt-3'}>
                                                                 <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'proddatetitle  regular '}>
-                                                                    <span className={[(this.props.i18n.language == "ar") ? "ml-2 DroidKufi " : "mr-2 gill "] + 'titlecolorprod  regular '}> {(this.props.i18n.language == "ar") ? author_ar : value.author}</span>
-                                                                    <span className='blue gill regular '>{value.date}</span>
+                                                                    <span className={[(this.props.i18n.language == "ar") ? "mr-2 DroidKufi " : "mr-2 gill "] + 'titlecolorprod  regular '}> {(this.props.i18n.language == "ar") ? author_ar : value.author}</span>
+                                                                    <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'blue  regular '}>{value.date}</span>
                                                                 </h3>
                                                             </figcaption>
                                                         </div>
-                                                        <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
-                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 w-100'}>
-                                                                <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'lineheight titlemedia meduim'}>{(this.props.i18n.language == "ar") ? title_ar : value.title}</h1>
+                                                        <div className="container-fluid p-0 griddescriptionheight">
+                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
+                                                                <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 w-100'}>
+                                                                    <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'lineheight titlemedia meduim'}>{(this.props.i18n.language == "ar") ? title_ar : value.title}</h1>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
-                                                            <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 h-100 w-100 '>
-                                                                <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'texttitlemedia lineheightbig footertext light w74 '}>
-                                                                    {(this.props.i18n.language == "ar") ? brief_ar : value.brief}
-                                                                </p>
-                                                                <div className='container-fluid w-100'>
-                                                                    <div className='row w-100'>
-                                                                        <div className={(this.props.i18n.language == "ar") ? "" : 'col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 w-100'}>
-                                                                        </div>
+                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
+                                                                <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 h-100 w-100 '>
+                                                                    <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'texttitlemedia lineheightbig footertext light w74 '}>
+                                                                        {(this.props.i18n.language == "ar") ? brief_ar : value.brief}
+                                                                    </p>
+                                                                    <div className='container-fluid w-100'>
+                                                                        <div className='row w-100'>
+                                                                            <div className={(this.props.i18n.language == "ar") ? "" : 'col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 w-100'}>
+                                                                            </div>
 
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className={[(this.props.i18n.language == "ar") ? "textalignleft col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100" : " textalignright mediareadmore col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 w-100 "]}>
-                                                            <Link href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }}>
-                                                                <a href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }} className={[(this.props.i18n.language == "ar") ? " linkleft" : "link"]}>
-                                                                    <div className='container-fluid p-0 w-100'>
-                                                                        {(this.props.i18n.language == "ar") ?
-                                                                            (<div className='row p-0 flexreverse '>
-                                                                                <img src='./assets/images/smallleftfleche.svg' className='img-fluid contain' />
-                                                                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2  footertext meditalic blue '}>{this.props.t("readmore")}</span>
-                                                                            </div>)
-                                                                            :
-                                                                            (<div className='row p-0'>
-                                                                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2  footertext meditalic blue '}>{this.props.t("readmore")}</span>
-                                                                                <img src='./assets/images/smallrightfleche.svg' className='img-fluid contain' />
-                                                                            </div>)}
-                                                                    </div>
-                                                                </a>
-                                                            </Link>
+                                                        <div className="container-fluid p-0">
+                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignleft col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100" : " textalignright mediareadmore col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 w-100 "]}>
+                                                                <Link href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }}>
+                                                                    <a href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }} className={[(this.props.i18n.language == "ar") ? " linkleft" : "link"]}>
+                                                                        <div className='container-fluid p-0 w-100'>
+                                                                            {(this.props.i18n.language == "ar") ?
+                                                                                (<div className='row p-0 flexreverse '>
+                                                                                    <img src='./assets/images/smallleftfleche.svg' className='img-fluid contain' />
+                                                                                    <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2  footertext meditalic blue '}>{this.props.t("readmore")}</span>
+                                                                                </div>)
+                                                                                :
+                                                                                (<div className='row p-0'>
+                                                                                    <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2  footertext meditalic blue '}>{this.props.t("readmore")}</span>
+                                                                                    <img src='./assets/images/smallrightfleche.svg' className='img-fluid contain' />
+                                                                                </div>)}
+                                                                        </div>
+                                                                    </a>
+                                                                </Link>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -293,53 +299,59 @@ class media extends React.Component {
                                                 <div className='container-fluid  '>
                                                     <div className='row '>
                                                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0  '>
-                                                            <div className='hiddenimg'>
-                                                                <img src={"" + imageurl + ""} className='img-fluid img cover w-100 imgshake' />
+                                                            <div className='hiddenimg pointer'>
+                                                                <Link href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }}>
+                                                                    <img src={"" + imageurl + ""} className='img-fluid img cover w-100 imgshake' />
+                                                                </Link>
                                                             </div>
                                                             <figcaption className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'mt-3'}>
                                                                 <h3 className='proddatetitle gill regular '>
-                                                                    <span className={[(this.props.i18n.language == "ar") ? "ml-2 DroidKufi " : "mr-2 gill "] + 'titlecolorprod gill regular '}> {(this.props.i18n.language == "ar") ? author_ar : value.author}</span>
+                                                                    <span className={[(this.props.i18n.language == "ar") ? "mr-2 DroidKufi " : "mr-2 gill "] + 'titlecolorprod gill regular '}> {(this.props.i18n.language == "ar") ? author_ar : value.author}</span>
                                                                     <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'blue  regular '}>{value.date}</span>
                                                                 </h3>
                                                             </figcaption>
                                                         </div>
-                                                        <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
-                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 w-100'}>
-                                                                <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'lineheight titlemedia meduim'}>{(this.props.i18n.language == "ar") ? title_ar : value.title}</h1>
-                                                            </div>
-                                                        </div>
-                                                        <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
-                                                            <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 h-100 w-100'>
-                                                                <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'texttitlemedia lineheightbig footertext light w74 '}>
-                                                                    {(this.props.i18n.language == "ar") ? brief_ar : value.brief}
-                                                                </p>
-                                                                <div className='container-fluid w-100'>
-                                                                    <div className='row w-100'>
-                                                                        <div className={(this.props.i18n.language == "ar") ? "" : 'col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 w-100'}>
-                                                                        </div>
-
-                                                                    </div>
+                                                        <div className="container-fluid p-0 griddescriptionheight">
+                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
+                                                                <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 w-100'}>
+                                                                    <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'lineheight titlemedia meduim'}>{(this.props.i18n.language == "ar") ? title_ar : value.title}</h1>
                                                                 </div>
+                                                            </div>
+                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignright " : ""] + 'row py-2 w-100'}>
+                                                                <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 h-100 w-100'>
+                                                                    <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'texttitlemedia lineheightbig footertext light w74 '}>
+                                                                        {(this.props.i18n.language == "ar") ? brief_ar : value.brief}
+                                                                    </p>
+                                                                    <div className='container-fluid w-100'>
+                                                                        <div className='row w-100'>
+                                                                            <div className={(this.props.i18n.language == "ar") ? "" : 'col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 w-100'}>
+                                                                            </div>
 
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div className={[(this.props.i18n.language == "ar") ? "textalignleft col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100" : " textalignright mediareadmore col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100"]}>
-                                                            <Link href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }}>
-                                                                <a href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }} className={[(this.props.i18n.language == "ar") ? " linkleft" : "link"]}>
-                                                                    <div className='container-fluid p-0 w-100'>
-                                                                        {(this.props.i18n.language == "ar") ?
-                                                                            (<div className='row p-0 flexreverse'>
-                                                                                <img src='./assets/images/smallleftfleche.svg' className='img-fluid contain' />
-                                                                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2 footertext meditalic blue '}>{this.props.t("readmore")}</span>
-                                                                            </div>)
-                                                                            :
-                                                                            (<div className='row p-0'>
-                                                                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2 footertext meditalic blue '}>{this.props.t("readmore")}</span>
-                                                                                <img src='./assets/images/smallrightfleche.svg' className='img-fluid contain' />
-                                                                            </div>)}
-                                                                    </div>
-                                                                </a>
-                                                            </Link>
+                                                        <div className="container-fluid p-0">
+                                                            <div className={[(this.props.i18n.language == "ar") ? "textalignleft col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100" : " textalignright mediareadmore col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100"]}>
+                                                                <Link href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }}>
+                                                                    <a href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }} className={[(this.props.i18n.language == "ar") ? " linkleft" : "link"]}>
+                                                                        <div className='container-fluid p-0 w-100'>
+                                                                            {(this.props.i18n.language == "ar") ?
+                                                                                (<div className='row p-0 flexreverse'>
+                                                                                    <img src='./assets/images/smallleftfleche.svg' className='img-fluid contain' />
+                                                                                    <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2 footertext meditalic blue '}>{this.props.t("readmore")}</span>
+                                                                                </div>)
+                                                                                :
+                                                                                (<div className='row p-0'>
+                                                                                    <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'px-2 footertext meditalic blue '}>{this.props.t("readmore")}</span>
+                                                                                    <img src='./assets/images/smallrightfleche.svg' className='img-fluid contain' />
+                                                                                </div>)}
+                                                                        </div>
+                                                                    </a>
+                                                                </Link>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -359,14 +371,15 @@ class media extends React.Component {
                             <div className={[(this.props.i18n.language == "ar") ? "textalignleft flexreverse " : " textalignright "] + "col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 paginnext gill regular  "}>
                                 {arraypages.map((key, value) => {
                                     return (
-                                        <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"color_pagination"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                        <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+[(this.state.currentpage==key)?" currentpage ":""]+" color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                     )
                                 })}
-                                {((arraypages.length == this.state.currentpage) ? <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"blue"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)}
+                                {((arraypages.length == this.state.currentpage) ? <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill  "]+"blue pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"blue pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)}
                             </div>
                         </div>
                     </div>
                 </div>
+                {console.log(this.state.currentpage)}
                 <Footer></Footer>
             </div>
         );

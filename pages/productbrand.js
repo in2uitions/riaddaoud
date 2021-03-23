@@ -828,20 +828,20 @@ class product extends React.Component {
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
                                                                 <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
-
-                                                                    <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                        <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                            <div class="container-fluid centereditems" >
-                                                                                <img
-                                                                                    src={"" + imageurl + ""}
-                                                                                    className="img-fluid "
-                                                                                />
-                                                                            </div>
-                                                                        </a>
-                                                                    </Link>
+                                                                    <div className='hiddenimg pointer'>
+                                                                        <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
+                                                                            <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
+                                                                                <div class="container-fluid centereditems" >
+                                                                                    <img
+                                                                                        src={"" + imageurl + ""}
+                                                                                        className="img-fluid "
+                                                                                    />
+                                                                                </div>
+                                                                            </a>
+                                                                        </Link>
+                                                                    </div>
                                                                     <div className={[(i18n.language=="ar")?"textalignright ":""]+"Products"}>
-                                                                        <Link href="/productbrand">
-                                                                            <a href="/productbrand">
+                                                                      
                                                                                 <p className={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"footertext  prodbrandd"}>
                                                                                 {this.state.brand[key.brand - 1].title}
                                                                                     <br />
@@ -849,8 +849,7 @@ class product extends React.Component {
                                                                                     {  (i18n.language=="ar") ? key.title_ar : key.title}
                                                                                     </span>
                                                                                 </p>
-                                                                            </a>
-                                                                        </Link>
+                                                                            
                                                                         <FontAwesomeIcon style={{ height: "20px" }} className="fass" icon={faSearch} />
 
                                                                     </div>
@@ -875,20 +874,20 @@ class product extends React.Component {
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
                                                                 <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
-
-                                                                    <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                        <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                            <div class="container-fluid centereditems" >
-                                                                                <img
-                                                                                    src={"" + imageurl + ""}
-                                                                                    className="img-fluid "
-                                                                                />
-                                                                            </div>
-                                                                        </a>
-                                                                    </Link>
+                                                                    <div className='hiddenimg pointer'>
+                                                                        <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
+                                                                            <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
+                                                                                <div class="container-fluid centereditems" >
+                                                                                    <img
+                                                                                        src={"" + imageurl + ""}
+                                                                                        className="img-fluid "
+                                                                                    />
+                                                                                </div>
+                                                                            </a>
+                                                                        </Link>
+                                                                    </div>
                                                                     <div className={[(i18n.language=="ar")?"textalignright ":""]+"Products"}>
-                                                                        <Link href="/productbrand">
-                                                                            <a href="/productbrand">
+                                                                     
                                                                                 <p className={[(i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"footertext  prodbrandd"}>
                                                                                 {  (i18n.language=="ar") ?  this.state.brand[key.brand - 1].title_ar : this.state.brand[key.brand - 1].title}
                                                                                     <br />
@@ -896,8 +895,7 @@ class product extends React.Component {
                                                                                     {  (i18n.language=="ar") ? key.title_ar : key.title}
                                                                                     </span>
                                                                                 </p>
-                                                                            </a>
-                                                                        </Link>
+                                                                            
                                                                         <FontAwesomeIcon style={{ height: "20px" }} className="fass" icon={faSearch} />
 
                                                                     </div>

@@ -81,14 +81,14 @@ class product extends React.Component {
         this.loadAnim();
     }
     loadAnim() {
-        function myFunctionn() {
-            var scrollTop = window.pageYOffset
-            if (scrollTop >= 10) {
-                document.getElementById("header").style.backgroundColor = "white";
-            } else {
-                document.getElementById("header").style.backgroundColor = "transparent";
-            }
-        }
+        // function myFunctionn() {
+        //     var scrollTop = window.pageYOffset
+        //     if (scrollTop >= 10) {
+        //         document.getElementById("header").style.backgroundColor = "white";
+        //     } else {
+        //         document.getElementById("header").style.backgroundColor = "transparent";
+        //     }
+        // }
         $("[id='categ1']").show();
         $("[id='categ2']").hide();
         $("[id='categ3']").hide();
@@ -123,7 +123,7 @@ class product extends React.Component {
                 $("[id='categ4']").hide();
             };
         })
-
+        
         $("#jquery_box").change(function () {
 
             if (this.value == "4") {
@@ -153,7 +153,6 @@ class product extends React.Component {
             }
 
         }
-        
 
 
         )
@@ -174,33 +173,7 @@ class product extends React.Component {
                 }
             }
         };
-        function openproduct(evt, productName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(productName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
 
-        function opensubproduct(evt, subproductName) {
-            var i, tabcontent, tablinks;
-            subtabcontent = document.getElementsByClassName("subtabcontent");
-            for (i = 0; i < subtabcontent.length; i++) {
-                subtabcontent[i].style.display = "none";
-            }
-            subtablinks = document.getElementsByClassName("subtablinks");
-            for (i = 0; i < subtablinks.length; i++) {
-                subtablinks[i].className = subtablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(subproductName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
 
         var coll = document.getElementsByClassName("collapsible");
         var i;
@@ -300,19 +273,17 @@ class product extends React.Component {
                 }
             });
         });
+        //     myFunctionn()
+        // };
 
-        onscroll = function () {
-            myFunctionn()
-        };
-
-        function myFunctionn() {
-            var scrollTop = window.pageYOffset
-            if (scrollTop >= 10) {
-                document.getElementById("header").style.backgroundColor = "white";
-            } else {
-                document.getElementById("header").style.backgroundColor = "transparent";
-            }
-        }
+        // function myFunctionn() {
+        //     var scrollTop = window.pageYOffset
+        //     if (scrollTop >= 10) {
+        //         document.getElementById("header").style.backgroundColor = "white";
+        //     } else {
+        //         document.getElementById("header").style.backgroundColor = "transparent";
+        //     }
+        // }
 
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
@@ -331,33 +302,7 @@ class product extends React.Component {
                 }
             }
         };
-        function openproduct(evt, productName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(productName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
 
-        function opensubproduct(evt, subproductName) {
-            var i, tabcontent, tablinks;
-            subtabcontent = document.getElementsByClassName("subtabcontent");
-            for (i = 0; i < subtabcontent.length; i++) {
-                subtabcontent[i].style.display = "none";
-            }
-            subtablinks = document.getElementsByClassName("subtablinks");
-            for (i = 0; i < subtablinks.length; i++) {
-                subtablinks[i].className = subtablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(subproductName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
 
         var coll = document.getElementsByClassName("collapsible");
         var i;
@@ -496,7 +441,7 @@ class product extends React.Component {
     clearfilter = () => {
         //when clicked clear filter=>delete all data from arrays used in filtering
         this.setState({ filtering: [], isFilterPress: false,isbrandPress: false,isCategPress: false, arrayid: [], arraycategid: [],
-            paginationfilterarray: [], paginationfilterarrayforprod: [],paginationarray:[],paginationarrayforprod:[]
+            paginationfilterarray: [], paginationfilterarrayforprod: [],paginationarrayforprod:[]
         },()=>{ this.removecheckwhenclearfilter()})
 
     }
@@ -900,21 +845,22 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
+                                                                <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                     <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                         <div class="container-fluid centereditems" >
                                                                             <img
                                                                                 src={"" + imageurl + ""}
-                                                                                className="img-fluid "
+                                                                                className="img-fluid imgshake"
                                                                             />
                                                                         </div>
                                                                     </a>
                                                                 </Link>
+                                                                </div>
                                                                 <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"Products"}>
-                                                                    <Link href="/productbrand">
-                                                                        <a href="/productbrand">
+                                                                   
                                                                             <p className="footertext meduim prodbrandd">
                                                                                 {/* {this.state.brand[key.brand - 1].title} */}
                                                                                 {  (this.props.i18n.language == "ar") ? brandtitle_ar : this.state.brand[key.brand - 1].title}
@@ -923,8 +869,7 @@ class product extends React.Component {
                                                                                 {  (this.props.i18n.language == "ar") ? title_ar : key.title}
                                                                                 </span>
                                                                             </p>
-                                                                        </a>
-                                                                    </Link>
+                                                                      
                                                                     <FontAwesomeIcon style={{ height: "20px" }} className="fass" icon={faSearch} />
                                                                     {/* <p className="fas fa-search searchiconindex"></p> */}
                                                                 </div>
@@ -946,21 +891,22 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
+                                                                <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                     <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                         <div class="container-fluid centereditems" >
                                                                             <img
                                                                                 src={"" + imageurl + ""}
-                                                                                className="img-fluid "
+                                                                                className="img-fluid imgshake"
                                                                             />
                                                                         </div>
                                                                     </a>
                                                                 </Link>
+                                                                </div>
                                                                 <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"Products"}>
-                                                                    <Link href="/productbrand">
-                                                                        <a href="/productbrand">
+                                                                   
                                                                             <p className="footertext meduim prodbrandd">
                                                                             {  (this.props.i18n.language == "ar") ? brandtitle_ar : this.state.brand[key.brand - 1].title}
                                                                                 <br />
@@ -968,8 +914,7 @@ class product extends React.Component {
                                                                                 {  (this.props.i18n.language == "ar") ? title_ar : key.title}
                                                                                 </span>
                                                                             </p>
-                                                                        </a>
-                                                                    </Link>
+                                                                        
                                                                     <FontAwesomeIcon style={{ height: "20px" }} className="fass" icon={faSearch} />
                                                                     {/* <p className="fas fa-search searchiconindex"></p> */}
                                                                 </div>
@@ -992,21 +937,22 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
+                                                                <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                     <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                         <div class="container-fluid centereditems" >
                                                                             <img
                                                                                 src={"" + imageurl + ""}
-                                                                                className="img-fluid "
+                                                                                className="img-fluid imgshake "
                                                                             />
                                                                         </div>
                                                                     </a>
                                                                 </Link>
+                                                                </div>
                                                                 <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"Products"}>
-                                                                    <Link href="/productbrand">
-                                                                        <a href="/productbrand">
+                                                                   
                                                                             <p className="footertext meduim prodbrandd">
                                                                             {  (this.props.i18n.language == "ar") ? brandtitle_ar : this.state.brand[key.brand - 1].title}
                                                                                 <br />
@@ -1014,8 +960,7 @@ class product extends React.Component {
                                                                                 {  (this.props.i18n.language == "ar") ? title_ar : key.title}
                                                                                 </span>
                                                                             </p>
-                                                                        </a>
-                                                                    </Link>
+                                                                        
                                                                     <FontAwesomeIcon style={{ height: "20px" }} className="fass" icon={faSearch} />
                                                                     {/* <p className="fas fa-search searchiconindex"></p> */}
                                                                 </div>
@@ -1043,21 +988,21 @@ class product extends React.Component {
 
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
-                                                                <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
-
+                                                                <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                                    <div className='hiddenimg pointer'>
                                                                     <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                         <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                             <div class="container-fluid centereditems" >
                                                                                 <img
                                                                                     src={"" + imageurl + ""}
-                                                                                    className="img-fluid "
+                                                                                    className="img-fluid imgshake"
                                                                                 />
                                                                             </div>
                                                                         </a>
                                                                     </Link>
+                                                                    </div>
                                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"Products"}>
-                                                                        <Link href="/productbrand">
-                                                                            <a href="/productbrand">
+                                                                       
                                                                                 <p className="footertext meduim prodbrandd">
                                                                                 {  (this.props.i18n.language == "ar") ? brandtitle_ar : this.state.brand[key.brand - 1].title}
                                                                                     <br />
@@ -1065,8 +1010,7 @@ class product extends React.Component {
                                                                                     {  (this.props.i18n.language == "ar") ? title_ar : key.title}
                                                                                     </span>
                                                                                 </p>
-                                                                            </a>
-                                                                        </Link>
+                                                                          
                                                                         <FontAwesomeIcon style={{ height: "20px" }} className="fass" icon={faSearch} />
 
                                                                     </div>
@@ -1094,20 +1038,20 @@ class product extends React.Component {
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
                                                                 <div className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
-
-                                                                    <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                        <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
-                                                                            <div class="container-fluid centereditems" >
-                                                                                <img
-                                                                                    src={"" + imageurl + ""}
-                                                                                    className="img-fluid "
-                                                                                />
-                                                                            </div>
-                                                                        </a>
-                                                                    </Link>
+                                                                    <div className='hiddenimg pointer'>
+                                                                        <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
+                                                                            <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
+                                                                                <div class="container-fluid centereditems" >
+                                                                                    <img
+                                                                                        src={"" + imageurl + ""}
+                                                                                        className="img-fluid imgshake"
+                                                                                    />
+                                                                                </div>
+                                                                            </a>
+                                                                        </Link>
+                                                                    </div>
                                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"Products"}>
-                                                                        <Link href="/productbrand">
-                                                                            <a href="/productbrand">
+                                                                       
                                                                                 <p className="footertext meduim prodbrandd">
                                                                                 {  (this.props.i18n.language == "ar") ? brandtitle_ar : this.state.brand[key.brand - 1].title}
                                                                                     <br />
@@ -1115,8 +1059,7 @@ class product extends React.Component {
                                                                                     {  (this.props.i18n.language == "ar") ? title_ar : key.title}
                                                                                     </span>
                                                                                 </p>
-                                                                            </a>
-                                                                        </Link>
+                                                                           
                                                                         <FontAwesomeIcon style={{ height: "20px" }} className="fass" icon={faSearch} />
 
                                                                     </div>
@@ -1133,45 +1076,49 @@ class product extends React.Component {
 
 
                                     </div>
+                                   { 
+                                   ((this.state.isFilterPress) ?arrayfilterpages==1:arraysearchedpages==1)?"":
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
-                                            <div className={[(this.state.isvisible)?"":"displaynone "]+"col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext gill regular paddingrightnext "} >
+                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext gill regular paddingrightnext " >
                                                 {(this.state.isSearchPress) ?
                                                     arraysearchedpages.map((key, value) => {
                                                         return (
-                                                            <button className="color_pagination" onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                            <button className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                         )
                                                     })
+                                                    // style={(this.state.currentpage==key)?"color=red":"color=green"}
                                                     :
                                                     (this.state.isFilterPress) ?
                                                         arrayfilterpages.map((key, value) => {
                                                             return (
-                                                                <button className="color_pagination" onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                                <button className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                             )
                                                         })
                                                         :
                                                         arraypages.map((key, value) => {
                                                             return (
-                                                                <button className="color_pagination" onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                                <button className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
                                                             )
                                                         })
                                                 }
                                                 {
                                                     (this.state.isSearchPress) ?
-                                                        ((arraysearchedpages.length == this.state.currentpage) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
+                                                        ((arraysearchedpages.length == this.state.currentpage) ? <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
                                                             // && (arraysearchedpages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>Next</button> : null)
                                                         :
                                                         (this.state.isFilterPress) ?
-                                                            ((arrayfilterpages.length == this.state.currentpage) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
+                                                            ((arrayfilterpages.length == this.state.currentpage) ? <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
                                                                 // || (arrayfilterpages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>Next</button> : null
                                                             :
-                                                            ((arraypages.length == this.state.currentpage ) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
+                                                            ((arraypages.length == this.state.currentpage ) ? <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
                                                                 // || (arraypages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>Next</button> : null
                                                 }
                                             </div>
                                         </div>
                                     </div>
+                                    }
                                 </div>
                             </section>
                         </div>

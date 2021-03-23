@@ -7,7 +7,6 @@ import Link from "next/link";
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import createDOMPurify from 'dompurify';
 // import {useTranslation} from 'react-i18next';
 import { withTranslation } from "react-i18next";
 import DirectusSDK from '@directus/sdk-js';
@@ -29,7 +28,7 @@ const responsive = {
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 2
+    items: 1
   }
 };
 const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
@@ -42,7 +41,11 @@ class index extends React.Component {
       categ: [],
       brands: [],
       products: [],
-      articles: []
+      articles: [],
+      currentslidecarousel: 1,
+      oldSlide: 0,
+      activeSlide: 0,
+      activeSlide2: 0
     };
 
     this.getData = this.getData.bind(this);
@@ -69,6 +72,8 @@ class index extends React.Component {
     this.loadcarousel();
   }
   loadcarousel() {
+    // document.getElementById(this.state.currentslidecarousel).style.backgroundColor = "red";
+    // console.log("this is the main "+this.state.currentslidecarousel)
     $(document).ready(function () {
       var submitIcon = $('.searchbox-icon');
       var inputBox = $('.searchbox-input');
@@ -230,7 +235,8 @@ class index extends React.Component {
       current.addClass('current');
 
     });
-
+  
+    // $(document).getElementById(this.state.currentslidecarousel).sty
     $(document).ready(function () {
       $(".item").addClass("animated slideInUp");
     });
@@ -241,18 +247,18 @@ class index extends React.Component {
     this.getData();
 
 
-    onscroll = function () {
-      myFunctionn();
-    };
+    // onscroll = function () {
+    //   myFunctionn();
+    // };
 
-    function myFunctionn() {
-      var scrollTop = window.pageYOffset;
-      if (scrollTop >= 100) {
-        document.getElementById("header").style.backgroundColor = "white";
-      } else {
-        document.getElementById("header").style.backgroundColor = "transparent";
-      }
-    }
+    // function myFunctionn() {
+    //   var scrollTop = window.pageYOffset;
+    //   if (scrollTop >= 100) {
+    //     document.getElementById("header").style.backgroundColor = "white";
+    //   } else {
+    //     document.getElementById("header").style.backgroundColor = "transparent";
+    //   }
+    // }
 
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
@@ -284,7 +290,23 @@ class index extends React.Component {
       });
     });
   }
-
+  filter(current) {
+   
+    // document.getElementById(2).style.opacity = "0.5";
+    // document.getElementById(4).style.transform ="0.5";
+    // document.getElementById("3").style.transform ="0.5";
+    // // alert(this.state.brands.length)
+    // for(const i in this.state.brands){
+    //   if(current==i)
+    //     {document.getElementById(current).style.transform = "scale(2)";}
+    //   else {
+    //     document.getElementById(i).style.transform = "scale(1)";
+    //   }
+        
+    // }
+   
+    // console.log("this is the current "+current)
+}
   render() {
     // const {t,i18n}=useTranslation();
     var b = [];
@@ -331,7 +353,7 @@ class index extends React.Component {
     return (
       <div >
         <Navigation current="index"></Navigation>
-        <div  >
+        <div>
           <section className="video-wrapper videowrapperparallax ">
             <div
               id="owl-demo"
@@ -370,18 +392,6 @@ class index extends React.Component {
                     alt="The Last of us"
                     className="img-fluid w-100 cover parallaxxi "
                   />
-                  <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
-                    <p className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "t"}>
-                      {(this.props.i18n.language == "ar") ? title_ar : b.title}
-                    </p>
-                    <p className="boxetc mt-4">
-                      <span className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "years regular"}>
-                        {(this.props.i18n.language == "ar") ? subtitle_ar : b.subtitle}
-                      </span>
-                      <br />
-                      <span className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "name lineheightbig  "}> {(this.props.i18n.language == "ar") ? description_ar : b.description}</span>
-                    </p>
-                  </div>
                   <div className="scroll">
                     <p className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "light scrolltoexp"}>
                       {this.props.t("scroll")}
@@ -396,18 +406,6 @@ class index extends React.Component {
                     alt="The Last of us"
                     className="img-fluid w-100 cover parallaxxi "
                   />
-                  <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
-                    <p className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "t"}>
-                      {(this.props.i18n.language == "ar") ? title_ar : b.title}
-                    </p>
-                    <p className="boxetc mt-4">
-                      <span className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "years regular"}>
-                        {(this.props.i18n.language == "ar") ? subtitle_ar : b.subtitle}
-                      </span>
-                      <br />
-                      <span className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "name lineheightbig  "}> {(this.props.i18n.language == "ar") ? description_ar : b.description}</span>
-                    </p>
-                  </div>
                   <div className="scroll">
                     <p className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "light scrolltoexp"}>
                       {this.props.t("scroll")}
@@ -420,7 +418,7 @@ class index extends React.Component {
           <div className="scrollingg">
             <div className="container-fluid p-0 ">
               <div className="row mgb relative">
-                <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4 leftkherye">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4 leftone p-0">
                   <div className="px-4 py-4  relative bluebox">
                     <h1 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + " titlebox meduim"}>
                       {(this.props.i18n.language == "ar") ? box_title_ar : b.box_title}
@@ -436,7 +434,7 @@ class index extends React.Component {
               </div>
               <div className="relative ">
                 <hr className="hr my-5 " />
-                <div className="thingonhr">
+                <div className="thingonhr aligncenter">
                   <h1 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "blue meduim biggersizefont"}>{this.props.t("indexcateg")}</h1>
                 </div>
               </div>
@@ -514,43 +512,62 @@ class index extends React.Component {
 
               <div className="relative ">
                 <hr className="hr my-5 " />
-                <div className="thingonhr ">
+                <div className="thingonhr aligncenter">
                   <h1 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "blue meduim biggersizefont"}>{this.props.t("indexbrand")}</h1>
                 </div>
               </div>
               <Carousel
+              // centerMode={true}
               swipeable={true}
-              draggable={true}
+              draggable={false}
               showDots={false}
-              ssr={true} // means to render carousel on server-side.
+              ssr={false} // means to render carousel on server-side.
               infinite={true}
-              autoPlay={this.props.deviceType !== "mobile" ? false : false}
+              autoPlay={this.props.deviceType !== "mobile" ? true : true}
               autoPlaySpeed={1000}
               keyBoardControl={true}
-              customTransition="all .1000"
-              transitionDuration={500}
+              // customTransition="all .5"
+              transitionDuration={1000}
               containerClass="carousel-container"
               deviceType={this.props.deviceType}
-              dotListClass="custom-dot-list-style"
-              itemClass="carousel-item-padding-40-px"
+              // itemClass={this.state.currentslidecarousel}
+              // afterChange={(previousSlide, { currentSlide, onMove }) => {
+              //   this.setState({currentslidecarousel:currentSlide-1},()=>{
+              //     this.filter(currentSlide-1)
+              //   })
+               
+              // }}
+              beforeChange={ (current, next) =>
+                      this.setState({ oldSlide: current, activeSlide: next 
+                      })
+                      // console.log("current : "+current)
+                    }
+            afterChange= {current => 
+                  this.setState({ activeSlide2: current })
+                  // console.log("current activeslide2 : "+current)
+                }
               responsive={responsive}>
               {brannnnds.map((value, index) => {
+                // console.log(index+"hel index")
                 //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
                 var startb_url = 'https://rdcms.businessexchange.me/assets/';
                 var endb_url = '?key=system-large-cover';
                 var valuebackimg = value.image;
                 const imagbackeurl = startb_url + valuebackimg + endb_url;
 
-                return (<div>
+                return (
+                <div className={"textaligncenter "+index}>
                   <img
+                    id={index}
                     src={"" + imagbackeurl + ""}
                     alt=""
-                    class="img-fluid cover customimagecarousel" /></div>
+                    class="img-fluid cover customimagecarousel" />
+                    </div>
 
                 )
-
               })}
             </Carousel>
+            {console.log(this.state.activeSlide)}
               {/* <div className="container-fluid  mb-5 py-5 py-md-2">
                 <div className="owl-carousel1 owl-theme carousel_2 ">
                     {brannnnds.map((value, index) => {
@@ -577,7 +594,7 @@ class index extends React.Component {
 
               <div className="relative ">
                 <hr className="hr my-5 " />
-                <div className="thingonhr">
+                <div className="thingonhr aligncenter">
                   <h1 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "blue meduim biggersizefont"}>{this.props.t("indexnewestprod")}</h1>
                 </div>
               </div>
@@ -600,10 +617,12 @@ class index extends React.Component {
                             <Link href="/product">
                               <a href="/product">
                                 <div class="container-fluid centereditems" >
-                                  <img
-                                    src={"" + imagbackeurl + ""}
-                                    className="img-fluid "
-                                  />
+                                  <div className='hiddenimg '>
+                                    <img
+                                      src={"" + imagbackeurl + ""}
+                                      className="img-fluid imgshake "
+                                    />
+                                  </div>
                                 </div>
                                 <div className={[(this.props.i18n.language == "ar") ? "textalignright " : " "] + "Products d-flex w-100"}>
                                   <p className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "footertext meduim prodbrandd w-100"}>
@@ -638,7 +657,7 @@ class index extends React.Component {
                                   :
                                   <a
                                     href="/product"
-                                    className="font_size_med gill blue link meduim viewproducts"
+                                    className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill meduim"] +"font_size_med  blue link  viewproducts"}
                                   >
                                     <span className="mr-2">{this.props.t("viewourprod")}</span>
                                     <img src="./assets/images/smallrightfleche.svg" />
@@ -657,7 +676,7 @@ class index extends React.Component {
             <div className="container-fluid  ">
               <div className="relative py-3 py-md-0">
                 <hr className="hr my-5 " />
-                <div className="thingonhr">
+                <div className="thingonhr aligncenter">
                   <h1 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "blue meduim biggersizefont"}>{this.props.t("latestnews")}</h1>
                 </div>
               </div>
@@ -758,13 +777,13 @@ class index extends React.Component {
                                 <li
                                   data-target="#carouselExample"
                                   data-slide-to="0"
-                                  className="active"
+                                  className=""
                                 ></li>
 
                                 <li
                                   data-target="#carouselExample"
                                   data-slide-to="1"
-                                  className=""
+                                  className="active"
                                 ></li>
 
                                 <li

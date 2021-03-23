@@ -61,7 +61,9 @@ import { withTranslation } from "react-i18next";
                                                 <div className="container-fluid lineheight">
                                                     <div className="row">
                                                         <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 ">
-                                                            <img src="./assets/images/email.svg" alt="email logo" className="img-fluid cover ml-1 " />
+                                                            <Link href={"mailto:"+this.state.data.contact_email+""}>
+                                                                 <img src="./assets/images/email.svg" alt="email logo" className="img-fluid cover ml-1 " />
+                                                            </Link>
                                                         </div>
                                                         <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 p-0">
                                                             <Link href={"mailto:"+this.state.data.contact_email+""}>

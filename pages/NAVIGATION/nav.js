@@ -51,7 +51,18 @@ class Nav extends React.Component{
                 }
             });
         });
-        
+        onscroll = function () {
+            myFunctionn();
+          };
+      
+          function myFunctionn() {
+            var scrollTop = window.pageYOffset;
+            if (scrollTop >= 100) {
+              document.getElementById("header").style.backgroundColor = "white";
+            } else {
+              document.getElementById("header").style.backgroundColor = "transparent";
+            }
+          }
         
             var current = this.state.current
             // console.log(this.state.current);
@@ -121,7 +132,7 @@ handletrue = () => {
                 <div className="searchgen col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0">
                     <div className="container-fluid p-0">
                         <div className="row relative w-100 ">
-                            <form className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  jtfg">
+                            <form className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9 p-0  jtfg">
                                 <div className="container-fluid p-0 searchbox">
                                     <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required />
                                     {(this.state.issearchopen)? 
@@ -129,7 +140,7 @@ handletrue = () => {
                                     <i  className="searchbox-icon fa fa-search " id="fa" onClick={this.handletrue}></i>}
                                 </div>
                             </form>
-                            <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 p-0 dropdown ">
+                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-0 dropdown allzero textalignright">
                                 <div className="container-fluid p-0">
                                     {(i18n.language=="ar")?
                                         <button class="dropbtn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -143,8 +154,8 @@ handletrue = () => {
                                         </button>
                                     }
                                     <div class="dropdown-menu dropdowncontent" id="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <p class="dropdown-item pointer"  onClick={()=>changeLanguage("ar")}>Arabic</p>
-                                        <p class="dropdown-item pointer"  onClick={()=>changeLanguage("en")}>English</p>
+                                        <p class="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("ar")}>Arabic</p>
+                                        <p class="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("en")}>English</p>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +164,7 @@ handletrue = () => {
                 </div>
             </div>
         </nav>
-        <div className=" col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 logowen">
+        <div className=" col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 logowen py-md-0 py-1">
             <Link href="/">
             <a href="index.html">
                 <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="img-fluid cover " />

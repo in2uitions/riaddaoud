@@ -294,7 +294,7 @@ render (){
         <div className="container-fluid py-md-0 py-sm-3 py-5">
             <div className="relative ">
                 <hr className="hr my-5 "/>
-                <div className="thingonhr">
+                <div className="thingonhr aligncenter">
                     <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"blue meduim"}>{this.props.t('riadovertheyear')}</h1>
                 </div>
             </div>

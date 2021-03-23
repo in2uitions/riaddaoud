@@ -204,7 +204,7 @@ render (){
         <div className="container-fluid p-0 ">
           <div className="relative ">
             <hr className="hr my-5 " />
-            <div className="thingonhr">
+            <div className="thingonhr aligncenter">
               <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"blue meduim biggersizefont"}>{(this.props.i18n.language=="ar")?subtitle_ar:a.subtitle}</h1>
             </div>
           </div>
@@ -235,14 +235,16 @@ render (){
                     <div className="form-row ">
                       <div className="col ">
                         <input
-                          type="text "
+                          type="email"
+                          // pattern=".+@gmail.com"
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light " ]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("emailplaceholder")}
                         />
                       </div>
                       <div className="col ">
                         <input
-                          type="text "
+                          type="tel"
+                          pattern="[0-9]{2}-[0-9]{6}"
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("phonenbplaceholder")}
                         />
