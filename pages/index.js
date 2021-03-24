@@ -31,6 +31,25 @@ const responsive = {
     items: 1
   }
 };
+const responsiveseconde = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 4
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
 class index extends React.Component {
 
@@ -72,74 +91,72 @@ class index extends React.Component {
     this.loadcarousel();
   }
   loadcarousel() {
-    // document.getElementById(this.state.currentslidecarousel).style.backgroundColor = "red";
-    // console.log("this is the main "+this.state.currentslidecarousel)
-    $(document).ready(function () {
+    $(document).ready(function() {
       var submitIcon = $('.searchbox-icon');
       var inputBox = $('.searchbox-input');
       var searchBox = $('.searchbox');
       var isOpen = false;
-      submitIcon.click(function () {
-        if (isOpen == false) {
-          searchBox.addClass('searchbox-open');
-          inputBox.focus();
-          isOpen = true;
-        } else {
-          searchBox.removeClass('searchbox-open');
-          inputBox.focusout();
-          isOpen = false;
-        }
+      submitIcon.click(function() {
+          if (isOpen == false) {
+              searchBox.addClass('searchbox-open');
+              inputBox.focus();
+              isOpen = true;
+          } else {
+              searchBox.removeClass('searchbox-open');
+              inputBox.focusout();
+              isOpen = false;
+          }
       });
-      submitIcon.mouseup(function () {
-        return false;
+      submitIcon.mouseup(function() {
+          return false;
       });
-      searchBox.mouseup(function () {
-        return false;
+      searchBox.mouseup(function() {
+          return false;
       });
-      $(document).mouseup(function () {
-        if (isOpen == true) {
-          $('.searchbox-icon').css('display', 'block');
-          submitIcon.click();
-        }
+      $(document).mouseup(function() {
+          if (isOpen == true) {
+              $('.searchbox-icon').css('display', 'block');
+              submitIcon.click();
+          }
       });
-    });
-    (function ($, window, document, undefined) {
+  });
+  (function($, window, document, undefined) {
       /**
        * Creates the Linked plugin.
        * @class The Linked Plugin
        * @param {Owl} carousel - The Owl Carousel
        */
-      var Linked = function (carousel) {
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
-        this._core = carousel;
+      var Linked = function(carousel) {
+          /**
+           * Reference to the core.
+           * @protected
+           * @type {Owl}
+           */
+          this._core = carousel;
 
-        /**
-         * All event handlers.
-         * @protected
-         * @type {Object}
-         */
-        this._handlers = {
-          'dragged.owl.carousel changed.owl.carousel': $.proxy(function (e) {
-            if (e.namespace && this._core.settings.linked) {
-              this.update(e);
-            }
-          }, this),
-          'linked.to.owl.carousel': $.proxy(function (e, index, speed, standard, propagate) {
-            if (e.namespace && this._core.settings.linked) {
-              this.toSlide(index, speed, propagate);
-            }
-          }, this)
-        };
+          /**
+           * All event handlers.
+           * @protected
+           * @type {Object}
+           */
+          this._handlers = {
+              'dragged.owl.carousel changed.owl.carousel': $.proxy(function(e) {
+                  if (e.namespace && this._core.settings.linked) {
+                      this.update(e);
+                  }
+              }, this),
+              'linked.to.owl.carousel': $.proxy(function(e, index, speed, standard, propagate) {
+                  if (e.namespace && this._core.settings.linked) {
+                      this.toSlide(index, speed, propagate);
+                  }
+              }, this)
+          };
 
-        // register event handlers
-        this._core.$element.on(this._handlers);
+          // register event handlers
+          this._core.$element.on(this._handlers);
 
-        // set default options
-        this._core.options = $.extend({}, Linked.Defaults, this._core.options);
+          // set default options
+          this._core.options = $.extend({}, Linked.Defaults, this._core.options);
       };
 
       /**
@@ -147,14 +164,14 @@ class index extends React.Component {
        * @public
        */
       Linked.Defaults = {
-        linked: false
+          linked: false
       };
 
       /**
        * Updated linked instances
        */
-      Linked.prototype.update = function (e) {
-        this.toSlide(e.relatedTarget.relative(e.item.index));
+      Linked.prototype.update = function(e) {
+          this.toSlide(e.relatedTarget.relative(e.item.index));
       };
 
       /**
@@ -163,50 +180,50 @@ class index extends React.Component {
        * @param {int} speed
        * @param {bool} propagate
        */
-      Linked.prototype.toSlide = function (index, speed, propagate) {
-        var id = this._core.$element.attr('id'),
-          linked = typeof (this._core.settings.linked) === 'string' ? this._core.settings.linked.split(',') : this._core.settings.linked;
+      Linked.prototype.toSlide = function(index, speed, propagate) {
+          var id = this._core.$element.attr('id'),
+              linked = typeof(this._core.settings.linked) === 'string' ? this._core.settings.linked.split(',') : this._core.settings.linked;
 
-        if (typeof propagate == 'undefined') {
-          propagate = true;
-        }
-
-        index = index || 0;
-
-        if (propagate) {
-          $.each(linked, function (i, el) {
-            $(el).trigger('linked.to.owl.carousel', [index, 300, true, false]);
-          });
-        } else {
-          this._core.$element.trigger('to.owl.carousel', [index, 300, true]);
-
-          if (this._core.settings.current) {
-            this._core._plugins.current.switchTo(index);
+          if (typeof propagate == 'undefined') {
+              propagate = true;
           }
-        }
+
+          index = index || 0;
+
+          if (propagate) {
+              $.each(linked, function(i, el) {
+                  $(el).trigger('linked.to.owl.carousel', [index, 300, true, false]);
+              });
+          } else {
+              this._core.$element.trigger('to.owl.carousel', [index, 300, true]);
+
+              if (this._core.settings.current) {
+                  this._core._plugins.current.switchTo(index);
+              }
+          }
       };
 
       /**
        * Destroys the plugin.
        * @protected
        */
-      Linked.prototype.destroy = function () {
-        var handler, property;
+      Linked.prototype.destroy = function() {
+          var handler, property;
 
-        for (handler in this._handlers) {
-          this.$element.off(handler, this._handlers[handler]);
-        }
-        for (property in Object.getOwnPropertyNames(this)) {
-          typeof this[property] != 'function' && (this[property] = null);
-        }
+          for (handler in this._handlers) {
+              this.$element.off(handler, this._handlers[handler]);
+          }
+          for (property in Object.getOwnPropertyNames(this)) {
+              typeof this[property] != 'function' && (this[property] = null);
+          }
       };
 
       $.fn.owlCarousel.Constructor.Plugins.linked = Linked;
-    })(window.Zepto || window.jQuery, window, document);
+  })(window.Zepto || window.jQuery, window, document);
 
-    var sync2 = $(".carousel_2");
+  var sync2 = $(".carousel_2");
 
-    $(sync2).owlCarousel({
+  $(sync2).owlCarousel({
       nav: true,
       loop: true,
       items: 5,
@@ -214,51 +231,49 @@ class index extends React.Component {
       center: true,
       dots: false,
       responsive: {
-        700: {
-          items: 3
-        },
-        500: {
-          items: 2
-        },
-        200: {
-          items: 2
-        }
+          700: {
+              items: 3
+          },
+          500: {
+              items: 2
+          },
+          200: {
+              items: 2
+          }
       },
-      navText: ["<div className='nav-btn prevlogo-slide '><img src='./assets/images/bigleft.png' style='object-fit: contain;height: 20px' className='img-fluid ' /></div>", "<div className='nav-btn nextlogo-slide'><img src='./assets/images/bigright.png' style='object-fit: contain;height: 20px' className='img-fluid ' /></div>"],
+      navText: ["<div class='nav-btn prevlogo-slide '><img src='./assets/images/bigleft.png' style='object-fit: contain;height: 20px' class='img-fluid ' /></div>", "<div class='nav-btn nextlogo-slide'><img src='./assets/images/bigright.png' style='object-fit: contain;height: 20px' class='img-fluid ' /></div>"],
       // slideSpeed: 300,
       // paginationSpeed: 400,
 
       linked: sync2.prev()
-    }).on('initialized.owl.carousel linked.to.owl.carousel', function () {
+  }).on('initialized.owl.carousel linked.to.owl.carousel', function() {
       sync2.find('.owl-item.current').removeClass('current');
       var current = sync2.find('.owl-item.active.center').length ? sync2.find('.owl-item.active.center') : sync2.find('.owl-item.active').eq(0);
       current.addClass('current');
 
-    });
-  
-    // $(document).getElementById(this.state.currentslidecarousel).sty
-    $(document).ready(function () {
-      $(".item").addClass("animated slideInUp");
-    });
+  });
 
+  $(document).ready(function () {
+    $(".item").addClass("animated slideInUp");
+  });
   }
 
   componentDidMount() {
     this.getData();
 
 
-    // onscroll = function () {
-    //   myFunctionn();
-    // };
+    onscroll = function () {
+      myFunctionn();
+    };
 
-    // function myFunctionn() {
-    //   var scrollTop = window.pageYOffset;
-    //   if (scrollTop >= 100) {
-    //     document.getElementById("header").style.backgroundColor = "white";
-    //   } else {
-    //     document.getElementById("header").style.backgroundColor = "transparent";
-    //   }
-    // }
+    function myFunctionn() {
+      var scrollTop = window.pageYOffset;
+      if (scrollTop >= 100) {
+        document.getElementById("header").style.backgroundColor = "white";
+      } else {
+        document.getElementById("header").style.backgroundColor = "transparent";
+      }
+    }
 
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
@@ -282,8 +297,8 @@ class index extends React.Component {
         nav: true,
         items: 1,
         navText: [
-          "<div className='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' className='img-fluid ' /></div>",
-          "<div className='nav-btn next-slide'><img src='./assets/images/bigright.png' style='object-fit: cover' className='img-fluid ' /></div>",
+          "<div class='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' class='img-fluid ' /></div>",
+          "<div class='nav-btn next-slide'><img src='./assets/images/bigright.png' style='object-fit: cover' class='img-fluid ' /></div>",
         ],
         slideSpeed: 300,
         paginationSpeed: 400,
@@ -521,34 +536,28 @@ class index extends React.Component {
               swipeable={true}
               draggable={false}
               showDots={false}
-              ssr={false} // means to render carousel on server-side.
+              ssr={false} 
               infinite={true}
               autoPlay={this.props.deviceType !== "mobile" ? true : true}
               autoPlaySpeed={1000}
               keyBoardControl={true}
-              // customTransition="all .5"
+             
               transitionDuration={1000}
               containerclassName="carousel-container"
               deviceType={this.props.deviceType}
-              // itemclassName={this.state.currentslidecarousel}
-              // afterChange={(previousSlide, { currentSlide, onMove }) => {
-              //   this.setState({currentslidecarousel:currentSlide-1},()=>{
-              //     this.filter(currentSlide-1)
-              //   })
-               
-              // }}
+            
               beforeChange={ (current, next) =>
                       this.setState({ oldSlide: current, activeSlide: next 
                       })
-                      // console.log("current : "+current)
+                    
                     }
             afterChange= {current => 
                   this.setState({ activeSlide2: current })
-                  // console.log("current activeslide2 : "+current)
+               
                 }
               responsive={responsive}>
               {brannnnds.map((value, index) => {
-                // console.log(index+"hel index")
+             
                 //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
                 var startb_url = 'https://rdcms.businessexchange.me/assets/';
                 var endb_url = '?key=system-large-cover';
@@ -591,19 +600,43 @@ class index extends React.Component {
                 </div>
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-1 p-md-3"></div>
               </div> */}
-
+              
               <div className="relative ">
                 <hr className="hr my-5 " />
                 <div className="thingonhr aligncenter">
                   <h1 className={[(this.props.i18n.language == "ar") ? "DroidKufi " : "gill "] + "blue meduim biggersizefont"}>{this.props.t("indexnewestprod")}</h1>
                 </div>
               </div>
+
               <div className="row px-md-5 px-5">
                 <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
                 <div className=" col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 col-xxl-10">
-                  <div className="container-fluid">
-                    <div className="row">
-                      {lastposts.map((key, value) => {
+                <Carousel
+              // centerMode={true}
+              swipeable={false}
+              draggable={false}
+              showDots={false}
+              ssr={false} 
+              infinite={true}
+              autoPlay={this.props.deviceType !== "mobile" ? true : true}
+              autoPlaySpeed={1000}
+              keyBoardControl={false}
+              // removeArrowOnDeviceType={["superLargeDesktop", "desktop"]}
+              transitionDuration={1000}
+              containerclassName="carousel-container2"
+              deviceType={this.props.deviceType}
+            
+              beforeChange={ (current, next) =>
+                      this.setState({ oldSlide: current, activeSlide: next 
+                      })
+                    
+                    }
+            afterChange= {current => 
+                  this.setState({ activeSlide2: current })
+               
+                }
+              responsive={responsiveseconde}>
+             {lastposts.map((key, value) => {
                         var startb_url = 'https://rdcms.businessexchange.me/assets/';
                         var endb_url = '?w=200&h=250 ';
                         var valuebackimg = key.image;
@@ -613,7 +646,7 @@ class index extends React.Component {
                         if (brannnnds[key.brand - 1].title_ar == null) { var brandstitle_ar = brannnnds[key.brand - 1].title }
                         else var brandstitle_ar = brannnnds[key.brand - 1].title_ar
                         return (
-                          <div key={['btn-3-'+value]} className={[(this.props.i18n.language == "ar") ? "hoverbrandindexar " : "hoverbrandindex "] + "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 "}>
+                          <div key={['btn-32-'+value]} className={[(this.props.i18n.language == "ar") ? "hoverbrandindexar " : "hoverbrandindex "] + " "}>
                             <Link href="/product">
                               <a href="/product">
                                 <div className="container-fluid centereditems" >
@@ -640,8 +673,9 @@ class index extends React.Component {
 
                         )
                       })}
+            </Carousel>
                       {(this.props.i18n.language == "ar") ? "" : <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 "></div>}
-                      <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 ">
+                      <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
                         <div className="container-fluid py-3">
                           <div className="row">
                             <div className={[(this.props.i18n.language == "ar") ? " " : "text-right "] + "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  py-3"}>
@@ -666,8 +700,8 @@ class index extends React.Component {
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      {/* </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
