@@ -232,44 +232,6 @@ class index extends React.Component {
       $.fn.owlCarousel.Constructor.Plugins.linked = Linked;
     })(window.Zepto || window.jQuery, window, document);
 
-    var sync2 = $(".carousel_2");
-
-    $(sync2)
-      .owlCarousel({
-        nav: true,
-        loop: true,
-        items: 5,
-        // margin: 2,
-        center: true,
-        dots: false,
-        responsive: {
-          700: {
-            items: 3,
-          },
-          500: {
-            items: 2,
-          },
-          200: {
-            items: 2,
-          },
-        },
-        navText: [
-          "<div class='nav-btn prevlogo-slide '><img src='./assets/images/bigleft.png' style='object-fit: contain;height: 20px' class='img-fluid ' /></div>",
-          "<div class='nav-btn nextlogo-slide'><img src='./assets/images/bigright.png' style='object-fit: contain;height: 20px' class='img-fluid ' /></div>",
-        ],
-        // slideSpeed: 300,
-        // paginationSpeed: 400,
-
-        linked: sync2.prev(),
-      })
-      .on("initialized.owl.carousel linked.to.owl.carousel", function () {
-        sync2.find(".owl-item.current").removeClass("current");
-        var current = sync2.find(".owl-item.active.center").length
-          ? sync2.find(".owl-item.active.center")
-          : sync2.find(".owl-item.active").eq(0);
-        current.addClass("current");
-      });
-
     $(document).ready(function () {
       $(".item").addClass("animated slideInUp");
     });
@@ -312,6 +274,8 @@ class index extends React.Component {
         loop: true,
         nav: true,
         items: 1,
+        touchDrag : true,
+        mouseDrag : true,
         navText: [
           "<div class='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' class='img-fluid ' /></div>",
           "<div class='nav-btn next-slide'><img src='./assets/images/bigright.png' style='object-fit: cover' class='img-fluid ' /></div>",
@@ -715,15 +679,16 @@ class index extends React.Component {
               </div>
               <Carousel
                 // centerMode={true}
-                swipeable={false}
-                draggable={false}
+                swipeable={true}
+                draggable={true}
                 showDots={false}
                 ssr={false}
                 infinite={true}
-                autoPlay={this.props.deviceType !== "mobile" ? true : true}
-                autoPlaySpeed={2000}
+                autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                autoPlaySpeed={1000}
                 keyBoardControl={true}
-                transitionDuration={2000}
+                customTransition="all .5"
+                transitionDuration={500}
                 containerclassName="carousel-container"
                 deviceType={this.props.deviceType}
                 beforeChange={(current, next) =>
@@ -778,16 +743,16 @@ class index extends React.Component {
                 <div className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                   <Carousel
                     // centerMode={true}
-                    swipeable={false}
-                    draggable={false}
+                    swipeable={true}
+                    draggable={true}
                     showDots={false}
                     ssr={false}
                     infinite={true}
-                    autoPlay={this.props.deviceType !== "mobile" ? true : true}
-                    autoPlaySpeed={2000}
-                    keyBoardControl={false}
-                    // removeArrowOnDeviceType={["superLargeDesktop", "desktop"]}
-                    transitionDuration={2000}
+                    autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                    autoPlaySpeed={1000}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
                     containerclassName="carousel-container2"
                     deviceType={this.props.deviceType}
                     beforeChange={(current, next) =>
