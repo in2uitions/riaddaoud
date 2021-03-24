@@ -187,7 +187,7 @@ render (){
                 </div>
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 px-md-5">
                     <div className="row  ">
-                        <form className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" action={"mailto:"+this.state.submit.contact_email+""} method="POST" >
+                        <form className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" action={"mailto:"+this.state.submit.contact_email+"" } data-rel="external" method="POST" >
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">

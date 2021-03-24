@@ -62,7 +62,9 @@ import { withTranslation } from "react-i18next";
                                                     <div className="row">
                                                         <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 ">
                                                             <Link href={"mailto:"+this.state.data.contact_email+""}>
-                                                                 <img src="./assets/images/email.svg" alt="email logo" className="img-fluid cover ml-1 pointer" />
+                                                                <a href={"mailto:"+this.state.data.contact_email+""}>
+                                                                     <img src="./assets/images/email.svg" alt="email logo" className="img-fluid cover ml-1 pointer" />
+                                                                 </a>
                                                             </Link>
                                                         </div>
                                                         <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 p-0">
@@ -89,18 +91,24 @@ import { withTranslation } from "react-i18next";
                                                 <div className="container-fluid ">
                                                     <div className="row ">
                                                         <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2">
-                                                        <Link href={""+this.state.data.facebook_link+""}>
-                                                            <img src="./assets/images/facebook.svg" alt="socialmedia logo" className="img-fluid cover pointer  " />
+                                                            <Link href={""+this.state.data.facebook_link+""}>
+                                                                <a href={""+this.state.data.facebook_link+""}>
+                                                                    <img src="./assets/images/facebook.svg" alt="socialmedia logo" className="img-fluid cover pointer  " />
+                                                                </a>
                                                             </Link>
                                                         </div>
                                                         <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
-                                                        <Link href={""+this.state.data.twitter_link+""}>
-                                                            <img src="./assets/images/twitter.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
+                                                            <Link href={""+this.state.data.twitter_link+""}>
+                                                                <a href={""+this.state.data.twitter_link+""}>
+                                                                    <img src="./assets/images/twitter.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
+                                                                </a>
                                                             </Link>
                                                         </div>
                                                         <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
-                                                        <Link href={""+this.state.data.instagram_link+""}>
-                                                            <img src="./assets/images/insta.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
+                                                            <Link href={""+this.state.data.instagram_link+""}>
+                                                                <a href={""+this.state.data.instagram_link+""}>
+                                                                    <img src="./assets/images/insta.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
+                                                                </a>
                                                             </Link>
                                                         </div>
                                                     </div>

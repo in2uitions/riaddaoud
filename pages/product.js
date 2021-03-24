@@ -99,28 +99,28 @@ class product extends React.Component {
         $("[id='categ_mini4']").hide();
         $("#jquery_box_mini").change(function () {
             if (this.value == "4") {
-                $("[id='categ1']").hide();
-                $("[id='categ2']").hide();
-                $("[id='categ3']").hide();
-                $("[id='categ4']").show();
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").show();
             };
             if (this.value == "3") {
-                $("[id='categ1']").hide();
-                $("[id='categ2']").hide();
-                $("[id='categ3']").show();
-                $("[id='categ4']").hide();
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").show();
+                $("[id='categ_mini4']").hide();
             };
             if (this.value == "2") {
-                $("[id='categ1']").hide();
-                $("[id='categ2']").show();
-                $("[id='categ3']").hide();
-                $("[id='categ4']").hide();
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").show();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").hide();
             };
             if (this.value == "1") {
-                $("[id='categ1']").show();
-                $("[id='categ2']").hide();
-                $("[id='categ3']").hide();
-                $("[id='categ4']").hide();
+                $("[id='categ_mini1']").show();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").hide();
             };
         })
         
@@ -220,24 +220,6 @@ class product extends React.Component {
             });
 
 
-        });
-        const buttons = document.querySelectorAll(".subtablinks");
-        const section = document.querySelectorAll(".thumb");
-        buttons.forEach(item => {
-            item.addEventListener('click', () => {
-                buttons.forEach(item => {
-                    item.className = "";
-                });
-                item.className = "active";
-                let values = item.textContent;
-                document.getElementById("myCheck").checked = true;
-                section.forEach(show => {
-                    show.style.display = "none";
-                    if (show.getAttribute("data-id") === values || values === "All products") {
-                        show.style.display = "block";
-                    }
-                });
-            });
         });
     }
 

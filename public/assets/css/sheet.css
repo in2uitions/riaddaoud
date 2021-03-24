@@ -119,11 +119,16 @@
                 justify-content: flex-end;
             }
         } */
-        
+        @media only screen and (max-width: 1300px) {
+        .scrollingg {
+            position: relative!important;
+          
+        }}
         @media only screen and (max-width: 1200px) {
             .searchbox-open {
                 width: 200px!important;
             }
+    
             .navbar .collapse {
                 width: 100%;
                 /* display: inline-block; */
@@ -1676,7 +1681,7 @@ a:focus {
         .videowrapperparallax {
             position: fixed;
             top: 0px;
-            left: 0px;
+            right: 0px;
             margin:0px;
             width: 100%!important;
         }
@@ -1684,7 +1689,7 @@ a:focus {
         .scrollingg {
             position: absolute;
             left: 0px;
-            width: 100%;
+            width: 100%!important;
             /* top: 86vh; */
             top: 80vh;
             background-color: white;
@@ -1719,21 +1724,21 @@ a:focus {
         
         .video-wrapper .owl-carousel .next-slide {
     
-            right: 3%;
+            right: 4%;
             top: 45% !important;
         }
         
         .video-wrapper .bigslider1 .owl-next {
             position: absolute;
             top: 50%;
-            right: -5px;
+            /* right: -5px; */
             transform: translateY(-50%);
         }
         
         .video-wrapper .bigslider1 .owl-prev {
             position: absolute;
             top: 50%;
-            left: -5px;
+            /* left: -5px; */
             transform: translateY(-50%);
         }
         
@@ -3486,4 +3491,12 @@ a:focus {
 .currentpage{
     background-color: #002891;
     color:white;
+}
+.heightwidth{
+    width:200px;
+    height:200px;
+    object-fit: contain;
+}
+.pads{
+padding:opx 10px 0px 10px
 }
