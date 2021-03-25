@@ -592,13 +592,13 @@ class product extends React.Component {
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
                         <div className="container-fluid p-0">
                             <div className="row ">
-                                <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3   px-md-4">
+                                <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 mobilehidden  px-md-4">
                                     <h4 className={[(this.props.i18n.language=="ar")?"textalignright ":"light "]+" text-lightgrey gill "}>{this.props.t("BrowseCategories")}</h4>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9  ">
                                     <div className="container-fluid ">
                                         <div className="row ">
-                                            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
+                                            <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 showingaligncenter">
                                                 <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
                                                 {this.props.t("Showing")}
                                         {" " + (this.state.isFilterPress) ?
