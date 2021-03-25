@@ -545,7 +545,7 @@ class index extends React.Component {
                             key={["btn-4-" + index]}
                             className="block  block--left clip406"
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
+                              backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
                             <Link href="/product">
@@ -574,7 +574,7 @@ class index extends React.Component {
                           <div
                             className="block  block--right clip406 "
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
+                              backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
                             <Link href="/product">
@@ -603,7 +603,7 @@ class index extends React.Component {
                           <div
                             className="block  block_center clip406 "
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
+                              backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
                             <Link href="/product">
@@ -631,7 +631,7 @@ class index extends React.Component {
                           <div
                             className="block   block_center1 clip406 "
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
+                              backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
                             <Link href="/product">
