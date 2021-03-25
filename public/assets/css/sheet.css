@@ -95,13 +95,36 @@
         .whitee {
             color: white;
         }
-        
+        @media only screen and (min-width: 900px) {
+        .lefteye{
+            padding-left:5%!important
+        }
+        .lefteye1{
+            padding-left:25%!important
+        }
+        .lefteye2{
+            padding-left:25%!important
+        }
+        .lefteye3{
+            padding-left:25%!important
+        }}
         @media only screen and (min-width: 992px) {
             .leftone {
                 left: 8%;
             }
         }
-        
+        .lefteye{
+            padding-left: 5%;
+        }
+        .lefteye1{
+            padding-left: 5%;
+        }
+        .lefteye2{
+            padding-left: 5%;
+        }
+        .lefteye3{
+            padding-left: 5%;
+        }
         .meditalic {
             font-weight: 600;
         }
@@ -740,10 +763,10 @@
         }
         
         .textalign {
-            text-align-last: center;
+            /* text-align-last: center; */
+            /* left:15%; */
             padding-top: 12%;
         }
-        
         .textaligncenter {
             text-align-last: center;
         }

@@ -556,7 +556,7 @@ class index extends React.Component {
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi "
                                         : "gill ",
-                                    ] + "white italic  textalign"
+                                    ] + "white italic  textalign lefteye"
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -585,7 +585,7 @@ class index extends React.Component {
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi "
                                         : "gill ",
-                                    ] + "white italic  textalign"
+                                    ] + "white italic  textalign lefteye1"
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -614,7 +614,7 @@ class index extends React.Component {
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi "
                                         : "gill ",
-                                    ] + "white italic  textalign"
+                                    ] + "white italic  textalign lefteye2"
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -642,7 +642,7 @@ class index extends React.Component {
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi "
                                         : "gill ",
-                                    ] + "white italic  textalign"
+                                    ] + "white italic  textalign lefteye3"
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -685,7 +685,7 @@ class index extends React.Component {
                 ssr={false}
                 infinite={true}
                 autoPlay={this.props.deviceType !== "mobile" ? true : false}
-                autoPlaySpeed={1000}
+                autoPlaySpeed={4000}
                 keyBoardControl={true}
                 customTransition="all .5"
                 transitionDuration={500}
@@ -749,7 +749,7 @@ class index extends React.Component {
                     ssr={false}
                     infinite={true}
                     autoPlay={this.props.deviceType !== "mobile" ? true : false}
-                    autoPlaySpeed={1000}
+                    autoPlaySpeed={4000}
                     keyBoardControl={true}
                     customTransition="all .5"
                     transitionDuration={500}
