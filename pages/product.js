@@ -89,38 +89,41 @@ class product extends React.Component {
         //         document.getElementById("header").style.backgroundColor = "transparent";
         //     }
         // }
-        function handleBackPress(event) {
-            event.preventDefault();
-            event.stopPropagation();
+        $("#myModal .close").click();
+
+        $("#myModal .close").trigger("click"); 
+        window.onload=function(){
+
+            State=popset=0;
+            setpops=function(){
+                if(popset) return;popset=1;// dont set event multiple times
+                window.onpopstate=function(e){
+                    State=e.state;
+                    if(e.state=="hide"){
+                        $(".modal").modal("hide").removeClass("in show");
+                        $(".modal-backdrop").remove();// force hide bg
+                        /* in some old devices .modal("hide") is not enough */
+                    }
+                };
+            };
         
-            $('.modal').modal('hide');
-            $('.modal-backdrop').remove();
-        }
+            $(".modal")
+            .on("show.bs.modal",function(){// while modal show
+                path=window.location.pathname+window.location.search;
+                history.pushState("hide",null,path);
+                history.pushState("show",null,path);
+                State="show";
+            })
+            .on("hidden.bs.modal",function(){// while modal hide
+                if(!!State)
+                    history.go(State=="hide"?-1:-2);// remove extra forward states
+            });
         
-        var closedModalHashStateId = "#modalClosed";
-        var openModalHashStateId = "#modalOpen";
+            window.onpopstate=function(){setpops();};
         
-        /* Updating the hash state creates a new entry
-         * in the web browser's history. The latest entry in the web browser's
-         * history is "modal.html#modalClosed". */
-        window.location.hash = closedModalHashStateId;
+            setTimeout(function(){setpops();},2000);// fix old webkit bug
         
-        $(window).on('popstate', this.handleBackPress);
-        document.addEventListener("backbutton", this.handleBackPress, false);
-        
-        /* The latest entry in the web browser's history is now "modal.html#modalOpen".
-         * The entry before this is "modal.html#modalClosed". */
-        $('.modal').on('show.bs.modal', function(e) {
-          window.history.pushState('forward', null, './'+openModalHashStateId);
-        });  
-        
-        /* When the user closes the modal using the Twitter Bootstrap UI, 
-         * we just return to the previous entry in the web 
-         * browser's history, which is "modal.html#modalClosed". This is the same thing
-         * that happens when the user clicks the web browser's back button. */
-        $('.modal').on('hide.bs.modal', function(e) {
-          window.history.back();
-        });  
+        }; 
         $("[id='categ1']").show();
         $("[id='categ2']").hide();
         $("[id='categ3']").hide();
@@ -619,7 +622,7 @@ class product extends React.Component {
                                                         <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
                                                             {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
                                                             
-                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+" pt-2  texttitlemedia footertext   w-100"}
+                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+"   texttitlemedia footertext   w-100"}
                                                                 value={this.state.inputsearch} onChange={this.filter} />
                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
                                                              <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
@@ -859,7 +862,7 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div key={['btn-10-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div key={['btn-10-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-6 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
                                                                 <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
@@ -905,7 +908,7 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div key={['btn-11-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div key={['btn-11-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-6 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
                                                                 <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
@@ -951,7 +954,7 @@ class product extends React.Component {
                                                     else var brandtitle_ar = this.state.brand[key.brand - 1].title_ar
                                                     if (value < this.state.website_sett.products_display_nb) {
                                                         return (
-                                                            <div key={['btn-12-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                            <div key={['btn-12-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex  py-3 js--fadeInb") : ("col-6 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                 {/* this.state.brand[key.brand].title+ */}
                                                                 <div className='hiddenimg pointer'>
                                                                 <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
@@ -1002,7 +1005,7 @@ class product extends React.Component {
 
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
-                                                                <div key={['btn-13-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
+                                                                <div key={['btn-13-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-6 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex  py-3 js--fadeInb")} data-id={"" + ""}>
                                                                     <div className='hiddenimg pointer'>
                                                                     <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                         <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
@@ -1051,7 +1054,7 @@ class product extends React.Component {
 
                                                         if (nbr_of_place < this.state.website_sett.products_display_nb) {
                                                             return (
-                                                                <div key={['btn-14-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
+                                                                <div key={['btn-14-'+value]} className={(key.singleplace_or_doubleplace == 1) ? ("col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 hoverbrandindex py-3 js--fadeInb") : ("col-6 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 hoverbrandindex py-3 js--fadeInb")} data-id={"" + ""}>
                                                                     <div className='hiddenimg pointer'>
                                                                         <Link href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
                                                                             <a href={{ pathname: '/productdetail', as: "/media1/" + key.id, query: { data: key.title, data_id: key.id } }}>
