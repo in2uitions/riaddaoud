@@ -164,6 +164,7 @@
         }
         .textaligncenter {
             text-align-last: center;
+            text-align: center;
         }
         
         select {
@@ -354,7 +355,9 @@
             position: absolute;
             width: 100%;
             top: 60%;
-            text-align-last: center;
+            text-align: center;
+            left:50%;
+            transform: translateX(-50%);
         }
         
         .menuicon {
@@ -365,6 +368,7 @@
             top: 70%;
             left: 86%;
             text-align-last: center;
+            text-align: center;
         }
         
         .scroll p {
@@ -1305,7 +1309,9 @@ a:focus {
             position: absolute;
             top: 60%
         }
-        
+        .flexend{
+            align-self: flex-end;
+        }
         .minheight {
             min-height: 15px;
             min-width: 15px;
@@ -2934,13 +2940,14 @@ padding:0px 10px 0px 10px
     .lefteye3{
         padding-left:25%!important
     }}
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 767px) {
     .mobilehidden{
         visibility: hidden!important;
         display: none!important;
     }
     .showingaligncenter{
         text-align-last: center;
+        text-align: center;
     }
 }
     @media only screen and (min-width: 992px) {

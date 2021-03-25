@@ -411,7 +411,7 @@ class index extends React.Component {
                       </span>
                     </p>
                   </div>
-                  <div className="scroll">
+                  <div className="scroll w-100">
                     <p
                       className={
                         [
