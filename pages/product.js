@@ -1113,8 +1113,51 @@ class product extends React.Component {
 
 
                                     </div>
+                                    {console.log(arraysearchedpages.length<2)}
                                    { 
-                                   ((this.state.isFilterPress) ?arrayfilterpages.length==1:arraysearchedpages.length==1)?"":
+                                   ((this.state.isFilterPress)?(arrayfilterpages.length==1)?"":
+                                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
+                                        <div className="row">
+                                            <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
+                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext gill regular paddingrightnext " >
+                                                {(this.state.isSearchPress) ?
+                                                    arraysearchedpages.map((key, value) => {
+                                                        return (
+                                                            <button key={['btn-1-'+value]} className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                        )
+                                                    })
+                                                    // style={(this.state.currentpage==key)?"color=red":"color=green"}
+                                                    :
+                                                    (this.state.isFilterPress) ?
+                                                        arrayfilterpages.map((key, value) => {
+                                                            return (
+                                                                <button key={['btn-3-'+value]} className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                            )
+                                                        })
+                                                        :
+                                                        arraypages.map((key, value) => {
+                                                            return (
+                                                                <button key={['btn-2-'+value]} className={[(this.state.currentpage==key)?" currentpage ":""]+"color_pagination pointer"} onClick={() => this.step_one_of_afficherpaginationfilter(key)} id={"page" + key}>{key}</button>
+                                                            )
+                                                        })
+                                                }
+                                                {
+                                                    (this.state.isSearchPress) ?
+                                                        ((arraysearchedpages.length == this.state.currentpage) ? <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
+                                                            // && (arraysearchedpages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>Next</button> : null)
+                                                        :
+                                                        (this.state.isFilterPress) ?
+                                                            ((arrayfilterpages.length == this.state.currentpage) ? <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
+                                                                // || (arrayfilterpages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>Next</button> : null
+                                                            :
+                                                            ((arraypages.length == this.state.currentpage ) ? <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button> : <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>{this.props.t("next")}</button>)
+                                                                // || (arraypages.length != 1) ? <button className="blue" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage + 1)}>Next</button> : null
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                   :(arraysearchedpages.length==1))?"":
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
