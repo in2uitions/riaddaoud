@@ -613,7 +613,7 @@ class product extends React.Component {
                         <div className="container-fluid p-0">
                             <div className="row ">
                                 <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 mobilehidden  px-md-4 flexend">
-                                    <h4 className={[(this.props.i18n.language=="ar")?"textalignright ":"light "]+" text-lightgrey gill "}>{this.props.t("BrowseCategories")}</h4>
+                                    <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill"]+" text-lightgrey  "}>{this.props.t("BrowseCategories")}</h4>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9  ">
                                     <div className="container-fluid ">
