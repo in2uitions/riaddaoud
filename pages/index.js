@@ -474,7 +474,7 @@ class index extends React.Component {
           </section>
           <div className="scrollingg ">
             <div className="container-fluid p-0">
-              <div className="row mgb relative">
+              <div className="row mgb relative ">
                 <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4 leftone ">
                   <div className="px-4 py-4  relative bluebox">
                     <h1
@@ -545,7 +545,7 @@ class index extends React.Component {
                             key={["btn-4-" + index]}
                             className="block  block--left clip406"
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",
+                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
                             }}
                           >
                             <Link href="/product">
@@ -574,7 +574,7 @@ class index extends React.Component {
                           <div
                             className="block  block--right clip406 "
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",
+                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
                             }}
                           >
                             <Link href="/product">
@@ -603,7 +603,7 @@ class index extends React.Component {
                           <div
                             className="block  block_center clip406 "
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",
+                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
                             }}
                           >
                             <Link href="/product">
@@ -631,7 +631,7 @@ class index extends React.Component {
                           <div
                             className="block   block_center1 clip406 "
                             style={{
-                              backgroundImage: "url(" + imagbackeurl + ")",
+                              backgroundImage: "url(" + imagbackeurl + ")",opacity:0.8
                             }}
                           >
                             <Link href="/product">
@@ -682,6 +682,7 @@ class index extends React.Component {
                 swipeable={true}
                 draggable={true}
                 showDots={false}
+                focusOnSelect={true}
                 ssr={false}
                 infinite={true}
                 autoPlay={this.props.deviceType !== "mobile" ? true : false}
@@ -744,6 +745,7 @@ class index extends React.Component {
                   <Carousel
                     // centerMode={true}
                     swipeable={true}
+                    focusOnSelect={true}
                     draggable={true}
                     showDots={false}
                     ssr={false}

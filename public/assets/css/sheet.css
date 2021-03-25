@@ -396,6 +396,7 @@
             border-left: 0.1px solid #818386;
             opacity: 0.5;
             height: 190px;
+
         }
         
         .webkitalign {
@@ -1534,7 +1535,6 @@ a:focus {
             background: rgb(0, 0, 0);
             background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(180, 180, 180, 0.5) 45%, rgba(255, 255, 255, 1) 70%);
         }
-        
         .c button.active {
             background-color: #002891;
         }
@@ -2041,6 +2041,8 @@ a:focus {
             bottom: 0;
             transition-timing-function: ease;
             background-color: rgba(129, 131, 134, 0.5);
+            /* background: rgb(255,255,255);
+            background: linear-gradient(67deg, rgba(255,255,255,1) 0%, rgba(191,191,191,0.8183648459383753) 47%, rgba(0,0,0,0.5522584033613445) 74%, rgba(0,0,0,0.6558998599439776) 100%); */
             z-index: -1;
             cursor: pointer;
             transition: all 1s;
@@ -2049,7 +2051,6 @@ a:focus {
             -ms-transition: all 1s;
             -o-transition: all 1s;
         }
-        
         .blocks .block:hover .overlayicateg {
             opacity: 1;
             transition: all 1s;
