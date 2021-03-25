@@ -128,7 +128,10 @@
             .searchbox-open {
                 width: 200px!important;
             }
-    
+            .scrollingg {
+                position: relative!important;
+              
+            }
             .navbar .collapse {
                 width: 100%;
                 /* display: inline-block; */
