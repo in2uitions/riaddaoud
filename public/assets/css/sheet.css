@@ -2049,7 +2049,7 @@ a:focus {
             /* background-color: rgba(129, 131, 134, 0.5); */
             /* background: rgb(129, 131, 134, 0.5); */
             background: rgb(255,255,255);
-            background: linear-gradient(0deg, rgba(185,185,185,0.4374124649859944) 0%, rgba(185,185,185,0.6474964985994398) 47%, rgba(0,0,0,0.3925945378151261) 81%, rgba(0,0,0,0.6558998599439776) 100%);
+            background: linear-gradient(0deg, rgba(185,185,185,0.0) 0%, rgba(185,185,185,0.0) 50%, rgba(0,0,0,1) 100%);
             z-index: -1;
             cursor: pointer;
             transition: all 1s;
@@ -2930,17 +2930,18 @@ padding:0px 10px 0px 10px
 }
 @media only screen and (min-width: 900px) {
     .lefteye{
-        padding-left:5%!important
+        padding-left:10%!important
     }
     .lefteye1{
-        padding-left:25%!important
+        padding-left:30%!important
     }
     .lefteye2{
-        padding-left:25%!important
+        padding-left:30%!important
     }
     .lefteye3{
-        padding-left:25%!important
-    }}
+        padding-left:30%!important
+    }
+}
     @media only screen and (max-width: 767px) {
     .mobilehidden{
         visibility: hidden!important;
@@ -2961,16 +2962,16 @@ padding:0px 10px 0px 10px
         display: flex;
     }
     .lefteye{
-        padding-left: 5%;
+        padding-left: 10%;
     }
     .lefteye1{
-        padding-left: 5%;
+        padding-left: 10%;
     }
     .lefteye2{
-        padding-left: 5%;
+        padding-left: 10%;
     }
     .lefteye3{
-        padding-left: 5%;
+        padding-left: 10%;
     }
     .meditalic {
         font-weight: 600;
