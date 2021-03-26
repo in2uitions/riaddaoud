@@ -50,6 +50,25 @@ const responsiveseconde = {
     items: 1,
   },
 };
+const responsivelast = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 1,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 const directus = new DirectusSDK("https://rdcms.businessexchange.me/");
 class index extends React.Component {
   constructor(props) {
@@ -64,6 +83,7 @@ class index extends React.Component {
       oldSlide: 0,
       activeSlide: 0,
       activeSlide2: 0,
+      img:"",
     };
 
     this.getData = this.getData.bind(this);
@@ -80,14 +100,25 @@ class index extends React.Component {
     var datadirectbrand = await directus.items("brands").read();
     var datadirectproducts = await directus.items("products").read();
     var datadirectarticles = await directus.items("articles").read();
-
-    this.setState({ databox: datadirectbox.data });
+    var a=[]
+    var imagbackeurl=""
+    this.setState({ databox: datadirectbox.data },()=>{
+    for (const i in this.state.databox[0]) {
+      a[i] = this.state.databox[0][i];
+    }
+    var startb_url = "https://rdcms.businessexchange.me/assets/";
+    var endb_url = "?key=system-large-contain";
+    var valuebackimg =a.image;
+     imagbackeurl = startb_url + valuebackimg + endb_url;
+    });
+    console.log(imagbackeurl)
     var datadirectcateg = await directus.items("categories").read();
     this.setState({
       categ: datadirectcateg.data,
       brands: datadirectbrand.data,
       products: datadirectproducts.data,
       articles: datadirectarticles.data,
+      img:imagbackeurl
     });
     this.loadcarousel();
   }
@@ -271,11 +302,19 @@ class index extends React.Component {
     };
     $(document).ready(function () {
       $(".bigslider").owlCarousel({
-        loop: true,
+        autoplay:true,
+        rewind:true,
+        // rewind: true,
+        clone:false,
         nav: true,
         items: 1,
-        touchDrag : true,
-        mouseDrag : true,
+        autoplayTimeout: 4500,
+        smartSpeed: 2000,
+        autoHeight: false,
+        touchDrag: true,
+        mouseDrag: true,
+        // touchDrag : true,
+        // mouseDrag : true,
         navText: [
           "<div class='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' class='img-fluid ' /></div>",
           "<div class='nav-btn next-slide'><img src='./assets/images/bigright.png' style='object-fit: cover' class='img-fluid ' /></div>",
@@ -320,10 +359,11 @@ class index extends React.Component {
       brannnnds[y] = this.state.brands[y];
     }
     var arrayofbrandsimages = brannnnds.map((key, value) => key.image);
-    var startb_url = "https://rdcms.businessexchange.me/assets/";
-    var endb_url = "?key=system-large-contain";
-    var valuebackimg = b.image;
-    const imagbackeurl = startb_url + valuebackimg + endb_url;
+    // var startb_url = "https://rdcms.businessexchange.me/assets/";
+    // var endb_url = "?key=system-large-contain";
+    // var valuebackimg =this.state.img;
+    // const imagbackeurl = startb_url + valuebackimg + endb_url;
+    // console.log(imagbackeurl)
     var categarray = [];
     for (const i in this.state.categ) {
       categarray[i] = this.state.categ[i];
@@ -352,6 +392,25 @@ class index extends React.Component {
     if (b.box_description_ar == null) {
       var box_description_ar = b.box_description;
     } else var box_description_ar = b.box_description_ar;
+    const CustomDot = ({ onClick, ...rest }) => {
+      const {
+        onMove,
+        index,
+        active,
+        carouselState: { currentSlide, deviceType }
+      } = rest;
+      const carouselItems = [<div></div>, <div></div>, <div></div>];
+      // onMove means if dragging or swiping in progress.
+      // active is provided by this lib for checking if the item is active or not.
+      return (
+        <button
+          className={active ? "active" : "inactive"}
+          onClick={() => onClick()}
+        >
+          {React.Children.toArray(carouselItems)[index]}
+        </button>
+      );
+    };
     return (
       <div>
         <Navigation current="index"></Navigation>
@@ -364,8 +423,8 @@ class index extends React.Component {
               <div className="item  p-0 relative ">
                 <div className="container-fluid p-0">
                   <img
-                    src={"" + imagbackeurl + ""}
-                    alt="The Last of us"
+                    src={"" + this.state.img + ""}
+                    alt="index photo"
                     className="img-fluid w-100 cover parallaxxi "
                   />
                   <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
@@ -429,11 +488,54 @@ class index extends React.Component {
               <div className="item  p-0 relative ">
                 <div className="container-fluid p-0">
                   <img
-                    src={"" + imagbackeurl + ""}
-                    alt="The Last of us"
+                    src={"" + this.state.img + ""}
+                    alt="index photo"
                     className="img-fluid w-100 cover parallaxxi "
                   />
-                  <div className="scroll">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
+                    <p
+                      className={
+                        [
+                          this.props.i18n.language == "ar"
+                            ? "DroidKufi "
+                            : "gill ",
+                        ] + "t"
+                      }
+                    >
+                      {this.props.i18n.language == "ar" ? title_ar : b.title}
+                    </p>
+                    <p className="boxetc mt-4">
+                      <span
+                        className={
+                          [
+                            this.props.i18n.language == "ar"
+                              ? "DroidKufi "
+                              : "gill ",
+                          ] + "years regular"
+                        }
+                      >
+                        {this.props.i18n.language == "ar"
+                          ? subtitle_ar
+                          : b.subtitle}
+                      </span>
+                      <br />
+                      <span
+                        className={
+                          [
+                            this.props.i18n.language == "ar"
+                              ? "DroidKufi "
+                              : "gill ",
+                          ] + "name lineheightbig  "
+                        }
+                      >
+                        {" "}
+                        {this.props.i18n.language == "ar"
+                          ? description_ar
+                          : b.description}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="scroll w-100">
                     <p
                       className={
                         [
@@ -451,11 +553,54 @@ class index extends React.Component {
               <div className="item  p-0 relative ">
                 <div className="container-fluid p-0">
                   <img
-                    src={"" + imagbackeurl + ""}
-                    alt="The Last of us"
+                    src={"" + this.state.img + ""}
+                    alt="index photo"
                     className="img-fluid w-100 cover parallaxxi "
                   />
-                  <div className="scroll">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
+                    <p
+                      className={
+                        [
+                          this.props.i18n.language == "ar"
+                            ? "DroidKufi "
+                            : "gill ",
+                        ] + "t"
+                      }
+                    >
+                      {this.props.i18n.language == "ar" ? title_ar : b.title}
+                    </p>
+                    <p className="boxetc mt-4">
+                      <span
+                        className={
+                          [
+                            this.props.i18n.language == "ar"
+                              ? "DroidKufi "
+                              : "gill ",
+                          ] + "years regular"
+                        }
+                      >
+                        {this.props.i18n.language == "ar"
+                          ? subtitle_ar
+                          : b.subtitle}
+                      </span>
+                      <br />
+                      <span
+                        className={
+                          [
+                            this.props.i18n.language == "ar"
+                              ? "DroidKufi "
+                              : "gill ",
+                          ] + "name lineheightbig  "
+                        }
+                      >
+                        {" "}
+                        {this.props.i18n.language == "ar"
+                          ? description_ar
+                          : b.description}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="scroll w-100">
                     <p
                       className={
                         [
@@ -937,7 +1082,207 @@ class index extends React.Component {
                 <div className="container-fluid ">
                   <div className="row ">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 w-100">
-                      <div
+                    <Carousel
+
+                    arrows={false}
+                    showDots={true}
+                    customDot={<CustomDot />}
+                    focusOnSelect={false}
+                    draggable={true}
+                    wipeable={true}
+                    ssr={false}
+                    infinite={true}
+                    autoPlay={this.props.deviceType !== "mobile" ? false : true}
+                    autoPlaySpeed={4000}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
+                    itemClass="carousel-item-padding-40-px"
+                    deviceType={this.props.deviceType}
+                    responsive={responsivelast}
+                  >
+                    {last3articles.map((value, index) => {
+                                var startb_url =
+                                  "https://rdcms.businessexchange.me/assets/";
+                                var endb_url = "?key=system-large-contain";
+                                var valuebackimg = value.image;
+                                const imagbackeurl =
+                                  startb_url + valuebackimg + endb_url;
+                                if (value.title_ar == null) {
+                                  var title_ar = value.title;
+                                } else var title_ar = value.title_ar;
+                                if (
+                                  value.brief_ar == null ||
+                                  value.brief_ar == ""
+                                ) {
+                                  var brief_ar = value.brief;
+                                } else var brief_ar = value.brief_ar;
+                                if (value.author_ar == null) {
+                                  var author_ar = value.author;
+                                } else var author_ar = value.author_ar;
+                                return (
+                                  <div key={["btn-28-" + index]} className="container-fluid p-0 textaligncenter">
+                                    <div className="row p-0">
+                                      <div
+                                        className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 "
+                                        style={{ height: "400px" }}
+                                      >
+                                        <img
+                                          src={"" + imagbackeurl + ""}
+                                          className="img-fluid cover w-100 h-100 "
+                                        />
+                                      </div>
+                                      <div
+                                        className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 greyback "
+                                        style={{ height: "400px" }}
+                                      >
+                                        <div className="container-fluid">
+                                          <div className="row">
+                                            <div className="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 col-xxl-10">
+                                              <div
+                                                className={
+                                                  [
+                                                    this.props.i18n.language ==
+                                                    "ar"
+                                                      ? "textalignright "
+                                                      : "",
+                                                  ] + "px-2 py-5 w-100 h-100 "
+                                                }
+                                              >
+                                                <span
+                                                  className={
+                                                    [
+                                                      this.props.i18n
+                                                        .language == "ar"
+                                                        ? "DroidKufi "
+                                                        : "gill ",
+                                                    ] + "subtitlenews"
+                                                  }
+                                                >
+                                                  {this.props.i18n.language ==
+                                                  "ar"
+                                                    ? title_ar
+                                                    : value.title}
+                                                </span>
+                                                <br />
+                                                <div className="row pt-2 ">
+                                                  <div className="col-6 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-3 ">
+                                                    <p
+                                                      className={
+                                                        [
+                                                          this.props.i18n
+                                                            .language == "ar"
+                                                            ? "textalignright DroidKufi "
+                                                            : "gill ",
+                                                        ] +
+                                                        " semisubtitlenews bold"
+                                                      }
+                                                    >
+                                                      {this.props.i18n
+                                                        .language == "ar"
+                                                        ? author_ar
+                                                        : value.author}
+                                                    </p>
+                                                  </div>
+                                                  <div className="col-6 col-sm-6 col-md-6 col-lg-5 col-xl-4 col-xxl-4 w-100">
+                                                    <p
+                                                      className={
+                                                        [
+                                                          this.props.i18n
+                                                            .language == "ar"
+                                                            ? "textalignright DroidKufi "
+                                                            : "gill ",
+                                                        ] +
+                                                        "regular semisubtitlenews"
+                                                      }
+                                                    >
+                                                      {value.date}
+                                                    </p>
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  className={
+                                                    [
+                                                      this.props.i18n
+                                                        .language == "ar"
+                                                        ? "textalignright DroidKufi "
+                                                        : "gill ",
+                                                    ] +
+                                                    "textnews col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 w74 "
+                                                  }
+                                                >
+                                                  <span>
+                                                    {this.props.i18n.language ==
+                                                    "ar"
+                                                      ? brief_ar
+                                                      : value.brief}
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        {this.props.i18n.language == "ar" ? (
+                                          <div className="col-2 "></div>
+                                        ) : (
+                                          ""
+                                        )}
+                                        <div
+                                          className={[
+                                            this.props.i18n.language == "ar"
+                                              ? "aligncenter col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 readmoreindex p-0"
+                                              : "text-right floatl col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 readmoreindex p-0",
+                                          ]}
+                                        >
+                                          <Link href="/media">
+                                            {this.props.i18n.language ==
+                                            "ar" ? (
+                                              <a
+                                                href="/media"
+                                                className={
+                                                  [
+                                                    this.props.i18n.language ==
+                                                    "ar"
+                                                      ? "DroidKufi "
+                                                      : "gill ",
+                                                  ] +
+                                                  "viewproducts meduim font_size link"
+                                                }
+                                              >
+                                                <span className="ml-3">
+                                                  {this.props.t("readmore")}
+                                                </span>
+                                                <img src="./assets/images/smallleftfleche.svg" />
+                                              </a>
+                                            ) : (
+                                              <a
+                                                href="/media"
+                                                className="viewproducts meduim font_size link"
+                                              >
+                                                <span
+                                                  className={
+                                                    [
+                                                      this.props.i18n
+                                                        .language == "ar"
+                                                        ? "DroidKufi "
+                                                        : "gill ",
+                                                    ] + "mr-2"
+                                                  }
+                                                >
+                                                  {this.props.t("readmore")}
+                                                </span>
+                                                <img src="./assets/images/smallrightfleche.svg" />
+                                              </a>
+                                            )}
+                                          </Link>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                  </Carousel>
+                      {/* <div
                         id="carouselExample"
                         className="carousel slide w-100"
                         data-ride="carousel"
@@ -1152,7 +1497,7 @@ class index extends React.Component {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
