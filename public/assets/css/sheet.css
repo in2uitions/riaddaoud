@@ -168,7 +168,8 @@
         }
         
         select {
-            /* background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd; */
+            background: url("../images/dropdownwhite.svg") no-repeat  #ddd;
+            background-position: 90% 50%; 
             -webkit-appearance: none;
             /* background-position-x: 70%; */
             color: white;
@@ -1115,8 +1116,8 @@ a:focus {
             position: absolute;
             left: 0px;
             width: 100%!important;
-            /* top: 86vh; */
-            top: 80vh;
+            top: 90vh;
+            /* top: 80vh; */
             background-color: white;
             z-index: 100;
         }
@@ -2985,25 +2986,25 @@ padding:0px 10px 0px 10px
     .lightitalic {
         font-weight: 800;
     }
-    @media only screen and (min-width: 1300px) {
+    /* @media only screen and (min-width: 1300px) {
         .scrollingg {
             position: absolute!important;
           
-        }}
-    @media only screen and (max-width: 1300px) {
+        }} */
+    /* @media only screen and (max-width: 1300px) {
     .scrollingg {
         position: relative!important;
       
-    }}
+    }} */
     @media only screen and (max-width: 1200px) {
         .searchbox-open {
             width: 200px!important;
         }
-        .scrollingg {
-            position: relative!important;
+        /* .scrollingg {
+            position: relative!important; */
             /* overflow:hidden!important;; */
           
-        }
+        /* } */
         .navbar .collapse {
             width: 100%;
             /* display: inline-block; */
@@ -3587,8 +3588,9 @@ padding:0px 10px 0px 10px
         -ms-transform: scale(1.1);
         -o-transform: scale(1.1);
     }
-    .react-multi-carousel-track{
+    .react-multi-carousel-track1 .react-multi-carousel-track{
         padding-left:15px!important;
+        /* transform:unset!important */
     } 
     .carousel-item-padding-40-px{
         /* visibility: hidden!important;
@@ -3597,3 +3599,19 @@ padding:0px 10px 0px 10px
         list-style-type: none!important;
 
     }
+.safer{
+    margin: 0px!important;
+    padding: 0px!important;
+    /* width:100%!important */
+}
+.safermarg{
+    margin: 0px!important;
+    /* padding: 0px!important; */
+    /* width:100%!important */
+}
+/* .videowrapperparallax .owl-item{
+ width:100%!important
+}
+.videowrapperparallax .owl-stage{
+    width:100%!important
+   } */

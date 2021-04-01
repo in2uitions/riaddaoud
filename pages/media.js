@@ -7,7 +7,8 @@ import Footer from "./FOOTER/footer.js";
 import axios from 'axios';
 // import styles from './style3.module.css';
 import DirectusSDK from '@directus/sdk-js';
-const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
+import Api from './api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
 class media extends React.Component {
 
@@ -186,7 +187,7 @@ class media extends React.Component {
                                         </div>
                                         <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
                                         <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-3">
-                                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  gill  aligncenter"}>  {(this.props.i18n.language == "ar") ? box_description_ar : a.box_description}</div>
+                                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  aligncenter"}>  {(this.props.i18n.language == "ar") ? box_description_ar : a.box_description}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -379,7 +380,7 @@ class media extends React.Component {
                         </div>
                     </div>
                 </div>
-                {console.log(this.state.currentpage)}
+                {/* {console.log(this.state.currentpage)} */}
                 <Footer></Footer>
             </div>
         );

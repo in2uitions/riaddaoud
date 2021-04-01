@@ -4,6 +4,8 @@ import React from "react";
 import Navigation from "./NAVIGATION/nav.js";
 import Footer from "./FOOTER/footer.js";
 import Link from "next/link";
+import Api from './api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
 import "@fortawesome/fontawesome-free/js/fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -69,7 +71,6 @@ const responsivelast = {
     items: 1,
   },
 };
-const directus = new DirectusSDK("https://rdcms.businessexchange.me/");
 class index extends React.Component {
   constructor(props) {
     super(props);
@@ -302,10 +303,11 @@ class index extends React.Component {
     };
     $(document).ready(function () {
       $(".bigslider").owlCarousel({
-        autoplay:true,
+        // autoplay:true,
         rewind:true,
         // rewind: true,
         clone:false,
+        autoWidth:false,
         nav: true,
         items: 1,
         autoplayTimeout: 4500,
@@ -415,13 +417,13 @@ class index extends React.Component {
       <div>
         <Navigation current="index"></Navigation>
         {/* <div> */}
-          <section className="video-wrapper videowrapperparallax">
+          <section className="video-wrapper videowrapperparallax px-0 ">
             <div
-              id="owl-demo"
-              className="owl-carousel owl-theme  bigslider relative"
+              id="owl-demo "
+              className="owl-carousel owl-theme  bigslider relative px-0 "
             >
               <div className="item  p-0 relative ">
-                <div className="container-fluid p-0">
+                <div className="container-fluid px-0 ">
                   <img
                     src={"" + this.state.img + ""}
                     alt="index photo"
@@ -486,7 +488,7 @@ class index extends React.Component {
                 </div>
               </div>
               <div className="item  p-0 relative ">
-                <div className="container-fluid p-0">
+                <div className="container-fluid px-0 ">
                   <img
                     src={"" + this.state.img + ""}
                     alt="index photo"
@@ -551,7 +553,7 @@ class index extends React.Component {
                 </div>
               </div>
               <div className="item  p-0 relative ">
-                <div className="container-fluid p-0">
+                <div className="container-fluid px-0 ">
                   <img
                     src={"" + this.state.img + ""}
                     alt="index photo"
@@ -618,9 +620,9 @@ class index extends React.Component {
             </div>
           </section>
           <div className="scrollingg ">
-            <div className="container-fluid p-0">
+            <div className="container-fluid ">
               <div className="row mgb relative ">
-                <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-4 leftone ">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 px-0 leftone ">
                   <div className="px-4 py-4  relative bluebox">
                     <h1
                       className={
@@ -635,19 +637,19 @@ class index extends React.Component {
                         ? box_title_ar
                         : b.box_title}
                     </h1>
-                    <h4
+                    <div
                       className={
                         [
                           this.props.i18n.language == "ar"
                             ? "DroidKufi "
                             : "gill ",
-                        ] + "etc py-4 mr-4 light"
+                        ] + "etc py-4 mr-4 light footertext"
                       }
                     >
                       {this.props.i18n.language == "ar"
                         ? box_description_ar
                         : b.box_description}
-                    </h4>
+                    </div>
                   </div>
                 </div>
                 <div className="vr p-0">
@@ -824,13 +826,13 @@ class index extends React.Component {
               </div>
               <Carousel
                 // centerMode={true}
-                swipeable={true}
-                draggable={true}
+                swipeable={false}
+                draggable={false}
                 showDots={false}
                 focusOnSelect={true}
                 ssr={false}
                 infinite={true}
-                autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                autoPlay={this.props.deviceType !== "mobile" ? false : false}
                 autoPlaySpeed={4000}
                 keyBoardControl={true}
                 customTransition="all .5"
@@ -889,13 +891,13 @@ class index extends React.Component {
                 <div className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                   <Carousel
                     // centerMode={true}
-                    swipeable={true}
-                    focusOnSelect={true}
-                    draggable={true}
+                    swipeable={false}
+                    focusOnSelect={false}
+                    draggable={false}
                     showDots={false}
                     ssr={false}
                     infinite={true}
-                    autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                    autoPlay={this.props.deviceType !== "mobile" ? false : false}
                     autoPlaySpeed={4000}
                     keyBoardControl={true}
                     customTransition="all .5"
@@ -1083,7 +1085,7 @@ class index extends React.Component {
                   <div className="row ">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 w-100">
                     <Carousel
-
+                    // centerMode={true}
                     arrows={false}
                     showDots={true}
                     customDot={<CustomDot />}
@@ -1097,7 +1099,8 @@ class index extends React.Component {
                     keyBoardControl={true}
                     customTransition="all .5"
                     transitionDuration={500}
-                    itemClass="carousel-item-padding-40-px"
+                    containerClass="react-multi-carousel-track1"
+                    itemClass="carousel-item-padding"
                     deviceType={this.props.deviceType}
                     responsive={responsivelast}
                   >

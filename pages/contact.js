@@ -7,7 +7,8 @@ import axios from 'axios';
 // import {withTranslation,useTranslation} from 'react-i18next';
 // import styles from './style3.module.css';
 import DirectusSDK from '@directus/sdk-js';
-const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
+import Api from './api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
  class contact extends React.Component{
     constructor(props) {
@@ -152,7 +153,18 @@ import { withTranslation } from "react-i18next";
 
 
   }
-
+//   sendPulse() {
+//     axios.post('https://us-central1-journeylife-dev.cloudfunctions.net/sendPulse', {
+//         pulseUrl: this.state.pulseUrl,
+//         pulseTitle: this.state.pulseTitle,
+//     }, {
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//         }).then(function () {
+//             document.getElementById('sentPulse').style.display = 'block';
+//         })
+// }
   
 render (){
 

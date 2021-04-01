@@ -5,7 +5,8 @@ import Navigation from "./NAVIGATION/nav.js";
 import Footer from "./FOOTER/footer.js";
 import Link from 'next/link'
 import DirectusSDK from '@directus/sdk-js';
-const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
+import Api from './api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
 import axios from 'axios';
 // import styles from './style3.module.css';
 import i18n from '../i18n';

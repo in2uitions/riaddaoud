@@ -9,7 +9,8 @@ import axios from 'axios';
 import i18n from '../i18n';
 import { Translation } from 'react-i18next';
 import DirectusSDK from '@directus/sdk-js';
-const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
+import Api from './api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
 import { useTranslation } from 'react-i18next';
 
 function Prevarticle() {

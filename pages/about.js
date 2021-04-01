@@ -6,7 +6,8 @@ import Link from 'next/link'
 import Footer from "./FOOTER/footer.js";
 import { useRouter } from 'next/router'
 import DirectusSDK from '@directus/sdk-js';
-const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
+import Api from './api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
 // import styles from './style3.module.css';
 class about extends React.Component{

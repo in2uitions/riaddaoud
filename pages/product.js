@@ -103,18 +103,18 @@ class product extends React.Component {
         $("#myModal .close").trigger("click"); 
         window.onload=function(){
 
-            State=popset=0;
-            setpops=function(){
-                if(popset) return;popset=1;// dont set event multiple times
-                window.onpopstate=function(e){
-                    State=e.state;
-                    if(e.state=="hide"){
-                        $(".modal").modal("hide").removeClass("in show");
-                        $(".modal-backdrop").remove();// force hide bg
-                        /* in some old devices .modal("hide") is not enough */
-                    }
-                };
-            };
+            // State=popset=0;
+            // setpops=function(){
+            //     if(popset) return;popset=1;// dont set event multiple times
+            //     window.onpopstate=function(e){
+            //         State=e.state;
+            //         if(e.state=="hide"){
+            //             $(".modal").modal("hide").removeClass("in show");
+            //             $(".modal-backdrop").remove();// force hide bg
+            //             /* in some old devices .modal("hide") is not enough */
+            //         }
+            //     };
+            // };
         
             $(".modal")
             .on("show.bs.modal",function(){// while modal show
@@ -683,7 +683,7 @@ class product extends React.Component {
                                                                     <div className="row">
                                                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "> */}
                                                                             {/* <div > */}
-                                                                            <select name="jquery_box_mini" id="jquery_box_mini" className="py-4 textaligncenter w-100  backgroundblue">
+                                                                            <select name="jquery_box_mini" id="jquery_box_mini" className="py-4 px-3 pointer w-100  backgroundblue">
                                                                                 {this.state.categ.map((key, value) => {
                                                                                     if (key.title_ar == null) { var title_ar = key.title }
                                                                                     else var title_ar = key.title_ar 
@@ -782,7 +782,7 @@ class product extends React.Component {
                                                 <div className="row">
                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
-                                                        <select name="jquery_box" id="jquery_box" className="py-4 textaligncenter w-100 backgroundblue">
+                                                        <select name="jquery_box" id="jquery_box" className="py-4 w-100 backgroundblue px-3 pointer ">
                                                             {this.state.categ.map((key, value) => {
                                                                  if (key.title_ar == null) { var title_ar = key.title }
                                                                  else var title_ar = key.title_ar 

@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link'
 import DirectusSDK from '@directus/sdk-js';
-const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
+import Api from '../api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
+
 import { withTranslation } from "react-i18next";
  class footer extends React.Component {
     constructor(props) {

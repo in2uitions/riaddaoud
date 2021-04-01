@@ -5,7 +5,8 @@ import Navigation from "./NAVIGATION/nav.js";
 import Footer from "./FOOTER/footer.js";
 import DirectusSDK from '@directus/sdk-js';
 import { withTranslation } from "react-i18next";
-const directus = new DirectusSDK('https://rdcms.businessexchange.me/')
+import Api from './api/Api.js';
+const directus = new DirectusSDK(Api.baseUrl);
  class blog extends React.Component{
   constructor(props) {
     super(props);
