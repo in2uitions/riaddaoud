@@ -258,12 +258,12 @@ class proddetail extends React.Component {
                                             <div className="row ">
                                                 {(i18n.language == "ar") ?
                                                     <div className="container-fluid p-0 py-2 link ">
-                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
                                                         <img src="./assets/images/smallrightfleche.svg" className="img-fluid cover backmediafleche" />
                                                     </div> :
                                                     <div className="container-fluid p-0 py-2 linkleft centeredpag">
                                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
-                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
                                                     </div>}
                                             </div>
                                         </a>

@@ -1230,7 +1230,7 @@ class index extends React.Component {
                                         <div
                                           className={[
                                             this.props.i18n.language == "ar"
-                                              ? "aligncenter col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 readmoreindex p-0"
+                                              ? "aligncenter col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 readmoreindex_ar p-0"
                                               : "textaligncenter aligncenter floatl col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 readmoreindex p-0",
                                           ]}
                                         >

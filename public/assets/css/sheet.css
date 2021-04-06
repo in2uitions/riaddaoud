@@ -2954,6 +2954,15 @@ padding:0px 10px 0px 10px
     top: 0%!important;
     left: 0%!important;
 } */
+@media only screen and (max-width: 991px) {
+.secquotes {
+    align-self: flex-end!important;
+    padding-top: 0px!important;
+}
+.footertext {
+    font-size: 0.75em!important;
+}
+}
     @media only screen and (min-width: 992px) {
         .leftone {
             left: 8%;
@@ -2963,6 +2972,11 @@ padding:0px 10px 0px 10px
         position: absolute!important;
         top: 92%;
         left: 35%;
+    }
+    .readmoreindex_ar {
+        position: absolute!important;
+        top: 92%;
+        left: 5%;
     }
     .mobilehidden{
         visibility: visible;
@@ -3615,6 +3629,9 @@ padding:0px 10px 0px 10px
     margin: 0px!important;
     /* padding: 0px!important; */
     /* width:100%!important */
+}
+.vtmidddle{
+    vertical-align: unset;
 }
 /* .videowrapperparallax .owl-item{
  width:100%!important

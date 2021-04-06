@@ -276,8 +276,8 @@ render (){
                                 <div className='py-2 mt-4 '>
                                     <Link href='/contact'>
                                         <a href='contact'>
-                                            <button type='button'  className=' buttoncontact px-5 mb-2'>
-                                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'textcontact light'}>{this.props.t("contactus")}</span>
+                                            <button type='button'  className={[(this.props.i18n.language=="ar")?" ":"mb-2 "]+' buttoncontact px-5 '}>
+                                                <span className={[(this.props.i18n.language=="ar")?"DroidKufi vtmidddle ":"gill "]+'textcontact  light'}>{this.props.t("contactus")}</span>
                                             </button>
                                         </a>
                                     </Link>

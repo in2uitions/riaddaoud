@@ -820,8 +820,8 @@ class product extends React.Component {
                                                                             <input type="checkbox" id="categCheck" name={"" + key.title + ""} value={"" + key.title + ""} onChange={(e) => this.clickingcategfilter(keys.id, e.target.checked)} />
                                                                         </label>
                                                                     </div>
-                                                                    <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 p-0 subtablinks ">
-                                                                        <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":" gill light "]+" text-lightgrey contents "}>{  (this.props.i18n.language == "ar") ? title_ar : keys.title} </h3>
+                                                                    <div className={[(this.props.i18n.language=="ar")?"textalignright mr-3 ":""]+"col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 p-0 subtablinks "}>
+                                                                        <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi mr-3 ":" gill light "]+" text-lightgrey contents "}>{  (this.props.i18n.language == "ar") ? title_ar : keys.title} </h3>
                                                                     </div>
                                                                 </div>
                                                             </div>

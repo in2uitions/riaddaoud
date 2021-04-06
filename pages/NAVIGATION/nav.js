@@ -46,7 +46,7 @@ class Nav extends React.Component{
             });
             $(document).mouseup(function() {
                 if (isOpen == true) {
-                    $('.searchbox-icon').css('display', 'block');
+                    // $('.searchbox-icon').css('display', 'block');
                     submitIcon.click();
                 }
             });
