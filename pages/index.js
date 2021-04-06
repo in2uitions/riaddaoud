@@ -1076,10 +1076,7 @@ class index extends React.Component {
                 </div>
               </div>
               <div
-                className={
-                  [this.props.i18n.language == "ar" ? "rtl " : " "] +
-                  "row p-0 mt-4"
-                }
+                className="row p-0 mt-4"
               >
                 <div className="container-fluid ">
                   <div className="row ">
@@ -1124,7 +1121,7 @@ class index extends React.Component {
                                   var author_ar = value.author;
                                 } else var author_ar = value.author_ar;
                                 return (
-                                  <div key={["btn-28-" + index]} className="container-fluid p-0 textaligncenter">
+                                  <div key={["btn-28-" + index]} className={  [this.props.i18n.language == "ar" ? "rtl " : " "] +"container-fluid p-0 "}>
                                     <div className="row p-0">
                                       <div
                                         className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 "
@@ -1147,9 +1144,9 @@ class index extends React.Component {
                                                   [
                                                     this.props.i18n.language ==
                                                     "ar"
-                                                      ? "textalignright "
+                                                      ? "textalignright px-0 px-md-2 pr-5 pr-md-0"
                                                       : "",
-                                                  ] + "px-2 py-5 w-100 h-100 "
+                                                  ] + "px-0 px-md-2 pr-3 pr-md-0 py-5 w-100 h-100 "
                                                 }
                                               >
                                                 <span
@@ -1234,7 +1231,7 @@ class index extends React.Component {
                                           className={[
                                             this.props.i18n.language == "ar"
                                               ? "aligncenter col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 readmoreindex p-0"
-                                              : "text-right floatl col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 readmoreindex p-0",
+                                              : "textaligncenter aligncenter floatl col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 readmoreindex p-0",
                                           ]}
                                         >
                                           <Link href="/media">

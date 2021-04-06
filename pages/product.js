@@ -116,21 +116,21 @@ class product extends React.Component {
             //     };
             // };
         
-            $(".modal")
-            .on("show.bs.modal",function(){// while modal show
-                path=window.location.pathname+window.location.search;
-                history.pushState("hide",null,path);
-                history.pushState("show",null,path);
-                State="show";
-            })
-            .on("hidden.bs.modal",function(){// while modal hide
-                if(!!State)
-                    history.go(State=="hide"?-1:-2);// remove extra forward states
-            });
+            // $(".modal")
+            // .on("show.bs.modal",function(){// while modal show
+            //     path=window.location.pathname+window.location.search;
+            //     history.pushState("hide",null,path);
+            //     history.pushState("show",null,path);
+            //     State="show";
+            // })
+            // .on("hidden.bs.modal",function(){// while modal hide
+            //     if(!!State)
+            //         history.go(State=="hide"?-1:-2);// remove extra forward states
+            // });
         
-            window.onpopstate=function(){setpops();};
+            // window.onpopstate=function(){setpops();};
         
-            setTimeout(function(){setpops();},2000);// fix old webkit bug
+            // setTimeout(function(){setpops();},2000);// fix old webkit bug
         
         }; 
         $("[id='categ1']").show();
@@ -672,7 +672,7 @@ class product extends React.Component {
                                             <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div className="modal-dialog " role="document">
                                                     <div className="modal-content">
-                                                        <div className="modal-header">
+                                                        <div className="modal-header ltr">
                                                             <p>FILTER</p>
                                                             <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         </div>
@@ -683,7 +683,7 @@ class product extends React.Component {
                                                                     <div className="row">
                                                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "> */}
                                                                             {/* <div > */}
-                                                                            <select name="jquery_box_mini" id="jquery_box_mini" className="py-4 px-3 pointer w-100  backgroundblue">
+                                                                            <select name="jquery_box_mini" id="jquery_box_mini" className={[(this.props.i18n.language=="ar")?"fleche_ar ":""]+"py-4 px-3 pointer w-100  backgroundblue"}>
                                                                                 {this.state.categ.map((key, value) => {
                                                                                     if (key.title_ar == null) { var title_ar = key.title }
                                                                                     else var title_ar = key.title_ar 
@@ -782,7 +782,7 @@ class product extends React.Component {
                                                 <div className="row">
                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
-                                                        <select name="jquery_box" id="jquery_box" className="py-4 w-100 backgroundblue px-3 pointer ">
+                                                        <select name="jquery_box" id="jquery_box" className={[(this.props.i18n.language=="ar")?"fleche_ar ":""]+"py-4 w-100 backgroundblue px-3 pointer "}>
                                                             {this.state.categ.map((key, value) => {
                                                                  if (key.title_ar == null) { var title_ar = key.title }
                                                                  else var title_ar = key.title_ar 

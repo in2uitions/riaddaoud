@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 // import '@fortawesome/fontawesome-free/js/regular';
 // import '@fortawesome/fontawesome-free/js/brands';
 import Header from './HEAD/head.js';
+import sendpulse from "sendpulse-api";
 import ReactDOM from "react-dom";
 import '../i18n';
 

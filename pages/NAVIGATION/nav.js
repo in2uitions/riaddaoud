@@ -130,7 +130,7 @@ handletrue = () => {
                 </ul>
                 <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3"></div>
                 <div className="searchgen col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0">
-                    <div className="container-fluid p-0">
+                    <div className="container-fluid ">
                         <div className="row relative w-100 ">
                             <form className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9 p-0  jtfg">
                                 <div className="container-fluid p-0 searchbox">

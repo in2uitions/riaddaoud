@@ -229,7 +229,7 @@ render (){
                                         
                                         </h1>
                                 </div>
-                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+'mission light py-2 lineheightbig'}>
+                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}>
                                     <h3>
                                     {(this.props.i18n.language=="ar")?description_ar:value.description}
                                     </h3></div>
@@ -262,7 +262,7 @@ render (){
                             <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 aligncenter '}>
                                  <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>   {(this.props.i18n.language=="ar")?title_ar:value.title}</h1>
                             </div>
-                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 lineheightbig'}><h3>{(this.props.i18n.language=="ar")?description_ar:value.description}</h3>
+                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}><h3>{(this.props.i18n.language=="ar")?description_ar:value.description}</h3>
                             </div>
                         </div>
                     </div>
