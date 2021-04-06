@@ -26,7 +26,8 @@ import { withTranslation } from "react-i18next";
           Subject:"",
           Phone:"",
           Text:"",
-          Name:""
+          Name:"",
+          token:""
         };
     
         this.getData=this.getData.bind(this);
@@ -40,26 +41,7 @@ import { withTranslation } from "react-i18next";
                 }
             }
         });
-        const emailStringbuilder ="{\"subject\":\"Test\",\"template\":{\"id\":72113,\"variables\":{\"email\":\"George\"}},\"from\":{\"name\":\"Mike\",\"email\":\"contact@in2uitions.com\"},\"to\":[{\"email\":\"georges.dagher@in2uitions.com\",\"name\":\"George\"}]}"
-        var obj = JSON.parse(emailStringbuilder)
-        console.log(obj)
-          
-          let axiosConfig = {
-            headers: {
-                'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjdlOTQ4MDIyYjFkZjNjMjc2YzE2ZmRlOWZmODM4NGZhODg2NDhlNGRjMTA4YzUzOGVkMTBhMjc5NTA0MDQ2YjZjYzNiYzk0ZTFhMjM1YWYxIn0.eyJhdWQiOiIwIiwianRpIjoiN2U5NDgwMjJiMWRmM2MyNzZjMTZmZGU5ZmY4Mzg0ZmE4ODY0OGU0ZGMxMDhjNTM4ZWQxMGEyNzk1MDQwNDZiNmNjM2JjOTRlMWEyMzVhZjEiLCJpYXQiOjE2MTc3MDE2MjQsIm5iZiI6MTYxNzcwMTYyNCwiZXhwIjoxNjE3NzA1MjI0LCJzdWIiOiIiLCJzY29wZXMiOltdLCJ1c2VyIjp7ImlkIjo3NTUyMDM5LCJncm91cF9pZCI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJhcmVhIjoicmVzdCJ9fQ.ppM3WD61t6GgHD25ZlMSs7qBhsRJmtFxwBT5xgO0LeiOI5DjTS45W4X8xfzAFMoehTVCbzC3TFRiwWQsHgmTGpJDnsiBSip2AKMsNH69NT5CMAwbQ-9AcGFYq7UH1L5Jf8eyHwxz0tHyvXfXIbe8OUZRq8Un2ykQWewR-9z7VKUToSpoiidrhVVqdQQ3rlCOwMjKKScz3MxsZikRfwoBJfJWc1j6aG_FDX4hmRdPijMN64BvwLRoa5FUD9qizAp0vjbRbEnvmdS2sUQxzr6LR6v617upLAV-cRRs3R95RhKx6K13-QOtHGAVVOrOM4aobOlAVdAG8ePZQ2fu8i4JeQ`,
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods" : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-          };
-          
-          axios.post('https://cors-anywhere.herokuapp.com/https://api.sendpulse.com/smtp/emails', obj, axiosConfig)
-          .then((res) => {
-            console.log("RESPONSE RECEIVED: ", res);
-          })
-          .catch((err) => {
-            console.log("AXIOS ERROR: ", err);
-          })
+    //   alert(this.state.token)
         var datadirectsubmit=await directus.items('website_settings').read();
         this.setState({ data: datadirect.data ,submit:datadirectsubmit.data});
         // axios.get('https://cors-anywhere.herokuapp.com/https://api.sendpulse.com/templates', {
@@ -244,11 +226,71 @@ handleEmailChange =(e)=> {
     this.setState({Phone: e.target.value});
  }
  handleLogin =()=> {
-    console.log("Email: " + this.state.Email);
-    console.log("Text: " + this.state.Text);
-    console.log("Name: " + this.state.Name);
-    console.log("Subject: " + this.state.Subject);
-    console.log("Phone: " + this.state.Phone);
+    var formdata = new FormData();
+    formdata.append("grant_type", "client_credentials");
+    formdata.append("client_id", "abf00ccfee58b1f7d175588b9e9b8e60");
+    formdata.append("client_secret", "c5c8c09549f7a5d67cd906dc686d515a");
+    
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
+    
+    fetch("https://api.sendpulse.com/oauth/access_token", requestOptions)
+      .then(response =>response.text())
+      .then(result =>{
+          alert("fet")
+        var tokenns = "Bearer "+(result.access_token).toString();
+        alert(tokenns)
+        var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    myHeaders.append("Authorization", tokenns);
+    var urlencoded = new URLSearchParams();
+    var test = {
+        
+        "subject": "test1",
+        "template": {
+            "id": 72113,
+            "variables": {
+                "email": this.state.Email,
+                "name": this.state.Name,
+                "phone": this.state.Phone,
+                "message": this.state.Text,
+                "subject": this.state.Subject
+            }
+        },
+        "from": {
+            "name": "Mike",
+            "email": "contact@in2uitions.com"
+        },
+        "to": [
+            {
+            "email": "rachelle.saade@in2uitions.com",
+            "name": "jj"
+            }
+        ]
+    };
+    urlencoded.append("email",JSON.stringify(test));
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: urlencoded,
+    redirect: 'follow'
+    };
+
+    fetch("https://api.sendpulse.com/smtp/emails", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error)).then((res) => {
+        console.log("RESPONSE RECEIVED: ", res);
+      })
+      .catch((err) => {
+        console.log("AXIOS ERROR: ", err.response);
+      })
+
+      })
+      .catch(error => console.log(error.response));
 }
 render (){
 
@@ -299,7 +341,7 @@ render (){
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="tel" onChange={this.handlePhoneChange} pattern="[0-9]{2}-[0-9]{6}" className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")}/>
+                                        <input type="tel" onChange={this.handlePhoneChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")}/>
                                     </div>
                                     <div className="col">
                                         <input type="text" onChange={this.handleSubjectChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")}/>
