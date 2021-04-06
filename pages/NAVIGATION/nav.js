@@ -164,7 +164,7 @@ handletrue = () => {
                 </div>
             </div>
         </nav>
-        <div className=" col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 logowen py-md-0 py-1">
+        <div className=" col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 logowen py-md-0 py-1 logosheight">
             <Link href="/">
             <a href="index.html">
                 <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="img-fluid cover " />

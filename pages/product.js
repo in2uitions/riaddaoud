@@ -547,7 +547,15 @@ class product extends React.Component {
         var endb_url = '?key=system-large-cover';
         var valuebackimg = this.state.backg.map((key, value) => { return key.image });
         const imagbackeurl = startb_url + valuebackimg + endb_url;
-
+        var a_back = [];
+        for (const i in this.state.backg[0]) {
+            a_back[i] = this.state.backg[0][i];
+        }
+        if (a_back.box_title_ar == null) { var box_title_ar = a_back.box_title }
+        else var box_title_ar = a_back.box_title_ar
+        if (a_back.box_description_ar == null) { var box_description_ar = a_back.box_description }
+        else var box_description_ar = a_back.box_description_ar
+        console.log(a_back)
         //get nmbr of pages for all items
         var ln = this.state.paginationarray.length;
         var pages = ln / this.state.website_sett.products_display_nb;
@@ -595,7 +603,7 @@ class product extends React.Component {
         return (
             <div >
                 <Navigation current="products"></Navigation>
-                <div>
+                <div >
                     <div className="container-fluid p-0 parallax " style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
                         <div className={[(this.props.i18n.language=="ar")?"productnewbackar textalignright":"productnewback "]+" col-10 col-sm-10 col-md-10 col-lg-4 col-xl-4 col-xxl-4 p-0 "}>
                             <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"   bigtitleprod"}>
@@ -603,53 +611,21 @@ class product extends React.Component {
                                      if (key.description_ar == null) { var description_ar = key.description }
                                      else var description_ar = key.description_ar
                                      return (this.props.i18n.language == "ar") ? description_ar : key.description  } )}
-
                             </p>
                         </div>
                     </div>
-                </div>
-                <div className={[(this.props.i18n.language=="ar")?"rtl ":""]+"container-fluid py-4"} >
-                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
-                        <div className="container-fluid p-0">
-                            <div className="row ">
-                                <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 mobilehidden  px-md-4 flexend">
-                                    <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill"]+" text-lightgrey  "}>{this.props.t("BrowseCategories")}</h4>
-                                </div>
-                                <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9  ">
-                                    <div className="container-fluid ">
-                                        <div className="row ">
-                                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 showingaligncenter flexend">
-                                                <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
-                                                    {this.props.t("Showing")}
-                                                        {" " + (this.state.isFilterPress) ?
-                                                    ( (this.state.filtering.length==0 && this.state.isFilterPress==true) ?0: (this.state.firstnmbrofprod))
-                                                    :
-                                                    (this.state.firstnmbrofprod)
-                                                    
-                                                    }
-                                                    –
-                                                    {
-                                                                    " " + this.knowthelastelementrightnow() + " "
-
-                                                                }
-                                                    {this.props.t("of")}
-                                                    {" " + ((this.state.isFilterPress) ? this.state.filtering.length : this.state.prod.length)}  {this.props.t("products")}
-                                                </h4>
-                                            </div>
-                                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0  ">
-                                                <form action="" className="row relative ">
-                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
-                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
-                                                            {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
-                                                            
-                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+"   texttitlemedia footertext   w-100"}
-                                                                value={this.state.inputsearch} onChange={this.filter} />
-                                                            <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
-                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
+                    <div className="container-fluid ">
+                        <div className="row">
+                            <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3"></div>
+                            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 aboutheaderprodnew py-4 px-3">
+                                <div className="container-fluid py-4 mb-4 ">
+                                    <div className="row  py-4">
+                                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                                            <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"meduim white  aligncenter"}>{(this.props.i18n.language == "ar") ? box_title_ar : a_back.box_title}</h1>
+                                        </div>
+                                        <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
+                                        <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-3">
+                                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  aligncenter"}>{(this.props.i18n.language == "ar") ? box_description_ar : a_back.box_description}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -657,23 +633,38 @@ class product extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="p-5"></div>
+                {/* <div className={[(this.props.i18n.language=="ar")?"rtl ":""]+"container-fluid py-4"} >
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                        <div className="container-fluid p-0">
+                            <div className="row ">
+                                <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 mobilehidden  px-md-4 flexend">
+                                    <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill"]+" text-lightgrey  "}>{this.props.t("BrowseCategories")}</h4>
+                                </div>
+                                <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9  ">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> */}
 
 
                 <div className={[(this.props.i18n.language=="ar")?"rtl ":""]+"container-fluid px-4"}>
                     <div className="row ">
-                        <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 p-3 px-4 show ">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 py-0 px-4 show ">
                             <div className="panel-group borders" id="modal" role="tablist" aria-multiselectable="true">
                                 <div className="panel">
                                     <div className="col-md-12 visible-sm">
                                         <div className="navbar-expand-md">
-                                            <button data-parent="#modal" className="navbar-toggler textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
-                                                <span>FILTER</span>
+                                            <button data-parent="#modal" className="navbar-toggler whitee color_filter textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
+                                                <span clasName="gill whitee">FILTER</span>
                                             </button>
                                             <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div className="modal-dialog " role="document">
                                                     <div className="modal-content">
                                                         <div className="modal-header ltr">
-                                                            <p>FILTER</p>
+                                                            <p clasName="gill ">FILTER</p>
                                                             <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         </div>
                                                         <div className="modal-body">
@@ -758,8 +749,8 @@ class product extends React.Component {
                                                                 )
                                                             })}
                                                             <div className="textaligncenter py-4 ">
-                                                                <button className="clearfilterbtn textaligncenter px-5 py-2" onClick={() => this.clearfilter()}>
-                                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignrightDroidKufi ":"gill "]+" light  text-lightgrey px-4"}>{this.props.t("clearfilters")}</h3>
+                                                                <button className="clearfilterbtn  px-5 py-2" onClick={() => this.clearfilter()}>
+                                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+" light safermarg text-lightgrey px-4"}>{this.props.t("clearfilters")}</h3>
                                                                 </button>
                                                             </div>
 
@@ -777,8 +768,8 @@ class product extends React.Component {
 
 
                                     <div className="container-fluid  p-0 div-collapse collapse" id="collapse1">
-                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                            <div className="container-fluid p-0 ">
+                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 productboxheight">
+                                            <div className="container-fluid p-0 productboxheight ">
                                                 <div className="row">
                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
@@ -858,7 +849,7 @@ class product extends React.Component {
                                         })}
                                         <div className="textaligncenter py-4 ">
                                             <button className="clearfilterbtn textaligncenter px-5 py-2" onClick={() => this.clearfilter()}>
-                                                <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" light  text-lightgrey px-4"}>{this.props.t("clearfilters")}</h3>
+                                                <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" light safermarg text-lightgrey px-4"}>{this.props.t("clearfilters")}</h3>
                                             </button>
                                         </div>
                                     </div>
@@ -866,6 +857,42 @@ class product extends React.Component {
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 mt-2 ">
+                        <div className="container-fluid productboxheight py-4">
+                                        <div className="row ">
+                                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 showingaligncenter flexend">
+                                                <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
+                                                    {this.props.t("Showing")}
+                                                        {" " + (this.state.isFilterPress) ?
+                                                    ( (this.state.filtering.length==0 && this.state.isFilterPress==true) ?0: (this.state.firstnmbrofprod))
+                                                    :
+                                                    (this.state.firstnmbrofprod)
+                                                    
+                                                    }
+                                                    –
+                                                    {
+                                                                    " " + this.knowthelastelementrightnow() + " "
+
+                                                                }
+                                                    {this.props.t("of")}
+                                                    {" " + ((this.state.isFilterPress) ? this.state.filtering.length : this.state.prod.length)}  {this.props.t("products")}
+                                                </h4>
+                                            </div>
+                                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0  ">
+                                                <form action="" className="row relative ">
+                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
+                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
+                                                            {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
+                                                            
+                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+"   texttitlemedia footertext   w-100"}
+                                                                value={this.state.inputsearch} onChange={this.filter} />
+                                                            <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
+                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                             <section>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 ">
                                     <div className="container-fluid p-0 row">

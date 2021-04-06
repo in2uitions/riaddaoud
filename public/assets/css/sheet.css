@@ -160,7 +160,7 @@
         .textalign {
             /* text-align-last: center; */
             /* left:15%; */
-            padding-top: 12%;
+            padding-top: 8%;
         }
         .textaligncenter {
             text-align-last: center;
@@ -1794,6 +1794,12 @@ a:focus {
             margin-bottom: -200px;
             background-color: #081D54;
         }
+        .aboutheaderprodnew {
+            position: relative;
+            top: -150px;
+            margin-bottom: -200px;
+            background-color: #081D54;
+        }
         
         .aboutheaderprod {
             position: relative;
@@ -2939,6 +2945,18 @@ padding:0px 10px 0px 10px
     .lefteye3{
         padding-left:30%!important
     }
+    .lefteye_ar{
+        padding-left: 75%!important;
+    }
+    .lefteye_ar1{
+        padding-left: 55%!important;
+    }
+    .lefteye_ar2{
+        padding-left: 50%!important;
+    }
+    .lefteye_ar3{
+        padding-left: 40%!important;
+    }
 }
     @media only screen and (max-width: 767px) {
     .mobilehidden{
@@ -2993,6 +3011,18 @@ padding:0px 10px 0px 10px
     }
     .lefteye3{
         padding-left: 10%;
+    }
+    .lefteye_ar{
+        padding-left: 82%!important;
+    }
+    .lefteye_ar1{
+        padding-left: 62%!important;
+    }
+    .lefteye_ar2{
+        padding-left: 60%!important;
+    }
+    .lefteye_ar3{
+        padding-left: 50%!important;
     }
     .meditalic {
         font-weight: 600;
@@ -3569,7 +3599,7 @@ padding:0px 10px 0px 10px
             background-size: cover;
         }
     }
-    .react-multi-carousel-dot-list{
+    .react-multi-carousel-track1 .react-multi-carousel-dot-list{
         bottom:1%!important;
         left: 32%!important;
         margin: unset!important;
@@ -3583,8 +3613,6 @@ padding:0px 10px 0px 10px
         transform: scale(0.4);
         margin: 5px 7px;
         background: #002891;
-        /*border-color: #002891;
-*/
         border: 1px solid #002891;
         display: block;
         -webkit-backface-visibility: visible;
@@ -3632,6 +3660,15 @@ padding:0px 10px 0px 10px
 }
 .vtmidddle{
     vertical-align: unset;
+}
+.logosheight{
+    height: 40px;
+}
+.productboxheight{
+    height: 50px;
+}
+.color_filter{
+    background-color: #002891;
 }
 /* .videowrapperparallax .owl-item{
  width:100%!important

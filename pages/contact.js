@@ -31,6 +31,7 @@ import { withTranslation } from "react-i18next";
         };
     
         this.getData=this.getData.bind(this);
+        this.handleLogin = this.handleLogin.bind(this)
       }
     
       async getData() {
@@ -225,7 +226,9 @@ handleEmailChange =(e)=> {
  handlePhoneChange =(e)=> {
     this.setState({Phone: e.target.value});
  }
- handleLogin =()=> {
+ handleLogin =(e)=> {
+    e.preventDefault()
+  
     var formdata = new FormData();
     formdata.append("grant_type", "client_credentials");
     formdata.append("client_id", "abf00ccfee58b1f7d175588b9e9b8e60");
@@ -234,15 +237,16 @@ handleEmailChange =(e)=> {
     var requestOptions = {
       method: 'POST',
       body: formdata,
-      redirect: 'follow'
     };
     
     fetch("https://api.sendpulse.com/oauth/access_token", requestOptions)
-      .then(response =>response.text())
+      .then(response =>response.json())
       .then(result =>{
-          alert("fet")
+        //   console.log(result)
+        
         var tokenns = "Bearer "+(result.access_token).toString();
-        alert(tokenns)
+        // console.log(result.access_token)
+        // alert(tokenns)
         var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
     myHeaders.append("Authorization", tokenns);
@@ -276,7 +280,7 @@ handleEmailChange =(e)=> {
     method: 'POST',
     headers: myHeaders,
     body: urlencoded,
-    redirect: 'follow'
+
     };
 
     fetch("https://api.sendpulse.com/smtp/emails", requestOptions)
@@ -294,10 +298,9 @@ handleEmailChange =(e)=> {
 }
 render (){
 
-    // const {t}=this.props;
+
     var a=[];
     for(const i in this.state.data[0]){
-        // if()
         a[i]=this.state.data[0][i];
     }
 
@@ -310,7 +313,7 @@ render (){
   return (
     <div>
       <Navigation current="contact"></Navigation>
-      {console.log(this.state.api)}
+      {/* {console.log(this.state.api)} */}
       <>
       <div className={[(this.props.i18n.language=="ar")?" direction: rtl ":" "]+"container-fluid p-0 relative"}>
         <div className="row  p-0 ">
@@ -327,24 +330,24 @@ render (){
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 px-md-5">
                     <div className="row  ">
                         {/* <form className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" action={"mailto:"+this.state.submit.contact_email+"" } data-rel="external" method="POST" > */}
-                        <form className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"  >
+                        <form onSubmit={this.handleLogin} className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"  >
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="text" onChange={this.handleNameChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder  bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")}/>
+                                        <input type="text" onChange={this.handleNameChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder  bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")} required/>
                                     </div>
                                     <div className="col">
-                                        <input type="email" onChange={this.handleEmailChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder  bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")}/>
+                                        <input type="email" onChange={this.handleEmailChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder  bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")} required/>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="tel" onChange={this.handlePhoneChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")}/>
+                                        <input type="tel" onChange={this.handlePhoneChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")} required/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" onChange={this.handleSubjectChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")}/>
+                                        <input type="text" onChange={this.handleSubjectChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")} required/>
                                     </div>
                                 </div>
                             </div>
@@ -357,7 +360,7 @@ render (){
                                 <div className="row mb-4">
                                     <div className={(this.props.i18n.language=="ar")?null:"col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 "}></div>
                                     <div className={(this.props.i18n.language=="ar")?"col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex textalignleft":"col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 "}>
-                                        <button type="submit"  onClick={this.handleLogin} className=" button light font_size submitbtn bordernone px-4 animation js--fadeInRight">
+                                        <button type="submit" className=" button light font_size submitbtn bordernone px-4 animation js--fadeInRight">
                                                 <div className="container-fluid px-4 py-2">
                                                     <div className={[(this.props.i18n.language=="ar")?"flexreverse ":""]+"row "}>
                                                         <div className="submitpaperplace mr-3 ">

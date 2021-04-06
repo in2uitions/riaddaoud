@@ -26,11 +26,11 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    items: 3,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
+    items: 3,
   },
 };
 const responsiveseconde = {
@@ -49,7 +49,7 @@ const responsiveseconde = {
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
+    items: 2,
   },
 };
 const responsivelast = {
@@ -628,7 +628,7 @@ class index extends React.Component {
                       className={
                         [
                           this.props.i18n.language == "ar"
-                            ? "DroidKufi "
+                            ? "DroidKufi textalignright "
                             : "gill ",
                         ] + " titlebox meduim"
                       }
@@ -641,7 +641,7 @@ class index extends React.Component {
                       className={
                         [
                           this.props.i18n.language == "ar"
-                            ? "DroidKufi "
+                            ? "DroidKufi textalignright "
                             : "gill ",
                         ] + "etc py-4 mr-4 light footertext"
                       }
@@ -701,9 +701,9 @@ class index extends React.Component {
                                   className={
                                     [
                                       this.props.i18n.language == "ar"
-                                        ? "DroidKufi "
-                                        : "gill ",
-                                    ] + "white italic  textalign lefteye"
+                                        ? "DroidKufi lefteye_ar "
+                                        : "gill lefteye ",
+                                    ] + "white italic  textalign "
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -730,9 +730,9 @@ class index extends React.Component {
                                   className={
                                     [
                                       this.props.i18n.language == "ar"
-                                        ? "DroidKufi "
-                                        : "gill ",
-                                    ] + "white italic  textalign lefteye1"
+                                        ? "DroidKufi lefteye_ar1 "
+                                        : "gill lefteye1 ",
+                                    ] + "white italic  textalign "
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -759,9 +759,9 @@ class index extends React.Component {
                                   className={
                                     [
                                       this.props.i18n.language == "ar"
-                                        ? "DroidKufi "
-                                        : "gill ",
-                                    ] + "white italic  textalign lefteye2"
+                                        ? "DroidKufi lefteye_ar2 "
+                                        : "gill lefteye2 ",
+                                    ] + "white italic  textalign "
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -787,9 +787,9 @@ class index extends React.Component {
                                   className={
                                     [
                                       this.props.i18n.language == "ar"
-                                        ? "DroidKufi "
-                                        : "gill ",
-                                    ] + "white italic  textalign lefteye3"
+                                        ? "DroidKufi lefteye_ar3 "
+                                        : "gill lefteye3 ",
+                                    ] + "white italic  textalign "
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -826,13 +826,14 @@ class index extends React.Component {
               </div>
               <Carousel
                 // centerMode={true}
+                arrows={false}
                 swipeable={false}
                 draggable={false}
-                showDots={false}
+                showDots={true}
                 focusOnSelect={true}
                 ssr={false}
                 infinite={true}
-                autoPlay={this.props.deviceType !== "mobile" ? false : false}
+                autoPlay={this.props.deviceType !== "mobile" ? true : true}
                 autoPlaySpeed={4000}
                 keyBoardControl={true}
                 customTransition="all .5"
@@ -891,13 +892,14 @@ class index extends React.Component {
                 <div className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                   <Carousel
                     // centerMode={true}
+                    arrows={false}
                     swipeable={false}
                     focusOnSelect={false}
                     draggable={false}
-                    showDots={false}
+                    showDots={true}
                     ssr={false}
                     infinite={true}
-                    autoPlay={this.props.deviceType !== "mobile" ? false : false}
+                    autoPlay={this.props.deviceType !== "mobile" ? true : true}
                     autoPlaySpeed={4000}
                     keyBoardControl={true}
                     customTransition="all .5"
@@ -1091,7 +1093,7 @@ class index extends React.Component {
                     wipeable={true}
                     ssr={false}
                     infinite={true}
-                    autoPlay={this.props.deviceType !== "mobile" ? false : true}
+                    autoPlay={this.props.deviceType !== "mobile" ? true : true}
                     autoPlaySpeed={4000}
                     keyBoardControl={true}
                     customTransition="all .5"
