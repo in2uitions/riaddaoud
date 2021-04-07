@@ -716,13 +716,13 @@ class product extends React.Component {
                                                 <div className="row">
                                                     <div className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
-                                                        <select name="jquery_box" id="jquery_box" className="py-4 textaligncenter w-100 backgroundblue">
+                                                        <select name="jquery_box" id="jquery_box" className="py-4  w-100 backgroundblue px-3 pointer">
                                                             {this.state.categ.map((key, value) => {
                                                                  if (key.title_ar == null) { var title_ar = key.title }
                                                                  else var title_ar = key.title_ar 
 
                                                                 return (
-                                                                    <option key={['btn-8-'+value]} className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter font_size"} value={"" + key.id + ""}>
+                                                                    <option key={['btn-8-'+value]} className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter meduim font_size"} value={"" + key.id + ""}>
                                                                         {  (i18n.language=="ar") ? title_ar : key.title}
                                                                     </option>
 

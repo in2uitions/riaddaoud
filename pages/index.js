@@ -413,6 +413,44 @@ class index extends React.Component {
         </button>
       );
     };
+    const CustomDotsecond = ({ onClick, ...rest }) => {
+      const {
+        onMove,
+        index,
+        active,
+        carouselState: { currentSlide, deviceType }
+      } = rest;
+      const carouselItems = [<div></div>, <div></div>, <div></div>];
+      // onMove means if dragging or swiping in progress.
+      // active is provided by this lib for checking if the item is active or not.
+      return (
+        <button
+          className={active ? "active" : "inactive"}
+          onClick={() => onClick()}
+        >
+          {React.Children.toArray(carouselItems)[index]}
+        </button>
+      );
+    };
+    const CustomDotfirst = ({ onClick, ...rest }) => {
+      const {
+        onMove,
+        index,
+        active,
+        carouselState: { currentSlide, deviceType }
+      } = rest;
+      const carouselItems = [<div></div>, <div></div>, <div></div>];
+      // onMove means if dragging or swiping in progress.
+      // active is provided by this lib for checking if the item is active or not.
+      return (
+        <button
+          className={active ? "active" : "inactive"}
+          onClick={() => onClick()}
+        >
+          {React.Children.toArray(carouselItems)[currentSlide]}
+        </button>
+      );
+    };
     return (
       <div>
         <Navigation current="index"></Navigation>
@@ -642,8 +680,8 @@ class index extends React.Component {
                         [
                           this.props.i18n.language == "ar"
                             ? "DroidKufi textalignright "
-                            : "gill ",
-                        ] + "etc py-4 mr-4 light footertext"
+                            : "gill mr-4 ",
+                        ] + "etc py-4  light footertext"
                       }
                     >
                       {this.props.i18n.language == "ar"
@@ -827,14 +865,17 @@ class index extends React.Component {
               <Carousel
                 // centerMode={true}
                 arrows={false}
-                swipeable={false}
-                draggable={false}
+                swipeable={true}
+                rewind={true}
+                customDot={<CustomDotfirst />}
+                draggable={true}
                 showDots={true}
                 focusOnSelect={true}
                 ssr={false}
+                containerClass="react-multi-carousel-track2"
                 infinite={true}
                 autoPlay={this.props.deviceType !== "mobile" ? true : true}
-                autoPlaySpeed={4000}
+                autoPlaySpeed={3000}
                 keyBoardControl={true}
                 customTransition="all .5"
                 transitionDuration={500}
@@ -893,18 +934,21 @@ class index extends React.Component {
                   <Carousel
                     // centerMode={true}
                     arrows={false}
-                    swipeable={false}
+                    rewind={true}
+                    swipeable={true}
+                    customDot={<CustomDotsecond />}
                     focusOnSelect={false}
-                    draggable={false}
+                    draggable={true}
                     showDots={true}
                     ssr={false}
-                    infinite={true}
+                    containerClass="react-multi-carousel-track2"
+                    infinite={false}
                     autoPlay={this.props.deviceType !== "mobile" ? true : true}
-                    autoPlaySpeed={4000}
+                    autoPlaySpeed={3000}
                     keyBoardControl={true}
                     customTransition="all .5"
                     transitionDuration={500}
-                    containerclassName="carousel-container2"
+                    containerclassName="carousel-container2 py-2"
                     deviceType={this.props.deviceType}
                     beforeChange={(current, next) =>
                       this.setState({ oldSlide: current, activeSlide: next })
