@@ -3871,6 +3871,9 @@ nav .search-icon{
   nav{
     padding: 0px;
   }
+  .nav-items{
+    background-color: white;
+}
   nav .logo{
     flex: 2;
     text-align: center;
