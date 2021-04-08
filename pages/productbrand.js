@@ -547,45 +547,11 @@ class product extends React.Component {
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
                         <div className="container-fluid p-0">
                             <div className="row ">
-                                <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3   px-md-4">
+                                {/* <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3   px-md-4">
                                     <h4 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}><BrowseCategories /></h4>
-                                </div>
+                                </div> */}
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9  ">
-                                    <div className="container-fluid ">
-                                        <div className="row ">
-                                            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
-                                                <h4 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
-                                               <Showing />
-                                        {" " + 
-                                        (this.state.firstnmbrofprod)
-                                        
-                                        }
-                                        –
-                                        {
-                                                        " " + this.knowthelastelementrightnow() + " "
-
-                                                    }
-                                        <Of />
-                                        {" " + (this.state.specificbrand.length)}  
-                                    </h4>
-                                            </div>
-                                            <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
-                                                <form action="" className="row relative ">
-                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
-                                                        <div className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
-                                                            {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
-                                                            
-                                                            <input type="text" id="search "
-                                                             placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"SearchProducts"} className={[(i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 gill light "]+"  texttitlemedia footertext   w-100"}
-                                                                value={this.state.inputsearch} onChange={this.filter} />
-                                                            <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
-                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -595,7 +561,7 @@ class product extends React.Component {
 
                 <div className={[(i18n.language=="ar")?"rtl ":""]+"container-fluid px-4"}>
                     <div className="row ">
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 p-3 px-4 show ">
+                        <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 py-0 px-4 show ">
                             <div className="panel-group borders" id="modal" role="tablist" aria-multiselectable="true">
                                 <div className="panel">
                                     <div className="col-md-12 visible-xs">
@@ -711,8 +677,8 @@ class product extends React.Component {
 
 
                                     <div className="container-fluid  p-0 div-collapse collapse" id="collapse1">
-                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                            <div className="container-fluid p-0 ">
+                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                                            <div className="container-fluid p-0  ">
                                                 <div className="row">
                                                     <div className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
@@ -800,7 +766,42 @@ class product extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 mt-2 ">
+                        <div className="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 mt-2 ">
+                                <div className="container-fluid productboxheight py-4">
+                                        <div className="row ">
+                                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 showingaligncenter flexend ">
+                                                <h4 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>
+                                               <Showing />
+                                        {" " + 
+                                        (this.state.firstnmbrofprod)
+                                        
+                                        }
+                                        –
+                                        {
+                                                        " " + this.knowthelastelementrightnow() + " "
+
+                                                    }
+                                        <Of />
+                                        {" " + (this.state.specificbrand.length)}  
+                                    </h4>
+                                            </div>
+                                            <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
+                                                <form action="" className="row relative ">
+                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
+                                                        <div className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
+                                                            {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
+                                                            
+                                                            <input type="text" id="search "
+                                                             placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"SearchProducts"} className={[(i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 gill light "]+"  texttitlemedia footertext   w-100"}
+                                                                value={this.state.inputsearch} onChange={this.filter} />
+                                                            <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
+                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                             <section>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 ">
                                     <div className="container-fluid p-0 row">

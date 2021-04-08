@@ -4,6 +4,7 @@ import React from 'react';
 import Navigation from "./NAVIGATION/nav.js";
 import Footer from "./FOOTER/footer.js";
 import axios from 'axios';
+import Swal from 'sweetalert2'
 import sendpulse from "sendpulse-api";
 // import {withTranslation,useTranslation} from 'react-i18next';
 // import styles from './style3.module.css';
@@ -15,6 +16,7 @@ var TOKEN_STORAGE="/tmp/";
 
 const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
+import { faYenSign } from "@fortawesome/free-solid-svg-icons";
  class contact extends React.Component{
     constructor(props) {
         super(props);
@@ -27,7 +29,8 @@ import { withTranslation } from "react-i18next";
           Phone:"",
           Text:"",
           Name:"",
-          token:""
+          token:"",
+        
         };
     
         this.getData=this.getData.bind(this);
@@ -59,7 +62,9 @@ import { withTranslation } from "react-i18next";
         //     .catch((error) => {
         //     console.error(error)
         //     })
+      
         }
+        
       
       
       componentDidMount () {
@@ -175,7 +180,6 @@ import { withTranslation } from "react-i18next";
                 duration: 850,
             });
 
-
         });
         // const config = {
         //     headers: { Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImNkOWIxNDg5OTQyZWQ1OThlZDU0NzZhNDZiYWViNDgyY2NjYzgyOGRhNjgwOWZiOTliMWY2ZDRhYWMzNTk2YTZiZjE2OWZkNDY3ZDg0ZGM1In0.eyJhdWQiOiIwIiwianRpIjoiY2Q5YjE0ODk5NDJlZDU5OGVkNTQ3NmE0NmJhZWI0ODJjY2NjODI4ZGE2ODA5ZmI5OWIxZjZkNGFhYzM1OTZhNmJmMTY5ZmQ0NjdkODRkYzUiLCJpYXQiOjE2MTc2MTczNDIsIm5iZiI6MTYxNzYxNzM0MiwiZXhwIjoxNjE3NjIwOTQyLCJzdWIiOiIiLCJzY29wZXMiOltdLCJ1c2VyIjp7ImlkIjo3NTUyMDM5LCJncm91cF9pZCI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJhcmVhIjoicmVzdCJ9fQ.oPnMY8mNUsqZ_z32FU7k76-b5c8yQ5ZAdut1yW0-xgPuVg3SqZ_dDDx1dWL4u6i_OrzGjZMNZkOHxqLO1m8Qw7gEUHlGMuncdZn0Ir3C--6CVvpojKm1NKhgEkHLg_ey5Ax513ntl0rkcKj_WZf6DPDBhMVMTxYNcCANqslg1ZvDUyOv0rFkdNYUf5ULxR5Frc7-X-PHRoz1xMuU_fMyK5nX7sQTFyb4yKJEbdr9KU-yYiTznyQU0HBXWo1i76NDdV52_u5n38PXA5Pq3z1cdueNUrktvqyTt-hRRuz-Usdmnv_a2hQYUaSvcpHv0tcKtH9_vjxXdaj7DZoH_LgS0Q` }
@@ -253,7 +257,7 @@ handleEmailChange =(e)=> {
     var urlencoded = new URLSearchParams();
     var test = {
         
-        "subject": "test1",
+        "subject": "contact",
         "template": {
             "id": 72113,
             "variables": {
@@ -265,12 +269,12 @@ handleEmailChange =(e)=> {
             }
         },
         "from": {
-            "name": "Mike",
+            "name": this.state.Name,
             "email": "contact@in2uitions.com"
         },
         "to": [
             {
-            "email": "rachelle.saade@in2uitions.com",
+            "email": this.state.submit.contact_email,
             "name": "jj"
             }
         ]
@@ -285,7 +289,17 @@ handleEmailChange =(e)=> {
 
     fetch("https://api.sendpulse.com/smtp/emails", requestOptions)
     .then(response => response.text())
-    .then(result => console.log(result))
+    .then(result =>Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Your message has been send',
+        showConfirmButton: false,
+        // timer: 10
+      })
+    //   text.value = ""
+
+      
+      )
     .catch(error => console.log('error', error)).then((res) => {
         console.log("RESPONSE RECEIVED: ", res);
       })
@@ -298,7 +312,7 @@ handleEmailChange =(e)=> {
 }
 render (){
 
-
+    console.log(this.state.yes)
     var a=[];
     for(const i in this.state.data[0]){
         a[i]=this.state.data[0][i];
@@ -334,26 +348,26 @@ render (){
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="text" onChange={this.handleNameChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder  bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")} required/>
+                                        <input type="text" name="text" onChange={this.handleNameChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder  bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")} required/>
                                     </div>
                                     <div className="col">
-                                        <input type="email" onChange={this.handleEmailChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder  bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")} required/>
+                                        <input type="email" name="text" onChange={this.handleEmailChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder  bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")} required/>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="tel" onChange={this.handlePhoneChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")} required/>
+                                        <input type="tel" name="text" onChange={this.handlePhoneChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")} required/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" onChange={this.handleSubjectChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")} required/>
+                                        <input type="text" name="text" onChange={this.handleSubjectChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")} required/>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">
                                 <div className="form-group  ">
-                                    <textarea onChange={this.handleTextChange} className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight  bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")}></textarea>
+                                    <textarea name="text" onChange={this.handleTextChange} className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight  bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")}></textarea>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">

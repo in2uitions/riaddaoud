@@ -768,8 +768,8 @@ class product extends React.Component {
 
 
                                     <div className="container-fluid  p-0 div-collapse collapse" id="collapse1">
-                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 productboxheight">
-                                            <div className="container-fluid p-0 productboxheight ">
+                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                                            <div className="container-fluid p-0  ">
                                                 <div className="row">
                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
@@ -857,7 +857,7 @@ class product extends React.Component {
                             </div>
                         </div>
                         <div className="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 mt-2 ">
-                        <div className="container-fluid productboxheight py-4">
+                            <div className="container-fluid productboxheight py-4">
                                         <div className="row ">
                                             <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 showingaligncenter flexend">
                                                 <h4 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey  "}>

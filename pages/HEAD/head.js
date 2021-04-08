@@ -19,6 +19,7 @@ function HEAD({title,description}){
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossOrigin="anonymous"></script>
                 <link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
                 <link rel="stylesheet" href="assets/css/owl.theme.default.min.css"/>
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                 {/* <link rel= "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"/> */}
                 {/* <link rel= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/> */}
                 

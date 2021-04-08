@@ -4,6 +4,7 @@ import React from 'react';
 import Navigation from "./NAVIGATION/nav.js";
 import Footer from "./FOOTER/footer.js";
 import DirectusSDK from '@directus/sdk-js';
+import Swal from 'sweetalert2'
 import { withTranslation } from "react-i18next";
 import Api from './api/Api.js';
 const directus = new DirectusSDK(Api.baseUrl);
@@ -13,6 +14,12 @@ const directus = new DirectusSDK(Api.baseUrl);
     this.state = {
       data: 0,
       submit:[],
+      Email:"",
+      Lastname:"",
+      Phone:"",
+      Text:"",
+      Name:"",
+      token:""
     };
 
     this.getData=this.getData.bind(this);
@@ -155,6 +162,97 @@ this.loadanim();
 
 
   }
+  handleEmailChange =(e)=> {
+    this.setState({Email: e.target.value});
+ }
+ handleTextChange =(e)=> {
+    this.setState({Text: e.target.value});
+ }
+ handleNameChange =(e)=> {
+    this.setState({Name: e.target.value});
+ }
+ handleLastnameChange =(e)=> {
+    this.setState({Lastname: e.target.value});
+ }
+ handlePhoneChange =(e)=> {
+    this.setState({Phone: e.target.value});
+ }
+  handleLogin =(e)=> {
+    e.preventDefault()
+  
+    var formdata = new FormData();
+    formdata.append("grant_type", "client_credentials");
+    formdata.append("client_id", "abf00ccfee58b1f7d175588b9e9b8e60");
+    formdata.append("client_secret", "c5c8c09549f7a5d67cd906dc686d515a");
+    
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+    };
+    
+    fetch("https://api.sendpulse.com/oauth/access_token", requestOptions)
+      .then(response =>response.json())
+      .then(result =>{
+        //   console.log(result)
+        
+        var tokenns = "Bearer "+(result.access_token).toString();
+        // console.log(result.access_token)
+        // alert(tokenns)
+        var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    myHeaders.append("Authorization", tokenns);
+    var urlencoded = new URLSearchParams();
+    var test = {
+        
+        "subject": "careers",
+        "template": {
+            "id": 74021,
+            "variables": {
+                "email": this.state.Email,
+                "name": this.state.Name,
+                "phone": this.state.Phone,
+                "message": this.state.Text,
+                "lastname": this.state.Lastname
+            }
+        },
+        "from": {
+            "name": this.state.Name,
+            "email": "contact@in2uitions.com"
+        },
+        "to": [
+            {
+            "email": this.state.submit.careers_email,
+            "name": "jj"
+            }
+        ]
+    };
+    urlencoded.append("email",JSON.stringify(test));
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: urlencoded,
+
+    };
+
+    fetch("https://api.sendpulse.com/smtp/emails", requestOptions)
+    .then(response => response.text())
+    .then(result => Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Your message has been send',
+      showConfirmButton: false,
+      // timer: 10
+    }))
+    .catch(error => console.log('error', error)).then((res) => {
+        console.log("RESPONSE RECEIVED: ", res);
+      })
+      .catch((err) => {
+        console.log("AXIOS ERROR: ", err.response);
+      })
+
+      })
+      .catch(error => console.log(error.response));
+}
 render (){
 
   var a=[];
@@ -213,21 +311,21 @@ render (){
             <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 p-md-5 "></div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8  ">
               <div className="row ">
-                <form className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 "  action={"mailto:"+this.state.submit.careers_email+""} method="POST">
+                <form className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 "   onSubmit={this.handleLogin}>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">
                     <div className="form-row ">
                       <div className="col   ">
                         <input
-                          type="text "
+                          type="text " onChange={this.handleNameChange}
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation  placeholder  bordernone js--fadeInb"}
-                          placeholder={this.props.t("firstname")}
+                          placeholder={this.props.t("firstname")} required
                         />
                       </div>
                       <div className="col ">
                         <input
-                          type="text "
+                          type="text " onChange={this.handleLastnameChange}
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation placeholder  bordernone js--fadeInb"}
-                          placeholder={this.props.t("lastname")}
+                          placeholder={this.props.t("lastname")} required
                         />
                       </div>
                     </div>
@@ -236,7 +334,7 @@ render (){
                     <div className="form-row ">
                       <div className="col ">
                         <input
-                          type="email"
+                          type="email" onChange={this.handleEmailChange}
                           // pattern=".+@gmail.com"
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light " ]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("emailplaceholder")}
@@ -244,8 +342,7 @@ render (){
                       </div>
                       <div className="col ">
                         <input
-                          type="tel"
-                          pattern="[0-9]{2}-[0-9]{6}"
+                          type="tel" onChange={this.handlePhoneChange}
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("phonenbplaceholder")}
                         />
@@ -291,7 +388,7 @@ render (){
                     </div>
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 ">
                       <div className="form-group ">
-                        <textarea
+                        <textarea onChange={this.handleTextChange}
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation js--fadeInb  placeholder resizeoff bordernone"}
                           id="exampleFormControlTextarea1 "
                           rows="5"

@@ -26,6 +26,7 @@
     "react-dom": "17.0.1",
     "react-i18next": "^11.8.9",
     "react-multi-carousel": "^2.6.2",
-    "sendpulse-api": "^1.1.5"
+    "sendpulse-api": "^1.1.5",
+    "sweetalert2": "^10.16.0"
   }
 }
