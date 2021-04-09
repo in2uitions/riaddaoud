@@ -139,28 +139,36 @@ class index extends React.Component {
     $('.iconslider').owlCarousel({
         loop:true,
         // margin:10,
-         nav: true,
-        items: 5,
+        nav: true,
+        items: 4,
         center:true,
+        dots:false,
+        navText: [
+          "<div class='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' class='img-fluid ' /></div>",
+          "<div class='nav-btn next-slide'><img src='./assets/images/bigright.png' style='object-fit: cover' class='img-fluid ' /></div>",
+        ],
         autoplayTimeout: 4500,
         smartSpeed: 2000,
         autoHeight: false,
         touchDrag: true,
-        dots:false,
         mouseDrag: true,
         responsive : {
             0 : {
                 items : 3,
+                dots:true,
                 nav: false,
-                dots:true
     
             },
             480 : {
-                items : 3,
+              items : 3,
+                dots:true,
+                nav: false,
     
             },
             768 : {
-                items : 3,
+              items : 3,
+                dots:false,
+                nav: true,
     
             }
         }
@@ -182,11 +190,11 @@ class index extends React.Component {
 
             },
             480 : {
-                option1 : 2,
+              items : 2,
 
             },
             768 : {
-                option1 : 2,
+              items : 2,
 
             }
         }
@@ -930,8 +938,8 @@ class index extends React.Component {
                 </div>
               </div>
               <section className="owl-carousel owl-theme owl-loaded iconslider ">
-                <div className="owl-stage-outer  mb-1">
-                    <div className="owl-stage mb-3">
+                <div className="owl-stage-outer  ">
+                    <div className="owl-stage ">
                     {brannnnds.map((value, index) => {
                             //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
                             var startb_url = "https://rdcms.businessexchange.me/assets/";
