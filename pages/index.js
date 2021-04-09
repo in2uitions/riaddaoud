@@ -146,11 +146,13 @@ class index extends React.Component {
         smartSpeed: 2000,
         autoHeight: false,
         touchDrag: true,
+        dots:false,
         mouseDrag: true,
         responsive : {
             0 : {
                 items : 3,
                 nav: false,
+                dots:true
     
             },
             480 : {
