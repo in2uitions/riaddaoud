@@ -125,24 +125,24 @@ handletrue = () => {
                 <span class="fas fa-bars"></span></div>
                 <div class="nav-items col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">
                     <li><Link href="/about">
-                        <a className="  headersubtitles px-3" href="/about">
+                        <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/about">
                             <span id="about">{i18n.t("about")}</span>
                         </a>
                     </Link></li>
                     <li><Link href="/product">
-                    <a className="  headersubtitles px-3" href="/product">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/product">
                         <span id="products">{i18n.t("products")}</span>
                     </a></Link></li>
                     <li><Link href="/media">
-                    <a className="   headersubtitles px-3" href="/media">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/media">
                         <span id="media">{i18n.t("media")}</span>
                     </a></Link></li>
                     <li><Link href="/blog">
-                    <a className="   px-3 headersubtitles" href="/blog">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-3 headersubtitles"} href="/blog">
                         <span id="careers">{i18n.t("careers")}</span>
                     </a></Link></li>
                     <li><Link href="/contact">
-                    <a className="  headersubtitles px-3" href="/contact">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/contact">
                         <span id="contact">{i18n.t("contact")}</span>
                     </a></Link></li>
                 </div>
@@ -153,7 +153,7 @@ handletrue = () => {
                 </a>
                 </Link>
             </div>
-            <div className="col-1"></div>
+            {/* <div className="col-1"></div> */}
             <div class="search-icon">
             <span class="fas fa-search"></span></div>
             <div class="cancel-icon">
