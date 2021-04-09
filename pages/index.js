@@ -912,7 +912,7 @@ class index extends React.Component {
               </div>
 
               <div className="relative ">
-                <hr className="hr my-5 " />
+                <hr className="hr mt-5 " />
                 <div className="thingonhr aligncenter">
                   <h1
                     className={
