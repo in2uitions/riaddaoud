@@ -145,6 +145,14 @@ handletrue = () => {
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/contact">
                         <span id="contact">{i18n.t("contact")}</span>
                     </a></Link></li>
+                    <div className="makeitdesp aligncenter">
+                         <hr className="" />
+                                <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}</span>
+                        {/* <ul > */}
+                        <p className="pointer gill font_size_med mt-4"  onClick={()=>changeLanguage("ar")}>Arabic</p>
+                        <p className="pointer gill font_size_med mt-2"  onClick={()=>changeLanguage("en")}>English</p>
+                        {/* </ul> */}
+                    </div>
                 </div>
             <div class="logo ">
             <Link href="/">
@@ -153,6 +161,7 @@ handletrue = () => {
                 </a>
                 </Link>
             </div>
+            
             {/* <div className="col-1"></div> */}
             <div class="search-icon">
             <span class="fas fa-search"></span></div>
@@ -170,15 +179,15 @@ handletrue = () => {
                     <input type="search" className="search-data" placeholder={i18n.t("search")} required/>
                     <button type="submit" className="fas fa-search"></button>
             </form>
-            <div className="dropdown aligncenter">
-            <button className="  dropdown-toggle headersubtitles" type="button" data-toggle="dropdown">
-                    <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-2 mr-2 cover"/></span>
-            </button>
-            <ul className="dropdown-menu">
-            <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("ar")}>Arabic</p>
-                <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("en")}>English</p>
-  </ul>
-</div>
+            <div className="dropdown aligncenter makeitapp ">
+                <button className="  dropdown-toggle headersubtitles" type="button" data-toggle="dropdown">
+                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-2 mr-2 cover"/></span>
+                </button>
+                <ul className="dropdown-menu">
+                <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("ar")}>Arabic</p>
+                    <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("en")}>English</p>
+                </ul>
+            </div>
 </nav>
 </div>
 
