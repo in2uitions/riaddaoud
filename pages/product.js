@@ -606,12 +606,12 @@ class product extends React.Component {
                 <div >
                     <div className="container-fluid p-0 parallax " style={{ backgroundImage: 'url(' + imagbackeurl + ')' }}>
                         <div className={[(this.props.i18n.language=="ar")?"productnewbackar textalignright":"productnewback "]+" col-10 col-sm-10 col-md-10 col-lg-4 col-xl-4 col-xxl-4 p-0 "}>
-                            <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"   bigtitleprod"}>
+                            {/* <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill meduim "]+"   bigtitleprod"}>
                                 {this.state.backg.map((key, value) => {
                                      if (key.description_ar == null) { var description_ar = key.description }
                                      else var description_ar = key.description_ar
                                      return (this.props.i18n.language == "ar") ? description_ar : key.description  } )}
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                     <div className="container-fluid ">
@@ -620,7 +620,7 @@ class product extends React.Component {
                             <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 aboutheaderprodnew py-4 px-3">
                                 <div className="container-fluid py-4 mb-4 ">
                                     <div className="row  py-4">
-                                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-3">
                                             <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"meduim white  aligncenter"}>{(this.props.i18n.language == "ar") ? box_title_ar : a_back.box_title}</h1>
                                         </div>
                                         <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
