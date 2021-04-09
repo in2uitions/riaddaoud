@@ -119,8 +119,8 @@ handletrue = () => {
     render(){
  
     return(
-        <div id="header" className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 headermenu "}>
-        <nav  className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 row py-2 pl-2 "}>
+        <div id="header" className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 headermenu p-md-1 p-0"}>
+        <nav  className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 row py-2 pl-md-2 pl-0 "}>
             <div class="menu-icon navbar-toggler">
                 <span class="fas fa-bars"></span></div>
                 <div class="nav-items col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">

@@ -928,7 +928,7 @@ class index extends React.Component {
               </div>
               <section className="owl-carousel owl-theme owl-loaded iconslider ">
                 <div className="owl-stage-outer  mb-1">
-                    <div className="owl-stage mb-1">
+                    <div className="owl-stage mb-3">
                     {brannnnds.map((value, index) => {
                             //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
                             var startb_url = "https://rdcms.businessexchange.me/assets/";
