@@ -139,8 +139,8 @@ class index extends React.Component {
     $('.iconslider').owlCarousel({
         loop:true,
         // margin:10,
-        // nav: true,
-        items: 4,
+         nav: true,
+        items: 5,
         center:true,
         autoplayTimeout: 4500,
         smartSpeed: 2000,
@@ -150,14 +150,15 @@ class index extends React.Component {
         responsive : {
             0 : {
                 items : 3,
+                nav: false,
     
             },
             480 : {
-                option1 : 3,
+                items : 3,
     
             },
             768 : {
-                option1 : 3,
+                items : 3,
     
             }
         }
