@@ -220,10 +220,6 @@
             transform: scale(1.1);
            
         }
-
-        .iconslider .owl-dots{
-                top:70%;
-        }
         
         .hoverbrandindexar:hover {
             /*border: 0.5px solid #bebebe;
@@ -1828,8 +1824,8 @@ a:focus {
         }
         .aboutheaderprodnew {
             position: relative;
-            top: -150px;
-            margin-bottom: -200px;
+            top: -250px;
+            margin-bottom: -150px;
             background-color: #081D54;
         }
         
@@ -2237,7 +2233,7 @@ a:focus {
         .headersubtitles span {
             color: #000000;
             font-weight: normal;
-            font-size: 0.8em;
+            font-size: 1em;
         }
         
         .cover {
@@ -3770,7 +3766,12 @@ padding:0px 10px 0px 10px
     background-color:unset;
 } */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-
+.makeitdesp{
+    display:none;
+}
+.makeitapp{
+    display:block;
+}
 nav{
   /* background: #002891; */
   display: flex;
@@ -3879,6 +3880,12 @@ nav .search-icon{
   nav{
     padding: 0px;
   }
+  .makeitdesp{
+    display:block!important;
+}
+.makeitapp{
+    display:none!important;
+}
   .nav-items{
     background-color: white;
 }
@@ -4027,4 +4034,15 @@ nav .search-icon{
 }
 .padscentered{
     padding-left: 15px;
+}
+.iconslider .prev-slide{
+    position: absolute!important;
+    left: 0%!important;
+    top: 45% !important;
+}
+
+.iconslider .next-slide {
+    position: absolute!important;
+    right: 0%!important;
+    top: 45% !important;
 }
