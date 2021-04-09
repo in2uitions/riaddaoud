@@ -123,7 +123,7 @@ import { withTranslation } from "react-i18next";
                         </div>
                         <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
                         <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 p-0 mt-3">
+                        <div className="col-9 col-sm-9 col-md-10 col-lg-10 col-xl-10 col-xxl-10 p-0 mt-3">
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+"col-12 col-sm-12 col-md-8 col-lg-4 col-xl-4 col-xxl-4"}>

@@ -170,7 +170,7 @@ handletrue = () => {
                     <input type="search" className="search-data" placeholder={i18n.t("search")} required/>
                     <button type="submit" className="fas fa-search"></button>
             </form>
-            <div className="dropdown">
+            <div className="dropdown aligncenter">
             <button className="  dropdown-toggle headersubtitles" type="button" data-toggle="dropdown">
                     <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-2 mr-2 cover"/></span>
             </button>

@@ -880,10 +880,10 @@ class product extends React.Component {
                                             <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0  ">
                                                 <form action="" className="row relative ">
                                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
-                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
+                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia  font_size   h-100"}>
                                                             {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
                                                             
-                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+"   texttitlemedia footertext   w-100"}
+                                                            <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 searchnewprodbordure mb-1 py-1 py-md-0 light gill "]+"   texttitlemedia footertext   w-100"}
                                                                 value={this.state.inputsearch} onChange={this.filter} />
                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
                                                              <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
@@ -893,7 +893,8 @@ class product extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                            <section>
+                                    <div className="py-2"></div>
+                            {/* <section> */}
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 ">
                                     <div className="container-fluid p-0 row">
 
@@ -1142,11 +1143,11 @@ class product extends React.Component {
                                     </div>
                                   {/* {console.log(arraysearchedpages.length==0)} */}
                                    { 
-                                   ((this.state.isFilterPress==true)?((arrayfilterpages.length==1 )?"":
-                                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
+                                   ((this.state.isFilterPress==true)?((arrayfilterpages.length<=1 )?"":
+                                   <div className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5 ">
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
-                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext gill regular paddingrightnext " >
+                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext container-fluid p-0 gill regular paddingrightnext " >
                                            { ((this.state.currentpage == 1 ) ?"":
                                                         <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button>)}
                                                 {(this.state.isSearchPress) ?
@@ -1187,10 +1188,10 @@ class product extends React.Component {
                                     </div>
                                    )
                                    :(this.state.isSearchPress==true)?(arraysearchedpages.length<=1)?"":
-                                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
+                                   <div className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5  pr-4">
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
-                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext gill regular paddingrightnext " >
+                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext container-fluid p-0 gill regular paddingrightnext " >
                                             { (this.state.isSearchPress) ?
                                                         ((this.state.currentpage == 1 ) ?"":
                                                         <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button>)
@@ -1239,10 +1240,10 @@ class product extends React.Component {
                                    
                                    
                                    :(arraypages.length<=1)?"":
-                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 ">
+                                    <div className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5 pr-4">
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
-                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext gill regular paddingrightnext " >
+                                            <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext container-fluid p-0 gill regular paddingrightnext " >
                                             { (this.state.isSearchPress) ?
                                                         ((this.state.currentpage == 1 ) ?"":
                                                         <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button>)
@@ -1290,7 +1291,7 @@ class product extends React.Component {
                                     )
                                     }
                                 </div>
-                            </section>
+                            {/* </section> */}
                         </div>
                     </div>
                 </div>
