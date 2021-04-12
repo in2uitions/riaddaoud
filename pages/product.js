@@ -147,35 +147,35 @@ class product extends React.Component {
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").show();
-                document.getElementById("displaynoneee").style.display="block"
+                document.getElementById("displaynoneee_mini").style.display="block"
             };
             if (this.value == "3") {
                 $("[id='categ_mini1']").hide();
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").show();
                 $("[id='categ_mini4']").hide();
-                document.getElementById("displaynoneee").style.display="block"
+                document.getElementById("displaynoneee_mini").style.display="block"
             };
             if (this.value == "2") {
                 $("[id='categ_mini1']").hide();
                 $("[id='categ_mini2']").show();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").hide();
-                document.getElementById("displaynoneee").style.display="block"
+                document.getElementById("displaynoneee_mini").style.display="block"
             };
             if (this.value == "1") {
                 $("[id='categ_mini1']").show();
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").hide();
-                document.getElementById("displaynoneee").style.display="block"
+                document.getElementById("displaynoneee_mini").style.display="block"
             };
             if (this.value == "all") {
                 $("[id='categ_mini1']").hide();
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").hide();
-                document.getElementById("displaynoneee").style.display="none"
+                document.getElementById("displaynoneee_mini").style.display="none"
             };
         })
         
@@ -721,7 +721,7 @@ class product extends React.Component {
                                                                 </div>
                                                             </div> */}
 
-                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4 displaynoneee" id="displaynoneee">
+                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4 displaynoneee" id="displaynoneee_mini">
                                                                 <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill  "]+"blue meduim py-2"}>{this.props.t("subcateg")}</h3>
                                                                 {this.state.categ.map((key, value) => {
                                                                     let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })

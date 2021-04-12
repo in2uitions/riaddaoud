@@ -4057,13 +4057,13 @@ nav .search-icon{
 .iconslider .prev-slide{
     position: absolute!important;
     left: 0%!important;
-    top: 45% !important;
+    top: 35% !important;
 }
 
 .iconslider .next-slide {
     position: absolute!important;
     right: 0%!important;
-    top: 45% !important;
+    top: 35% !important;
 }
 .displaynoneee{
     display:none;
