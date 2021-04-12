@@ -827,8 +827,8 @@
         }
         
         .quotesimg {
-            height: 50px;
-            width: 50px;
+            height: 30px;
+            width: 30px;
         }
         
         .secquotes {
@@ -3474,6 +3474,10 @@ padding:0px 10px 0px 10px
             width: 100%;
             /* display: inline-block; */
             /* background-color: white; */
+        }
+        .quotesimg {
+            height: 50px!important;
+            width: 50px!important;
         }
         .dropbtn span {
             font-size: 0.7em!important;
