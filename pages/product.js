@@ -1174,7 +1174,7 @@ class product extends React.Component {
                                    ((this.state.isFilterPress==true)?((arrayfilterpages.length<=1 )?"":
                                    <div className="col-10 col-sm-10 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5 ">
                                         <div className="row">
-                                            <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
+                                            <div className="col-2 col-sm-2 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
                                             <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext container-fluid p-0 gill regular paddingrightnext " >
                                            { ((this.state.currentpage == 1 ) ?"":
                                                         <button className="blue pointer" onClick={() => this.step_one_of_afficherpaginationfilter(this.state.currentpage - 1)}>{this.props.t("back")}</button>)}
@@ -1218,7 +1218,7 @@ class product extends React.Component {
                                    :(this.state.isSearchPress==true)?(arraysearchedpages.length<=1)?"":
                                    <div className="col-10 col-sm-10 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5  pr-4">
                                         <div className="row">
-                                            <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
+                                            <div className="col-2 col-sm-2 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
                                             <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext container-fluid p-0 gill regular paddingrightnext " >
                                             { (this.state.isSearchPress) ?
                                                         ((this.state.currentpage == 1 ) ?"":
@@ -1270,7 +1270,7 @@ class product extends React.Component {
                                    :(arraypages.length<=1)?"":
                                     <div className="col-10 col-sm-10 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5 pr-4">
                                         <div className="row">
-                                            <div className="col-6 col-sm-6 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
+                                            <div className="col-2 col-sm-2 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
                                             <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext container-fluid p-0 gill regular paddingrightnext " >
                                             { (this.state.isSearchPress) ?
                                                         ((this.state.currentpage == 1 ) ?"":
