@@ -175,7 +175,7 @@ handletrue = () => {
                     <i  className="searchbox-icon fa fa-search " id="fa" onClick={this.handletrue}></i>}
                 </div>
             </div>
-            <form action="#">
+            <form action="#" className={[(i18n.language=="ar")?"arabic ":""]+""}>
                     <input type="search" className="search-data" placeholder={i18n.t("search")} required/>
                     <button type="submit" className="fas fa-search"></button>
             </form>

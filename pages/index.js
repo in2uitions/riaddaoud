@@ -155,19 +155,19 @@ class index extends React.Component {
         responsive : {
             0 : {
                 items : 3,
-                dots:true,
+                // dots:true,
                 nav: false,
     
             },
             480 : {
               items : 3,
-                dots:true,
+                // dots:true,
                 nav: false,
     
             },
             768 : {
               items : 5,
-                dots:false,
+                // dots:false,
                 nav: true,
     
             }
@@ -179,6 +179,8 @@ class index extends React.Component {
         // nav: true,
         items: 4,
         // center:true,
+        dots:true,
+        // dotsEach:2,
         autoplayTimeout: 4500,
         smartSpeed: 2000,
         autoHeight: false,
@@ -186,15 +188,20 @@ class index extends React.Component {
         mouseDrag: true,
         responsive : {
             0 : {
-                items : 2,
+                items : 3,
+                // center:true,
+                dotsEach:2,
 
             },
             480 : {
-              items : 2,
+              items : 3,
+              // center:true,
+              dotsEach:2,
 
             },
             768 : {
               items :4,
+              dotsEach:2,
 
             }
         }

@@ -986,7 +986,7 @@ background-color: #eee;
         }
         
         .modal.show .modal-dialog {
-            transform: translateY(50%);
+            transform: translateY(20%);
         }
         /*     
 a {
@@ -1828,7 +1828,7 @@ a:focus {
         .aboutheaderprodnew {
             position: relative;
             top: -250px;
-            margin-bottom: -150px;
+            margin-bottom: -250px;
             background-color: #081D54;
         }
         
@@ -3479,7 +3479,7 @@ padding:0px 10px 0px 10px
             font-size: 0.7em!important;
         }
         .headersubtitles span {
-            font-size: 0.7em!important;
+            font-size: 0.9em!important;
         }
         .bigtitleprod {
             font-size: 1.4em!important;
@@ -3946,13 +3946,16 @@ nav .search-icon{
     position: absolute;
     content: "";
     top: -13px;
-    right: 40%;
+    right: 0%;
     width: 0;
     height: 0;
     z-index: -1;
     border: 10px solid transparent;
     border-bottom-color: #002891;
     margin: -20px 0 0;
+  }
+  nav .arabic:before{
+    right: 90%!important;
   }
   nav form:after{
     position: absolute;
@@ -4061,4 +4064,7 @@ nav .search-icon{
     position: absolute!important;
     right: 0%!important;
     top: 45% !important;
+}
+.displaynoneee{
+    display:none;
 }

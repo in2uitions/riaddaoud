@@ -137,7 +137,7 @@ class product extends React.Component {
         $("[id='categ2']").hide();
         $("[id='categ3']").hide();
         $("[id='categ4']").hide();
-        $("[id='categ_mini1']").show();
+        $("[id='categ_mini1']").hide();
         $("[id='categ_mini2']").hide();
         $("[id='categ_mini3']").hide();
         $("[id='categ_mini4']").hide();
@@ -147,30 +147,35 @@ class product extends React.Component {
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").show();
+                document.getElementById("displaynoneee").style.display="block"
             };
             if (this.value == "3") {
                 $("[id='categ_mini1']").hide();
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").show();
                 $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             };
             if (this.value == "2") {
                 $("[id='categ_mini1']").hide();
                 $("[id='categ_mini2']").show();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             };
             if (this.value == "1") {
                 $("[id='categ_mini1']").show();
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             };
             if (this.value == "all") {
                 $("[id='categ_mini1']").hide();
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee").style.display="none"
             };
         })
         
@@ -181,6 +186,7 @@ class product extends React.Component {
                 $("[id='categ2']").hide();
                 $("[id='categ3']").hide();
                 $("[id='categ4']").show();
+                document.getElementById("displaynoneee").style.display="block"
             }
 
             if (this.value == "3") {
@@ -188,19 +194,29 @@ class product extends React.Component {
                 $("[id='categ2']").hide();
                 $("[id='categ3']").show();
                 $("[id='categ4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             }
             if (this.value == "2") {
                 $("[id='categ1']").hide();
                 $("[id='categ2']").show();
                 $("[id='categ3']").hide();
                 $("[id='categ4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             }
             if (this.value == "1") {
                 $("[id='categ1']").show();
                 $("[id='categ2']").hide();
                 $("[id='categ3']").hide();
                 $("[id='categ4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             }
+            if (this.value == "all") {
+                $("[id='categ1']").hide();
+                $("[id='categ2']").hide();
+                $("[id='categ3']").hide();
+                $("[id='categ4']").hide();
+                document.getElementById("displaynoneee").style.display="none"
+            };
 
         }
 
@@ -639,7 +655,7 @@ class product extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="p-5"></div>
+                <div className="p-md-5 p-0"></div>
                 {/* <div className={[(this.props.i18n.language=="ar")?"rtl ":""]+"container-fluid py-4"} >
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
                         <div className="container-fluid p-0">
@@ -663,9 +679,10 @@ class product extends React.Component {
                                 <div className="panel">
                                     <div className="col-md-12 visible-sm">
                                         <div className="navbar-expand-md">
-                                            <button data-parent="#modal" className="navbar-toggler py-2 whitee color_filter textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
-                                                <span clasName="gill whitee">{this.props.t("filter")}</span>
-                                            </button>
+                                            {/* <button data-parent="#modal" className="navbar-toggler py-2  textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent"> */}
+                                                {/* <span clasName="gill whitee">{this.props.t("filter")}</span> */}
+                                                {/* <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter}/> */}
+                                            {/* </button> */}
                                             <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div className="modal-dialog " role="document">
                                                     <div className="modal-content">
@@ -681,6 +698,9 @@ class product extends React.Component {
                                                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "> */}
                                                                             {/* <div > */}
                                                                             <select name="jquery_box_mini" id="jquery_box_mini" className={[(this.props.i18n.language=="ar")?"fleche_ar ":""]+"py-4 px-3 pointer w-100  backgroundblue"}>
+                                                                                <option className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"selectoption container-fluid px-2 textalignleft meduim  font_size"} value={"all"}>
+                                                                                    ALL CATEGORIES
+                                                                                </option>
                                                                                 {this.state.categ.map((key, value) => {
                                                                                     if (key.title_ar == null) { var title_ar = key.title }
                                                                                     else var title_ar = key.title_ar 
@@ -701,7 +721,7 @@ class product extends React.Component {
                                                                 </div>
                                                             </div> */}
 
-                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
+                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4 displaynoneee" id="displaynoneee">
                                                                 <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill  "]+"blue meduim py-2"}>{this.props.t("subcateg")}</h3>
                                                                 {this.state.categ.map((key, value) => {
                                                                     let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
@@ -800,7 +820,7 @@ class product extends React.Component {
                                             </div>
                                         </div>
 
-                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
+                                        <div className=" displaynoneee col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4" id="displaynoneee">
                                             <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"blue meduim  py-2"}>{this.props.t("subcateg")}</h3>
                                             {this.state.categ.map((key, value) => {
                                                 let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
@@ -885,21 +905,23 @@ class product extends React.Component {
                                             </div>
                                             <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0  ">
                                                 <form action="" className="row relative ">
-                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
+                                                    <div className="col-11 col-sm-11 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
                                                         <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia  font_size   h-100"}>
                                                             {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
                                                             
                                                             <input type="text" id="search " placeholder={this.props.t("SearchProducts")} className={[(this.props.i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 searchnewprodbordure mb-1 py-1 py-md-0 light gill "]+"   texttitlemedia footertext   w-100"}
                                                                 value={this.state.inputsearch} onChange={this.filter} />
                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
-                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
+                                                             {/* <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} /> */}
                                                         </div>
                                                     </div>
+                                                    <div className="col-1 p-0 makeitdesp"><button data-parent="#modal" className="navbar-toggler py-2  textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent"><FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter}/></button></div>
                                                 </form>
+                                                
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="py-2"></div>
+                                    <div className="py-md-2 py-4"></div>
                             {/* <section> */}
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 ">
                                     <div className="container-fluid p-0 row">
