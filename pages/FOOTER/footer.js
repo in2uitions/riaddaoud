@@ -92,21 +92,21 @@ import { withTranslation } from "react-i18next";
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 Products d-flex py-2 p-0">
                                                 <div className="container-fluid ">
                                                     <div className="row ">
-                                                        <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2">
+                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
                                                             <Link href={""+this.state.data.facebook_link+""} target="_blank">
                                                                 <a href={""+this.state.data.facebook_link+""} target="_blank">
                                                                     <img src="./assets/images/facebook.svg" alt="socialmedia logo" className="img-fluid cover pointer  " />
                                                                 </a>
                                                             </Link>
                                                         </div>
-                                                        <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
+                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
                                                             <Link href={""+this.state.data.twitter_link+""}target="_blank">
                                                                 <a href={""+this.state.data.twitter_link+""}target="_blank">
                                                                     <img src="./assets/images/twitter.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
                                                                 </a>
                                                             </Link>
                                                         </div>
-                                                        <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
+                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
                                                             <Link href={""+this.state.data.instagram_link+""}target="_blank">
                                                                 <a href={""+this.state.data.instagram_link+""}target="_blank">
                                                                     <img src="./assets/images/insta.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />

@@ -166,7 +166,7 @@ class index extends React.Component {
     
             },
             768 : {
-              items : 3,
+              items : 5,
                 dots:false,
                 nav: true,
     
@@ -177,8 +177,8 @@ class index extends React.Component {
         loop:true,
         // margin:10,
         // nav: true,
-        items: 3,
-        center:true,
+        items: 4,
+        // center:true,
         autoplayTimeout: 4500,
         smartSpeed: 2000,
         autoHeight: false,
@@ -194,7 +194,7 @@ class index extends React.Component {
 
             },
             768 : {
-              items : 2,
+              items :4,
 
             }
         }
@@ -425,7 +425,7 @@ class index extends React.Component {
     for (const prod in this.state.products) {
       var k = this.state.products.length;
       var lastk = +k - 1;
-      var firstk = +k - 4;
+      var firstk = +k - 5;
       if (prod <= lastk && prod >= firstk) {
         posts[prod] = this.state.products[prod];
       }
@@ -990,7 +990,7 @@ class index extends React.Component {
                 <section className="owl-carousel owl-theme owl-loaded productslider">
     <div className="owl-stage-outer">
         <div className="owl-stage">
-            {console.log(lastposts)}
+            {/* {console.log(lastposts)} */}
         {lastposts.map((key, value) => {
                       var startb_url =
                         "https://rdcms.businessexchange.me/assets/";

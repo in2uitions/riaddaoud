@@ -120,41 +120,41 @@ handletrue = () => {
  
     return(
         <div id="header" className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 headermenu p-md-1 p-0"}>
-        <nav  className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 row py-2 pl-md-2 pl-0 "}>
-            <div class="menu-icon navbar-toggler">
+        <nav  className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  py-2 px-0 "}>
+            <div class={[(i18n.language=="ar")?"textalignright ":" "]+"menu-icon navbar-toggler  col-2 col-md-5"}>
                 <span class="fas fa-bars"></span></div>
-                <div class="nav-items col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">
-                    <li><Link href="/about">
-                        <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/about">
+                <div class="nav-items col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <li className="py-1 py-md-0"><Link href="/about">
+                        <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2 "} href="/about">
                             <span id="about">{i18n.t("about")}</span>
                         </a>
                     </Link></li>
-                    <li><Link href="/product">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/product">
+                    <li className="py-1 py-md-0"><Link href="/product">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/product">
                         <span id="products">{i18n.t("products")}</span>
                     </a></Link></li>
-                    <li><Link href="/media">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/media">
+                    <li className="py-1 py-md-0"><Link href="/media">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/media">
                         <span id="media">{i18n.t("media")}</span>
                     </a></Link></li>
-                    <li><Link href="/blog">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-3 headersubtitles"} href="/blog">
+                    <li className="py-1 py-md-0"><Link href="/blog">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-lg-3 px-2 headersubtitles"} href="/blog">
                         <span id="careers">{i18n.t("careers")}</span>
                     </a></Link></li>
-                    <li><Link href="/contact">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-3"} href="/contact">
+                    <li className="py-1 py-md-0"><Link href="/contact">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/contact">
                         <span id="contact">{i18n.t("contact")}</span>
                     </a></Link></li>
                     <div className="makeitdesp aligncenter">
                          <hr className="" />
                                 <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}</span>
                         {/* <ul > */}
-                        <p className="pointer gill font_size_med mt-4"  onClick={()=>changeLanguage("ar")}>Arabic</p>
-                        <p className="pointer gill font_size_med mt-2"  onClick={()=>changeLanguage("en")}>English</p>
+                        <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"pointer  font_size_med mt-4"}  onClick={()=>changeLanguage("ar")}>{i18n.t("arabic")}</p>
+                        <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"pointer  font_size_med mt-2"}  onClick={()=>changeLanguage("en")}>{i18n.t("english")}</p>
                         {/* </ul> */}
                     </div>
                 </div>
-            <div class="logo ">
+            <div class="logo col-8 col-md-4 textaligncenter">
             <Link href="/">
                 <a href="index.html">
                     <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="img-fluid contain logosheight" />
@@ -163,11 +163,11 @@ handletrue = () => {
             </div>
             
             {/* <div className="col-1"></div> */}
-            <div class="search-icon">
+            <div class={[(i18n.language=="ar")?"textalignleftmenu ":" "]+"search-icon col-2 col-md-5"}>
             <span class="fas fa-search"></span></div>
             <div class="cancel-icon">
             <span class="fas fa-times"></span></div>
-            <div className=" doneee col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
+            <div className=" doneee col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className={[(i18n.language=="ar")?"floatsearchleft ":"  "]+" container-fluid p-0 searchbox "}>
                     <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required />
                     {(this.state.issearchopen)? 
@@ -179,13 +179,13 @@ handletrue = () => {
                     <input type="search" className="search-data" placeholder={i18n.t("search")} required/>
                     <button type="submit" className="fas fa-search"></button>
             </form>
-            <div className="dropdown aligncenter makeitapp ">
-                <button className="  dropdown-toggle headersubtitles" type="button" data-toggle="dropdown">
-                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-2 mr-2 cover"/></span>
+            <div className="dropdown col-1 p-0 makeitapp  ">
+                <button className="  dropdown-toggle p-0  headersubtitleslan" type="button" data-toggle="dropdown">
+                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-1 verbaseline  cover"/></span>
                 </button>
                 <ul className="dropdown-menu">
-                <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("ar")}>Arabic</p>
-                    <p className="dropdown-item pointer gill font_size_med"  onClick={()=>changeLanguage("en")}>English</p>
+                <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"dropdown-item pointer  font_size_med"}  onClick={()=>changeLanguage("ar")}>{i18n.t("arabic")}</p>
+                    <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"dropdown-item pointer  font_size_med"}  onClick={()=>changeLanguage("en")}>{i18n.t("english")}</p>
                 </ul>
             </div>
 </nav>

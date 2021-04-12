@@ -72,6 +72,9 @@
         .textalignleft {
             text-align: left;
         }
+        .textalignleftmenu{
+            text-align: left!important;
+        }
         
         .flexreverse {
             flex-direction: row-reverse!important
@@ -266,7 +269,7 @@
         }
         
         .backgroundblue {
-            background-color: #002891;
+            background-color: #081D54;
             /* min-height: 80px; */
         }
         
@@ -824,13 +827,13 @@
         }
         
         .quotesimg {
-            height: 30px;
-            width: 30px;
+            height: 50px;
+            width: 50px;
         }
         
         .secquotes {
-            align-self: center;
-            padding-top: 20px;
+            align-self: flex-end;
+            /* padding-top: 20px; */
         }
         
         .aboutvision {
@@ -2235,6 +2238,11 @@ a:focus {
             font-weight: normal;
             font-size: 1em;
         }
+        .headersubtitleslan span {
+            color: #000000;
+            font-weight: normal;
+            font-size: 0.9em;
+        }
         
         .cover {
             object-fit: cover;
@@ -2550,8 +2558,8 @@ a:focus {
             color: #002891!important;
         }
         .navbar-toggler {
-            font-size: 1.5em!important;
-            padding: 0px 0px 0px 0px !important;
+            font-size: 1.1em!important;
+            /* padding: 0px 0px 0px 0px !important; */
 
         }
         
@@ -2776,7 +2784,7 @@ a:focus {
         
         .clearfilterbtn:hover {
             cursor: pointer;
-            background-color: #002891!important;
+            background-color: #081D54!important;
         }
         
         .clearfilterbtn:hover h3 {
@@ -3003,10 +3011,10 @@ padding:0px 10px 0px 10px
 @media only screen and (max-width: 991px) {
 .secquotes {
     align-self: flex-end!important;
-    padding-top: 0px!important;
+    /* padding-top: 0px!important; */
 }
 .footertext {
-    font-size: 0.75em!important;
+    font-size: 0.70em!important;
 }
 }
     @media only screen and (min-width: 992px) {
@@ -3708,7 +3716,7 @@ padding:0px 10px 0px 10px
     height: 50px;
 }
 .color_filter{
-    background-color: #002891;
+    background-color: #081D54;
 }
 /* .videowrapperparallax .owl-item{
  width:100%!important
@@ -3855,13 +3863,17 @@ nav .search-icon{
 nav .cancel-icon{
     color:#002891!important;
 }
+nav .search-icon{
+    text-align: right;
+
+}
 nav .menu-icon,
 nav .cancel-icon,
 nav .search-icon{
   width: 40px;
-  text-align: center;
-  margin: 0 50px;
-  font-size: 13px;
+  /* text-align: center; */
+  /* margin: 0 50px; */
+  font-size: 20px;
   color: #fff;
   cursor: pointer;
   display: none;
@@ -3875,8 +3887,9 @@ nav .search-icon{
   nav{
     padding: 0 50px;
   }
+  
 }
-@media (max-width: 1140px){
+@media (max-width: 900px){
   nav{
     padding: 0px;
   }
@@ -3914,7 +3927,7 @@ nav .search-icon{
     /* margin: 30px 0; */
   }
   nav .nav-items li .headersubtitles{
-    font-size: 20px;
+    /* font-size: 20px; */
   }
   nav form{
     position: absolute;
@@ -3971,11 +3984,11 @@ nav .search-icon{
 }
 
 
-@media (max-width: 980px){
+@media (max-width: 900px){
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon{
-    margin: 0 20px;
+    /* margin: 0 20px; */
   }
   nav form{
     right: 30px;
@@ -4009,14 +4022,14 @@ nav .search-icon{
 .iconslider .active.center {
     opacity: 1!important;
     font-weight: bolder!important;
-    transform: scale(1.3, 1.3)!important;
-    -webkit-transform: scale(1.3, 1.3)!important;
-    -moz-transform: scale(1.3, 1.3)!important;
-    -ms-transform: scale(1.3, 1.3)!important;
-    -o-transform: scale(1.3, 1.3)!important;
+    transform: scale(1.9, 1.9)!important;
+    -webkit-transform: scale(1.9, 1.9)!important;
+    -moz-transform: scale(1.9, 1.9)!important;
+    -ms-transform: scale(1.9, 1.9)!important;
+    -o-transform: scale(1.9, 1.9)!important;
 }
 .iconslider .owl-item{
-    opacity:0.2;
+    /* opacity:0.2; */
     /* height:70px; */
     display: flex;
     justify-content: center;
@@ -4031,6 +4044,9 @@ nav .search-icon{
 }
 .baseline{
     align-items: baseline;
+}
+.verbaseline{
+    vertical-align: baseline;
 }
 .padscentered{
     padding-left: 15px;

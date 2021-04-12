@@ -32,7 +32,8 @@
     "Showing": "عرض",
     "of": "من",
     "brand": "ماركة",
-    "clearfilters": "مسح عوامل التصفية",
+    "clearfilters": "مسح",
+    "filter":"فلتر",
     "subcateg": "تصنيف فرعي",
     "formoreinfo": "لمزيد من الاستفسارات أو الأسئلة",
     "aboutreplying": "نرد على استفساراتك في أي وقت من الأوقات",
@@ -43,5 +44,7 @@
     "Claim": "مطالبة",
     "Privacy": "خصوصية",
     "Terms": "شروط",
-    "search":"...بحث"
+    "search":"...بحث",
+    "english":"الإنجليزية",
+    "arabic":"عربى"
 }

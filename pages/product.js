@@ -133,7 +133,7 @@ class product extends React.Component {
             // setTimeout(function(){setpops();},2000);// fix old webkit bug
         
         }; 
-        $("[id='categ1']").show();
+        $("[id='categ1']").hide();
         $("[id='categ2']").hide();
         $("[id='categ3']").hide();
         $("[id='categ4']").hide();
@@ -162,6 +162,12 @@ class product extends React.Component {
             };
             if (this.value == "1") {
                 $("[id='categ_mini1']").show();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").hide();
+            };
+            if (this.value == "all") {
+                $("[id='categ_mini1']").hide();
                 $("[id='categ_mini2']").hide();
                 $("[id='categ_mini3']").hide();
                 $("[id='categ_mini4']").hide();
@@ -657,14 +663,14 @@ class product extends React.Component {
                                 <div className="panel">
                                     <div className="col-md-12 visible-sm">
                                         <div className="navbar-expand-md">
-                                            <button data-parent="#modal" className="navbar-toggler whitee color_filter textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
-                                                <span clasName="gill whitee">FILTER</span>
+                                            <button data-parent="#modal" className="navbar-toggler py-2 whitee color_filter textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
+                                                <span clasName="gill whitee">{this.props.t("filter")}</span>
                                             </button>
                                             <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div className="modal-dialog " role="document">
                                                     <div className="modal-content">
                                                         <div className="modal-header ltr">
-                                                            <p clasName="gill ">FILTER</p>
+                                                            <p clasName="gill ">{this.props.t("filter")}</p>
                                                             <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         </div>
                                                         <div className="modal-body">
@@ -706,16 +712,13 @@ class product extends React.Component {
                                                                             <div key={['btn-5-'+value]} className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-1" id={"categ_mini" + keys.category + ""}>
                                                                                 <div className="container-fluid p-0">
                                                                                     <div className="row">
-                                                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright  ":"mr-3  "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 "}>
+                                                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright ":"mr-3 "]+"col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0  "}>
                                                                                             <label className="checkbox h-100 w-100 p-0 " >
                                                                                                 <input type="checkbox" id="categCheck" name={"" + key.title + ""} value={"" + key.title + ""} onChange={(e) => this.clickingcategfilter(keys.id, e.target.checked)} />
                                                                                             </label>
                                                                                         </div>
-                                                                                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-0 subtablinks">
-                                                                                            <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+" text-lightgrey contents "}>
-                                                                                                {  (this.props.i18n.language == "ar") ? title_ar : keys.title}
-                                                                                                {/* {"" + keys.category + ""} */}
-                                                                                                 </h3>
+                                                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright mr-3 ":""]+"col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 p-0 subtablinks "}>
+                                                                                            <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi mr-3 ":" gill light "]+" text-lightgrey contents "}>{  (this.props.i18n.language == "ar") ? title_ar : keys.title} </h3>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -774,6 +777,9 @@ class product extends React.Component {
                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
                                                         <select name="jquery_box" id="jquery_box" className={[(this.props.i18n.language=="ar")?"fleche_ar ":""]+"py-4 w-100 backgroundblue px-3 pointer "}>
+                                                                     <option className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter meduim  font_size"} value={"all"}>
+                                                                        ALL CATEGORIES
+                                                                    </option>
                                                             {this.state.categ.map((key, value) => {
                                                                  if (key.title_ar == null) { var title_ar = key.title }
                                                                  else var title_ar = key.title_ar 

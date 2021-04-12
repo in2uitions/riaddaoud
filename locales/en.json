@@ -33,6 +33,7 @@
     "of": "of",
     "brand": "Brand",
     "clearfilters": "Clear Filters",
+    "filter":"FILTER",
     "subcateg": "SUB - CATEGORY",
     "formoreinfo": "for more inquiries or questions",
     "aboutreplying": "We reply to your inquiries in no time",
@@ -43,5 +44,7 @@
     "Claim": "Claim",
     "Privacy": "Privacy",
     "Terms": "Terms",
-    "search":"search..."
+    "search":"search...",
+    "english":"English",
+    "arabic":"Arabic"
 }
