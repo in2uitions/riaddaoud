@@ -343,6 +343,7 @@ render (){
                       <div className="col ">
                         <input
                           type="tel" onChange={this.handlePhoneChange}
+                          pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("phonenbplaceholder")}
                         />
