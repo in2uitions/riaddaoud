@@ -1063,19 +1063,19 @@ a:focus {
         }
         @media screen and (max-width: 595px) {
             .lefteye_ar{
-                text-align: right;
+                /* text-align: right; */
                 padding-left: 0px!important;
             }
             .lefteye_ar1{
-                text-align: right;
+                /* text-align: right; */
                 padding-left: 0px!important;
             }
             .lefteye_ar2{
-                text-align: right;
+                /* text-align: right; */
                 padding-left: 0px!important;
             }
             .lefteye_ar3{
-                text-align: right;
+                /* text-align: right; */
                 padding-left: 0px!important;
             }
         }
@@ -4111,3 +4111,4 @@ nav .search-icon{
 .languageprob{
     text-align: -webkit-right;
 }
+.displaynonefor{display:none}

@@ -102,7 +102,7 @@ class Nav extends React.Component{
         });
         $(function () {
             $(".dropdown-menu > li  a").click(function () {
-                console.log("clicked");
+                // console.log("clicked");
                 return false;
             });
         });
@@ -179,7 +179,16 @@ handletrue = () => {
                     <input type="search" className="search-data" placeholder={i18n.t("search")} required/>
                     <button type="submit" className="fas fa-search"></button>
             </form>
-            <div className={[(i18n.language=="ar")?"languageprob ":"  "]+"dropdown col-1 p-0 makeitapp  "}>
+            <div className={[(i18n.language=="ar")?"languageprob displaynonefor ":"  "]+"dropdown col-1 p-0 makeitapp  "}>
+                <button className="  dropdown-toggle p-0  headersubtitleslan" type="button" data-toggle="dropdown">
+                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-1 verbaseline  cover"/></span>
+                </button>
+                <ul className="dropdown-menu">
+                <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"dropdown-item pointer  font_size_med"}  onClick={()=>changeLanguage("ar")}>{i18n.t("arabic")}</p>
+                    <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"dropdown-item pointer  font_size_med"}  onClick={()=>changeLanguage("en")}>{i18n.t("english")}</p>
+                </ul>
+            </div>
+            <div className={[(i18n.language=="ar")?"languageprob ":" displaynonefor "]+"dropdown1 col-1 p-0 makeitapp  "}>
                 <button className="  dropdown-toggle p-0  headersubtitleslan" type="button" data-toggle="dropdown">
                         <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-1 verbaseline  cover"/></span>
                 </button>
