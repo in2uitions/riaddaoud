@@ -145,8 +145,8 @@ handletrue = () => {
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/contact">
                         <span id="contact">{i18n.t("contact")}</span>
                     </a></Link></li>
-                    <div className="makeitdesp aligncenter">
-                         <hr className="" />
+                    <div className="makeitdesp  headersubtitles aligncenter">
+                         <hr  />
                                 <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}</span>
                         {/* <ul > */}
                         <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"pointer  font_size_med mt-4"}  onClick={()=>changeLanguage("ar")}>{i18n.t("arabic")}</p>
@@ -156,8 +156,8 @@ handletrue = () => {
                 </div>
             <div class="logo col-8 col-md-4 textaligncenter">
             <Link href="/">
-                <a href="index.html">
-                    <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="img-fluid contain logosheight" />
+                <a href="index.html" className="logoabsolute">
+                    <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="contain logosheight" />
                 </a>
                 </Link>
             </div>

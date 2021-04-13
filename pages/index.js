@@ -141,7 +141,7 @@ class index extends React.Component {
         // margin:10,
         nav: true,
         items: 4,
-        center:true,
+        // center:true,
         dots:false,
         navText: [
           "<div class='nav-btn prev-slide '><img src='./assets/images/bigleft.png' style='object-fit: cover' class='img-fluid ' /></div>",
@@ -157,18 +157,21 @@ class index extends React.Component {
                 items : 3,
                 // dots:true,
                 nav: false,
+                dotsEach:3,
     
             },
             480 : {
               items : 3,
                 // dots:true,
                 nav: false,
+                dotsEach:3,
     
             },
             768 : {
               items : 5,
                 // dots:false,
                 nav: true,
+                dotsEach:5,
     
             }
         }
@@ -190,18 +193,18 @@ class index extends React.Component {
             0 : {
                 items : 3,
                 // center:true,
-                dotsEach:2,
+                dotsEach:3,
 
             },
             480 : {
               items : 3,
               // center:true,
-              dotsEach:2,
+              dotsEach:3,
 
             },
             768 : {
               items :4,
-              dotsEach:2,
+              dotsEach:4,
 
             }
         }

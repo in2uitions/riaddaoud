@@ -1084,6 +1084,14 @@ a:focus {
             .product3dunno {
                 border-right: solid 0.5px #9A9A9A
             }
+            .footermobile{
+                text-align-last: center!important;
+                text-align: center!important;
+            }
+            .footermobilemail{
+                display: flex!important;
+                justify-content: space-around!important;
+            }
             .timeline::before {
                 left: 50px;
             }
@@ -3298,6 +3306,12 @@ padding:0px 10px 0px 10px
     @media only screen and (max-width: 900px) {
         .searchbox-open {
             width: 200px;
+        }        
+        .logoabsolute{
+            position: absolute!important;
+            top: 50%!important;
+            transform: translateX(-50%)translateY(-50%)!important;
+            left: 50%!important;
         }
         .lefteye_ar{
             padding-left: 90%;
@@ -4071,4 +4085,7 @@ nav .search-icon{
 }
 .displaynoneee{
     display:none;
+}
+.bckgcover{
+    background-size: cover;
 }
