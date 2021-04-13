@@ -179,7 +179,23 @@ this.loadanim();
  }
   handleLogin =(e)=> {
     e.preventDefault()
-  
+    var x = document.getElementById("name").value
+    var y = document.getElementById("textarea").value
+    var z = document.getElementById("last").value
+    // var x = document.getElementById("name").value
+    // console.log(x)
+    if (x === null || x.trim() === "") {
+        alert("you can't send empty fields !!");
+        return false;
+    }
+    if (y === null || y.trim() === "") {
+      alert("you can't send empty fields !!");
+      return false;
+    }
+    if (z === null || z.trim() === "") {
+      alert("you can't send empty fields !!");
+      return false;
+    }
     var formdata = new FormData();
     formdata.append("grant_type", "client_credentials");
     formdata.append("client_id", "abf00ccfee58b1f7d175588b9e9b8e60");
@@ -241,10 +257,16 @@ this.loadanim();
       icon: 'success',
       title: 'Your message has been send',
       showConfirmButton: false,
-      // timer: 10
+      timer: 1000
     }))
     .catch(error => console.log('error', error)).then((res) => {
         console.log("RESPONSE RECEIVED: ", res);
+        document.getElementById("name").value=""
+        document.getElementById("textarea").value=""
+        document.getElementById("last").value=""
+        document.getElementById("email").value=""
+        document.getElementById("phone").value=""
+        document.getElementById("custom-text").innerHTML=this.props.t("attachresume")
       })
       .catch((err) => {
         console.log("AXIOS ERROR: ", err.response);
@@ -318,14 +340,15 @@ render (){
                         <input
                           type="text " onChange={this.handleNameChange}
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation  placeholder  bordernone js--fadeInb"}
-                          placeholder={this.props.t("firstname")} required
+                          placeholder={this.props.t("firstname")} required maxlength="200"
+                          id="name"
                         />
                       </div>
                       <div className="col ">
                         <input
                           type="text " onChange={this.handleLastnameChange}
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation placeholder  bordernone js--fadeInb"}
-                          placeholder={this.props.t("lastname")} required
+                          placeholder={this.props.t("lastname")} required maxlength="200"  id="last"
                         />
                       </div>
                     </div>
@@ -338,6 +361,7 @@ render (){
                           // pattern=".+@gmail.com"
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light " ]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("emailplaceholder")}
+                          required maxlength="200" minlength="6"   id="email"
                         />
                       </div>
                       <div className="col ">
@@ -346,6 +370,7 @@ render (){
                           pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("phonenbplaceholder")}
+                          required maxlength="200" minlength="8"   id="phone"
                         />
                       </div>
                     </div>
@@ -394,6 +419,7 @@ render (){
                           id="exampleFormControlTextarea1 "
                           rows="5"
                           placeholder={this.props.t("textareaplaceholder")}
+                          required maxlength="200"  id="textarea"
                         ></textarea>
                       </div>
                     </div>

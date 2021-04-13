@@ -232,7 +232,21 @@ handleEmailChange =(e)=> {
  }
  handleLogin =(e)=> {
     e.preventDefault()
-  
+    var x = document.getElementById("name").value
+    var y = document.getElementById("textarea").value
+    var z = document.getElementById("Subject").value
+    if (x === null || x.trim() === "") {
+        alert("you can't send empty fields !!");
+        return false;
+    }
+    if (y === null || y.trim() === "") {
+      alert("you can't send empty fields !!");
+      return false;
+    }
+    if (z === null || z.trim() === "") {
+      alert("you can't send empty fields !!");
+      return false;
+    }
     var formdata = new FormData();
     formdata.append("grant_type", "client_credentials");
     formdata.append("client_id", "abf00ccfee58b1f7d175588b9e9b8e60");
@@ -294,7 +308,7 @@ handleEmailChange =(e)=> {
         icon: 'success',
         title: 'Your message has been send',
         showConfirmButton: false,
-        // timer: 10
+        timer: 1000
       })
     //   text.value = ""
 
@@ -302,6 +316,11 @@ handleEmailChange =(e)=> {
       )
     .catch(error => console.log('error', error)).then((res) => {
         console.log("RESPONSE RECEIVED: ", res);
+        document.getElementById("Subject").value="";
+        document.getElementById("name").value="";
+        document.getElementById("textarea").value="";
+        document.getElementById("email").value="";
+        document.getElementById("phone").value="";
       })
       .catch((err) => {
         console.log("AXIOS ERROR: ", err.response);
@@ -327,7 +346,6 @@ render (){
   return (
     <div>
       <Navigation current="contact"></Navigation>
-      {/* {console.log(this.state.api)} */}
       <>
       <div className={[(this.props.i18n.language=="ar")?" direction: rtl ":" "]+"container-fluid p-0 relative"}>
         <div className="row  p-0 ">
@@ -348,26 +366,26 @@ render (){
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="text" name="text" onChange={this.handleNameChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder  bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")} required/>
+                                        <input type="text" id="name" name="text" onChange={this.handleNameChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi  textalignright  animation js--fadeInRight placeholder  bordernone":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone "} placeholder={this.props.t("nameplaceholder")} required maxlength="200"/>
                                     </div>
                                     <div className="col">
-                                        <input type="email" name="text" onChange={this.handleEmailChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder  bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")} required/>
+                                        <input type="email" id="email"  minlength="6" name="text" onChange={this.handleEmailChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi animation js--fadeInRight placeholder  bordernone textalignright":"form-control gill animation js--fadeInRight placeholder lightitalic bordernone"} placeholder={this.props.t("emailplaceholder")} required maxlength="200"/>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2">
                                 <div className="form-row">
                                     <div className="col">
-                                        <input type="tel"   pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$" name="text" onChange={this.handlePhoneChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")} required/>
+                                        <input type="tel" id="phone" minlength="8" pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$" name="text" onChange={this.handlePhoneChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder  animation js--fadeInRight  bordernone textalignright":"form-control  gill placeholder  animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("phonenbplaceholder")} required maxlength="200"/>
                                     </div>
                                     <div className="col">
-                                        <input type="text" name="text" onChange={this.handleSubjectChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")} required/>
+                                        <input type="text" id="Subject"  name="text" onChange={this.handleSubjectChange} className={(this.props.i18n.language=="ar")?"form-control DroidKufi placeholder animation js--fadeInRight  bordernone textalignright":"form-control gill placeholder animation js--fadeInRight lightitalic bordernone "} placeholder={this.props.t("Subjectplaceholder")} required maxlength="200"/>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">
                                 <div className="form-group  ">
-                                    <textarea name="text" onChange={this.handleTextChange} className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight  bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")}></textarea>
+                                    <textarea name="text" onChange={this.handleTextChange} className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight  bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")} required maxlength="200"  id="textarea"></textarea>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">
