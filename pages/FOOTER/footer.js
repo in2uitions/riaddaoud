@@ -45,7 +45,7 @@ import { withTranslation } from "react-i18next";
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 py-3">
                                                 <div className="container-fluid p-0">
                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+"container-fluid p-0"}>
-                                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"footertext light text-lightgrey lineheight footermobile"}>{this.state.data.footer_brief}</p>
+                                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"footertext light text-lightgrey lineheight"}>{this.state.data.footer_brief}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -56,12 +56,12 @@ import { withTranslation } from "react-i18next";
                                         <div className="container-fluid p-md-0">
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 Products d-flex p-0  footerheighttitile">
                                                 <div className="container-fluid p-0">
-                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+"meduim px-md-1  blue footermobile"}>{(this.props.i18n.language=="ar")?"اتصل بنا":"Contact Us"}</h3>
+                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+"meduim px-md-1  blue"}>{(this.props.i18n.language=="ar")?"اتصل بنا":"Contact Us"}</h3>
                                                 </div>
                                             </div>
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 py-3">
-                                                <div className="container-fluid lineheight footermobilemail">
-                                                    <div className="row ">
+                                                <div className="container-fluid lineheight">
+                                                    <div className="row">
                                                         <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 ">
                                                             <Link href={"mailto:"+this.state.data.contact_email+""} target="_blank">
                                                                 <a href={"mailto:"+this.state.data.contact_email+""} target="_blank">
@@ -86,27 +86,27 @@ import { withTranslation } from "react-i18next";
                                         <div className="container-fluid p-md-0">
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 Products d-flex p-0 footerheighttitile">
                                                 <div className="container-fluid p-0">
-                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"meduim px-md-1 blue footermobile"}>{(this.props.i18n.language=="ar")?"تابعنا":"Follow Us"}</h3>
+                                                    <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"meduim px-md-1 blue"}>{(this.props.i18n.language=="ar")?"تابعنا":"Follow Us"}</h3>
                                                 </div>
                                             </div>
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 Products d-flex py-2 p-0">
                                                 <div className="container-fluid ">
-                                                    <div className="row footermobilemail">
-                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
+                                                    <div className="row ">
+                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2 px-0">
                                                             <Link href={""+this.state.data.facebook_link+""} target="_blank">
                                                                 <a href={""+this.state.data.facebook_link+""} target="_blank">
                                                                     <img src="./assets/images/facebook.svg" alt="socialmedia logo" className="img-fluid cover pointer  " />
                                                                 </a>
                                                             </Link>
                                                         </div>
-                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
+                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2 px-0">
                                                             <Link href={""+this.state.data.twitter_link+""}target="_blank">
                                                                 <a href={""+this.state.data.twitter_link+""}target="_blank">
                                                                     <img src="./assets/images/twitter.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
                                                                 </a>
                                                             </Link>
                                                         </div>
-                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-2">
+                                                        <div className="col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2 px-0">
                                                             <Link href={""+this.state.data.instagram_link+""}target="_blank">
                                                                 <a href={""+this.state.data.instagram_link+""}target="_blank">
                                                                     <img src="./assets/images/insta.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
@@ -127,7 +127,7 @@ import { withTranslation } from "react-i18next";
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+"col-12 col-sm-12 col-md-8 col-lg-4 col-xl-4 col-xxl-4"}>
-                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light "]+"footerallright  font_size_small footermobile"}>
+                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light "]+"footerallright  font_size_small"}>
                                         {this.props.t("footersignature")}
                                             </p>
                                     </div>
