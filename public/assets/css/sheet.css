@@ -3975,6 +3975,14 @@ nav .search-icon{
   nav .arabic:before{
     right: 90%!important;
   }
+  nav .arabic.active{
+    left: 5%!important;
+    width: 90%!important;
+  }
+  nav form.active{
+    right: 5%;
+    width: 90%!important;
+  }
   nav form:after{
     position: absolute;
     content: '';
