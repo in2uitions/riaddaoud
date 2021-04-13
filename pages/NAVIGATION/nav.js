@@ -147,7 +147,7 @@ handletrue = () => {
                     </a></Link></li>
                     <div className="makeitdesp  headersubtitles aligncenter">
                          <hr  />
-                                <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}</span>
+                                {/* <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}</span> */}
                         {/* <ul > */}
                         <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"pointer  font_size_med mt-4"}  onClick={()=>changeLanguage("ar")}>{i18n.t("arabic")}</p>
                         <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"pointer  font_size_med mt-2"}  onClick={()=>changeLanguage("en")}>{i18n.t("english")}</p>

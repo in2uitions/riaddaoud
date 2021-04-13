@@ -1084,6 +1084,9 @@ a:focus {
             .product3dunno {
                 border-right: solid 0.5px #9A9A9A
             }
+            .font_size_med {
+                font-size: 0.9em!important;
+            }
             .footermobile{
                 text-align-last: center!important;
                 text-align: center!important;
