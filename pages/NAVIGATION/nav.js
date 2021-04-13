@@ -154,10 +154,10 @@ handletrue = () => {
                         {/* </ul> */}
                     </div>
                 </div>
-            <div class="logo col-8 col-md-4 textaligncenter">
+            <div class="logo col-8 col-md-4 textaligncenter ">
             <Link href="/">
-                <a href="index.html" className="logoabsolute">
-                    <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="contain logosheight" />
+                <a href="index.html" className="logoabsolute ">
+                    <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="contain logosheight logoslidingproblem" />
                 </a>
                 </Link>
             </div>
@@ -179,7 +179,7 @@ handletrue = () => {
                     <input type="search" className="search-data" placeholder={i18n.t("search")} required/>
                     <button type="submit" className="fas fa-search"></button>
             </form>
-            <div className="dropdown col-1 p-0 makeitapp  ">
+            <div className={[(i18n.language=="ar")?"languageprob ":"  "]+"dropdown col-1 p-0 makeitapp  "}>
                 <button className="  dropdown-toggle p-0  headersubtitleslan" type="button" data-toggle="dropdown">
                         <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-1 verbaseline  cover"/></span>
                 </button>

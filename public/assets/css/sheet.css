@@ -4040,7 +4040,7 @@ nav .search-icon{
 .productslider .owl-dots{
         margin-top:30px!important
 }
-/* .iconslider .active.center {
+.iconslider .active.center {
     opacity: 1!important;
     font-weight: bolder!important;
     transform: scale(1.9, 1.9)!important;
@@ -4048,7 +4048,7 @@ nav .search-icon{
     -moz-transform: scale(1.9, 1.9)!important;
     -ms-transform: scale(1.9, 1.9)!important;
     -o-transform: scale(1.9, 1.9)!important;
-} */
+}
 .iconslider .owl-item{
     /* opacity:0.2; */
     /* height:70px; */
@@ -4091,4 +4091,12 @@ nav .search-icon{
 }
 .iconslider .owl-dots{
     margin-top:0px!important;
+}
+@media screen and (min-width: 991px) and (max-width: 1080px) {
+   .logoslidingproblem{ position: absolute;
+    top: 50%;
+    left: 62%;
+    transform: translateX(-50%)translateY(-50%);}}
+.languageprob{
+    text-align: -webkit-right;
 }
