@@ -58,7 +58,7 @@ this.loadanim();
               origin: 'bottom',
               distance: '300px',
               easing: 'ease-in-out',
-              duration: 800,
+              duration: 850,
           });
 
 
@@ -68,7 +68,7 @@ this.loadanim();
           origin: 'bottom',
           distance: '300px',
           easing: 'ease-in-out',
-          duration: 800,
+          duration: 850,
       });
 
 
@@ -113,35 +113,35 @@ this.loadanim();
       });
   });
 
-  onscroll = function() {
-      myFunctionn()
-  };
+  // onscroll = function() {
+  //     myFunctionn()
+  // };
 
-  function myFunctionn() {
-      var scrollTop = window.pageYOffset
-      if (scrollTop >= 100) {
-          document.getElementById("header").style.backgroundColor = "white";
-      } else {
-          document.getElementById("header").style.backgroundColor = "transparent";
-      }
-  }
+  // function myFunctionn() {
+  //     var scrollTop = window.pageYOffset
+  //     if (scrollTop >= 100) {
+  //         document.getElementById("header").style.backgroundColor = "white";
+  //     } else {
+  //         document.getElementById("header").style.backgroundColor = "transparent";
+  //     }
+  // }
+  
+  // function myFunction() {
+  //     document.getElementById("myDropdown").classList.toggle("show");
+  // }
 
-  function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-  }
-
-  window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                  openDropdown.classList.remove('show');
-              }
-          }
-      }
-  };
+  // window.onclick = function(event) {
+  //     if (!event.target.matches('.dropbtn')) {
+  //         var dropdowns = document.getElementsByClassName("dropdown-content");
+  //         var i;
+  //         for (i = 0; i < dropdowns.length; i++) {
+  //             var openDropdown = dropdowns[i];
+  //             if (openDropdown.classList.contains('show')) {
+  //                 openDropdown.classList.remove('show');
+  //             }
+  //         }
+  //     }
+  // };
   const realFileBtn = document.getElementById("real-file");
   const customBtn = document.getElementById("custom-button");
   const customTxt = document.getElementById("custom-text");
@@ -277,11 +277,11 @@ render (){
       < >
         <div>
           <div className="container-fluid p-0 parallax "style={{backgroundImage:'url('+imageurl+')'}}></div>
-          <div className="container-fluid px-5 py-0">
+          <div className="container-fluid ">
             <div className="row">
               <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 "></div>
-              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 aboutheader py-5 p-0">
-                <div className="container-fluid p-0">
+              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 aboutheader py-4 px-3">
+                <div className="container-fluid py-4 mb-4 ">
                   <div className="row py-4 ">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
                       <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"meduim white aligncenter "}>
