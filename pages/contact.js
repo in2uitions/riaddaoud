@@ -331,7 +331,7 @@ render (){
       <>
       <div className={[(this.props.i18n.language=="ar")?" direction: rtl ":" "]+"container-fluid p-0 relative"}>
         <div className="row  p-0 ">
-            <div className={(this.props.i18n.language=="ar")?"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 parallaxx relative fliphorizontally":"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 parallaxx relative bckgcover"}style={{backgroundImage:'url('+imageurl+')'}}>
+            <div className={(this.props.i18n.language=="ar")?"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 parallaxx bckgcover relative fliphorizontally":"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 parallaxx relative bckgcover"}style={{backgroundImage:'url('+imageurl+')'}}>
                 <div className="col-12 overlay1"></div>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7 py-5 px-1 mt-4 ">

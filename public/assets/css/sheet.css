@@ -1344,7 +1344,7 @@ a:focus {
         
         .product2backg {
             background-image: url('../images/8.png');
-            background-size: cover;
+            background-size: cover!important;
             /* position: relative; */
         }
         
@@ -4098,7 +4098,7 @@ nav .search-icon{
     display:none;
 }
 .bckgcover{
-    background-size: cover;
+    background-size: cover!important;;
 }
 .iconslider .owl-dots{
     margin-top:0px!important;
