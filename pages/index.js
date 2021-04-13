@@ -157,6 +157,7 @@ class index extends React.Component {
                 items : 3,
                 // dots:true,
                 nav: false,
+                dots:true,
                 dotsEach:3,
     
             },
@@ -164,6 +165,7 @@ class index extends React.Component {
               items : 3,
                 // dots:true,
                 nav: false,
+                dots:true,
                 dotsEach:3,
     
             },
