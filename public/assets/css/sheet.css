@@ -3976,7 +3976,7 @@ nav .search-icon{
     margin: -20px 0 0;
   }
   nav .arabic:before{
-    right: 90%!important;
+    right: 95%!important;
   }
   nav .arabic.active{
     left: 5%!important;

@@ -153,38 +153,49 @@ class product extends React.Component {
         // $("[id="+"myCheck"+6+"]").prop('checked', false);
         var fff='myCheck'+this.props.query.data_id
         $("[id="+fff+"]").prop('checked', true);
-        $("[id='categ1']").show();
+        $("[id='categ1']").hide();
         $("[id='categ2']").hide();
         $("[id='categ3']").hide();
         $("[id='categ4']").hide();
-        $("[id='categ_mini1']").show();
+        $("[id='categ_mini1']").hide();
         $("[id='categ_mini2']").hide();
         $("[id='categ_mini3']").hide();
         $("[id='categ_mini4']").hide();
         $("#jquery_box_mini").change(function () {
             if (this.value == "4") {
-                $("[id='categ1']").hide();
-                $("[id='categ2']").hide();
-                $("[id='categ3']").hide();
-                $("[id='categ4']").show();
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").show();
+                document.getElementById("displaynoneee_mini").style.display="block"
             };
             if (this.value == "3") {
-                $("[id='categ1']").hide();
-                $("[id='categ2']").hide();
-                $("[id='categ3']").show();
-                $("[id='categ4']").hide();
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").show();
+                $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee_mini").style.display="block"
             };
             if (this.value == "2") {
-                $("[id='categ1']").hide();
-                $("[id='categ2']").show();
-                $("[id='categ3']").hide();
-                $("[id='categ4']").hide();
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").show();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee_mini").style.display="block"
             };
             if (this.value == "1") {
-                $("[id='categ1']").show();
-                $("[id='categ2']").hide();
-                $("[id='categ3']").hide();
-                $("[id='categ4']").hide();
+                $("[id='categ_mini1']").show();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee_mini").style.display="block"
+            };
+            if (this.value == "all") {
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee_mini").style.display="none"
             };
         })
 
@@ -195,6 +206,8 @@ class product extends React.Component {
                 $("[id='categ2']").hide();
                 $("[id='categ3']").hide();
                 $("[id='categ4']").show();
+                document.getElementById("displaynoneee").style.display="block"
+                // console.log(document.getElementById("displaynoneee"))
             }
 
             if (this.value == "3") {
@@ -202,19 +215,29 @@ class product extends React.Component {
                 $("[id='categ2']").hide();
                 $("[id='categ3']").show();
                 $("[id='categ4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             }
             if (this.value == "2") {
                 $("[id='categ1']").hide();
                 $("[id='categ2']").show();
                 $("[id='categ3']").hide();
                 $("[id='categ4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             }
             if (this.value == "1") {
                 $("[id='categ1']").show();
                 $("[id='categ2']").hide();
                 $("[id='categ3']").hide();
                 $("[id='categ4']").hide();
+                document.getElementById("displaynoneee").style.display="block"
             }
+            if (this.value == "all") {
+                $("[id='categ_mini1']").hide();
+                $("[id='categ_mini2']").hide();
+                $("[id='categ_mini3']").hide();
+                $("[id='categ_mini4']").hide();
+                document.getElementById("displaynoneee").style.display="none"
+            };
 
         }
         
@@ -566,9 +589,9 @@ class product extends React.Component {
                                 <div className="panel">
                                     <div className="col-md-12 visible-xs">
                                         <div className="navbar-expand-lg">
-                                            <button data-parent="#modal" className="navbar-toggler textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
+                                            {/* <button data-parent="#modal" className="navbar-toggler textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent">
                                                 <span>FILTER</span>
-                                            </button>
+                                            </button> */}
                                             <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div className="modal-dialog " role="document">
                                                     <div className="modal-content">
@@ -584,6 +607,9 @@ class product extends React.Component {
                                                                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "> */}
                                                                             {/* <div > */}
                                                                             <select name="jquery_box_mini" id="jquery_box_mini" className="py-4 textaligncenter w-100  backgroundblue">
+                                                                                <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"selectoption container-fluid px-2 textalignleft  font_size"} value={"all"}>
+                                                                                    ALL CATEGORIES
+                                                                                </option>
                                                                                 {this.state.categ.map((key, value) => {
                                                                                     if (key.title_ar == null) { var title_ar = key.title }
                                                                                     else var title_ar = key.title_ar 
@@ -604,7 +630,7 @@ class product extends React.Component {
                                                                 </div>
                                                             </div> */}
 
-                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
+                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4 displaynoneee" id="displaynoneee_mini">
                                                                 <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill  "]+"blue py-2"}><Subcateg /></h3>
                                                                 {this.state.categ.map((key, value) => {
                                                                     let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
@@ -683,6 +709,10 @@ class product extends React.Component {
                                                     <div className={[(i18n.language=="ar")?"textalignright ":""]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 "}>
                                                         {/* <div > */}
                                                         <select name="jquery_box" id="jquery_box" className="py-4  w-100 backgroundblue px-3 pointer">
+                                                            
+                                                                <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"px-4 selectoption textaligncenter meduim font_size"} value={"all"}>
+                                                                            ALL CATEGORIES
+                                                                </option>
                                                             {this.state.categ.map((key, value) => {
                                                                  if (key.title_ar == null) { var title_ar = key.title }
                                                                  else var title_ar = key.title_ar 
@@ -703,7 +733,7 @@ class product extends React.Component {
                                             </div>
                                         </div>
 
-                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4">
+                                        <div className=" displaynoneee col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 mt-4 px-4" id="displaynoneee">
                                             <h3 className={[(i18n.language=="ar")?"textalignright DroidKufi ":"meduim gill " ]+"blue  py-2"}><Subcateg /></h3>
                                             {this.state.categ.map((key, value) => {
                                                 let a = this.state.subcateg.filter(keyy => { return keyy.category == key.id })
@@ -787,22 +817,23 @@ class product extends React.Component {
                                             </div>
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 p-0 ">
                                                 <form action="" className="row relative ">
-                                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
-                                                        <div className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"relative texttitlemedia searchnewprodbordure font_size   h-100"}>
+                                                    <div className="col-11 col-sm-11 col-md-12 col-lg-12 col-xl-12 col-xxl-12  w-100 ">
+                                                        <div className={[(i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"relative texttitlemedia  font_size   h-100"}>
                                                             {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
                                                             
                                                             <input type="text" id="search "
-                                                             placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"SearchProducts"} className={[(i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 gill light "]+"  texttitlemedia footertext   w-100"}
+                                                             placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"SearchProducts"} className={[(i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 gill light "]+"   searchnewprodbordure mb-1 py-1 py-md-0 texttitlemedia footertext   w-100"}
                                                                 value={this.state.inputsearch} onChange={this.filter} />
                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
-                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} />
+                                                             {/* <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} /> */}
                                                         </div>
                                                     </div>
+                                                    <div className="col-1 p-0 makeitdesp"><button data-parent="#modal" className="navbar-toggler py-2  textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent"><FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter}/></button></div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                            <section>
+                            <section className="mt-4 mt-md-2">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 ">
                                     <div className="container-fluid p-0 row">
 

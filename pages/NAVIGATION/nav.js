@@ -26,8 +26,13 @@ class Nav extends React.Component{
         const form = document.querySelector("form");
         menuBtn.onclick = ()=>{
           items.classList.toggle("active");
-          menuBtn.classList.toggle("hide");
+          const formopened =form.classList.contains("active")
+          if(formopened)form.classList.toggle("active");
+            // if(menuBtnopened)form.classList.toggle("active");
+        //   form.classList.toggle("active");
+        //   menuBtn.classList.toggle("hide");
         //   searchBtn.classList.toggle("hide");
+        //   (i18n.language=="ar")?null:searchBtn.classList.toggle("hide");
         //   cancelBtn.classList.toggle("show");
         }
         cancelBtn.onclick = ()=>{
@@ -40,6 +45,8 @@ class Nav extends React.Component{
           }
         searchBtn.onclick = ()=>{
           form.classList.toggle("active");
+          const menuBtnopened =items.classList.contains("active")
+            if(menuBtnopened)form.classList.toggle("active");
         //   searchBtn.classList.toggle("hide");
         //   cancelBtn.classList.toggle("show");
         }
@@ -98,14 +105,23 @@ class Nav extends React.Component{
         //   alert(document.getElementById("dropdown-menu").classList.value)
         
         $(document).ready(function(){
+            // const drop = document.querySelector(".dropdown-menu");
+            //     const dropopened =drop.classList.contains("show")
             $('.dropdown-toggle').dropdown()
+                // const drop = document.querySelector(".dropdown-menu");
+                // const dropopened =drop.classList.contains("show")
+                // if(dropopened)drop.classList.toggle("show");
+                // console.log(dropopened)
         });
-        $(function () {
-            $(".dropdown-menu > li  a").click(function () {
-                // console.log("clicked");
-                return false;
-            });
+        $(".dropdown-menu").click(function() {
+            $(this).closest(".dropdown-menu").prev().dropdown("toggle");
         });
+        // $(function () {
+        //     $(".dropdown-menu > li  a").click(function () {
+        //         // console.log("clicked");
+        //         return false;
+        //     });
+        // });
     }
     
 handlefalse = () => {
