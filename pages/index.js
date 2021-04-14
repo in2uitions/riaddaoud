@@ -964,12 +964,16 @@ class index extends React.Component {
                                 key={["btn-5-" + index]}
                                 className={"textaligncenter owl-item " + index}
                                 >
+                                  <Link href={{ pathname: '/productbrand', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                                    <a href={{ pathname: '/productbrand', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <img
                                     id={index}
                                     src={"" + imagbackeurl + ""}
                                     alt=""
                                     className="img-fluid contain customimagecarousel"
                                 />
+                                </a>
+                                </Link>
                                 </div>
                             );
                             })}
@@ -1027,8 +1031,8 @@ class index extends React.Component {
                             ] + " textaligncenter owl-item"
                           }
                         >
-                          <Link href="/product">
-                            <a href="/product">
+                         <Link href={{ pathname: '/productdetail', as: "/index/" + key.id, query: { data: key.title, data_id: key.id } }}>
+                            <a href={{ pathname: '/productdetail', as: "/index/" + key.id, query: { data: key.title, data_id: key.id } }}>
                               <div className="container-fluid centereditems">
                                 <div className="hiddenimg ">
                                   <img
@@ -1311,11 +1315,12 @@ class index extends React.Component {
                                               : "textaligncenter aligncenter floatl col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 readmoreindex p-0",
                                           ]}
                                         >
-                                          <Link href="/media">
+                                                                    {/* <a href={{ pathname: '/media1', as: "/media1/", query: { data: value.slug, data_id: value.id } }} className={[(this.props.i18n.language == "ar") ? " linkleft" : "link"]}></a> */}
+                                          <Link href={{ pathname: '/media1', as: "/index/", query: { data: value.slug, data_id: value.id } }}>
                                             {this.props.i18n.language ==
                                             "ar" ? (
                                               <a
-                                                href="/media"
+                                                href={{ pathname: '/media1', as: "/index/", query: { data: value.slug, data_id: value.id } }}
                                                 className={
                                                   [
                                                     this.props.i18n.language ==

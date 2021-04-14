@@ -19,7 +19,8 @@ const directus = new DirectusSDK(Api.baseUrl);
       Phone:"",
       Text:"",
       Name:"",
-      token:""
+      token:"",
+      file:[]
     };
 
     this.getData=this.getData.bind(this);
@@ -156,12 +157,18 @@ this.loadanim();
           )[1];
       } else {
           customTxt.innerHTML = "No file chosen, yet. ";
-          alert("mop");
+          // alert("mop");
       }
   });
 
 
   }
+  handleFile =(e)=> {
+    this.setState({ file: e.target.files[0] });
+    // console.log(e.target.files[0])
+    // console.log(e.target.files)
+    // console.log(e.target.value)
+ }
   handleEmailChange =(e)=> {
     this.setState({Email: e.target.value});
  }
@@ -377,7 +384,7 @@ render (){
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 mt-3">
                     <div className="form-group ">
-                      <input type="file" id="real-file" hidden="hidden" />
+                      <input type="file" id="real-file" hidden="hidden"  onChange={this.handleFile} />
                       <div className="container-fluid fileattach bordernone animation js--fadeInb">
                         <div className="row ">
                           <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 col-xxl-10 px-0 my-auto "}>
