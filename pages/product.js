@@ -403,17 +403,6 @@ class product extends React.Component {
                 }
             });
         });
-        //     myFunctionn()
-        // };
-
-        // function myFunctionn() {
-        //     var scrollTop = window.pageYOffset
-        //     if (scrollTop >= 10) {
-        //         document.getElementById("header").style.backgroundColor = "white";
-        //     } else {
-        //         document.getElementById("header").style.backgroundColor = "transparent";
-        //     }
-        // }
 
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
