@@ -820,8 +820,8 @@ class index extends React.Component {
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href="/product">
-                              <a href="/product">
+                            <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -849,8 +849,8 @@ class index extends React.Component {
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href="/product">
-                              <a href="/product">
+                            <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -878,8 +878,8 @@ class index extends React.Component {
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href="/product">
-                              <a href="/product">
+                             <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -906,8 +906,8 @@ class index extends React.Component {
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href="/product">
-                              <a href="/product">
+                           <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
