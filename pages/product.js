@@ -1346,7 +1346,7 @@ render (){
                                    
                                    
                                    :(arraypages.length<=1)?"":
-                                    <div className="col-10 col-sm-10 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5 pr-4">
+                                    <div className="col-10 col-sm-10 col-md-11 col-lg-11 col-xl-11 col-xxl-11 p-5 pr-0 pr-md-4">
                                         <div className="row">
                                             <div className="col-0 col-sm-0 col-md-8 col-lg-10 col-xl-10 col-xxl-10"></div>
                                             <div className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 col-xxl-2 medianext paginnext container-fluid p-0 gill regular paddingrightnext " >

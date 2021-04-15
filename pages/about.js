@@ -245,7 +245,7 @@ render (){
                                     <div className='d-flex col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 py-5 px-0 '>
                                         <div className='align-self-lg-start quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover ' /></div>
                                         <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'quotestext  aligncenter'}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt</p>
-                                        <div className='secquotes quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover' /></div>
+                                        <div className='secquotes pl-2 pl-sm-0 quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover' /></div>
                                     </div>
                                 </div>
                             </div>

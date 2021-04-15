@@ -412,6 +412,7 @@ class index extends React.Component {
         paginationSpeed: 400,
       });
     });
+   
   }
   filter(current) {
     // document.getElementById(2).style.opacity = "0.5";
@@ -747,7 +748,7 @@ class index extends React.Component {
           <div className="scrollingg ">
             <div className="container-fluid ">
               <div className="row mgb relative ">
-                <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 px-0 leftone ">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 px-0 leftone ">
                   <div className="px-4 py-4  relative bluebox">
                     <h1
                       className={
@@ -777,7 +778,7 @@ class index extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="vr p-0 ml-1 ml-md-0">
+                <div className="vr ">
                   <div className="vrr"></div>
                 </div>
               </div>

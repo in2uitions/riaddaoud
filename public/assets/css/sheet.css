@@ -1746,6 +1746,9 @@ a:focus {
                 font-size: 14px;
                 margin: 20px 0;
             }
+            .vr{
+                padding-left: 5px;
+            }
             .carousel-inner button {
                 display: block;
                 margin: 0 auto;
@@ -4138,3 +4141,11 @@ nav .search-icon{
     /* padding: 0!important; */
 } 
 .backgnotfixedios{background-attachment: scroll!important;}
+@media screen and (min-width: 901px) and (max-width: 935px) {
+nav .logo{
+    padding-left: 40px;
+  }}
+  @media screen and (min-width: 901px) and (max-width: 1108px) {
+  .headersubtitleslan span {
+    font-size: 0.73em!important;
+}}
