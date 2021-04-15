@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from 'react';
+import {isIOS} from 'react-device-detect';
 // import Header from './HEAD/head.js';
 import Navigation from "./NAVIGATION/nav.js";
 import Link from 'next/link'
@@ -234,7 +235,7 @@ render (){
                                     {(this.props.i18n.language=="ar")?description_ar:value.description}
                                     </h3></div>
                                 </div>
-                                <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax1' style={{backgroundImage:'url('+imageurl+')'}}   ></div>
+                                <div className={[(isIOS)?"backgnotfixedios ":""]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax1'} style={{backgroundImage:'url('+imageurl+')'}}   ></div>
                         </div>
                     </div>
                     {(index==0)?<div className='parallaxgeneral'>
@@ -257,7 +258,7 @@ render (){
                 <div>
                 <div className='container-fluid p-0' >
                      <div className='row relative' >
-                        <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax2'style={{backgroundImage:'url('+imageurl+')'}}></div>
+                        <div className={[(isIOS)?"backgnotfixedios ":""]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax2'}style={{backgroundImage:'url('+imageurl+')'}}></div>
                         <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 aboutvision px-3 py-5 js--fadeInRight'>
                             <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 aligncenter '}>
                                  <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>   {(this.props.i18n.language=="ar")?title_ar:value.title}</h1>
