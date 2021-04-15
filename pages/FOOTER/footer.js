@@ -135,8 +135,8 @@ import { withTranslation } from "react-i18next";
                                     <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                                         <div className="container-fluid">
                                             <div className="row">
-                                                <div className="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
-                                                <div className="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 col-xxl-8 row footerclaim">
+                                                <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-4 col-xxl-4"></div>
+                                                <div className="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-8 row footerclaim">
                                                     <a href="#" className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light "]+"footerallright   font_size_small"}>{this.props.t("Claim")}</a>
                                                     <a href="#" className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light "]+"footerallright   font_size_small"}>{this.props.t("Privacy")}</a>
                                                     <a href="#" className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill light "]+"footerallright   font_size_small"}>{this.props.t("Terms")}</a>

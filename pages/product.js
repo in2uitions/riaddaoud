@@ -56,6 +56,11 @@ function Next() {
 
     return <span> {t('next')} </span>
 }
+function Back() {
+    const { t } = useTranslation();
+
+    return <span> {t('back')} </span>
+}
 class product extends React.Component {
     
     constructor(props) {
