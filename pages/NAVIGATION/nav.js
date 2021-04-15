@@ -136,7 +136,7 @@ handletrue = () => {
  
     return(
         <div id="header" className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 headermenu p-md-1 p-0"}>
-        <nav  className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  py-2 px-0 "}>
+        <nav  className={[(i18n.language=="ar")?"rtl direction:rtl ":" "]+"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  py-2 px-0 navbar-light"}>
             <div class={[(i18n.language=="ar")?"textalignright ":" "]+"menu-icon navbar-toggler  col-2 col-md-5"}>
                 <span class="fas fa-bars"></span></div>
                 <div class="nav-items col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">

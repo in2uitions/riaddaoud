@@ -80,7 +80,18 @@ this.loadanim();
   componentDidMount () {
 
     this.getData();
-
+    onscroll = function() {
+          myFunctionn()
+      };
+    
+      function myFunctionn() {
+          var scrollTop = window.pageYOffset
+          if (scrollTop >= 30) {
+              document.getElementById("header").style.backgroundColor = "white";
+          } else {
+              document.getElementById("header").style.backgroundColor = "transparent";
+          }
+      }
 
  
 

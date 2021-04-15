@@ -89,7 +89,7 @@
     background: 0 0;
     color: inherit;
     border: none;
-    padding: 0!important;
+    /* padding: 0!important; */
     font: inherit
 }
 

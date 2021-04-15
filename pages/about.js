@@ -97,6 +97,19 @@ class about extends React.Component{
 
   componentDidMount () {
     this.getData();
+    onscroll = function() {
+        myFunctionn()
+    };
+
+    function myFunctionn() {
+        var scrollTop = window.pageYOffset
+        if (scrollTop >= 100) {
+            document.getElementById("header").style.backgroundColor = "white";
+        } else {
+            document.getElementById("header").style.backgroundColor = "transparent";
+        }
+        // alert(scrollTop);
+    }
         $(document).ready(function() {
             var submitIcon = $('.searchbox-icon');
             var inputBox = $('.searchbox-input');
@@ -127,19 +140,6 @@ class about extends React.Component{
             });
         });
 
-        onscroll = function() {
-            myFunctionn()
-        };
-
-        function myFunctionn() {
-            var scrollTop = window.pageYOffset
-            if (scrollTop >= 100) {
-                document.getElementById("header").style.backgroundColor = "white";
-            } else {
-                document.getElementById("header").style.backgroundColor = "transparent";
-            }
-            // alert(scrollTop);
-        }
 
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");

@@ -385,7 +385,7 @@ render (){
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">
                                 <div className="form-group  ">
-                                    <textarea name="text" onChange={this.handleTextChange} className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight  bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")} required maxlength="200"  id="textarea"></textarea>
+                                    <textarea name="text" onChange={this.handleTextChange} className={(this.props.i18n.language=="ar")?"form-control placeholder DroidKufi animation js--fadeInRight  bordernone resizeoff textalignright":"form-control placeholder gill animation js--fadeInRight lightitalic bordernone resizeoff"} id="exampleFormControlTextarea1 " rows="5 "  placeholder={this.props.t("textareaplaceholder")} required maxlength="200"  id="textarea" ></textarea>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 ">

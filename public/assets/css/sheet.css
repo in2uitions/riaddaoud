@@ -1150,7 +1150,7 @@ a:focus {
             position: fixed;
             top: 0px;
             right: 0px;
-            margin:0px;
+            /* margin:0px; */
             width: 100%!important;
         }
         
@@ -1857,6 +1857,10 @@ a:focus {
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
         }
         
         .viewproducts {
@@ -2194,6 +2198,10 @@ a:focus {
             /* min-height: 500px; */
             /* Create the parallax scrolling effect */
             background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -2205,7 +2213,7 @@ a:focus {
             /* Set a specific height */
             /* min-height: 500px; */
             /* Create the parallax scrolling effect */
-            background-attachment: fixed;
+            background-attachment: scroll;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -2217,7 +2225,7 @@ a:focus {
             /* Set a specific height */
             /* min-height: 500px; */
             /* Create the parallax scrolling effect */
-            background-attachment: fixed;
+            background-attachment: scroll;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -2229,7 +2237,7 @@ a:focus {
             /* Set a specific height */
             /* min-height: 500px; */
             /* Create the parallax scrolling effect */
-            background-attachment: fixed;
+            background-attachment: scroll;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -2323,6 +2331,10 @@ a:focus {
             width: 100%;
             /* Create the parallax scrolling effect */
             background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -2336,6 +2348,10 @@ a:focus {
             width: 100%;
             /* Create the parallax scrolling effect */
             background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             background-position: 0%;
             background-repeat: no-repeat;
             background-size: cover;
@@ -2349,6 +2365,10 @@ a:focus {
             width: 100%;
             /* Create the parallax scrolling effect */
             background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -4112,3 +4132,8 @@ nav .search-icon{
     text-align: -webkit-right;
 }
 .displaynonefor{display:none}
+.videowrapperparallax .item{
+    padding:unset!important;
+    margin: unset!important;
+    /* padding: 0!important; */
+} 
