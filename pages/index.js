@@ -777,7 +777,7 @@ class index extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="vr p-0">
+                <div className="vr p-0 ml-1 ml-md-0">
                   <div className="vrr"></div>
                 </div>
               </div>
