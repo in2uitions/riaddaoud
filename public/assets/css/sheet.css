@@ -698,7 +698,8 @@
         .lineheightbig {
             line-height: 1.5
         }
-        
+        .paddingleftonandroidmobile{
+        padding-left: 4px;}
         .imgshake {
             /*padding: 50px;
     */
@@ -3930,7 +3931,7 @@ nav .search-icon{
         position: unset!important;
         /* background-color: black; */
         /* top: 0; */
-        height: 30em!important;
+        height: 10em!important;
         /* width: 26%; */
         width: 100%!important;
     }

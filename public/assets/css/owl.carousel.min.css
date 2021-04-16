@@ -8,12 +8,12 @@
 .owl-carousel .owl-item {
     -webkit-tap-highlight-color: transparent;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .owl-carousel {
     display: none;
-    width: 100%;
+    /* width: 100%; */
     z-index: 1
 }
 
@@ -59,7 +59,7 @@
 
 .owl-carousel .owl-item img {
     display: block;
-    width: 100%
+    /* width: 100% */
 }
 
 .owl-carousel .owl-dots.disabled,
@@ -175,5 +175,5 @@
 .owl-carousel .owl-video-wrapper {
     position: relative;
     height: 100%;
-    background: #000
+    /* background: #000 */
 }

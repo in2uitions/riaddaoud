@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 // import Header from './HEAD/head.js';
+import {isAndroid,isMobileOnly} from 'react-device-detect';
 import Navigation from "./NAVIGATION/nav.js";
 import Footer from "./FOOTER/footer.js";
 import Link from "next/link";
@@ -85,6 +86,7 @@ class index extends React.Component {
       activeSlide: 0,
       activeSlide2: 0,
       img:"",
+      padding:false,
     };
 
     this.getData = this.getData.bind(this);
@@ -112,14 +114,15 @@ class index extends React.Component {
     var valuebackimg =a.image;
      imagbackeurl = startb_url + valuebackimg + endb_url;
     });
-    console.log(imagbackeurl)
+    var truth=isMobileOnly;
+    if(truth){truth=isAndroid}
     var datadirectcateg = await directus.items("categories").read();
     this.setState({
       categ: datadirectcateg.data,
       brands: datadirectbrand.data,
       products: datadirectproducts.data,
       articles: datadirectarticles.data,
-      img:imagbackeurl
+      img:imagbackeurl,padding:truth
     });
     this.loadcarousel();
   }
@@ -393,8 +396,10 @@ class index extends React.Component {
         // autoplay:true,
         rewind:true,
         // rewind: true,
+        margin:0,
+        lazyLoad: false,
         clone:false,
-        autoWidth:false,
+        // autoWidth:false,
         nav: true,
         items: 1,
         autoplayTimeout: 4500,
@@ -778,7 +783,7 @@ class index extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="vr ">
+                <div className={[(this.state.padding)?"paddingleftonandroidmobile ":" "]+"vr "}>
                   <div className="vrr"></div>
                 </div>
               </div>
