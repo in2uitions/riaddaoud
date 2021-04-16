@@ -782,7 +782,7 @@ render (){
                                                                             {/* <div > */}
                                                                             <select name="jquery_box_mini" id="jquery_box_mini" className={[(i18n.language=="ar")?"fleche_ar ":""]+"py-4 px-3 pointer w-100  backgroundblue"}>
                                                                                 <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"selectoption container-fluid px-2 textalignleft meduim  font_size"} value={"all"}>
-                                                                                    <Allcateg />
+                                                                                {  (i18n.language=="ar") ? "جميع الفئات" : "ALL CATEGORIES"}
                                                                                 </option>
                                                                                 {this.state.categ.map((key, value) => {
                                                                                     if (key.title_ar == null) { var title_ar = key.title }
@@ -881,7 +881,7 @@ render (){
                                                         {/* <div > */}
                                                         <select name="jquery_box" id="jquery_box" className={[(i18n.language=="ar")?"fleche_ar ":""]+"py-4 w-100 backgroundblue px-3 pointer "}>
                                                                      <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+" px-4 selectoption textaligncenter meduim  font_size"} value={"all"}>
-                                                                        <Allcateg />
+                                                                     {(i18n.language=="ar") ? "جميع الفئات" : "ALL CATEGORIES"}
                                                                     </option>
                                                             {this.state.categ.map((key, value) => {
                                                                  if (key.title_ar == null) { var title_ar = key.title }
