@@ -230,6 +230,11 @@ class proddetail extends React.Component {
     render() {
         if (this.state.brand.title_ar == null) { var title_ar = this.state.brand.title }
         else var title_ar = this.state.brand.title_ar
+        const aaa=this.state.data.map((key, value) => {return key.application})
+        const aaaa=this.state.data.map((key, value) => {return key.ingredients})
+        // if(aaa=="")alert("yes")
+        // if(a==null)alert("null")
+        // console.log(a)
         return (
             <div>
                 <Navigation current="products"></Navigation>
@@ -358,7 +363,7 @@ class proddetail extends React.Component {
                                     </p>
                                 </div>
                                 <div>
-                                    <div>
+                                    <div className={(aaa=="")?"displaynoneee ":""}>
                                         <div className="collapseapplication panel-heading">
                                             <button className={[(i18n.language == "ar") ? "panel-titlear " : "panel-title "] + "btn px-0 backwhite  w-100"} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <p className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "textalignleft gill "] + " fontsizetimelinedate textblack smalllineheight "}>
@@ -382,7 +387,8 @@ class proddetail extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mt-3">
+                                    <div className={[(aaa=="")?"":"displaynoneee "]+"p-5"}></div>
+                                    <div className={[(aaaa=="")?"displaynoneee ":""]+"mt-3"}>
                                         <div id="headingTwo" className="collapseapplication panel-heading">
                                             <button className={[(i18n.language == "ar") ? "panel-titlear " : "panel-title "] + "btn backwhite px-0 collapsed w-100"} data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                 <p className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "textalignleft gill "] + " fontsizetimelinedate textblack smalllineheight "} >
