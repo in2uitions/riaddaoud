@@ -20,6 +20,11 @@ function Back() {
 
     return <span> {t('back')} </span>
 }
+function Allcateg() {
+    const { t } = useTranslation();
+
+    return <span> {t('allcateg')} </span>
+}
 function Brand() {
     const { t } = useTranslation();
 
@@ -609,7 +614,7 @@ class product extends React.Component {
                                                                             {/* <div > */}
                                                                             <select name="jquery_box_mini" id="jquery_box_mini" className="py-4 textaligncenter w-100  backgroundblue">
                                                                                 <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"selectoption container-fluid px-2 textalignleft  font_size"} value={"all"}>
-                                                                                    ALL CATEGORIES
+                                                                                    <Allcateg />
                                                                                 </option>
                                                                                 {this.state.categ.map((key, value) => {
                                                                                     if (key.title_ar == null) { var title_ar = key.title }
@@ -712,7 +717,7 @@ class product extends React.Component {
                                                         <select name="jquery_box" id="jquery_box" className="py-4  w-100 backgroundblue px-3 pointer">
                                                             
                                                                 <option className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"px-4 selectoption textaligncenter meduim font_size"} value={"all"}>
-                                                                            ALL CATEGORIES
+                                                                            <Allcateg />
                                                                 </option>
                                                             {this.state.categ.map((key, value) => {
                                                                  if (key.title_ar == null) { var title_ar = key.title }
