@@ -215,7 +215,7 @@ class index extends React.Component {
         }
     })
     // var a = $( ".owl-item" ).width()
-    $(".bigslider .owl-item").width($( ".bigslider .owl-item" ).width()-6)
+    // $(".bigslider .owl-item").width($( ".bigslider .owl-item" ).width()-6)
     $(document).ready(function () {
       var submitIcon = $(".searchbox-icon");
       var inputBox = $(".searchbox-input");
@@ -398,7 +398,7 @@ class index extends React.Component {
         // autoplay:true,
         rewind:true,
         // rewind: true,
-        margin:0,
+        // margin:0,
         lazyLoad: false,
         clone:false,
         // autoWidth:false,
