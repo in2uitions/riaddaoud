@@ -858,7 +858,7 @@ class index extends React.Component {
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi lefteye_ar1 "
                                         : "gill lefteye1 ",
-                                    ] + "white italic  textalign "
+                                    ] + "white italic  textalign textalignmobile"
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -887,7 +887,7 @@ class index extends React.Component {
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi lefteye_ar2 "
                                         : "gill lefteye2 ",
-                                    ] + "white italic  textalign "
+                                    ] + "white italic  textalign textalignmobile"
                                   }
                                 >
                                   {this.props.i18n.language == "ar"
@@ -915,7 +915,7 @@ class index extends React.Component {
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi lefteye_ar3 "
                                         : "gill lefteye3 ",
-                                    ] + "white italic  textalign "
+                                    ] + "white italic  textalign textalignmobile"
                                   }
                                 >
                                   {this.props.i18n.language == "ar"

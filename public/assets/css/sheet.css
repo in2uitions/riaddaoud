@@ -3519,19 +3519,19 @@ nav .search-icon{
 @media screen and (max-width: 595px) {
     .lefteye_ar{
         /* text-align: right; */
-        padding-left: 0px!important;
+        /* padding-left: 0px!important; */
     }
     .lefteye_ar1{
         /* text-align: right; */
-        padding-left: 0px!important;
+        /* padding-left: 0px!important; */
     }
     .lefteye_ar2{
         /* text-align: right; */
-        padding-left: 0px!important;
+        /* padding-left: 0px!important; */
     }
     .lefteye_ar3{
         /* text-align: right; */
-        padding-left: 0px!important;
+        /* padding-left: 0px!important; */
     }
 }
 @media only screen and (min-width: 900px) {
@@ -3565,6 +3565,9 @@ nav .search-icon{
         visibility: hidden!important;
         display: none!important;
     }
+    .lastslider .owl-dots{
+        width:60% !important
+    }
     .showingaligncenter{
         text-align-last: center;
         text-align: center;
@@ -3593,7 +3596,7 @@ nav .search-icon{
         left:unset!important;
     }
     .logosheight{
-        height: 20px!important;
+        height: 30px!important;
     }
     .timeline .timeline-img {
         left: 50px;
@@ -3940,7 +3943,12 @@ nav .search-icon{
         /* left: 0%!important;s */
     }
     .overlayicategmobile {
-        background: linear-gradient(-90deg, rgba(185,185,185,0.0) 0%, rgba(185,185,185,0.0) 10%, rgba(0,0,0,1) 50%)!important;
+        background: linear-gradient(-90deg, rgba(185,185,185,0.0) 0%, rgba(185,185,185,0.0) 10%, rgba(0,0,0,0.5) 50%)!important;
+    }
+    .textalignmobile {
+        /* text-align-last: center; */
+        /* left:15%; */
+        padding-top:11%!important;
     }
     .block_center {
         clip-path: polygon(100% 0, 100% 95%, 0 100%, 0 5%)!important;

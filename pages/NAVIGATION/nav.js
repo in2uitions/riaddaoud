@@ -197,7 +197,7 @@ handletrue = () => {
             </form>
             <div className={[(i18n.language=="ar")?"languageprob displaynonefor ":"  "]+"dropdown col-1 p-0 makeitapp  "}>
                 <button className="  dropdown-toggle p-0  headersubtitleslan" type="button" data-toggle="dropdown">
-                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className="img-fluid ml-1 verbaseline  cover"/></span>
+                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+" "}>{i18n.t("language")}<img src="./assets/images/dropdown.svg" className={[(i18n.language=="ar")?"mr-1 ":"ml-1  "]+"img-fluid  verbaseline  cover"}/></span>
                 </button>
                 <ul className="dropdown-menu">
                 <p className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"dropdown-item pointer  font_size_med"}  onClick={()=>changeLanguage("ar")}>{i18n.t("arabic")}</p>
