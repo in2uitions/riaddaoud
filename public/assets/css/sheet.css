@@ -3831,6 +3831,7 @@ nav .search-icon{
         height: auto !important;
         overflow: visible !important;
     }
+    .makeitdisapppp{display:none!important}
 }
   @media (max-width: 900px){
     .searchbox-open {

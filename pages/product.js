@@ -993,7 +993,7 @@ render (){
                                                              {/* <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} /> */}
                                                         </div>
                                                     </div>
-                                                    <div className="col-1 p-0 makeitdesp"><button data-parent="#modal" className="navbar-toggler py-2  textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent"><FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter}/></button></div>
+                                                    <div className="col-1 p-0 makeitdisapppp"><button data-parent="#modal" className="navbar-toggler py-2  textaligncenter w-100" type="button" data-toggle="modal" data-target="#myModal" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent"><FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter}/></button></div>
                                                 </form>
                                                 
                                             </div>
