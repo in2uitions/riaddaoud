@@ -553,7 +553,7 @@ class index extends React.Component {
                   <img
                     src={"" + this.state.img + ""}
                     alt="index photo"
-                    className="img-fluid w-100 cover parallaxxi "
+                    className="img-fluid w-100 cover parallaxxi heightfirstcarouselimage"
                   />
                   <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
                     <p
@@ -618,7 +618,7 @@ class index extends React.Component {
                   <img
                     src={"" + this.state.img + ""}
                     alt="index photo"
-                    className="img-fluid w-100 cover parallaxxi "
+                    className="img-fluid w-100 cover parallaxxi  heightfirstcarouselimage"
                   />
                   <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
                     <p
@@ -683,7 +683,7 @@ class index extends React.Component {
                   <img
                     src={"" + this.state.img + ""}
                     alt="index photo"
-                    className="img-fluid w-100 cover parallaxxi "
+                    className="img-fluid w-100 cover parallaxxi heightfirstcarouselimage"
                   />
                   <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-0 boxtitle ">
                     <p
@@ -816,7 +816,7 @@ class index extends React.Component {
                         return (
                           <div
                             key={["btn-4-" + index]}
-                            className="block  block--left clip406"
+                            className="block  block--left clip406 "
                             style={{
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
@@ -836,7 +836,7 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg"></div>
+                                <div className="overlayicateg overlayicategmobile"></div>
                               </a>
                             </Link>
                           </div>
@@ -865,7 +865,7 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg"></div>
+                                <div className="overlayicateg overlayicategmobile"></div>
                               </a>
                             </Link>
                           </div>
@@ -894,7 +894,7 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg"></div>
+                                <div className="overlayicateg overlayicategmobile"></div>
                               </a>
                             </Link>
                           </div>
@@ -922,7 +922,7 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg"></div>
+                                <div className="overlayicateg overlayicategmobile"></div>
                               </a>
                             </Link>
                           </div>
