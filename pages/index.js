@@ -214,6 +214,8 @@ class index extends React.Component {
             }
         }
     })
+    // var a = $( ".owl-item" ).width()
+    $(".owl-item").width($( ".owl-item" ).width()-6)
     $(document).ready(function () {
       var submitIcon = $(".searchbox-icon");
       var inputBox = $(".searchbox-input");

@@ -2962,22 +2962,20 @@ padding:0px 10px 0px 10px
         font-weight: 800;
     }
 
-    @media only screen and (max-width: 1300px) {
+    /* @media only screen and (max-width: 1300px) {
         @supports (-webkit-touch-callout: none) {
-            /* CSS specific to iOS devices */ 
             .scrollingg {
                 position: relative!important;
             }
         }
       
         @supports not (-webkit-touch-callout: none) {
-            /* CSS for other than iOS devices */ 
             .scrollingg {
                 position: absolute!important;
                 top:500px !important;
             }
         }
-    }
+    } */
 
     /* @media only screen and (min-width: 1300px) {
         .scrollingg {
