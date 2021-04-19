@@ -19,15 +19,41 @@ class Nav extends React.Component{
     }
     componentDidMount () {
         // {console.log(this.state.current)}
+        // const nav = document.querySelector('.nav-items')
+        // console.log(nav)
+        // if (nav.classList.contains("active")) {
+        //     // $('body').addClass("fixed-position");
+        //     alert("yess")
+        //  } else {
+        //     $('body').removeClass("fixed-position");
+        //  }
         const menuBtn = document.querySelector(".menu-icon");
         const searchBtn = document.querySelector(".search-icon");
         const cancelBtn = document.querySelector(".cancel-icon");
         const items = document.querySelector(".nav-items");
         const form = document.querySelector("form");
+        // const clickeditems =document.querySelector(".itemindicator")
+        console.log(items)
+        items.onclick = ()=>{
+                // alert("nkabaset")
+                $('body').removeClass("fixed-position");
+            }
+        // const itemsli = document.querySelector(".nav-items li");
+        // clickeditems.onclick = ()=>{
+        //     alert("nkabaset")
+        //     $('body').removeClass("fixed-position");
+        // }
         menuBtn.onclick = ()=>{
+          $('body').removeClass("fixed-position");
           items.classList.toggle("active");
           const formopened =form.classList.contains("active")
           if(formopened)form.classList.toggle("active");
+          const menuBtnopened =items.classList.contains("active")
+          if(menuBtnopened){
+            $('body').addClass("fixed-position");}
+          else{
+            $('body').removeClass("fixed-position");
+          }
             // if(menuBtnopened)form.classList.toggle("active");
         //   form.classList.toggle("active");
         //   menuBtn.classList.toggle("hide");
@@ -116,12 +142,6 @@ class Nav extends React.Component{
         $(".dropdown-menu").click(function() {
             $(this).closest(".dropdown-menu").prev().dropdown("toggle");
         });
-        // $(function () {
-        //     $(".dropdown-menu > li  a").click(function () {
-        //         // console.log("clicked");
-        //         return false;
-        //     });
-        // });
     }
     
 handlefalse = () => {
@@ -140,24 +160,24 @@ handletrue = () => {
             <div class={[(i18n.language=="ar")?"textalignright ":" "]+"menu-icon navbar-toggler  col-2 col-md-5"}>
                 <span class="fas fa-bars"></span></div>
                 <div class="nav-items col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <li className="py-1 py-md-0"><Link href="/about">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/about">
                         <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2 "} href="/about">
                             <span id="about">{i18n.t("about")}</span>
                         </a>
                     </Link></li>
-                    <li className="py-1 py-md-0"><Link href="/product">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/product">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/product">
                         <span id="products">{i18n.t("products")}</span>
                     </a></Link></li>
-                    <li className="py-1 py-md-0"><Link href="/media">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/media">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/media">
                         <span id="media">{i18n.t("media")}</span>
                     </a></Link></li>
-                    <li className="py-1 py-md-0"><Link href="/blog">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/blog">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-lg-3 px-2 headersubtitles"} href="/blog">
                         <span id="careers">{i18n.t("careers")}</span>
                     </a></Link></li>
-                    <li className="py-1 py-md-0"><Link href="/contact">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/contact">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/contact">
                         <span id="contact">{i18n.t("contact")}</span>
                     </a></Link></li>

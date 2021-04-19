@@ -50,7 +50,10 @@
             text-decoration: none;
         }
         
-        p {}
+        .fixed-position {
+            position: fixed;
+         }
+        
         
         .rtl {
             direction: rtl

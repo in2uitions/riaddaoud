@@ -386,6 +386,7 @@ render (){
                         <input
                           type="tel" onChange={this.handlePhoneChange}
                           inputmode="numeric"
+                          title="Format: ex: +86 800 555 1234 ( Country Code,Area Code, Exchange,Subscriber Number)"
                           pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"
                           className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill light "]+"form-control animation   placeholder bordernone js--fadeInb"}
                           placeholder={this.props.t("phonenbplaceholder")}
