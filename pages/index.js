@@ -182,7 +182,8 @@ class index extends React.Component {
         }
     })
     $('.productslider').owlCarousel({
-        loop:true,
+        // loop:true,
+        rewind:true,
         // margin:10,
         // nav: true,
         items: 4,

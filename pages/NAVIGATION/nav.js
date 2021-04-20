@@ -33,7 +33,7 @@ class Nav extends React.Component{
         const items = document.querySelector(".nav-items");
         const form = document.querySelector("form");
         // const clickeditems =document.querySelector(".itemindicator")
-        console.log(items)
+        // console.log(items)
         items.onclick = ()=>{
                 // alert("nkabaset")
                 $('body').removeClass("fixed-position");

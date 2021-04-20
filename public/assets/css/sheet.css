@@ -2994,6 +2994,9 @@ padding:0px 10px 0px 10px
         .searchbox-open {
             width: 200px!important;
         }
+        .parallaxx {
+            max-height: 300px!important;
+        min-height: 300px!important;}
         /* .scrollingg {
             position: relative!important; */
             /* overflow:hidden!important;; */

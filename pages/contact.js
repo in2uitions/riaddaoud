@@ -352,7 +352,7 @@ render (){
             <div className={(this.props.i18n.language=="ar")?"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 parallaxx bckgcover relative fliphorizontally":"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 parallaxx relative bckgcover"}style={{backgroundImage:'url('+imageurl+')'}}>
                 <div className="col-12 overlay1"></div>
             </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7 py-5 px-1 mt-4 ">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7 py-md-5 py-2 px-1 mt-md-4 ">
                 <div className={(this.props.i18n.language=="ar")?"col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 px-md-5 py-4 mt-4 textalignright":"col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 px-md-5 py-4 mt-4 "}>
                     <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+" meduim textblack"}>
                      {(this.props.i18n.language=="ar" )?subtitle_ar:a.subtitle}
