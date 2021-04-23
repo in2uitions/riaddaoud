@@ -286,7 +286,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div key={['btn-3-'+value]} className="item w-100"> <div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div key={['btn-3-'+value]} className="item w-100"> <div className="container-fluid px-5 carouselcenteredprod" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
@@ -297,7 +297,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div key={['btn-2-'+value]} className="item w-100"><div className="container-fluid px-5" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div key={['btn-2-'+value]} className="item w-100"><div className="container-fluid px-5 carouselcenteredprod" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
@@ -305,7 +305,7 @@ class proddetail extends React.Component {
                                             </div>
 
 
-                                            <div id="sync2" className="owl-carousel productcarousel secondcarousel owl-theme webkitalign">
+                                            <div id="sync2" className="owl-carousel displaycarouselnone productcarousel secondcarousel owl-theme webkitalign">
                                                 {
                                                     this.state.data.map((key, value) => {
                                                         var startb_url = 'https://rdcms.businessexchange.me/assets/';

@@ -3256,6 +3256,13 @@ padding:0px 10px 0px 10px
         list-style-type: none!important;
 
     }
+    .displaycarouselnone{
+        display:none!important;
+    }
+    .carouselcenteredprod{
+        text-align: -webkit-center;
+        align-items: center;
+    }
 .safer{
     margin: 0px!important;
     padding: 0px!important;
