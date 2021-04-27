@@ -36,7 +36,6 @@ const directus = new DirectusSDK(Api.baseUrl);
     }
   });
   var datadirectsubmit=await directus.items('website_settings').read();
-    
     this.setState({ data: datadirect.data ,submit:datadirectsubmit.data });
 this.loadanim();
   
@@ -80,6 +79,17 @@ this.loadanim();
   componentDidMount () {
 
     this.getData();
+    const fileSelector = document.getElementById('real-file');
+    fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    console.log(fileList);
+    });
+    // const fileInput = document.querySelector('input[type="file"]');
+    // const realFileBtnn = document.getElementById("real-file");
+    // const formData = new FormData();
+
+    // formData.append('title', 'My First File');
+    // formData.append('file', realFileBtnn.files[0]);
     onscroll = function() {
           myFunctionn()
       };

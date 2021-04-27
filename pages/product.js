@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Translation } from 'react-i18next';
 import DirectusSDK from '@directus/sdk-js';
 import Api from './api/Api.js';
+import { withTranslation } from "react-i18next";
 const directus = new DirectusSDK(Api.baseUrl);
 import { useTranslation } from 'react-i18next';
 
@@ -99,6 +100,7 @@ class product extends React.Component {
             inputsearch: '',
             isvisible:true,
             searchedarray: [],
+            paramss:0,
         };
         this.getData = this.getData.bind(this);
         this.afterclickingbrandfilter = this.afterclickingbrandfilter.bind(this);
@@ -111,11 +113,13 @@ class product extends React.Component {
         this.filter = this.filter.bind(this);
       }
 
-      static async getInitialProps({ query }) {
-        return { query };
-    }
+    //   static async getInitialProps({ query }) {
+    //     return { query };
+    // }
       async getData() {
-         
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('data_id');
+        this.setState({paramss:myParam});
         var datadirectbackg = await directus.items('backgrounds').read({
             filter: {
                 target_page: {
@@ -153,8 +157,8 @@ class product extends React.Component {
 
         
         }; 
-        if(this.props.query.data_id){
-            if (this.props.query.data_id == 4) {
+        if(this.state.paramss){
+            if (this.state.paramss == 4) {
                 $("#jquery_box").val(4);
                 $("[id='categ1']").hide();
                 $("[id='categ2']").hide();
@@ -167,7 +171,7 @@ class product extends React.Component {
                 document.getElementById("displaynoneee_mini").style.display="block"
                 document.getElementById("displaynoneee").style.display="block"
             };
-            if (this.props.query.data_id == 3) {
+            if (this.state.paramss == 3) {
                 $("#jquery_box").val(3);
                 $("[id='categ1']").hide();
                 $("[id='categ2']").hide();
@@ -180,7 +184,7 @@ class product extends React.Component {
                 document.getElementById("displaynoneee_mini").style.display="block"
                 document.getElementById("displaynoneee").style.display="block"
             };
-            if (this.props.query.data_id == 2) {
+            if (this.state.paramss == 2) {
                 $("#jquery_box").val(2);
                 $("[id='categ1']").hide();
                 $("[id='categ2']").show();
@@ -193,7 +197,7 @@ class product extends React.Component {
                 document.getElementById("displaynoneee_mini").style.display="block"
                 document.getElementById("displaynoneee").style.display="block"
             };
-            if (this.props.query.data_id == 1) {
+            if (this.state.paramss == 1) {
                 // alert("yesss")
                 $("#jquery_box").val(1);
                 $("[id='categ1']").show();
@@ -1410,4 +1414,4 @@ render (){
             </div>
   );}
 }
-export default product;
+export default  withTranslation()(product);

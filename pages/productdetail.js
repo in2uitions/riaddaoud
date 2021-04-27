@@ -10,6 +10,7 @@ const directus = new DirectusSDK(Api.baseUrl);
 import axios from 'axios';
 // import styles from './style3.module.css';
 import i18n from '../i18n';
+import { withTranslation } from "react-i18next";
 import { useTranslation } from 'react-i18next';
 function Back() {
     const { t, i18n } = useTranslation();
@@ -51,15 +52,20 @@ class proddetail extends React.Component {
 
         this.getData = this.getData.bind(this);
     }
-    static async getInitialProps({ query }) {
-        return { query };
-    }
+    // static async getStaticProps({ query }) {
+    //     console.log(query)
+    //     return { query };
+    // }
 
     async getData() {
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('data_id');
+        // console.log(myParam)
         var datadirect = await directus.items('products').read({
             filter: {
                 id: {
-                    _eq: this.props.query.data_id,
+                    _eq: myParam,
                 },
             }
         });
@@ -67,10 +73,11 @@ class proddetail extends React.Component {
         var datadirectallprod = await directus.items('products_directus_files_2').read({
             filter: {
                 products_id: {
-                    _eq: this.props.query.data_id,
+                    _eq: myParam,
                 },
             }
         });
+        // i18n.on('languageChanged',location.reload());
         // var datadirectallprod=await directus.items('products').read();
         var testarabicbrand = await directus.items('brands').read()
 
@@ -430,4 +437,4 @@ class proddetail extends React.Component {
         );
     }
 }
-export default proddetail;
+export default withTranslation()(proddetail);
