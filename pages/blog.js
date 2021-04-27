@@ -7,6 +7,7 @@ import DirectusSDK from '@directus/sdk-js';
 import Swal from 'sweetalert2'
 import { withTranslation } from "react-i18next";
 import Api from './api/Api.js';
+import axios from 'axios';
 const directus = new DirectusSDK(Api.baseUrl);
  class blog extends React.Component{
   constructor(props) {
@@ -20,7 +21,10 @@ const directus = new DirectusSDK(Api.baseUrl);
       Text:"",
       Name:"",
       token:"",
-      file:[]
+      // file:[],
+      file: null,
+      base64URL: "",
+      file_id:"",
     };
 
     this.getData=this.getData.bind(this);
@@ -82,7 +86,6 @@ this.loadanim();
     const fileSelector = document.getElementById('real-file');
     fileSelector.addEventListener('change', (event) => {
     const fileList = event.target.files;
-    console.log(fileList);
     });
     // const fileInput = document.querySelector('input[type="file"]');
     // const realFileBtnn = document.getElementById("real-file");
@@ -184,6 +187,87 @@ this.loadanim();
 
 
   }
+  getBase64 = file => {
+    return new Promise(resolve => {
+      let fileInfo;
+      let baseURL = "";
+      // Make new FileReader
+      let reader = new FileReader();
+
+      // Convert the file to base64 text
+      reader.readAsDataURL(file);
+
+      // on reader load somthing...
+      reader.onload = () => {
+        // Make a fileInfo Object
+        // console.log("Called", reader);
+        baseURL = reader.result;
+        // console.log(baseURL);
+        resolve(baseURL);
+      };
+      // console.log(fileInfo);
+    });
+  };
+
+   handleFileInputChange =  (e) => {
+    // console.log(e.target.files[0]);
+    let { file } = this.state;
+
+    file = e.target.files[0];
+
+    this.getBase64(file)
+      .then(async (result) => {
+        file["base64"] = result;
+
+        var myHeaders = new Headers();
+        const fileInput = document.querySelector('input[type="file"]');
+// myHeaders.append("Content-Type", "multipart/form-data; charset=utf-8; boundary=__X_BOUNDARY__");
+// myHeaders.append("Content-Length", "3442422");
+
+var formdata = new FormData();
+// console.log(fileInput.files[0]);
+// console.log("fileInput.files[0]");
+formdata.append('title', 'My First File');
+formdata.append("file", fileInput.files[0]);
+
+var requestOptions = {
+  method: 'POST',
+  body: formdata
+};
+
+fetch(Api.baseUrl+"files", requestOptions)
+  .then(response => response.json())
+  .then(result => 
+    this.setState({file_id:Api.baseUrl+"assets/"+result.data.id}))
+  .catch(error => console.log('error', error));
+
+        
+      //   var formdata = new FormData();
+      //   formdata.append("file",file);
+
+      //   var requestOptions = {
+      //     method: 'POST',
+      //     body: formdata,
+      //   };
+
+
+      //  var files = await fetch('https://rdcms.businessexchange.me/files', requestOptions);
+      
+      //  console.log("File Is", file);
+        this.setState({
+          base64URL: result,
+          file
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    this.setState({
+      file: e.target.files[0]
+    });
+  };
+
   handleFile =(e)=> {
     this.setState({ file: e.target.files[0] });
     // console.log(e.target.files[0])
@@ -256,7 +340,8 @@ this.loadanim();
                 "name": this.state.Name,
                 "phone": this.state.Phone,
                 "message": this.state.Text,
-                "lastname": this.state.Lastname
+                "lastname": this.state.Lastname,
+                "mailfile":this.state.file_id
             }
         },
         "from": {
@@ -265,7 +350,7 @@ this.loadanim();
         },
         "to": [
             {
-            "email": this.state.submit.careers_email,
+            "email": "anthonios.ghaly@in2uitions.com",
             "name": "jj"
             }
         ]
@@ -277,7 +362,7 @@ this.loadanim();
     body: urlencoded,
 
     };
-
+    // console.log(this.state.file_id)
     fetch("https://api.sendpulse.com/smtp/emails", requestOptions)
     .then(response => response.text())
     .then(result => Swal.fire({
@@ -407,7 +492,7 @@ render (){
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-2 mt-3">
                     <div className="form-group ">
-                      <input type="file" id="real-file" hidden="hidden"  onChange={this.handleFile} />
+                      <input type="file" id="real-file" hidden="hidden"  onChange={this.handleFileInputChange} />
                       <div className="container-fluid fileattach bordernone animation js--fadeInb">
                         <div className="row ">
                           <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi ":"gill "]+"col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 col-xxl-10 px-0 my-auto "}>
