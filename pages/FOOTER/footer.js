@@ -30,7 +30,7 @@ import { withTranslation } from "react-i18next";
                 <div className="container-fluid px-4 py-1">
                     <div className="row ">
                         <div className="col-12 col-sm-12 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
-                        <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10 p-0 mt-5 ">
+                        <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10  mt-5 ">
                             <div className="container-fluid p-0">
                                 <div className="row ">
                                     <div className="col-12 col-sm-12 col-md-7 col-lg-4 col-xl-4 col-xxl-4  ">

@@ -433,7 +433,16 @@ class product extends React.Component {
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
-
+        var input = document.getElementById("search");
+        input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            // document.getElementById("search").click();
+        }
+        });
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
@@ -996,7 +1005,7 @@ render (){
                                                         <div className={[(i18n.language=="ar")?"textalignright DroidKufi ":"light gill "]+"relative texttitlemedia  font_size   h-100"}>
                                                             {/* <input type="text" id='search-input' name="search1" placeholder="Search Products" className="pl-5  texttitlemedia footertext light gill w-100" /> */}
                                                             
-                                                            <input type="text" id="search " placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"Search Products"} className={[(i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+"   searchnewprodbordure mb-1 py-1 py-md-0 texttitlemedia footertext   w-100"}
+                                                            <input type="text" id="search" placeholder={(i18n.language=="ar")?"البحث عن المنتجات":"Search Products"} className={[(i18n.language=="ar")?"pr-5 DroidKufi ":"pl-5 light gill "]+"   searchnewprodbordure mb-1 py-1 py-md-0 texttitlemedia footertext   w-100"}
                                                                 value={this.state.inputsearch} onChange={this.filter} />
                                                             <FontAwesomeIcon style={{ height: "12px" }} className="searchiconnewprod" icon={faSearch} />
                                                              {/* <FontAwesomeIcon style={{ height: "12px" }} className="searchiconsecnewprod" icon={faFilter} /> */}
