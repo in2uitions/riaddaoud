@@ -350,7 +350,7 @@ fetch(Api.baseUrl+"files", requestOptions)
         },
         "to": [
             {
-            "email": "anthonios.ghaly@in2uitions.com",
+            "email": this.state.submit.careers_email,
             "name": "jj"
             }
         ]
