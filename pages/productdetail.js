@@ -263,28 +263,28 @@ class proddetail extends React.Component {
                                     </div>
                                 </a>
                             </Link> */}
-                            <div className={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100   sidemenudropdown  "}>
-                                <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
-                                        <Link href="/product">
-                                        <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
-                                            <div className="row ">
-                                                {(i18n.language == "ar") ?
-                                                    <div className="container-fluid p-0 py-2 link ">
-                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
-                                                        <img src="./assets/images/smallrightfleche.svg" className="img-fluid cover backmediafleche" />
-                                                    </div> :
-                                                    <div className="container-fluid p-0 py-2 linkleft centeredpag">
-                                                        <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
-                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
-                                                    </div>}
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-                                <div className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 py-md-0 py-5">
-                                    <div className="row">
-                                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                            <div id="sync1" className="owl-carousel productcarousel owl-theme w-100 p-0">
+                            <div className={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100    sidemenudropdown  "}>
+//                                 <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
+//                                         <Link href="/product">
+//                                         <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
+//                                             <div className="row ">
+//                                                 {(i18n.language == "ar") ?
+//                                                     <div className="container-fluid p-0 py-2 link ">
+//                                                         <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
+//                                                         <img src="./assets/images/smallrightfleche.svg" className="img-fluid cover backmediafleche" />
+//                                                     </div> :
+//                                                     <div className="container-fluid p-0 py-2 linkleft centeredpag">
+//                                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
+//                                                         <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
+//                                                     </div>}
+//                                             </div>
+//                                         </a>
+//                                     </Link>
+//                                 </div>
+                                <div className="col-12 h-100 py-md-0 py-5">
+                                    <div className="row h-100 ">
+                                        <div className="col-12  px-0 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                            <div id="sync1" className="owl-carousel h-100 productcarousel owl-theme w-100 p-0">
 
                                                 {
                                                     this.state.data.map((key, value) => {
@@ -293,7 +293,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div key={['btn-3-'+value]} className="item w-100"> <div className="container-fluid px-5 carouselcenteredprod" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div key={['btn-3-'+value]} className="item w-100"> <div className="carouselcenteredprod" style={{ height: "100%" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
@@ -304,7 +304,7 @@ class proddetail extends React.Component {
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;
                                                         return (
-                                                            <div key={['btn-2-'+value]} className="item w-100"><div className="container-fluid px-5 carouselcenteredprod" style={{ height: "500px" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
+                                                            <div key={['btn-2-'+value]} className="item w-100"><div className="carouselcenteredprod" style={{ height: "100%" }}><img src={"" + imageurl + ""} className="imgprod  img-fluid" /></div></div>
                                                         )
                                                     })
                                                 }
