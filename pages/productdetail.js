@@ -247,7 +247,7 @@ class proddetail extends React.Component {
                 <Navigation current="products"></Navigation>
                 <div className={[(i18n.language == "ar") ? "rtl " : ""] + "container-fluid  relative"}>
                     <div className="row  ">
-                        <div className={[(i18n.language == "ar") ? "ltr " : ""] + "col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 product2backg "}>
+                        <div className={[(i18n.language == "ar") ? "ltr " : ""] + "col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 product2backg px-0 "}>
                             {/* <Link href="/product">
                                 <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
                                     <div className="row ">
@@ -263,7 +263,7 @@ class proddetail extends React.Component {
                                     </div>
                                 </a>
                             </Link> */}
-                            <div className={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100    sidemenudropdown  "}>
+                            <div className={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100   px-0 sidemenudropdown  "}>
                                {/*  <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
                                         <Link href="/product">
                                         <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
@@ -281,7 +281,7 @@ class proddetail extends React.Component {
                                         </a>
                                     </Link>
                                 </div>  */}
-                                <div className="col-12 h-100 py-md-0 py-5">
+                                <div className="col-12 h-100 py-md-0 ">
                                     <div className="row h-100 ">
                                         <div className="col-12  px-0 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                             <div id="sync1" className="owl-carousel h-100 productcarousel owl-theme w-100 p-0">
