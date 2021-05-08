@@ -981,7 +981,7 @@ background-color: #eee;
         }
         
         .imgprod {
-            object-fit: contain;
+            object-fit: cover;
             width: 300px;
             height: 300px;
         }
