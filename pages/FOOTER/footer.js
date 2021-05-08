@@ -37,7 +37,7 @@ import { withTranslation } from "react-i18next";
                                         <div className="container-fluid ">
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-0 d-flex Products footerheighttitile">
                                                 <div className="container-fluid p-0 ">
-                                                    <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10 justify-content-center justify-content-md-start  p-0 d-flex logosheight">
+                                                    <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10  justify-content-md-start  p-0 d-flex logosheight">
                                                         <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="img-fluid contain" />
                                                     </div>
                                                 </div>
