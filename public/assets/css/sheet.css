@@ -981,9 +981,9 @@ background-color: #eee;
         }
         
         .imgprod {
-            object-fit: cover;
-            width: 300px;
-            height: 300px;
+            object-fit: contain;
+            width: 500px;
+            height: 700px;
         }
         
         .imgprodmini {
@@ -4194,3 +4194,9 @@ nav .logo{
     }
     
   }
+
+@media(max-width:995px){
+        .imgprod {
+            height: 300px !important;
+        }
+}
