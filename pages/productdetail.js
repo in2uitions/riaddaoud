@@ -264,23 +264,23 @@ class proddetail extends React.Component {
                                 </a>
                             </Link> */}
                             <div className={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100    sidemenudropdown  "}>
-//                                 <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
-//                                         <Link href="/product">
-//                                         <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
-//                                             <div className="row ">
-//                                                 {(i18n.language == "ar") ?
-//                                                     <div className="container-fluid p-0 py-2 link ">
-//                                                         <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
-//                                                         <img src="./assets/images/smallrightfleche.svg" className="img-fluid cover backmediafleche" />
-//                                                     </div> :
-//                                                     <div className="container-fluid p-0 py-2 linkleft centeredpag">
-//                                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
-//                                                         <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
-//                                                     </div>}
-//                                             </div>
-//                                         </a>
-//                                     </Link>
-//                                 </div>
+                               {/*  <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
+                                        <Link href="/product">
+                                        <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
+                                            <div className="row ">
+                                                {(i18n.language == "ar") ?
+                                                    <div className="container-fluid p-0 py-2 link ">
+                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
+                                                        <img src="./assets/images/smallrightfleche.svg" className="img-fluid cover backmediafleche" />
+                                                    </div> :
+                                                    <div className="container-fluid p-0 py-2 linkleft centeredpag">
+                                                        <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
+                                                        <span className= {[(i18n.language == "ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-md-2 px-1"}><Back /></span>
+                                                    </div>}
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>  */}
                                 <div className="col-12 h-100 py-md-0 py-5">
                                     <div className="row h-100 ">
                                         <div className="col-12  px-0 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
