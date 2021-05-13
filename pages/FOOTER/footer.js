@@ -53,7 +53,7 @@ import { withTranslation } from "react-i18next";
                                     </div>
                                     <div className="col-12 col-sm-12 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
                                     <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 p-md-0 ">
-                                        <div className="container-fluid p-0">
+                                        <div className="container-fluid pb-3 p-0">
                                             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 Products d-flex p-0  footerheighttitile">
                                                 <div className="container-fluid p-0">
                                                     <h3 className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+"meduim px-md-1  blue"}>{(this.props.i18n.language=="ar")?"اتصل بنا":"Contact Us"}</h3>
@@ -102,7 +102,7 @@ import { withTranslation } from "react-i18next";
                                                         <div className={[(this.props.i18n.language=="ar")?"textalignright ":" "]+"col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2 px-0"}>
                                                             <Link href={""+this.state.data.twitter_link+""}target="_blank">
                                                                 <a href={""+this.state.data.twitter_link+""}target="_blank">
-                                                                    <img src="./assets/images/twitter.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
+                                                                    <img src="./assets/images/linkedin.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
                                                                 </a>
                                                             </Link>
                                                         </div>
