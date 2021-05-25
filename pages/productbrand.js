@@ -557,16 +557,7 @@ class product extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <Link href="/product">
-                                <a href="/product" className=" backmediaprod mt-3">
-                                <div className="row ">
-                                        <div className="container-fluid p-0 py-2 linkleft">
-                                        <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
-                                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
-                                    </div>
-                                    </div>
-                                </a>
-                            </Link>
+                        
                          
                         </div>
                     <div>
@@ -591,6 +582,17 @@ class product extends React.Component {
                 <div className={[(i18n.language=="ar")?"rtl ":""]+"container-fluid px-4"}>
                     <div className="row ">
                         <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 py-0 px-4 show ">
+                            
+                           <Link href="/product">
+                                <a href="/product" className=" backmediaprod my-3">
+                                <div className="row ">
+                                        <div className="container-fluid p-0 py-2 linkleft">
+                                        <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
+                                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                    </div>
+                                    </div>
+                                </a>
+                            </Link>
                             <div className="panel-group borders" id="modal" role="tablist" aria-multiselectable="true">
                                 <div className="panel">
                                     <div className="col-md-12 visible-xs">
