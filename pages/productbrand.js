@@ -584,7 +584,7 @@ class product extends React.Component {
                         <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3 py-0 px-4 show ">
                             
                            <Link href="/product">
-                                <a href="/product" className=" backmediaprod my-3">
+                                <a href="/product" className=" backmediaprod my-3" style={{position:'relative'}}>
                                 <div className="row ">
                                         <div className="container-fluid p-0 py-2 linkleft">
                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
