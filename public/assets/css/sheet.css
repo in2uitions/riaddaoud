@@ -611,9 +611,9 @@
         
         .searchiconsecnewprod {
             position: absolute;
-            top: 50%;
+            top: 100%;
             transform: translateY(-50%);
-            right: 20px;
+            left: 20px;
             -webkit-transform: translateY(-50%);
             -moz-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
@@ -1414,16 +1414,72 @@ a:focus {
     background-color: #ddd;
 } */
         /* Create an active/current tablink class */
+
+
+
+        .dt-bootstrap4 tbody tr{
+            float: left;
+            
+         }
+         
+         .dt-bootstrap4 tbody td .single,.dt-bootstrap4 tbody tr td .single{
+            width: 24vw;
+         }
+         .dt-bootstrap4 tbody td .double,.dt-bootstrap4 tbody tr td .double{
+            width: 48vw;
+         }
+         .dt-bootstrap4th,.dt-bootstrap4 td{
+             border-top: none;
+             padding: 0px;
+         }
+         .dt-bootstrap4 .row-col{
+             display:none;
+         }
+      
+         
+         .dt-bootstrap4 thead {
+            display: none;
+         }
+
+         .dataTables_paginate{
+             float:right;
+         }
+         .page-link{
+             border:none;
+             color:#002891;
+         }
+         .page-item.active .page-link{
+             background: #002891;
+         }
+         .dataTables_info{
+            font-family: GillSans!important;
+            color: #818386;
+            font-weight: 300;
+            font-size: 1.1em;
+         }
+         .dataTables_length.bs-select{
+            display: none;
+         }
         
         .tabtitlebuttons {
             font-size: 30px;
             color: #FFFFFF;
+        }
+        .disabled.page-item{
+            display: none;
         }
         
         .tab button.active p {
             color: #002891!important;
         }
         
+        .mdb-datatable-filter .form-control{
+            font-size: 0.9em;
+            color: #545454;
+            border: 1px solid #81838620!important;
+            font-family: GillSans!important;
+            font-weight: 300;
+        }
         .resizeoff {
             resize: none
         }
@@ -3634,6 +3690,12 @@ nav .search-icon{
         border-width: 10px 15px 10px 0;
         border-color: transparent #f5f5f5 transparent transparent;
     }
+    .dt-bootstrap4 tbody td .single,.dt-bootstrap4 tbody tr td .single{
+        width: 90vw;
+     }
+     .dt-bootstrap4 tbody td .double,.dt-bootstrap4 tbody tr td .double{
+        width: 90vw;
+     }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .carousel-inner p {
