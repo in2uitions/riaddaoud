@@ -120,6 +120,7 @@ class Filter extends React.Component{
 
     this.setState({ boxArr: datadirect.data[0] ,submit:datadirectsubmit.data,categories:categories.data,brands:brands.data});
     this.loadanim();
+    this.getProducts();
     
   }
 
