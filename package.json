@@ -20,14 +20,18 @@
     "fs": "0.0.1-security",
     "i18next": "^19.9.1",
     "jsdom": "^16.4.0",
+    "mdbreact": "^5.0.2",
     "next": "10.0.7",
     "nodemailer": "^6.5.0",
     "react": "17.0.1",
+    "react-data-table-component": "^6.11.7",
     "react-device-detect": "^1.17.0",
     "react-dom": "17.0.1",
     "react-i18next": "^11.8.9",
     "react-multi-carousel": "^2.6.2",
+    "reactjs-popup": "^2.0.4",
     "sendpulse-api": "^1.1.5",
+    "styled-components": "^5.3.0",
     "sweetalert2": "^10.16.0"
   }
 }
