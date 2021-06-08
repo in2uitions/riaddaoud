@@ -123,6 +123,7 @@ class Filter extends React.Component{
     this.setState({ boxArr: datadirect.data[0] ,submit:datadirectsubmit.data,categories:categories.data});
     this.loadanim();
     this.getProducts();
+    this.getSubCategories();
     
   }
 
