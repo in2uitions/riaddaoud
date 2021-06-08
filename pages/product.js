@@ -107,7 +107,7 @@ class Filter extends React.Component{
     const myParam = urlParams.get('data_id');    
     var datadirectsubmit=await directus.items('website_settings').read();
     var categories=await directus.items('categories').read();
-    var brands=await directus.items('brands').read();
+    
 
 
     if(myParam)
@@ -118,8 +118,9 @@ class Filter extends React.Component{
     }
 
 
-    this.setState({ boxArr: datadirect.data[0] ,submit:datadirectsubmit.data,categories:categories.data,brands:brands.data});
+    this.setState({ boxArr: datadirect.data[0] ,submit:datadirectsubmit.data,categories:categories.data});
     this.loadanim();
+    this.getProducts();
     
   }
 
@@ -132,7 +133,36 @@ class Filter extends React.Component{
             },
         }
     });
-   this.setState({subCategories:subCategories.data}); 
+
+     var query = {};
+     query['filter'] = {};
+     if(this.state.category != 0){
+         query['filter']['category'] = {
+             "_eq": this.state.category,
+          }
+     }
+         
+
+ 
+     query['fields'] = ['*','brand.*']
+ 
+     let myData = await directus.items('products').read(query);
+     let myDataSet = myData.data;
+
+     let itemIds = [];
+
+     for (var index = 0; index < myDataSet.length; index++) {
+        itemIds[index] = myDataSet[index].brand.id;
+     }
+
+
+    var brands=await directus.items('brands').read({filter: {
+        id: {
+            "_in": itemIds,
+        },
+    }});
+
+   this.setState({subCategories:subCategories.data,brands:brands.data}); 
    this.getProducts()
   }
 
@@ -188,9 +218,11 @@ class Filter extends React.Component{
 
     let myData = await directus.items('products').read(query);
     let myDataSet = myData.data;
+    let itemIds = [];
 
     for (var index = 0; index < myDataSet.length; index++) {
         let rowItem = {}
+ 
         
         rowItem["name"] = (i18n.language=="ar")? myDataSet[index].title_ar : myDataSet[index].title
         rowItem["brand"] = (i18n.language=="ar")? myDataSet[index].brand?.title_ar : myDataSet[index].brand?.title
@@ -213,6 +245,9 @@ class Filter extends React.Component{
                             
         rowsData.push(rowItem)
     }
+
+   
+
     this.setState({
         
         datatable:{
@@ -224,7 +259,9 @@ class Filter extends React.Component{
             },
             
         ],
-        rows: rowsData},
+        rows: rowsData,
+       },
+       
         
     });
   }
