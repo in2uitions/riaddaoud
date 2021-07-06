@@ -42,6 +42,7 @@ class Filter extends React.Component{
                         </div>
                     </div>
                 ))}
+                {this.props.brands.length == 0?'No Brands':''}
                 </div> 
                 
                 <div class="p-3 ">
@@ -57,6 +58,7 @@ class Filter extends React.Component{
                         </div>
                     </div>
                 ))}
+                {this.props.subCategories.length == 0?'No Sub-Categories':''}
                 </div>        
                 <div class="textaligncenter py-4 " onClick={this.props.resetFilter}>
                     <button class="clearfilterbtn textaligncenter px-5 py-2">
@@ -121,6 +123,7 @@ class Filter extends React.Component{
     this.setState({ boxArr: datadirect.data[0] ,submit:datadirectsubmit.data,categories:categories.data});
     this.loadanim();
     this.getProducts();
+    this.getSubCategories();
     
   }
 
@@ -135,16 +138,40 @@ class Filter extends React.Component{
     });
 
      var query = {};
+
+
+   
+     var subcategoriesArr = Array.from(this.state.subcategories, ([name, value]) => ({ name, value }));
+     var filteredSubCategory = subcategoriesArr.filter(function(item){
+          return item.value == true;
+      }).map(item => {
+          return item.name
+      })
+
+
+    console.log(filteredSubCategory)
+
+
      query['filter'] = {};
      if(this.state.category != 0){
          query['filter']['category'] = {
              "_eq": this.state.category,
           }
      }
+
+
+     if(filteredSubCategory.length > 0)
+     {
+         query['filter']['subcategory'] = {
+             "_in": filteredSubCategory,
+          }  
+     }
          
 
  
      query['fields'] = ['*','brand.*']
+
+     
  
      let myData = await directus.items('products').read(query);
      let myDataSet = myData.data;
@@ -156,13 +183,25 @@ class Filter extends React.Component{
      }
 
 
-    var brands=await directus.items('brands').read({filter: {
-        id: {
-            "_in": itemIds,
-        },
-    }});
+     var queryBrands = {};
+     var brandsData = [];
+     queryBrands['filter'] = {};
+     if(itemIds.length > 0){
+        queryBrands['filter']['id'] = {
+             "_in": itemIds,
+          }
+          var brands=await directus.items('brands').read(queryBrands);
+          brandsData = brands.data
+     }
+     else{
+        brandsData = []
+     }
 
-   this.setState({subCategories:subCategories.data,brands:brands.data}); 
+
+
+    
+
+   this.setState({subCategories:subCategories.data,brands:brandsData}); 
    this.getProducts()
   }
 
@@ -317,6 +356,7 @@ class Filter extends React.Component{
     const value = e.target.value;
     const isChecked = e.target.checked;
     this.setState(prevState => ({ [item]: prevState.[item].set(value, isChecked) }),() => {
+        this.getSubCategories();
         this.getProducts();
     });
     
