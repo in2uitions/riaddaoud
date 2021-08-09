@@ -193,7 +193,7 @@ handletrue = () => {
             <div class="logo col-8 col-md-4 textaligncenter ">
             <Link href="/">
                 <a href="index.html" className="logoabsolute ">
-                    <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="contain logosheight logoslidingproblem" />
+                    <img src={`./assets/images/riad_daoud_logo${(this.props.i18n.language=="ar")?'_ar':''}.svg`} alt="logo name" className="contain logosheight logoslidingproblem" />
                 </a>
                 </Link>
             </div>

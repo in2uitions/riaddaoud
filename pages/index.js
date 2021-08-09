@@ -436,7 +436,21 @@ class index extends React.Component {
     // }
     // console.log("this is the current "+current)
   }
+
+  reverse(arr) {
+    var ReverseArray = [];
+    var length = arr.length;
+    for(var i = length-1;i>=0;i--){
+      ReverseArray.push(arr[i]);
+    }
+
+    return ReverseArray;
+  }
+
+
   render() {
+
+    
     // const {t,i18n}=useTranslation();
     var b = [];
     for (const i in this.state.databox[0]) {
@@ -463,9 +477,19 @@ class index extends React.Component {
     // const imagbackeurl = startb_url + valuebackimg + endb_url;
     // console.log(imagbackeurl)
     var categarray = [];
+   
+    
     for (const i in this.state.categ) {
       categarray[i] = this.state.categ[i];
     }
+    if(this.props.i18n.language != "ar")
+    {
+      categarray = this.reverse(categarray);
+    }
+    
+   
+    console.log(categarray)
+
     var last3articles = [];
     for (const y in this.state.articles) {
       if (this.state.articles[y].id == this.state.articles.length - 2)
@@ -820,7 +844,7 @@ class index extends React.Component {
                       if (value.title_ar == null) {
                         var title_ar = value.title;
                       } else var title_ar = value.title_ar;
-                      if (value.id == 1) {
+                      if (index == 3) {
                         return (
                           <div
                             key={["btn-4-" + index]}
@@ -850,7 +874,7 @@ class index extends React.Component {
                           </div>
                         );
                       }
-                      if (value.id == categarray.length) {
+                      if (index == 0) {
                         return (
                           <div
                             className="block  block--right clip406 "
@@ -879,7 +903,7 @@ class index extends React.Component {
                           </div>
                         );
                       }
-                      if (value.id == 2) {
+                      if (index == 2) {
                         return (
                           <div
                             className="block  block_center clip406 "

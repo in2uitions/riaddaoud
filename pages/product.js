@@ -85,6 +85,7 @@ class Filter extends React.Component{
       datatable:[],
       subcategories: new Map(),
       brandsArr: new Map(),
+      language:''
       
     };
 
@@ -363,7 +364,18 @@ class Filter extends React.Component{
   }
 
   componentDidMount () {
+    
     this.getData();
+  }
+  componentDidUpdate(PrevProps, prevState){
+      
+      if(PrevProps.i18n.language != this.state.language){
+          console.log(PrevProps.i18n.language);
+          this.setState({
+              language:i18n.language
+          })
+          this.getData();
+      }
   }
 
 
