@@ -7,7 +7,7 @@ import Api from './api/Api.js';
 import i18n from '../i18n';
 import { MDBDataTable } from 'mdbreact';
 import Link from 'next/link'
-
+import router from 'next/router'
 
 const directus = new DirectusSDK(Api.baseUrl);
  
@@ -79,6 +79,7 @@ class Filter extends React.Component{
       submit:[],
       categories:[],
       brands:[],
+      brand:{},
       subCategories:[],
       category:0,
       tableRows:[],
@@ -110,7 +111,24 @@ class Filter extends React.Component{
     const myParam = urlParams.get('data_id');    
     var datadirectsubmit=await directus.items('website_settings').read();
     var categories=await directus.items('categories').read();
+    var brand= {};
+
+    if(router.query.brand_id)
+    {
+        const brandData=await directus.items('brands').read({
+            filter: {
+                id: {
+                    "_eq": router.query.brand_id,
+                }
+            }
+        });
+
+        brand = brandData.data[0]
+    }
     
+
+    console.log(brand)
+   
 
 
     if(myParam)
@@ -121,7 +139,7 @@ class Filter extends React.Component{
     }
 
 
-    this.setState({ boxArr: datadirect.data[0] ,submit:datadirectsubmit.data,categories:categories.data});
+    this.setState({ boxArr: datadirect.data[0] ,submit:datadirectsubmit.data,categories:categories.data,brand:brand});
     this.loadanim();
     this.getProducts();
     this.getSubCategories();
@@ -167,7 +185,9 @@ class Filter extends React.Component{
              "_in": filteredSubCategory,
           }  
      }
-         
+
+
+   
 
  
      query['fields'] = ['*','brand.*']
@@ -187,10 +207,16 @@ class Filter extends React.Component{
      var queryBrands = {};
      var brandsData = [];
      queryBrands['filter'] = {};
-     if(itemIds.length > 0){
+
+     if(router.query.brand_id)
+     {
+        itemIds = [router.query.brand_id];
+     }
+     if(itemIds.length > 0 ){
         queryBrands['filter']['id'] = {
              "_in": itemIds,
           }
+
           var brands=await directus.items('brands').read(queryBrands);
           brandsData = brands.data
      }
@@ -245,6 +271,17 @@ class Filter extends React.Component{
             "_in": filteredSubCategory,
          }  
     }
+
+    if(router.query.brand_id)
+    {
+        query['filter']['brand'] = {
+            "_eq": router.query.brand_id,
+         }  
+        
+    }
+        
+
+  
 
     if(filteredBrandsArr.length > 0)
     {
@@ -373,8 +410,10 @@ class Filter extends React.Component{
           console.log(PrevProps.i18n.language);
           this.setState({
               language:i18n.language
+          },()=>{
+            this.getData();
           })
-          this.getData();
+          
       }
   }
 
@@ -395,11 +434,13 @@ render (){
                                 <div className="container-fluid py-4 mb-4 ">
                                     <div className="row  py-4">
                                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-3">
-                                            <h1 className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"meduim white  aligncenter"}>{[(i18n.language=="ar")?this.state.boxArr.box_title_ar:this.state.boxArr.box_title]}</h1>
+                                            {(this.state.brand.id)?<h1 className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"meduim white  aligncenter"}>{[(i18n.language=="ar")?this.state.brand.title_ar:this.state.brand.title]}</h1>:
+                                            <h1 className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"meduim white  aligncenter"}>{[(i18n.language=="ar")?this.state.boxArr.box_title_ar:this.state.boxArr.box_title]}</h1>}
                                         </div>
                                         <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
                                         <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-3">
-                                            <div className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  aligncenter"}>{[(i18n.language=="ar")?this.state.boxArr.box_description_ar:this.state.boxArr.box_description]}</div>
+                                          {(this.state.brand.id)?<div className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  aligncenter"}>{[(i18n.language=="ar")?this.state.brand.description_ar:this.state.brand.description]}</div>
+                                            :<div className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  aligncenter"}>{[(i18n.language=="ar")?this.state.boxArr.box_description_ar:this.state.boxArr.box_description]}</div>}
                                         </div>
                                     </div>
                                 </div>

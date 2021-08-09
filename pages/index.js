@@ -997,8 +997,8 @@ class index extends React.Component {
                                 key={["btn-5-" + index]}
                                 className={"textaligncenter owl-item " + index}
                                 >
-                                  <Link href={{ pathname: '/productbrand', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
-                                    <a href={{ pathname: '/productbrand', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                                  <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
+                                    <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
                                 <img
                                     id={index}
                                     src={"" + imagbackeurl + ""}
