@@ -344,9 +344,9 @@ class proddetail extends React.Component {
                         </div>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 py-3 px-1 mt-3">
                             <div className="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 col-xxl-11 p-5">
-                                {/* <Link href="/productbrand" > */}
-                                <Link href={{ pathname: '/productbrand', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, data_id: this.state.brand.id } }}>
-                                    <a href={{ pathname: '/productbrand', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, data_id: this.state.brand.id } }}>
+                                {/* <Link href="/product" > */}
+                                <Link href={{ pathname: '/product', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, brand_id: this.state.brand.id } }}>
+                                    <a href={{ pathname: '/product', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, brand_id: this.state.brand.id } }}>
                                         <h2 className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "gill "] + "regular titlemedia p-0 pointer"}>
                                        
                                             {(i18n.language == "ar") ? title_ar : this.state.brand.title}

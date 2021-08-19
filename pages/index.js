@@ -482,10 +482,9 @@ class index extends React.Component {
     for (const i in this.state.categ) {
       categarray[i] = this.state.categ[i];
     }
-    if(this.props.i18n.language != "ar")
-    {
+    
       categarray = this.reverse(categarray);
-    }
+    
     
    
     console.log(categarray)
@@ -860,7 +859,7 @@ class index extends React.Component {
                                     [
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi lefteye_ar "
-                                        : "gill lefteye ",
+                                        : "gill lefteye1 ",
                                     ] + "white italic  textalign "
                                   }
                                 >
@@ -931,7 +930,8 @@ class index extends React.Component {
                             </Link>
                           </div>
                         );
-                      } else {
+                                }
+                        if (index == 1) {
                         return (
                           <div
                             className="block   block_center1 clip406 "
@@ -995,7 +995,7 @@ class index extends React.Component {
                             return (
                                 <div
                                 key={["btn-5-" + index]}
-                                className={"textaligncenter owl-item " + index}
+                                className={"px-3 textaligncenter owl-item " + index}
                                 >
                                   <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
                                     <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>

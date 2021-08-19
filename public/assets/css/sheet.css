@@ -1998,22 +1998,22 @@ a:focus {
             width: calc(29%);
         }
         
-        .block--left {
+        .block--right{
             clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
             left: 0;
         }
         
-        .block_center {
+        .block_center1{
             clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
             left: 24%
         }
         
-        .block_center1 {
+         .block_center{
             clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
             left: 48%
         }
         
-        .block--right {
+         .block--left{
             clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
             left: 72%;
         }
