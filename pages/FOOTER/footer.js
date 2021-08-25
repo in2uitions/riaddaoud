@@ -99,14 +99,14 @@ import { withTranslation } from "react-i18next";
                                                                 </a>
                                                             </Link>
                                                         </div>
-                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright ":" "]+"col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2 px-0"}>
+                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright ":" "]+"col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 pl-md-2 px-0"}>
                                                             <Link href={""+this.state.data.twitter_link+""}target="_blank">
                                                                 <a href={""+this.state.data.twitter_link+""}target="_blank">
                                                                     <img src="./assets/images/linkedin.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
                                                                 </a>
                                                             </Link>
                                                         </div>
-                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright ":" "]+"col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 px-md-2 px-0"}>
+                                                        <div className={[(this.props.i18n.language=="ar")?"textalignright ":" "]+"col-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2 p-0 pl-md-2 px-0"}>
                                                             <Link href={""+this.state.data.instagram_link+""}target="_blank">
                                                                 <a href={""+this.state.data.instagram_link+""}target="_blank">
                                                                     <img src="./assets/images/insta.svg" alt="socialmedia logo" className="img-fluid  cover pointer  " />
