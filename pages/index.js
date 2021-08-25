@@ -101,7 +101,7 @@ class index extends React.Component {
       },
     });
     var datadirectbrand = await directus.items("brands").read();
-    var datadirectproducts = await directus.items("products").read();
+    var datadirectproducts = await directus.items("products").read({fields:['*,*.*']});
     var datadirectarticles = await directus.items("articles").read();
     var a=[]
     var imagbackeurl=""
@@ -845,6 +845,7 @@ class index extends React.Component {
                       } else var title_ar = value.title_ar;
                       if (index == 3) {
                         return (
+                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             key={["btn-4-" + index]}
                             className="block  block--left clip406 "
@@ -852,7 +853,7 @@ class index extends React.Component {
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                           
                             <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
@@ -867,21 +868,23 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                            
                           </div>
+                          </Link>
                         );
                       }
                       if (index == 0) {
                         return (
+                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block  block--right clip406 "
                             style={{
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            
                             <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
@@ -896,21 +899,23 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                            
                           </div>
+                          </Link>
                         );
                       }
                       if (index == 2) {
                         return (
+                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block  block_center clip406 "
                             style={{
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                             <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                             
                             <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
@@ -925,21 +930,23 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                           
                           </div>
+                          </Link>
                         );
                                 }
                         if (index == 1) {
                         return (
+                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block   block_center1 clip406 "
                             style={{
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                           <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                           
                             <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
@@ -954,10 +961,11 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                           
                           </div>
+                          </Link>
                         );
                       }
                     })}
@@ -1044,7 +1052,7 @@ class index extends React.Component {
                       var startb_url =
                         "https://rdcms.businessexchange.me/assets/";
                       var endb_url = "?w=100&h=150 ";
-                      var valuebackimg = key.image;
+                      var valuebackimg = key.image.id;
                       const imagbackeurl = startb_url + valuebackimg + endb_url;
                       if (key.title_ar == null) {
                         var title_ar = key.title;
@@ -1106,8 +1114,8 @@ class index extends React.Component {
                                     }
                                   >
                                     {this.props.i18n.language == "ar"
-                                      ? brandstitle_ar
-                                      : brannnnds[key.brand - 1]?.title}
+                                      ? key.brand.title_ar
+                                      :key.brand.title}
                                   </span>
                                 </p>
                                 <FontAwesomeIcon
