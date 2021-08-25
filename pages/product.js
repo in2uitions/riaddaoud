@@ -9,6 +9,14 @@ import { MDBDataTable } from 'mdbreact';
 import Link from 'next/link'
 import router from 'next/router'
 
+import { useTranslation } from 'react-i18next';
+function Back() {
+    const { t } = useTranslation();
+
+    return <span> {t('back')} </span>
+}
+
+
 const directus = new DirectusSDK(Api.baseUrl);
  
 var image_url = Api.baseUrl + 'assets/';
@@ -428,6 +436,7 @@ render (){
                         </div>
                     </div>
                     <div className="container-fluid ">
+                        
                         <div className="row">
                             <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3"></div>
                             <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 aboutheaderprodnew py-4 px-3">
@@ -469,11 +478,37 @@ render (){
                     </div>
               
                 <div class="container-fluid py-5">
+                
+
                     <div class="row">
-                        <button type="button" class="navbar-toggler py-2 d-block d-md-none textaligncenter w-100 position-relative" data-toggle="modal" data-target="#exampleModalCenter">
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" class="svg-inline--fa fa-filter fa-w-16 searchiconsecnewprod" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{height:15}}><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg>
-                        </button>
+                        <div class="d-block d-md-none pl-4">
+                                <Link href="/">
+                                    <a href="/" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
+                                    <div className="row ">
+                                            <div className="container-fluid p-0 py-2 linkleft">
+                                            <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
+                                            <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                        </div>
+                                        </div>
+                                    </a>
+                                </Link>
+                                <button type="button" class="navbar-toggler py-2 textaligncenter w-100 position-relative" data-toggle="modal" data-target="#exampleModalCenter">
+                        
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" class="svg-inline--fa fa-filter fa-w-16 searchiconsecnewprod" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{height:15}}><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg>
+                                </button>
+                        </div>
+                     
                         <div class="col-md-3 d-none d-md-block">
+                        <Link href="/">
+                                <a href="/" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
+                                <div className="row ">
+                                        <div className="container-fluid p-0 py-2 linkleft">
+                                        <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
+                                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                    </div>
+                                    </div>
+                                </a>
+                            </Link>
                               <Filter handleChange={this.handleChange} handleChangeChecbox={this.handleChangeChecbox} resetFilter={this.resetFilter} t={this.props.t} {...this.state} />
                         </div>
                         <div class="col-md-9 ">
