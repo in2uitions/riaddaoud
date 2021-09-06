@@ -374,22 +374,10 @@ class Filter extends React.Component{
 
       } else {
 
-          sr.reveal('.js--fadeInb', {
-              origin: 'bottom',
-              distance: '300px',
-              easing: 'ease-in-out',
-              duration: 850,
-          });
 
 
       }
 
-      sr.reveal('.js--fadeInb', {
-          origin: 'bottom',
-          distance: '300px',
-          easing: 'ease-in-out',
-          duration: 850,
-      });
 
 
   });
@@ -482,8 +470,8 @@ render (){
 
                     <div class="row">
                         <div class="d-block d-md-none pl-4">
-                                <Link href="/">
-                                    <a href="/" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
+                                
+                                    <a href="/product" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
                                     <div className="row ">
                                             <div className="container-fluid p-0 py-2 linkleft">
                                             <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
@@ -491,7 +479,7 @@ render (){
                                         </div>
                                         </div>
                                     </a>
-                                </Link>
+                                
                                 <button type="button" class="navbar-toggler py-2 textaligncenter w-100 position-relative" data-toggle="modal" data-target="#exampleModalCenter">
                         
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" class="svg-inline--fa fa-filter fa-w-16 searchiconsecnewprod" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{height:15}}><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg>
@@ -499,8 +487,8 @@ render (){
                         </div>
                      
                         <div class="col-md-3 d-none d-md-block">
-                        <Link href="/">
-                                <a href="/" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
+                       
+                                <a href="/product" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
                                 <div className="row ">
                                         <div className="container-fluid p-0 py-2 linkleft">
                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
@@ -508,7 +496,7 @@ render (){
                                     </div>
                                     </div>
                                 </a>
-                            </Link>
+                            
                               <Filter handleChange={this.handleChange} handleChangeChecbox={this.handleChangeChecbox} resetFilter={this.resetFilter} t={this.props.t} {...this.state} />
                         </div>
                         <div class="col-md-9 ">
