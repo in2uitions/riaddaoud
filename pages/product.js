@@ -321,7 +321,7 @@ class Filter extends React.Component{
                                     </Link>
                                 </div>
                                     <div class="Products">
-                                        <p class="footertext meduim prodbrandd">{rowItem.brand}<br /><span class="gill font_size  meduim blue">{rowItem.name}</span></p>
+                                        <p class=" meduim prodbrandd">{rowItem.brand}<br /><span class="gill font_size  meduim blue">{rowItem.name}</span></p>
                                         <svg aria-hidden="true"  data-icon="search" class="svg-inline--fa fa-search fa-w-16 fass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style={{height: 20}}>
                                             <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
                                         </svg>
@@ -436,8 +436,8 @@ render (){
                                         </div>
                                         <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
                                         <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-3">
-                                          {(this.state.brand.id)?<div className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  aligncenter"}>{[(i18n.language=="ar")?this.state.brand.description_ar:this.state.brand.description]}</div>
-                                            :<div className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  lineheightbig  aligncenter"}>{[(i18n.language=="ar")?this.state.boxArr.box_description_ar:this.state.boxArr.box_description]}</div>}
+                                          {(this.state.brand.id)?<div className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"light white   lineheightbig  aligncenter"}>{[(i18n.language=="ar")?this.state.brand.description_ar:this.state.brand.description]}</div>
+                                            :<div className={[(i18n.language=="ar")?"DroidKufi ":"gill "]+"light white   lineheightbig  aligncenter"}>{[(i18n.language=="ar")?this.state.boxArr.box_description_ar:this.state.boxArr.box_description]}</div>}
                                         </div>
                                     </div>
                                 </div>
@@ -475,7 +475,7 @@ render (){
                                     <div className="row ">
                                             <div className="container-fluid p-0 py-2 linkleft">
                                             <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
-                                            <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                            <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"   color_pagination px-2"}><Back /></span>
                                         </div>
                                         </div>
                                     </a>
@@ -492,7 +492,7 @@ render (){
                                 <div className="row ">
                                         <div className="container-fluid p-0 py-2 linkleft">
                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
-                                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"  footertext color_pagination px-2"}><Back /></span>
+                                        <span className={[(i18n.language=="ar")?"DroidKufi ":"gill regular "]+"   color_pagination px-2"}><Back /></span>
                                     </div>
                                     </div>
                                 </a>
