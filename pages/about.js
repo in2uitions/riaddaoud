@@ -11,6 +11,8 @@ import Api from './api/Api.js';
 const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
 // import styles from './style3.module.css';
+import ReactHtmlParser from 'react-html-parser';
+
 class about extends React.Component{
 
     constructor(props) {
@@ -232,7 +234,8 @@ render (){
                                 </div>
                                 <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}>
                                     <p>
-                                    {(this.props.i18n.language=="ar")?description_ar:value.description}
+                                    {ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}
+                                    
                                     </p></div>
                                 </div>
                                 <div className={[(isIOS)?"backgnotfixedios ":""]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax1'} style={{backgroundImage:'url('+imageurl+')'}}   ></div>
@@ -263,7 +266,7 @@ render (){
                             <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 aligncenter '}>
                                  <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>   {(this.props.i18n.language=="ar")?title_ar:value.title}</h1>
                             </div>
-                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}><p>{(this.props.i18n.language=="ar")?description_ar:value.description}</p>
+                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}><p>{ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}</p>
                             </div>
                         </div>
                     </div>
