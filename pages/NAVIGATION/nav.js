@@ -169,10 +169,10 @@ handletrue = () => {
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/product">
                         <span id="products">{i18n.t("products")}</span>
                     </a></Link></li>
-                    <li className="py-1 py-md-0 itemindicator"><Link href="/media">
+                    {/* <li className="py-1 py-md-0 itemindicator"><Link href="/media">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/media">
                         <span id="media">{i18n.t("media")}</span>
-                    </a></Link></li>
+                    </a></Link></li> */}
                     <li className="py-1 py-md-0 itemindicator"><Link href="/blog">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-lg-3 px-2 headersubtitles"} href="/blog">
                         <span id="careers">{i18n.t("careers")}</span>
