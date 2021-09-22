@@ -1198,7 +1198,7 @@ class index extends React.Component {
             </div>
 
             <div className="container-fluid  ">
-              <div className="relative py-3 py-md-0">
+            {last3articles.length > 0?<div className="relative py-3 py-md-0">
                 <hr className="hr my-5 " />
                 <div className="thingonhr aligncenter">
                   <h1
@@ -1213,7 +1213,7 @@ class index extends React.Component {
                     {this.props.t("latestnews")}
                   </h1>
                 </div>
-              </div>
+              </div>:null}
               <div
                 className="row p-0 mt-4"
               >
