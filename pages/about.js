@@ -171,7 +171,7 @@ render (){
         a[i]=this.state.data[0][i];
     }
 
-    var startb_url =  'https://rdcms.businessexchange.me/assets/';
+    var startb_url =  'https://admin.riaddaoud.com/assets/';
     var endb_url='?key=system-large-cover';
     var valuebackimg=a.image;
     const imagbackeurl=startb_url+valuebackimg+endb_url;
@@ -211,7 +211,7 @@ render (){
     
     <div >
     {this.state.data_container.map((value, index) => {
-        var start_url =  'https://rdcms.businessexchange.me/assets/';
+        var start_url =  'https://admin.riaddaoud.com/assets/';
         var end_url='?key=system-large-cover';
         var valueimg=value.image;
         const imageurl=start_url+valueimg+end_url;
@@ -314,7 +314,7 @@ render (){
                     {this.state.data_timeline.map((value, index) => {
                         if(value.description_ar==null){ var description_ar=value.description}
                         else var description_ar=value.description_ar
-                        var start_url =  'https://rdcms.businessexchange.me/assets/';
+                        var start_url =  'https://admin.riaddaoud.com/assets/';
                         var end_url='?key=system-large-cover';
                         var valueimg=value.image;
                         const imageurl=start_url+valueimg+end_url;

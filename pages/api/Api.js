@@ -1,5 +1,5 @@
 const Api = ({
-     baseUrl:'https://rdcms.businessexchange.me/',
+     baseUrl:'https://admin.riaddaoud.com/',
    // baseUrl:'http://localhost:8055/'
 });
 

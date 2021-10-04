@@ -288,7 +288,7 @@ class proddetail extends React.Component {
 
                                                 {
                                                     this.state.data.map((key, value) => {
-                                                        var startb_url = 'https://rdcms.businessexchange.me/assets/';
+                                                        var startb_url = 'https://admin.riaddaoud.com/assets/';
                                                         var end_url = '?key=system-large-cover';
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
@@ -299,7 +299,7 @@ class proddetail extends React.Component {
                                                 }
                                                 {
                                                     this.state.prod.map((key, value) => {
-                                                        var startb_url = 'https://rdcms.businessexchange.me/assets/';
+                                                        var startb_url = 'https://admin.riaddaoud.com/assets/';
                                                         var end_url = '?key=system-large-cover';
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;
@@ -315,7 +315,7 @@ class proddetail extends React.Component {
                                             <div id="sync2" className="owl-carousel displaycarouselnone productcarousel secondcarousel owl-theme webkitalign">
                                                 {
                                                     this.state.data.map((key, value) => {
-                                                        var startb_url = 'https://rdcms.businessexchange.me/assets/';
+                                                        var startb_url = 'https://admin.riaddaoud.com/assets/';
                                                         var endb_url = '?key=system-large-cover';
                                                         var valueimg = key.image;
                                                         const imageurl = startb_url + valueimg;
@@ -326,7 +326,7 @@ class proddetail extends React.Component {
                                                 }
                                                 {
                                                     this.state.prod.map((key, value) => {
-                                                        var startb_url = 'https://rdcms.businessexchange.me/assets/';
+                                                        var startb_url = 'https://admin.riaddaoud.com/assets/';
                                                         var endb_url = '?key=system-large-cover';
                                                         var valueimg = key.directus_files_id;
                                                         const imageurl = startb_url + valueimg;

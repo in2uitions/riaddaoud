@@ -109,7 +109,7 @@ class index extends React.Component {
     for (const i in this.state.databox[0]) {
       a[i] = this.state.databox[0][i];
     }
-    var startb_url = "https://rdcms.businessexchange.me/assets/";
+    var startb_url = "https://admin.riaddaoud.com/assets/";
     var endb_url = "?key=system-large-contain";
     var valuebackimg =a.image;
      imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -471,7 +471,7 @@ class index extends React.Component {
       brannnnds[y] = this.state.brands[y];
     }
     var arrayofbrandsimages = brannnnds.map((key, value) => key.image);
-    // var startb_url = "https://rdcms.businessexchange.me/assets/";
+    // var startb_url = "https://admin.riaddaoud.com/assets/";
     // var endb_url = "?key=system-large-contain";
     // var valuebackimg =this.state.img;
     // const imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -836,7 +836,7 @@ class index extends React.Component {
                     {categarray.map((value, index) => {
                       //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
                       var startb_url =
-                        "https://rdcms.businessexchange.me/assets/";
+                        "https://admin.riaddaoud.com/assets/";
                       var endb_url = "?key=system-large-cover";
                       var valuebackimg = value.image;
                       const imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -995,7 +995,7 @@ class index extends React.Component {
                     <div className="owl-stage ">
                     {brannnnds.map((value, index) => {
                             //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
-                            var startb_url = "https://rdcms.businessexchange.me/assets/";
+                            var startb_url = "https://admin.riaddaoud.com/assets/";
                             var endb_url = "?key=system-large-cover";
                             var valuebackimg = value.image;
                             const imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -1050,7 +1050,7 @@ class index extends React.Component {
             {/* {console.log(lastposts)} */}
         {lastposts.map((key, value) => {
                       var startb_url =
-                        "https://rdcms.businessexchange.me/assets/";
+                        "https://admin.riaddaoud.com/assets/";
                       var endb_url = "?w=100&h=150 ";
                       var valuebackimg = key.image.id;
                       const imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -1225,7 +1225,7 @@ class index extends React.Component {
                             <div className="owl-stage ">
                     {last3articles.map((value, index) => {
                                 var startb_url =
-                                  "https://rdcms.businessexchange.me/assets/";
+                                  "https://admin.riaddaoud.com/assets/";
                                 var endb_url = "?key=system-large-contain";
                                 var valuebackimg = value.image;
                                 const imagbackeurl =

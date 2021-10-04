@@ -337,7 +337,7 @@ render (){
         a[i]=this.state.data[0][i];
     }
 
-    var start_url =  'https://rdcms.businessexchange.me/assets/';
+    var start_url =  'https://admin.riaddaoud.com/assets/';
     var end_url='?key=system-large-cover';
     var valueimg=a.image;
     const imageurl=start_url+valueimg+end_url;

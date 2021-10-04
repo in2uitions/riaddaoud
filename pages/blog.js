@@ -251,7 +251,7 @@ fetch(Api.baseUrl+"files", requestOptions)
       //   };
 
 
-      //  var files = await fetch('https://rdcms.businessexchange.me/files', requestOptions);
+      //  var files = await fetch('https://admin.riaddaoud.com/files', requestOptions);
       
       //  console.log("File Is", file);
         this.setState({
@@ -396,7 +396,7 @@ render (){
         a[i]=this.state.data[0][i];
 
     }
-    var start_url =  'https://rdcms.businessexchange.me/assets/';
+    var start_url =  'https://admin.riaddaoud.com/assets/';
     var end_url='?key=system-large-cover';
     var valueimg=a.image;
     const imageurl=start_url+valueimg+end_url;
