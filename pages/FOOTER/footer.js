@@ -42,10 +42,10 @@ import { withTranslation } from "react-i18next";
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 pr-2 py-3">
+                                            <div className={`col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ${(this.props.i18n.language=="ar")?'pr-1':'pr-5'} py-3`}>
                                                 <div className="container-fluid p-0">
                                                     <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+"container-fluid p-0"}>
-                                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"footertext light text-lightgrey lineheight"}>{this.state.data.footer_brief}</p>
+                                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"footertext light text-lightgrey lineheight"}>{(this.props.i18n.language=="ar")?this.state.data.footer_brief_ar:this.state.data.footer_brief}</p>
                                                     </div>
                                                 </div>
                                             </div>
