@@ -232,7 +232,7 @@ render (){
                                         
                                         </h1>
                                 </div>
-                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}>
+                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ar ":"gill en "]+[index ==0 && 'text-center ']+'mission  light py-2 px-3 px-md-0 lineheightbig'}>
                                     <p>
                                     {ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}
                                     
@@ -245,10 +245,10 @@ render (){
                             <div className='container-fluid'>
                                 <div className='row'>
                                     <div className=' col-1 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 '></div>
-                                    <div className='d-flex justify-content-center col-10 col-md-6 col-lg-6 col-xl-6 col-xxl-6 py-5 px-0 '>
+                                    <div className={`d-flex justify-content-center col-10 col-md-6 col-lg-6 col-xl-6 col-xxl-6 py-5 px-0 ${this.props.i18n.language=="ar"&&'flex-row-reverse'}`}>
                                         <div className='align-self-lg-start quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover ' /></div>
-                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'quotestext  aligncenter px-4'}>{(this.props.i18n.language=="ar")?this.state.data[0].quote_ar:this.state.data[0].quote}</p>
-                                        <div className='secquotes pl-2 pl-sm-0 quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover' /></div>
+                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'quotestext  mb-0 aligncenter px-4'}>{(this.props.i18n.language=="ar")?this.state.data[0].quote_ar:this.state.data[0].quote}</p>
+                                        <div className='secquotes pl-2 pl-sm-0 quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover mb-0 pb-0 mb-md-5 pb-md-5' /></div>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@ render (){
                             <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 aligncenter '}>
                                  <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>   {(this.props.i18n.language=="ar")?title_ar:value.title}</h1>
                             </div>
-                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}><p>{ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}</p>
+                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ar":"gill "]+'mission text-center light py-2 px-3 px-md-0 lineheightbig '}><p>{ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}</p>
                             </div>
                         </div>
                     </div>

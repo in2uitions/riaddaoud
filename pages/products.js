@@ -475,7 +475,7 @@ render (){
                     <div class="row">
                         <div class="d-block d-md-none pl-4">
                                 
-                                    <a href="/product" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
+                                    <a href="/products" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
                                     <div className="row ">
                                             <div className="container-fluid p-0 py-2 linkleft">
                                             <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
@@ -492,7 +492,7 @@ render (){
                      
                         <div class="col-md-3 d-none d-md-block">
                        
-                                <a href="/product" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
+                                <a href="/products" className=" backmediaprod my-3" style={{position:'relative',top:0}}>
                                 <div className="row ">
                                         <div className="container-fluid p-0 py-2 linkleft">
                                         <img src='./assets/images/smallleftfleche.svg' className="img-fluid cover backmediafleche" />
@@ -509,6 +509,7 @@ render (){
                                     small 
                                     
                                     data={this.state.datatable} 
+                                    onChangePage={()=>{alert();window.scrollTo(0, 0);}}
                                     
                              />
                             

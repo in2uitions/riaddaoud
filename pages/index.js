@@ -845,7 +845,7 @@ class index extends React.Component {
                       } else var title_ar = value.title_ar;
                       if (index == 3) {
                         return (
-                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             key={["btn-4-" + index]}
                             className="block  block--left clip406 "
@@ -854,7 +854,7 @@ class index extends React.Component {
                             }}
                           >
                            
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -877,7 +877,7 @@ class index extends React.Component {
                       }
                       if (index == 0) {
                         return (
-                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block  block--right clip406 "
                             style={{
@@ -885,7 +885,7 @@ class index extends React.Component {
                             }}
                           >
                             
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -908,7 +908,7 @@ class index extends React.Component {
                       }
                       if (index == 2) {
                         return (
-                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block  block_center clip406 "
                             style={{
@@ -916,7 +916,7 @@ class index extends React.Component {
                             }}
                           >
                              
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -939,7 +939,7 @@ class index extends React.Component {
                                 }
                         if (index == 1) {
                         return (
-                          <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block   block_center1 clip406 "
                             style={{
@@ -947,7 +947,7 @@ class index extends React.Component {
                             }}
                           >
                            
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -1005,8 +1005,8 @@ class index extends React.Component {
                                 key={["btn-5-" + index]}
                                 className={"px-3 textaligncenter owl-item " + index}
                                 >
-                                  <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
-                                    <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
+                                  <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
+                                    <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
                                 <img
                                     id={index}
                                     src={"" + imagbackeurl + ""}
@@ -1151,10 +1151,10 @@ class index extends React.Component {
                             "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  py-3"
                           }
                         >
-                          <Link href="/product">
+                          <Link href="/products">
                             {this.props.i18n.language == "ar" ? (
                               <a
-                                href="/product"
+                                href="/products"
                                 className={
                                   [
                                     this.props.i18n.language == "ar"
@@ -1171,7 +1171,7 @@ class index extends React.Component {
                               </a>
                             ) : (
                               <a
-                                href="/product"
+                                href="/products"
                                 className={
                                   [
                                     this.props.i18n.language == "ar"

@@ -248,8 +248,8 @@ class proddetail extends React.Component {
                 <div className={[(i18n.language == "ar") ? "rtl " : ""] + "container-fluid  relative"}>
                     <div className="row  ">
                         <div className={[(i18n.language == "ar") ? "ltr " : ""] + "col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 product2backg px-0 "}>
-                            {/* <Link href="/product">
-                                <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
+                            {/* <Link href="/products">
+                                <a href="/products" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
                                     <div className="row ">
                                         {(i18n.language == "ar") ?
                                             <div className="container-fluid p-0 py-2 link centeredpag">
@@ -265,8 +265,8 @@ class proddetail extends React.Component {
                             </Link> */}
                             <div className={[(i18n.language == "ar") ? "flexreverse ":" "]+"container-fluid h-100   px-0 sidemenudropdown  "}>
                                {/*  <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 p-0 h-100">
-                                        <Link href="/product">
-                                        <a href="/product" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
+                                        <Link href="/products">
+                                        <a href="/products" className={(i18n.language == "ar") ? "backmediaar" : " backmediaproduct"}>
                                             <div className="row ">
                                                 {(i18n.language == "ar") ?
                                                     <div className="container-fluid p-0 py-2 link ">
@@ -344,9 +344,9 @@ class proddetail extends React.Component {
                         </div>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 py-3 px-1 mt-3">
                             <div className="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 col-xxl-11 p-5">
-                                {/* <Link href="/product" > */}
-                                <Link href={{ pathname: '/product', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, brand_id: this.state.brand.id } }}>
-                                    <a href={{ pathname: '/product', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, brand_id: this.state.brand.id } }}>
+                                {/* <Link href="/products" > */}
+                                <Link href={{ pathname: '/products', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, brand_id: this.state.brand.id } }}>
+                                    <a href={{ pathname: '/products', as: "/productdetail/" + this.state.brand.id, query: { data: this.state.brand.title, brand_id: this.state.brand.id } }}>
                                         <h2 className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "gill "] + "regular titlemedia p-0 pointer"}>
                                        
                                             {(i18n.language == "ar") ? title_ar : this.state.brand.title}
@@ -403,7 +403,7 @@ class proddetail extends React.Component {
                                                 </p>
                                             </button>
                                         </div>
-                                        <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div id="collapseTwo" className="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
                                             <div className="card-body px-0">
                                                 <div className={[(i18n.language == "ar") ? "textalignright DroidKufi " : "gill light"] + "footertext lineheight  texttitlemedia lineheight"}>
                                                     <div dangerouslySetInnerHTML={{

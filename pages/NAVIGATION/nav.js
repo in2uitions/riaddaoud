@@ -165,16 +165,16 @@ handletrue = () => {
                             <span id="about">{i18n.t("about")}</span>
                         </a>
                     </Link></li>
-                    <li className="py-1 py-md-0 itemindicator"><Link href="/product">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/product">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/products">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/products">
                         <span id="products">{i18n.t("products")}</span>
                     </a></Link></li>
                     {/* <li className="py-1 py-md-0 itemindicator"><Link href="/media">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/media">
                         <span id="media">{i18n.t("media")}</span>
                     </a></Link></li> */}
-                    <li className="py-1 py-md-0 itemindicator"><Link href="/blog">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-lg-3 px-2 headersubtitles"} href="/blog">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/careers">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-lg-3 px-2 headersubtitles"} href="/careers">
                         <span id="careers">{i18n.t("careers")}</span>
                     </a></Link></li>
                     <li className="py-1 py-md-0 itemindicator"><Link href="/contact">
