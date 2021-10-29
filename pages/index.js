@@ -482,12 +482,11 @@ class index extends React.Component {
     for (const i in this.state.categ) {
       categarray[i] = this.state.categ[i];
     }
-    
+
+    if(this.props.i18n.language == 'ar')
       categarray = this.reverse(categarray);
     
     
-   
-    console.log(categarray)
 
     var last3articles = [];
     for (const y in this.state.articles) {

@@ -176,8 +176,6 @@ class Filter extends React.Component{
       })
 
 
-    console.log(filteredSubCategory)
-
 
      query['filter'] = {};
      if(this.state.category != 0){
@@ -193,11 +191,6 @@ class Filter extends React.Component{
              "_in": filteredSubCategory,
           }  
      }
-
-
-   
-
- 
      query['fields'] = ['*','brand.*']
 
      
@@ -287,6 +280,13 @@ class Filter extends React.Component{
          }  
         
     }
+
+    if(router.query.search)
+     {
+        query['filter']['title'] = {
+            "_contain": router.query.search,
+         } 
+     }
         
 
   

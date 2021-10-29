@@ -3,17 +3,23 @@ import Link from 'next/link'
 import React from 'react';
 import { withTranslation } from "react-i18next";
 import i18n from '../../i18n';
+import { withRouter } from 'next/router'
+
 // const {t}=useTranslation();
 const changeLanguage =(ln)=>{
     i18n.changeLanguage(ln);
     // console.log(ln);
 }
+
+
 class Nav extends React.Component{
+
     constructor(props) {
         super(props);
         this.state = {
           current:  this.props.current,
           issearchopen: false,
+          query:''
         };
         // const {t,i18n}=useTranslation();
     }
@@ -69,13 +75,7 @@ class Nav extends React.Component{
             form.classList.toggle("active");
             // cancelBtn.style.color = "#ff3d00";
           }
-        searchBtn.onclick = ()=>{
-          form.classList.toggle("active");
-          const menuBtnopened =items.classList.contains("active")
-            if(menuBtnopened)form.classList.toggle("active");
-        //   searchBtn.classList.toggle("hide");
-        //   cancelBtn.classList.toggle("show");
-        }
+     
         $(document).ready(function() {
             var submitIcon = $('.searchbox-icon');
             var inputBox = $('.searchbox-input');
@@ -205,7 +205,15 @@ handletrue = () => {
             <span class="fas fa-times"></span></div>
             <div className=" doneee col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className={[(i18n.language=="ar")?"floatsearchleft ":"  "]+" container-fluid p-0 searchbox "}>
-                    <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required />
+                    <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required 
+                    onChange={event => {this.setState({query: event.target.value})}}
+                    onKeyPress={event => {
+                        if (event.key === 'Enter') {
+                            this.props.router.push('/products?search='+this.state.query)
+                        }
+                      }}/>
+
+
                     {(this.state.issearchopen)? 
                     <i  className="searchbox-icon fa fa-close " id="fa" onClick={this.handlefalse}></i>:
                     <i  className="searchbox-icon fa fa-search " id="fa" onClick={this.handletrue}></i>}
@@ -240,4 +248,4 @@ handletrue = () => {
     )
 }
 }
- export default withTranslation()(Nav);
+ export default withTranslation()(withRouter(Nav));
