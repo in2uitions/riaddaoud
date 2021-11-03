@@ -483,7 +483,7 @@ class index extends React.Component {
       categarray[i] = this.state.categ[i];
     }
 
-    if(this.props.i18n.language == 'ar')
+    if(this.props.i18n.language == 'ar' && $( document).width() > 500)
       categarray = this.reverse(categarray);
     
     

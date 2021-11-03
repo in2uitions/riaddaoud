@@ -226,13 +226,13 @@ render (){
                     <div key={['btn-3-'+value]} className='container-fluid p-0' >
                        <div className='row relative' >
                             <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 aboutmission px-3 py-5 js--fadeInLeft'>
-                                <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  aligncenter'}>
+                                <div className={[(this.props.i18n.language=="ar")?"  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  aligncenter'}>
                                     <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>
                                         {(this.props.i18n.language=="ar")?title_ar:value.title}
                                         
                                         </h1>
                                 </div>
-                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ar ":"gill en "]+[index ==0 && 'text-center ']+' mission  light py-2 px-3 px-md-0 lineheightbig'}>
+                                <div className={[(this.props.i18n.language=="ar")?" DroidKufi  ar ":"gill en textalignright"]+[index ==0 ? 'text-center ' : 'textalignright']+' mission  light py-2 px-3 px-md-0 lineheightbig'}>
                                     <p>
                                     {ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}
                                     
