@@ -232,7 +232,7 @@ render (){
                                         
                                         </h1>
                                 </div>
-                                <div className={[(this.props.i18n.language=="ar")?" DroidKufi  ar ":"gill en textalignright"]+[index ==0 ? 'text-center ' : 'textalignright']+' mission  light py-2 px-3 px-md-0 lineheightbig'}>
+                                <div className={[(this.props.i18n.language=="ar")?" DroidKufi  ar ":"gill en "]+[index ==0 ? 'text-center ' : 'textalignright']+[(this.props.i18n.language!="ar") && index != 0 ?  'textalignright' :'']+' mission  light py-2 px-3 px-md-0 lineheightbig'}>
                                     <p>
                                     {ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}
                                     
