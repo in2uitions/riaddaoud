@@ -284,7 +284,7 @@ class Filter extends React.Component{
     if(router.query.search)
      {
         query['filter']['title'] = {
-            "_contain": router.query.search,
+            "_contains": router.query.search,
          } 
      }
         
