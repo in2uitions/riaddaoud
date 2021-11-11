@@ -73,6 +73,7 @@ class Nav extends React.Component{
             // searchBtn.classList.toggle("hide");
             // cancelBtn.classList.toggle("show");
             form.classList.toggle("active");
+           
             // cancelBtn.style.color = "#ff3d00";
           }
      
@@ -146,6 +147,7 @@ class Nav extends React.Component{
     
 handlefalse = () => {
     this.setState({ issearchopen: false })
+    
   }
   
 handletrue = () => {
@@ -199,9 +201,26 @@ handletrue = () => {
             </div>
             
             {/* <div className="col-1"></div> */}
-            <div class={[(i18n.language=="ar")?"textalignleftmenu ":" "]+"search-icon col-2 col-md-5"}>
-            <span class="fas fa-search"></span></div>
-            <div class="cancel-icon">
+            <div class={[(i18n.language=="ar")?"textalignleftmenu ":" "]+"search-icon col-2 col-md-5"} 
+            
+            >
+                <div className={[(i18n.language=="ar")?"floatsearchleft ":"  "]+" container-fluid p-0 searchbox "}>
+                    <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required 
+                    onChange={event => {this.setState({query: event.target.value})}}
+                    onKeyPress={event => {
+                        if (event.key === 'Enter') {
+                            this.props.router.push('/products?search='+this.state.query)
+                        }
+                      }}/>
+
+
+                    {(this.state.issearchopen)? 
+                    <i  className="searchbox-icon fa fa-close " id="fa" onClick={this.handlefalse}></i>:
+                    <i  className="searchbox-icon fa fa-search " id="fa" onClick={this.handletrue}></i>}
+                </div>
+            {/* <span class="fas fa-search"></span> */}
+            </div>
+            <div class="cancel-icon" >
             <span class="fas fa-times"></span></div>
             <div className=" doneee col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className={[(i18n.language=="ar")?"floatsearchleft ":"  "]+" container-fluid p-0 searchbox "}>
