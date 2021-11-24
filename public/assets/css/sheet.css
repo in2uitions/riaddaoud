@@ -564,7 +564,7 @@
         }
         
         .footertext {
-            font-size: 0.9em;
+            font-size: 1rem;
         }
         
         .mediareadmore {
@@ -689,7 +689,7 @@
         }
         
         .lineheight {
-            line-height: 1.1
+            line-height: 1.5
         }
         
         .smalllineheight {
@@ -859,8 +859,12 @@
             color: #6F8BA4;
             /* font-size: 0.7em; */
             /* line-height: 1.3; */
-            text-align: center;
+            text-align: left;
         }
+        .mission.ar ul{
+            direction:rtl
+        }
+      
         /* .quotes {
     color: #081D54;
      
@@ -1998,22 +2002,22 @@ a:focus {
             width: calc(29%);
         }
         
-        .block--left {
+        .block--right{
             clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
             left: 0;
         }
         
-        .block_center {
+        .block_center1{
             clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
             left: 24%
         }
         
-        .block_center1 {
+         .block_center{
             clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
             left: 48%
         }
         
-        .block--right {
+         .block--left{
             clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
             left: 72%;
         }
@@ -3727,11 +3731,11 @@ nav .search-icon{
         /* background-color: white; */
     }
     .quotesimg {
-        height: 50px!important;
+    
         width: 50px!important;
     }
     .dropbtn span {
-        font-size: 0.7em!important;
+        font-size: 1rem!important;
     }
     .headersubtitles span {
         font-size: 0.9em!important;
@@ -4209,7 +4213,7 @@ nav .search-icon{
         /* padding-top: 0px!important; */
     }
     .footertext {
-        font-size: 0.70em!important;
+        font-size: 1rem!important;
     }
     }
         @media only screen and (min-width: 992px) {

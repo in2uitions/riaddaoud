@@ -162,7 +162,7 @@ class media extends React.Component {
         for (const i in this.state.databox[0]) {
             a[i] = this.state.databox[0][i];
         }
-        var startb_url = 'https://rdcms.businessexchange.me/assets/';
+        var startb_url = 'https://admin.riaddaoud.com/assets/';
         var endb_url = '?key=system-large-cover';
         var valuebackimg = a.image;
         const imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -203,7 +203,7 @@ class media extends React.Component {
                             (this.state.paginationarrayforprod.length == 0) ?
                                 this.state.paginationarray.map((value, index) => {
                                     // console.log("fet")
-                                    var start_url = 'https://rdcms.businessexchange.me/assets/';
+                                    var start_url = 'https://admin.riaddaoud.com/assets/';
                                     var end_url = '?key=system-large-cover';
                                     var valueimg = value.image;
                                     const imageurl = start_url + valueimg + end_url;
@@ -283,7 +283,7 @@ class media extends React.Component {
                                 })
                                 :
                                 this.state.paginationarrayforprod.map((value, index) => {
-                                    var start_url = 'https://rdcms.businessexchange.me/assets/';
+                                    var start_url = 'https://admin.riaddaoud.com/assets/';
                                     var end_url = '?key=system-large-cover';
                                     var valueimg = value.image;
                                     const imageurl = start_url + valueimg + end_url;

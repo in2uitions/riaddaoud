@@ -7,7 +7,6 @@ function HEAD({title,description}){
               <Head>
                 {/* <title >title</title> */}
                 <meta charSet="utf-8" />
-                <link rel="icon" href="./assets/images/riad-daoud.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet" type='text/css'/>
@@ -20,7 +19,9 @@ function HEAD({title,description}){
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossOrigin="anonymous"></script>
                 <link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
                 <link rel="stylesheet" href="assets/css/owl.theme.default.min.css"/>
-
+                <link rel="icon" 
+                        type="image/png" 
+                        href="/assets/images/logoname.png" />
                 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                 {/* <link rel= "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"/> */}
                 {/* <link rel= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/> */}

@@ -165,7 +165,7 @@ class media1 extends React.Component {
   }
   
 render (){
-    var start_url =  'https://rdcms.businessexchange.me/assets/';
+    var start_url =  'https://admin.riaddaoud.com/assets/';
     var end_url='?key=system-large-cover';
     var valueimg= this.props.data.map((value, index) => {return value.image});
     const imageurl=start_url+valueimg+end_url;

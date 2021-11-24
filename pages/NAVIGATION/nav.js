@@ -3,17 +3,23 @@ import Link from 'next/link'
 import React from 'react';
 import { withTranslation } from "react-i18next";
 import i18n from '../../i18n';
+import { withRouter } from 'next/router'
+
 // const {t}=useTranslation();
 const changeLanguage =(ln)=>{
     i18n.changeLanguage(ln);
     // console.log(ln);
 }
+
+
 class Nav extends React.Component{
+
     constructor(props) {
         super(props);
         this.state = {
           current:  this.props.current,
           issearchopen: false,
+          query:''
         };
         // const {t,i18n}=useTranslation();
     }
@@ -67,15 +73,10 @@ class Nav extends React.Component{
             // searchBtn.classList.toggle("hide");
             // cancelBtn.classList.toggle("show");
             form.classList.toggle("active");
+           
             // cancelBtn.style.color = "#ff3d00";
           }
-        searchBtn.onclick = ()=>{
-          form.classList.toggle("active");
-          const menuBtnopened =items.classList.contains("active")
-            if(menuBtnopened)form.classList.toggle("active");
-        //   searchBtn.classList.toggle("hide");
-        //   cancelBtn.classList.toggle("show");
-        }
+     
         $(document).ready(function() {
             var submitIcon = $('.searchbox-icon');
             var inputBox = $('.searchbox-input');
@@ -146,6 +147,7 @@ class Nav extends React.Component{
     
 handlefalse = () => {
     this.setState({ issearchopen: false })
+    
   }
   
 handletrue = () => {
@@ -165,16 +167,16 @@ handletrue = () => {
                             <span id="about">{i18n.t("about")}</span>
                         </a>
                     </Link></li>
-                    <li className="py-1 py-md-0 itemindicator"><Link href="/product">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/product">
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/products">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/products">
                         <span id="products">{i18n.t("products")}</span>
                     </a></Link></li>
-                    <li className="py-1 py-md-0 itemindicator"><Link href="/media">
+                    {/* <li className="py-1 py-md-0 itemindicator"><Link href="/media">
                     <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"  headersubtitles px-lg-3 px-2"} href="/media">
                         <span id="media">{i18n.t("media")}</span>
-                    </a></Link></li>
-                    <li className="py-1 py-md-0 itemindicator"><Link href="/blog">
-                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-lg-3 px-2 headersubtitles"} href="/blog">
+                    </a></Link></li> */}
+                    <li className="py-1 py-md-0 itemindicator"><Link href="/careers">
+                    <a className={[(i18n.language=="ar")?"DroidKufi ":"gill  "]+"   px-lg-3 px-2 headersubtitles"} href="/careers">
                         <span id="careers">{i18n.t("careers")}</span>
                     </a></Link></li>
                     <li className="py-1 py-md-0 itemindicator"><Link href="/contact">
@@ -193,19 +195,44 @@ handletrue = () => {
             <div class="logo col-8 col-md-4 textaligncenter ">
             <Link href="/">
                 <a href="index.html" className="logoabsolute ">
-                    <img src="./assets/images/riad_daoud_logo.svg" alt="logo name" className="contain logosheight logoslidingproblem" />
+                    <img src={`./assets/images/riad_daoud_logo${(this.props.i18n.language=="ar")?'_ar':''}.svg`} alt="logo name" className="contain logosheight logoslidingproblem" />
                 </a>
                 </Link>
             </div>
             
             {/* <div className="col-1"></div> */}
-            <div class={[(i18n.language=="ar")?"textalignleftmenu ":" "]+"search-icon col-2 col-md-5"}>
-            <span class="fas fa-search"></span></div>
-            <div class="cancel-icon">
+            <div class={[(i18n.language=="ar")?"textalignleftmenu ":" "]+"search-icon col-2 col-md-5"} 
+            
+            >
+                <div className={[(i18n.language=="ar")?"floatsearchleft ":"  "]+" container-fluid p-0 searchbox "}>
+                    <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required 
+                    onChange={event => {this.setState({query: event.target.value})}}
+                    onKeyPress={event => {
+                        if (event.key === 'Enter') {
+                            this.props.router.push('/products?search='+this.state.query)
+                        }
+                      }}/>
+
+
+                    {(this.state.issearchopen)? 
+                    <i  className="searchbox-icon fa fa-close " id="fa" onClick={this.handlefalse}></i>:
+                    <i  className="searchbox-icon fa fa-search " id="fa" onClick={this.handletrue}></i>}
+                </div>
+            {/* <span class="fas fa-search"></span> */}
+            </div>
+            <div class="cancel-icon" >
             <span class="fas fa-times"></span></div>
             <div className=" doneee col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className={[(i18n.language=="ar")?"floatsearchleft ":"  "]+" container-fluid p-0 searchbox "}>
-                    <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required />
+                    <input type="search"   id="input" placeholder={i18n.t("search")} name="search" className={[(i18n.language=="ar")?"searchbox-inputleft ":"searchbox-input "]+" placeholder"}  required 
+                    onChange={event => {this.setState({query: event.target.value})}}
+                    onKeyPress={event => {
+                        if (event.key === 'Enter') {
+                            this.props.router.push('/products?search='+this.state.query)
+                        }
+                      }}/>
+
+
                     {(this.state.issearchopen)? 
                     <i  className="searchbox-icon fa fa-close " id="fa" onClick={this.handlefalse}></i>:
                     <i  className="searchbox-icon fa fa-search " id="fa" onClick={this.handletrue}></i>}
@@ -240,4 +267,4 @@ handletrue = () => {
     )
 }
 }
- export default withTranslation()(Nav);
+ export default withTranslation()(withRouter(Nav));

@@ -27,6 +27,7 @@
     "react-data-table-component": "^6.11.7",
     "react-device-detect": "^1.17.0",
     "react-dom": "17.0.1",
+    "react-html-parser": "^2.0.2",
     "react-i18next": "^11.8.9",
     "react-multi-carousel": "^2.6.2",
     "reactjs-popup": "^2.0.4",

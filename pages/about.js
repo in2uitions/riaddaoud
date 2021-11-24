@@ -11,6 +11,8 @@ import Api from './api/Api.js';
 const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
 // import styles from './style3.module.css';
+import ReactHtmlParser from 'react-html-parser';
+
 class about extends React.Component{
 
     constructor(props) {
@@ -169,7 +171,7 @@ render (){
         a[i]=this.state.data[0][i];
     }
 
-    var startb_url =  'https://rdcms.businessexchange.me/assets/';
+    var startb_url =  'https://admin.riaddaoud.com/assets/';
     var endb_url='?key=system-large-cover';
     var valuebackimg=a.image;
     const imagbackeurl=startb_url+valuebackimg+endb_url;
@@ -196,7 +198,7 @@ render (){
                             </div>
                             <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
                             <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10  py-4">
-                                <h4 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  aligncenter lineheightbig py-1"}> {(this.props.i18n.language=="ar")?box_description_ar:a.box_description}</h4>
+                                <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+"light white footertext  aligncenter lineheightbig py-1"}> {(this.props.i18n.language=="ar")?box_description_ar:a.box_description}</p>
                             
                             </div>
                         </div>
@@ -209,7 +211,7 @@ render (){
     
     <div >
     {this.state.data_container.map((value, index) => {
-        var start_url =  'https://rdcms.businessexchange.me/assets/';
+        var start_url =  'https://admin.riaddaoud.com/assets/';
         var end_url='?key=system-large-cover';
         var valueimg=value.image;
         const imageurl=start_url+valueimg+end_url;
@@ -224,16 +226,17 @@ render (){
                     <div key={['btn-3-'+value]} className='container-fluid p-0' >
                        <div className='row relative' >
                             <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 aboutmission px-3 py-5 js--fadeInLeft'>
-                                <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  aligncenter'}>
+                                <div className={[(this.props.i18n.language=="ar")?"  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  aligncenter'}>
                                     <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>
                                         {(this.props.i18n.language=="ar")?title_ar:value.title}
                                         
                                         </h1>
                                 </div>
-                                <div className={[(this.props.i18n.language=="ar")?"textalignright DroidKufi  ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}>
-                                    <h3>
-                                    {(this.props.i18n.language=="ar")?description_ar:value.description}
-                                    </h3></div>
+                                <div className={[(this.props.i18n.language=="ar")?" DroidKufi  ar ":"gill en "]+[index ==0 ? 'text-center ' : 'textalignright']+[(this.props.i18n.language!="ar") && index != 0 ?  'textalignright' :'']+' mission  light py-2 px-3 px-md-0 lineheightbig'}>
+                                    <p>
+                                    {ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}
+                                    
+                                    </p></div>
                                 </div>
                                 <div className={[(isIOS)?"backgnotfixedios ":""]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax1'} style={{backgroundImage:'url('+imageurl+')'}}   ></div>
                         </div>
@@ -241,11 +244,11 @@ render (){
                     {(index==0)?<div className='parallaxgeneral'>
                             <div className='container-fluid'>
                                 <div className='row'>
-                                    <div className=' col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3'></div>
-                                    <div className='d-flex col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 py-5 px-0 '>
+                                    <div className=' col-1 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 '></div>
+                                    <div className={`d-flex justify-content-center col-10 col-md-6 col-lg-6 col-xl-6 col-xxl-6 py-5 px-0 ${this.props.i18n.language=="ar"&&'flex-row-reverse'}`}>
                                         <div className='align-self-lg-start quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover ' /></div>
-                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'quotestext  aligncenter'}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt</p>
-                                        <div className='secquotes pl-2 pl-sm-0 quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover' /></div>
+                                        <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'quotestext  mb-0 aligncenter px-4'}>{(this.props.i18n.language=="ar")?this.state.data[0].quote_ar:this.state.data[0].quote}</p>
+                                        <div className='secquotes pl-2 pl-sm-0 quotesimg'><img src='./assets/images/quotes.png' className='img-fluid w-100 cover mb-0 pb-0 mb-md-5 pb-md-5' /></div>
                                     </div>
                                 </div>
                             </div>
@@ -260,10 +263,10 @@ render (){
                      <div className='row relative' >
                         <div className={[(isIOS)?"backgnotfixedios ":""]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 p-0 parallax2'}style={{backgroundImage:'url('+imageurl+')'}}></div>
                         <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 aboutvision px-3 py-5 js--fadeInRight'>
-                            <div className={[(this.props.i18n.language=="ar")?"textalignright  ":" "]+'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 aligncenter '}>
+                            <div className={'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 aligncenter '}>
                                  <h1 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'regular blue'}>   {(this.props.i18n.language=="ar")?title_ar:value.title}</h1>
                             </div>
-                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'mission light py-2 px-3 px-md-0 lineheightbig'}><h3>{(this.props.i18n.language=="ar")?description_ar:value.description}</h3>
+                            <div className={[(this.props.i18n.language=="ar")?"DroidKufi ar":"gill "]+' mission text-center light py-2 px-3 px-md-0 lineheightbig '}><p>{ReactHtmlParser((this.props.i18n.language=="ar")?description_ar:value.description)}</p>
                             </div>
                         </div>
                     </div>
@@ -311,7 +314,7 @@ render (){
                     {this.state.data_timeline.map((value, index) => {
                         if(value.description_ar==null){ var description_ar=value.description}
                         else var description_ar=value.description_ar
-                        var start_url =  'https://rdcms.businessexchange.me/assets/';
+                        var start_url =  'https://admin.riaddaoud.com/assets/';
                         var end_url='?key=system-large-cover';
                         var valueimg=value.image;
                         const imageurl=start_url+valueimg+end_url;
@@ -326,13 +329,13 @@ render (){
                                                 <img src={""+imageurl+""} className="img-fluid cover w-100 h-100"/>
                                             </div>:null}  
                                             <div className='timelinedate px-4 rightzero'>
-                                                <h3 className=' regular white mt-2 px-2'>{value.year}</h3>
+                                                <p className=' regular white mt-2 px-2'>{value.year}</p>
                                             </div>
                                             <div className='container py-4 row '>
                                                 <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2'></div>
-                                                {(value.image!=null)?(<div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 py-0 text-right regular timelinecolor '> <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{value.description}</h3>
+                                                {(value.image!=null)?(<div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 py-0 text-right regular timelinecolor '> <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{value.description}</p>
                                                 </div>):(<div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 py-5 text-right regular timelinecolor '>
-                                                    <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{(this.props.i18n.language=="ar")?description_ar:value.description}</h3>
+                                                    <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{(this.props.i18n.language=="ar")?description_ar:value.description}</p>
                                                 </div>)}
                                             </div>
                                         </div>
@@ -348,12 +351,12 @@ render (){
                                                 <img src={""+imageurl+""} className="img-fluid cover w-100 h-100"/>
                                             </div>:null}
                                             <div className='timelinedate px-4 leftzero'>
-                                                 <h3 className=' regular white mt-2 px-2'>{value.year}</h3>
+                                                 <p className=' regular white mt-2 px-2'>{value.year}</p>
                                             </div>
                                             <div className='container py-4 row '>
                                                 <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1'></div>
                                                 <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 py-5 text-left regular timelinecolor '>
-                                                    <h3 className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{(this.props.i18n.language=="ar")?description_ar:value.description}</h3>
+                                                    <p className={[(this.props.i18n.language=="ar")?"DroidKufi ":"gill "]+'py-1 mb-2'}>{(this.props.i18n.language=="ar")?description_ar:value.description}</p>
                                                  </div>
                                             </div>
                                         </div>

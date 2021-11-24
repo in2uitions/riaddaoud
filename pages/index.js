@@ -101,7 +101,7 @@ class index extends React.Component {
       },
     });
     var datadirectbrand = await directus.items("brands").read();
-    var datadirectproducts = await directus.items("products").read();
+    var datadirectproducts = await directus.items("products").read({fields:['*,*.*']});
     var datadirectarticles = await directus.items("articles").read();
     var a=[]
     var imagbackeurl=""
@@ -109,7 +109,7 @@ class index extends React.Component {
     for (const i in this.state.databox[0]) {
       a[i] = this.state.databox[0][i];
     }
-    var startb_url = "https://rdcms.businessexchange.me/assets/";
+    var startb_url = "https://admin.riaddaoud.com/assets/";
     var endb_url = "?key=system-large-contain";
     var valuebackimg =a.image;
      imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -436,7 +436,21 @@ class index extends React.Component {
     // }
     // console.log("this is the current "+current)
   }
+
+  reverse(arr) {
+    var ReverseArray = [];
+    var length = arr.length;
+    for(var i = length-1;i>=0;i--){
+      ReverseArray.push(arr[i]);
+    }
+
+    return ReverseArray;
+  }
+
+
   render() {
+
+    
     // const {t,i18n}=useTranslation();
     var b = [];
     for (const i in this.state.databox[0]) {
@@ -457,15 +471,23 @@ class index extends React.Component {
       brannnnds[y] = this.state.brands[y];
     }
     var arrayofbrandsimages = brannnnds.map((key, value) => key.image);
-    // var startb_url = "https://rdcms.businessexchange.me/assets/";
+    // var startb_url = "https://admin.riaddaoud.com/assets/";
     // var endb_url = "?key=system-large-contain";
     // var valuebackimg =this.state.img;
     // const imagbackeurl = startb_url + valuebackimg + endb_url;
     // console.log(imagbackeurl)
     var categarray = [];
+   
+    
     for (const i in this.state.categ) {
       categarray[i] = this.state.categ[i];
     }
+
+    if(this.props.i18n.language == 'ar' && $( document).width() > 500)
+      categarray = this.reverse(categarray);
+    
+    
+
     var last3articles = [];
     for (const y in this.state.articles) {
       if (this.state.articles[y].id == this.state.articles.length - 2)
@@ -813,15 +835,16 @@ class index extends React.Component {
                     {categarray.map((value, index) => {
                       //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
                       var startb_url =
-                        "https://rdcms.businessexchange.me/assets/";
+                        "https://admin.riaddaoud.com/assets/";
                       var endb_url = "?key=system-large-cover";
                       var valuebackimg = value.image;
                       const imagbackeurl = startb_url + valuebackimg + endb_url;
                       if (value.title_ar == null) {
                         var title_ar = value.title;
                       } else var title_ar = value.title_ar;
-                      if (value.id == 1) {
+                      if (index == 3) {
                         return (
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             key={["btn-4-" + index]}
                             className="block  block--left clip406 "
@@ -829,14 +852,14 @@ class index extends React.Component {
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                           
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
                                       this.props.i18n.language == "ar"
                                         ? "DroidKufi lefteye_ar "
-                                        : "gill lefteye ",
+                                        : "gill lefteye1 ",
                                     ] + "white italic  textalign "
                                   }
                                 >
@@ -844,22 +867,24 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                            
                           </div>
+                          </Link>
                         );
                       }
-                      if (value.id == categarray.length) {
+                      if (index == 0) {
                         return (
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block  block--right clip406 "
                             style={{
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                            <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                            
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -873,22 +898,24 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                            
                           </div>
+                          </Link>
                         );
                       }
-                      if (value.id == 2) {
+                      if (index == 2) {
                         return (
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block  block_center clip406 "
                             style={{
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                             <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                             
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -902,21 +929,24 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                           
                           </div>
+                          </Link>
                         );
-                      } else {
+                                }
+                        if (index == 1) {
                         return (
+                          <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                           <div
                             className="block   block_center1 clip406 "
                             style={{
                               backgroundImage: "url(" + imagbackeurl + ")",
                             }}
                           >
-                           <Link href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
-                            <a href={{ pathname: '/product', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                           
+                            <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
                                 <h2
                                   className={
                                     [
@@ -930,10 +960,11 @@ class index extends React.Component {
                                     ? title_ar
                                     : value.title}
                                 </h2>
-                                <div className="overlayicateg overlayicategmobile"></div>
+                                <div className="overlayicateg overlayicategmobile d-none d-md-block"></div>
                               </a>
-                            </Link>
+                           
                           </div>
+                          </Link>
                         );
                       }
                     })}
@@ -963,7 +994,7 @@ class index extends React.Component {
                     <div className="owl-stage ">
                     {brannnnds.map((value, index) => {
                             //  var arrayofbrandsimages=brannnnds.map((key,value)=>key.image);
-                            var startb_url = "https://rdcms.businessexchange.me/assets/";
+                            var startb_url = "https://admin.riaddaoud.com/assets/";
                             var endb_url = "?key=system-large-cover";
                             var valuebackimg = value.image;
                             const imagbackeurl = startb_url + valuebackimg + endb_url;
@@ -971,10 +1002,10 @@ class index extends React.Component {
                             return (
                                 <div
                                 key={["btn-5-" + index]}
-                                className={"textaligncenter owl-item " + index}
+                                className={"px-3 textaligncenter owl-item " + index}
                                 >
-                                  <Link href={{ pathname: '/productbrand', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
-                                    <a href={{ pathname: '/productbrand', as: "/index/" + value.id, query: { data: value.title, data_id: value.id } }}>
+                                  <Link href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
+                                    <a href={{ pathname: '/products', as: "/index/" + value.id, query: { data: value.title, brand_id: value.id } }}>
                                 <img
                                     id={index}
                                     src={"" + imagbackeurl + ""}
@@ -1018,9 +1049,9 @@ class index extends React.Component {
             {/* {console.log(lastposts)} */}
         {lastposts.map((key, value) => {
                       var startb_url =
-                        "https://rdcms.businessexchange.me/assets/";
+                        "https://admin.riaddaoud.com/assets/";
                       var endb_url = "?w=100&h=150 ";
-                      var valuebackimg = key.image;
+                      var valuebackimg = key.image.id;
                       const imagbackeurl = startb_url + valuebackimg + endb_url;
                       if (key.title_ar == null) {
                         var title_ar = key.title;
@@ -1082,8 +1113,8 @@ class index extends React.Component {
                                     }
                                   >
                                     {this.props.i18n.language == "ar"
-                                      ? brandstitle_ar
-                                      : brannnnds[key.brand - 1]?.title}
+                                      ? key.brand.title_ar
+                                      :key.brand.title}
                                   </span>
                                 </p>
                                 <FontAwesomeIcon
@@ -1119,10 +1150,10 @@ class index extends React.Component {
                             "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  py-3"
                           }
                         >
-                          <Link href="/product">
+                          <Link href="/products">
                             {this.props.i18n.language == "ar" ? (
                               <a
-                                href="/product"
+                                href="/products"
                                 className={
                                   [
                                     this.props.i18n.language == "ar"
@@ -1139,7 +1170,7 @@ class index extends React.Component {
                               </a>
                             ) : (
                               <a
-                                href="/product"
+                                href="/products"
                                 className={
                                   [
                                     this.props.i18n.language == "ar"
@@ -1166,7 +1197,7 @@ class index extends React.Component {
             </div>
 
             <div className="container-fluid  ">
-              <div className="relative py-3 py-md-0">
+            {last3articles.length > 0?<div className="relative py-3 py-md-0">
                 <hr className="hr my-5 " />
                 <div className="thingonhr aligncenter">
                   <h1
@@ -1181,7 +1212,7 @@ class index extends React.Component {
                     {this.props.t("latestnews")}
                   </h1>
                 </div>
-              </div>
+              </div>:null}
               <div
                 className="row p-0 mt-4"
               >
@@ -1193,7 +1224,7 @@ class index extends React.Component {
                             <div className="owl-stage ">
                     {last3articles.map((value, index) => {
                                 var startb_url =
-                                  "https://rdcms.businessexchange.me/assets/";
+                                  "https://admin.riaddaoud.com/assets/";
                                 var endb_url = "?key=system-large-contain";
                                 var valuebackimg = value.image;
                                 const imagbackeurl =
