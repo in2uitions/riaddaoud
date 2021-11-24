@@ -1025,10 +1025,10 @@ class index extends React.Component {
                       if (key.title_ar == null) {
                         var title_ar = key.title;
                       } else var title_ar = key.title_ar;
-                      if (brannnnds[key.brand - 1].title_ar == null) {
-                        var brandstitle_ar = brannnnds[key.brand - 1].title;
+                      if (brannnnds[key.brand - 1]?.title_ar == null) {
+                        var brandstitle_ar = brannnnds[key.brand - 1]?.title;
                       } else
-                        var brandstitle_ar = brannnnds[key.brand - 1].title_ar;
+                        var brandstitle_ar = brannnnds[key.brand - 1]?.title_ar;
                       return (
                         <div
                           key={["btn-32-" + value]}
@@ -1083,7 +1083,7 @@ class index extends React.Component {
                                   >
                                     {this.props.i18n.language == "ar"
                                       ? brandstitle_ar
-                                      : brannnnds[key.brand - 1].title}
+                                      : brannnnds[key.brand - 1]?.title}
                                   </span>
                                 </p>
                                 <FontAwesomeIcon
