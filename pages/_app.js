@@ -14,8 +14,7 @@ import '../i18n';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <Header description="this is the discription of the header" title="this is the title of the header">
-      </Header>
+    <Header description="this is the discription of the header" title="this is the title of the header" />
   <Component {...pageProps} />
   </>
   )

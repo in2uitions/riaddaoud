@@ -8,6 +8,7 @@ import Footer from "./FOOTER/footer.js";
 import { useRouter } from 'next/router'
 import DirectusSDK from '@directus/sdk-js';
 import Api from './api/Api.js';
+import i18n from "../i18n.js";
 const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
 // import styles from './style3.module.css';
@@ -182,7 +183,11 @@ render (){
     if(a.box_description_ar==null){ var box_description_ar=a.box_description}
     else var box_description_ar=a.box_description_ar
   return (
+
     <div>
+        <Head>
+            <title>{i18n.t("about")}</title>
+        </Head>
       <Navigation current="about"></Navigation>
     <div >
         <div className="container-fluid p-0 parallax"style={{backgroundImage:'url('+imagbackeurl+')'}}>

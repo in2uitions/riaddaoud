@@ -244,6 +244,9 @@ class proddetail extends React.Component {
         // console.log(a)
         return (
             <div>
+                <Head>
+                    <title>{(i18n.language == "ar") ? title_ar : this.state.brand.title}</title>
+                </Head>
                 <Navigation current="products"></Navigation>
                 <div className={[(i18n.language == "ar") ? "rtl " : ""] + "container-fluid  relative"}>
                     <div className="row  ">

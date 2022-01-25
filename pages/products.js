@@ -8,7 +8,7 @@ import i18n from '../i18n';
 import { MDBDataTable } from 'mdbreact';
 import Link from 'next/link'
 import router from 'next/router'
-
+import Head from "next/head";
 import { useTranslation } from 'react-i18next';
 function Back() {
     const { t } = useTranslation();
@@ -30,6 +30,9 @@ class Filter extends React.Component{
     render(){
         return(
             <>
+             <Head>
+                <title>{i18n.t('products')}</title>
+              </Head>
                 <select name="category" id="jquery_box" class="py-4 w-100 backgroundblue px-3 pointer " onChange={this.props.handleChange}  value={this.props.category}>
                     <option class="gill  px-4 selectoption textaligncenter meduim  font_size" value="0">ALL CATEGORIES</option>
                     {this.props.categories.map((item)=>(

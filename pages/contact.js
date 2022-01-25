@@ -13,7 +13,7 @@ import Api from './api/Api.js';
 var API_USER_ID="abf00ccfee58b1f7d175588b9e9b8e60";
 var API_SECRET="c5c8c09549f7a5d67cd906dc686d515a";
 var TOKEN_STORAGE="/tmp/";
-
+import i18n from "../i18n.js";
 const directus = new DirectusSDK(Api.baseUrl);
 import { withTranslation } from "react-i18next";
 import { faYenSign } from "@fortawesome/free-solid-svg-icons";
@@ -345,6 +345,9 @@ render (){
     else var subtitle_ar=a.subtitle_ar
   return (
     <div>
+        <Head>
+            <title>{i18n.t('contact')}</title>
+        </Head>
       <Navigation current="contact"></Navigation>
       <>
       <div className={[(this.props.i18n.language=="ar")?" direction: rtl ":" "]+"container-fluid p-0 relative"}>

@@ -573,6 +573,7 @@ class index extends React.Component {
       <div>
         <Navigation current="index"></Navigation>
         {/* <div> */}
+          <title>{'Riad Daoud'}</title>
           <section className="video-wrapper videowrapperparallax px-0 ">
             <div
               id="owl-demo "

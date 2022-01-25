@@ -6,6 +6,7 @@ import Footer from "./FOOTER/footer.js";
 import DirectusSDK from '@directus/sdk-js';
 import Swal from 'sweetalert2'
 import { withTranslation } from "react-i18next";
+import i18n from "../i18n.js";
 import Api from './api/Api.js';
 import axios from 'axios';
 const directus = new DirectusSDK(Api.baseUrl);
@@ -408,6 +409,9 @@ render (){
     else var box_description_ar=a.box_description_ar
   return (
     <div >
+      <Head>
+          <title>{i18n.t('careers')}</title>
+      </Head>
       <Navigation current="careers"></Navigation>
       < >
         <div>
